@@ -4,8 +4,7 @@ Pickit system software upgrades
 ================================
 
 Upgrading the Pickit software can be done by the user, without Pickit
-support engineers’ intervention. This feature is available starting from
-software version 1.10. This guide will take you through the upgrade
+support engineers’ intervention. This guide will take you through the upgrade
 procedure.
 
 Overview
@@ -13,54 +12,37 @@ Overview
 
 To upgrade your system follow these steps:
 
--  Press the **Settings** button in the top bar of Pickit's web
-   interface.
+- Before proceeding with the upgrade, make sure your setup and product files are saved.
 
-   .. image:: /assets/images/Documentation/settings-button-21.png
+- Download the latest version of Pickit here_.
+- Press the **Settings** button in the top bar of Pickit's web interface.
 
--  Under the **Upgrade Pickit version** drawer in the **Network
-   settings** section of the screen, you should see the following
-   content depending on whether you're connected to the internet.
+     .. image:: /assets/images/Documentation/settings-button-21.png
 
-   -  If you are connected on the internet on the laptop/computer
-      through which you are accessing the Pickit web interface), the
-      content will look like the screenshot below. To upgrade your
-      system, proceed with the steps
-      described in :ref:`software-upgrade-with-internet`.
+- In the **Network settings** section of the left menu, select the **Upgrade
+  Pickit version** drawer, and press the **Upload and
+  Install Upgrades** button to upload and select the downloaded
+  file.
 
-      .. image:: /assets/images/Documentation/Upgrade-pickit-version-internet.png
+  .. note:: **For version < 2.1.2** :
 
-   -  If you don’t have internet on your computer, the settings will
-      look like the screenshot below. To upgrade your system, follow the
-      steps described in :ref:`software-upgrade-without-internet`.
+    You first need to enable the option **I prefer downloading and
+    uploading the new version myself** before pressing the **Upload and
+    Install Upgrades** button.
 
-      .. image:: /assets/images/Documentation/Upgrade-pickit-version-no-internet.png
+- While the upgrade is in progress you should see the following:
 
-.. note:: Before proceeding with the automatic upgrade, make sure your
-   setup and product files are saved.
+   .. image:: /assets/images/Documentation/pickit-upgrading.png
 
-.. _software-upgrade-with-internet:
+.. _here: https://client.pickit3d.com/upgrade/v2/
 
-Software upgrade with internet connection
------------------------------------------
+.. warning:: Note that for Pickit versions < 2.1.2, the web interface can show
+  the error message **ERROR: Something went wrong during upgrading**, even though the
+  upgrade process is still running without problems.
 
-If you are connected to the internet, you can just press the **Download
-and Install Upgrades** button and the rest will be automatically taken
-care of. When the upgrading is in progress you should see the following:
+  If you see this message, **DO NOT REBOOT THE PICKIT SYSTEM YOURSELF**. Instead
+  **WAIT FOR IT TO REBOOT AUTOMATICALLY**. After the reboot, the web
+  interface will refresh automatically and show the newest version.
 
-.. image:: /assets/images/Documentation/pickit-upgrading.png
-
-.. _software-upgrade-without-internet:
-
-Software upgrade without internet connection
---------------------------------------------
-
-If the PC through which you access the Pickit web interface does not
-have access to the internet, you should download the upgrade file from
-the link shown on one of the previous screenshots above. 
-
-After you download the file, you can use a USB flash drive to transfer
-it on the computer on which the Pickit web interface is open, and under
-the same section for version upgrades, press the **Upload and Install
-Upgrades** to upload it and proceed with the same procedure as described
-above.
+  In the exceptional case where the Pickit system does not reboot within
+  15 minutes after starting the upgrade, please contact **support@pickit3d.com**.

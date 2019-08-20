@@ -199,7 +199,7 @@ To insert a new command, navigate to the **Command** tab select an entry from th
 | available object, if any, without the need of triggering a new detection |
 | and the time overhead it entails.                                        |
 |                                                                          |
-| The next Pickit command after  **Find object(s)** should always          |
+| The next Pickit command after  **Get next object** should always         |
 | be **Get result**, which waits until a response for the request          |
 | is ready.                                                                |
 |                                                                          |

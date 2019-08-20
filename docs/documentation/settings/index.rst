@@ -106,7 +106,7 @@ Test connectivity to the internet by pressing the Check button.
 Upgrade Pickit version
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/settings-upgrade.png
+.. image:: /assets/images/Documentation/upgrade_pickit_2.1.2.png
 
 Here you can upgrade your Pickit system to latest software version.
 Refer to the :ref:`Pickit-system-software-upgrade`

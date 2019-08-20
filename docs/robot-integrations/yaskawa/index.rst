@@ -71,7 +71,7 @@ Before starting, the MotoPlus application should be placed on a USB dongle.
 
 #. Load the correct USB device under :guilabel:`SYSTEM` → :guilabel:`MotoPlus APL` → :guilabel:`DEVICE`.
 #. Open the correct folder where the MotoPlus application is stored
-   under guilabel:`SYSTEM` → :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
+   under :guilabel:`SYSTEM` → :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
 #. Load the MotoPlus application under :guilabel:`SYSTEM` → :guilabel:`MotoPlus APL` → :guilabel:`LOAD(USER APPLICATION)`. 
 
 Test robot connection on Pickit

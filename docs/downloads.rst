@@ -56,7 +56,7 @@ Universal Robots
 
 The Pickit URCap is only available for Polyscope versions 3.4.x and higher and 5.0.x and higher.
 
-- `Download the Pickit URCap 1.3.6 <https://drive.google.com/uc?export=download&id=17_Aq7WvMChjbFQksap24_2j3bg3doNDK>`__
+- `Download the Pickit URCap 1.3.7 <https://drive.google.com/uc?export=download&id=1CnF0oO3MaZupuSo7Oz2YriL6kztgQbd5>`__
 - `Download the Pickit URScript files <https://drive.google.com/uc?export=download&id=1VedZYjVvlcyiE4iuqUuF67DsT8545ojU>`__
 
 
