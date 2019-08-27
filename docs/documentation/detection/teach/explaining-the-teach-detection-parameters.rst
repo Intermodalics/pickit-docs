@@ -96,6 +96,8 @@ is below this position tolerance value, then this scene point will
 confirm the model point. This parameter has a big impact on the scoring
 of the :ref:`Minimum-matching-score`.
 
+The following guide will help you find a good value for this parameter, :ref:`how-to-matching-parameters`.
+
 .. image:: /assets/images/Documentation/Teach-matching-tolerance.png
 
 .. _Minimum-matching-score:
@@ -105,6 +107,8 @@ Minimum matching score
 
 Minimum percentage of model points that need to be confirmed by scene
 points, for the detected object to be considered valid.
+
+The following guide will help you find a good value for this parameter, :ref:`how-to-matching-parameters`.
 
 Optimize detections
 ~~~~~~~~~~~~~~~~~~~
