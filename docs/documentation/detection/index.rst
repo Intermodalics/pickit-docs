@@ -26,3 +26,4 @@ type of shape or part arrangement.
   Teach <teach/index>
   Flex <flex/index>
   Pattern <pattern/index>
+  Bags <bags/index>
