@@ -88,19 +88,21 @@ offset with respect to the object model. The following article goes more into de
 
 .. image:: /assets/images/Documentation/Teach-pick-frame.png
 
+.. _matching-tolerance:
+
 Matching tolerance
 ^^^^^^^^^^^^^^^^^^
 
 If the distance between a detected scene point and a point of your model
 is below this position tolerance value, then this scene point will
 confirm the model point. This parameter has a big impact on the scoring
-of the :ref:`Minimum-matching-score`.
+of the :ref:`minimum-matching-score`.
 
 The following guide will help you find a good value for this parameter, :ref:`how-to-matching-parameters`.
 
 .. image:: /assets/images/Documentation/Teach-matching-tolerance.png
 
-.. _Minimum-matching-score:
+.. _minimum-matching-score:
 
 Minimum matching score
 ^^^^^^^^^^^^^^^^^^^^^^

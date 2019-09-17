@@ -3,14 +3,14 @@
 How to set good model matching parameters
 =========================================
 
-This article will guide you in setting good values for the :ref:`matching-tolerance-teach` and :ref:`minimum-matching-score-teach`.
+This article will guide you in setting good values for the :ref:`matching-tolerance` and :ref:`minimum-matching-score`.
 These values are unique for each model in a Pickit :ref:`Teach` detection.
 Setting these parameters to good values has a significant impact on object detection results.
 
 Matching tolerance
 ------------------
 
-The :ref:`matching-tolerance-teach` is a way to cope with small differences between the taught model and what is seen in the scene.
+The :ref:`matching-tolerance` is a way to cope with small differences between the taught model and what is seen in the scene.
 These small differences are often caused by sensor noise.
 A value for this setting can be either automatically calculated by Pickit or can be set manually.
 
@@ -41,7 +41,7 @@ To manually set this parameter, follow these steps:
 Minimum matching score
 ----------------------
 
-After you defined a good matching tolerance you can define a :ref:`minimum-matching-score-teach`.
+After you defined a good matching tolerance you can define a :ref:`minimum-matching-score`.
 This value represents how much of the part in the scene can be missing in comparison to what is known from the model.
 
 The following steps will guide you to find a good value:
