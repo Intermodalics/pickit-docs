@@ -22,7 +22,7 @@ Follow the steps below to do a robot camera calibration:
    robot shows the calibration plate to the camera at different angles. Confirm that
    the plate is visible for all waypoints.
 
-.. image:: /assets/images/First-steps/Robot-camera-calibration.jpg
+.. image:: /assets/images/Documentation/calibration_multi_pose_fixed_camera.png
 
 -  Run the multi-poses calibration program on the robot. Once all five poses are
    collected, the calibration process is finished.
