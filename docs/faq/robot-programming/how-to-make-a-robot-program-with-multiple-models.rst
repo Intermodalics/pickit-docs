@@ -19,7 +19,10 @@ The variable **pickit_type** is available to use after using the Pickit
 URCap **Find object(s)** command. This variable represents the detected model id.
 In the example program this id is used to define both a different picking as dropping strategy.
 
-.. image:: /assets/images/Documentation/UR-example-multiple-models.png
+.. image:: /assets/images/faq/simple-picking-mulitple-models-ur.png
+
+This example program can be downloaded 
+`here <https://drive.google.com/uc?export=download&id=1IpIrAboDHPQ14zruUoEY2_Gzz4oOkCh5>`__.
 
 ABB
 ---
