@@ -1,5 +1,7 @@
-How to depalletize buckets with a Pickit L camera
-=================================================
+.. _example-case-depalletizing:
+
+Pickit Example case: depalletizing buckets
+==========================================
 
 .. image:: /assets/images/faq/depal-buckets-1.png
 
@@ -144,6 +146,12 @@ until no buckets are detected anymore.
 At this point, the robot program should trigger a detection for the
 cardboard, pick it and drop it by the side. This finishes the top layer,
 leaving the buckets of the next layer ready for detection.
+
+Below you can see the template that has been used to make the robot program.
+This template can be downloaded
+`here <https://drive.google.com/uc?export=download&id=1VCoiDd7OWBovlI6JjE-ev1D2GXBB9fYR>`__.
+
+.. image:: /assets/images/examples/ur-simple-depalletizing.png
 
 Start picking!
 --------------
