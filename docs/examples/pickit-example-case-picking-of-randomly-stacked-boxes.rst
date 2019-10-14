@@ -1,3 +1,5 @@
+.. _example-random-boxes:
+
 Pickit example case: Picking of randomly stacked boxes
 ======================================================
 
@@ -87,32 +89,60 @@ By applying this strategy it means that in the first step all parts will be pick
 
 Interested in enforce alignment? See this article about :ref:`enforce-alignment-of-pick-frame-orientation`.
 
-Multiple step program
----------------------
+Robot program
+-------------
 
-After the first step the part is dropped on an isolated location.
-Then a new detection is triggered to determine the complete orientation of the part.
-For the second step a second setup and product file are created.
-The ROI now focus on the isolated part.
-The part itself is detected using Pickit Flex, by looking for rectangles.
+To set up this application, we provide the two-step template program, presented below.
+The template starts by first picking a box from the stack.
+The box is dropped in an isolated area and here the correct orientation is determined.
+Finaly the box is picked again and dropped in a pattern.
 
-The image below shows the complete robot program that has been used for this application.
-The second step is done in a second loop in the program.
-Right before the loop the setup and product file are changed.
-Afterwards the setup and product files are changed back for doing step 1.
+Below the image, all variables that need to be filled in the template are explained. The example program can be downloaded
+`here <https://drive.google.com/uc?export=download&id=1ubi_PUJFbL1aJ2XbjZb8xTPfjjJQi8yE>`__.
 
-.. image:: /assets/images/examples/example-case-boxes-ur-program.png
+.. image:: /assets/images/examples/ur-2-step-template.png
+
+First step
+----------
+
+The start of the program is similar as the :ref:`universal-robots-urcap-example`.
+The waypoint **drop_2** is where the box is dropped to trigger a second detection.
+The waypoint **detect_pose_2** is defined so the robot doesn't block the camera when triggering the second detection.
+In this application the grasping and release logic is turning on and off the vacuum.
+
+Second step
+-----------
+
+In the second step we start by selecting the correct setup and product file.
+Here the product file is a :ref:`Flex` detection looking for rectangles.
+The setup file is defined around the isolated area.
+Based on the detection triggered by Pickit multiple cases can be defined.
+
+Valid object is found
+~~~~~~~~~~~~~~~~~~~~~
+
+If a valid object is found, the box is picked again.
+The robot passes by **detect_pose_1** to be sure to not block a detection on the stack and immediately a new detection on the stack is triggered.
+In the meantime the box is dropped. For this application, the palletizing function of UR is used.
+
+No valid object is found
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this template, Pickit tries multiple times to find an object.
+But if after n retries no valid object is found, you can define what to do.
+This means that there is something in the isolated area, but it is not the box that we are looking for.
+In this simple application this case never happened.
+But one can easily imagine that you would trigger a cleaning command for the isolated area.
 
 .. _example-empty-roi:
 
-Detect empty ROI-box
---------------------
+No object is found
+~~~~~~~~~~~~~~~~~~
 
-In the program above, the ``pickit_empty_roi()`` function is used to verify if
+In the program, the ``pickit_empty_roi()`` function is used to verify if
 there are contents inside the ROI (see :ref:`detecting-an-empty-roi` for more
 details).
-If the ROI is empty, the program goes back to the first step; else the program
-stays in the second step and looks again.
+If the ROI is empty, the program goes back to the first step.
 
 Snapshots
 ---------
