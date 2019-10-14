@@ -33,3 +33,5 @@ to buy one or more of these options.
    -  1 camera plate
    -  2 plate screws
    -  2 dowel pins
+
+.. tip:: More technical specifications can be found in following articles, :ref:`pickit-processor`, :ref:`m-camera`, :ref:`l-camera` and :ref:`m-hd-camera`.

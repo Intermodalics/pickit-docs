@@ -1,3 +1,5 @@
+.. _pickit-processor:
+
 Pickit processor
 ================
 

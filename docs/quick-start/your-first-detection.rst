@@ -11,7 +11,7 @@ Follow the steps below to do your first detection with Pickit:
    :ref:`Pickit web interface <web-interface>`.
 -  In the Pickit web interface press :guilabel:`Disable Robot Mode`.
 -  Create a new setup: in the **Setup** tab, on top, click :guilabel:`+ New` and name
-   the new setup file 'Test\_Pickit'. Press :guilabel:`Continue`.
+   the new setup file 'Test\_Pickit'. Press :guilabel:`Create`.
 -  Place the three workspace markers, according the indicated arrows,
    inside the field of view of the camera.
 -  Go to the **Build ROI box** section and press :guilabel:`Around QR markers`. This button
@@ -22,7 +22,7 @@ Follow the steps below to do your first detection with Pickit:
 .. image:: /assets/images/First-steps/Empty-roi.png
 
 -  Create a new product: in the **Product** tab, on top, click :guilabel:`+ New` and name
-   the new product file 'Test\_Pickit'. Press :guilabel:`Continue`. 
+   the new product file 'Test\_Pickit'. Press :guilabel:`Create`. 
 -  Make sure that **Pickit Teach** is selected.
 -  Now place a soda can on its side in the middle of the marks.
 -  Under section **Define your models** press :guilabel:`Add a model`. Now the model view is

@@ -11,7 +11,7 @@ Welcome and thank you for choosing Pickit.
     whats-in-the-box
     mount-the-camera
     connect-the-cables
-    ../installation/testing-your-setup
+    testing-your-setup
     your-first-detection
     robot-camera-calibration
     your-first-pick
