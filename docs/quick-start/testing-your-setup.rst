@@ -15,6 +15,7 @@ things you can check for:
 
    -  From the top bar of the web interface, navigate to the :guilabel:`Settings` page, under **Pickit port labeled 'ROBOT'**.
    -  Insert the **IP address of your robot** in the Robot IP field and press :guilabel:`Check`.
+   
    .. image:: /assets/images/Documentation/pickit-robot-connection.png
       :scale: 70%
 
