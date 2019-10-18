@@ -65,6 +65,8 @@ After rebooting the address of Pickit needs to be entered in a **String**. To do
 
 .. note:: There is no communication yet between the Pickit and the robot.
   So don't worry if the connection is not shown in the Pickit web interface :ref:`web-interface-top-bar`.
+  The robot be pinged from the Pickit web interface to check the IP settings. 
+  Details on testing this connection can be found on: :ref:`test-robot-connection`.
 
 Load the program files
 ----------------------
@@ -80,11 +82,8 @@ Before starting, the Pickit folder should be placed on a USB dongle.
    under :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
 #. Load the MotoPlus application under :guilabel:`MotoPlus APL` → :guilabel:`LOAD(USER APPLICATION)`. 
 
-Test robot connection on Pickit
---------------------------------
+Test robot connection
+---------------------
 
 To start the communication, on the robot you can run the **PIT_RUN JOB**.
-When running this connection should be shown in the Pickit web interface :ref:`web-interface-top-bar`.
-
-From the Pickit side communication can also be tested.
-Details on testing this connection can be found on: :ref:`test-robot-connection`
+When running the program, connection should be shown in the Pickit web interface :ref:`web-interface-top-bar`.
