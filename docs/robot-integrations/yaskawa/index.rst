@@ -87,3 +87,43 @@ Test robot connection
 
 To start the communication, on the robot you can run the **PIT_RUN JOB**.
 When running the program, connection should be shown in the Pickit web interface :ref:`web-interface-top-bar`.
+
+Example program: TEST_PICKING
+-----------------------------
+
+Before running the program:
+
+-  Create a user frame with following coordinates: 0.0.0.0.0.0, this user frame cooresponds to the robot frame.
+-  Create a tool frame with the actual TCP values.
+
+Use these on line 3 of the Test_picking example file, i.e. change value 5 and 1 to the numbers of the user frame and tool you defined. 
+
+.. note:: If something is wrong here, you can expect the following message: Undefined user frame.
+   The example program by default uses frame 5 and tool 1, but these might not exist. 
+
+Variables used by the Pickit system
+-----------------------------------
+
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| Variable | Field name        | Comment                                                                                                                                  |
++==========+===================+==========================================================================================================================================+
+| I099     | command           | A single command from robot to Pickit.                                                                                                   |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| I098     | setup             | A number matching to a setup known by the Pickit system.                                                                                 |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| I097     | product           | A number matching to a product type known by the Pickit system.                                                                          |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| S099     | IP Pickit         | IP address of Pickit, by default 169.254.5.180 .                                                                                         |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| P099     | object_pose       | An object pose expressed relative to the robot base frame.                                                                               |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| D090     | object_age        | The amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot.  |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| I091     | object_type       | The type of object detected at object_pose                                                                                               |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| P098     | object_dimension  |  length or diameter (m) [1]: width or diameter (m) [2]: height (m)                                                                       |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| D091     | object_remaining  |  If this field is non-zero, it contains the number of remaining objects that can be sent in next messages to the robot.                  |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| I090     | status            | Contains the Pickit status or a response to previously received robot commands.                                                          |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
