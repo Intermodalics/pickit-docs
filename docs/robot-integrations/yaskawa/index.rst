@@ -45,36 +45,46 @@ IP configuration
 .. warning::
    The robot controller should be in **maintenance mode** and the security mode to **management mode** before making these changes.
 
-Setting the IP address of the robot controller happens in **maintenance mode** and can be done under :guilabel:`SYSTEM` → :guilabel:`SETYP` → :guilabel:`OPTION FUNCTION` → :guilabel:`NETWORK` and set the following values:
+Setting the IP address of the robot controller happens in **maintenance mode** and can be done under :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`OPTION FUNCTION` → :guilabel:`LAN interface setting` and set the following values:
 
   - **IP ADDRESS SETTING**: MANUAL SETTING
   - **IP ADDRESS:** 169.254.5.182
   - **SUBNET MASK:** 255.255.0.0
   - **DEFAULT GATEWAY:** 0.0.0.0
 
+Press :guilabel:`ENTER` and :guilabel:`CONFIRM` to modify the values before rebooting the controller.
+
 Setting the Pickit IP address on the robot controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The address of Pickit needs to be entered in a **String**. To do this:
+After rebooting the address of Pickit needs to be entered in a **String**. To do this:
 
   #. Start the robot controller in **normal mode**
   #. Go to :guilabel:`Main menu` → :guilabel:`VARIABLE` → :guilabel:`STRING` → :guilabel:`S099`.
   #. Set **S099** to value **169.254.5.180**
 
-Loading the MotoPlus application
---------------------------------
+.. note:: There is no communication yet between the Pickit and the robot.
+  So don't worry if the connection is not shown in the Pickit web interface :ref:`web-interface-top-bar`.
+
+Load the program files
+----------------------
 
 The robot controller should be maintenance mode and the security mode to management mode before making these changes.
 
-Before starting, the MotoPlus application should be placed on a USB dongle. 
+Before starting, the Pickit folder should be placed on a USB dongle. 
 :ref:`Download the Pickit Yaskawa files here <downloads:Yaskawa>`.
 
-#. Load the correct USB device under :guilabel:`SYSTEM` → :guilabel:`MotoPlus APL` → :guilabel:`DEVICE`.
+#. Load the **JOB**, **I/O DATA** and **SYSTEM DATA** files under :guilabel:`EX. MEMORY` → :guilabel:`LOAD`.
+#. Load the correct USB device under :guilabel:`MotoPlus APL` → :guilabel:`DEVICE`.
 #. Open the correct folder where the MotoPlus application is stored
-   under :guilabel:`SYSTEM` → :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
-#. Load the MotoPlus application under :guilabel:`SYSTEM` → :guilabel:`MotoPlus APL` → :guilabel:`LOAD(USER APPLICATION)`. 
+   under :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
+#. Load the MotoPlus application under :guilabel:`MotoPlus APL` → :guilabel:`LOAD(USER APPLICATION)`. 
 
 Test robot connection on Pickit
 --------------------------------
 
+To start the communication, on the robot you can run the **PIT_RUN JOB**.
+When running this connection should be shown in the Pickit web interface :ref:`web-interface-top-bar`.
+
+From the Pickit side communication can also be tested.
 Details on testing this connection can be found on: :ref:`test-robot-connection`
