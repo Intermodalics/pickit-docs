@@ -110,7 +110,7 @@ Program execution
    When running a program for the first time, it is advised to **set a low robot speed**. As such, non-expected behavior (for example due to incorrect programming or wrong calibration) can be identified early enough to prevent the robot from colliding with surrounding objects or people.
 
 .. warning::
-   Before running the program, it should be verified that **robot camera calibration** has been done correctly and that the **tool frame** has been defined correctly. Please refer to the :ref:`robot-camera-calibration`  article for more details on how to perform robot camera calibration.
+      Before running the program, there should exist a valid :ref:`robot camera calibration <robot-camera-calibration>` and that the **tool frame** must be correctly specified.
 
 To allow Pickit to respond to robot requests, Pickit needs to be in **robot mode**. To enable robot mode, click on the following button on the Pickit web interface:
 

@@ -17,7 +17,8 @@ Pre-requisites
 Pickit
 ~~~~~~~
 
-Verify that the installed **Pickit version is 1.8.2 or greater**. The software version can be verified at the top left of the web interface. When the version is not displayed at the top left of the web interface you are running an older version of Pickit which needs to be updated first.
+Verify that the installed **Pickit version is 1.8.2 or greater**. The software version can be verified in the :ref:`top bar <web-interface-top-bar>`
+of the web interface. When the version is not displayed at the top left of the web interface you are running an older version of Pickit which needs to be updated first.
 
 .. image:: /assets/images/robot-integrations/ur/urcap-installation-1.png
 

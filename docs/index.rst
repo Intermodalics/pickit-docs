@@ -60,6 +60,7 @@ sending an email to `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`_
   ABB <robot-integrations/abb/index>
   Fanuc <robot-integrations/fanuc/index>
   KUKA <robot-integrations/kuka/index>
+  Omron TM (beta) <robot-integrations/techman/index>
   Stäubli <robot-integrations/staubli/index>
   Universal Robots <robot-integrations/universal-robots/index>
   Yaskawa <robot-integrations/yaskawa/index>

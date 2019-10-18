@@ -3,7 +3,7 @@
 URCap robot camera calibration program
 ======================================
 
-This example program requires the **Pickit URCap** plugin to be installed in your robot.  For installation instructions of both the URCap plugin and the example programs please refer to the :ref:`universal-robots-urcap-installation` article.
+This example program requires the **Pickit URCap** plugin to be installed in your robot.  For installation instructions of both the URCap plugin and the example programs, please refer to the :ref:`universal-robots-urcap-installation` article.
 
 Before following these URCap specific instructions in this article, make sure you first understand the process of executing a robot camera calibration as explained on :ref:`robot-camera-calibration`.
 
@@ -21,9 +21,11 @@ The program starts by opening a pop-up message, informing that multi-poses calib
 
    All ``MoveJ`` commands are specified with respect to the **tool flange** (as opposed to the TCP).
 
-   While teaching the waypoints, it is recommended to have the :guilabel:`Calibration` page opened in the Pickit interface, where the user can verify whether the calibration plate is visible.
+   While teaching the waypoints, it is recommended to have the :guilabel:`Calibration` page open in the Pickit web interface, where the user can verify whether the calibration plate is visible.
 
-   The provided program serves as a template only, and the waypoints are not set. They must be taught by the user since they depend on the physical environment and location of the calibration plate. Guidance on how the five waypoints should be taught can be found in the article referenced above.
+   .. note::
+      This program is a template, and the waypoints are not set. They must be taught by the user since they depend on the physical environment and location of the calibration plate.
+      Refer to the :ref:`multi-poses calibration <multi-poses-calibration>` article for guidelines on how the five waypoints should be taught.
 
 #. Sends Pickit a calibration request, through the command ``Find calibration plate``.
 
