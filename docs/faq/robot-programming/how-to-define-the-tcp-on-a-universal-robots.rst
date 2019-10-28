@@ -12,7 +12,7 @@ Example
 
 .. image:: /assets/images/faq/define-tcp-on-a-ur-step-1.png
 
-In this example there is a translation of 220 mm along the X-axis between the robot flange and the tip of the end effector and no translation along the Y and Z axes because the end effector in exactly below the center of the robot flange. All rotations can be set to 0 because the end effector is round and does not have a clear direction.
+In this example there is a translation of 220 mm along the Z-axis between the robot flange and the tip of the end effector and no translation along the X and Y axes because the end effector in exactly below the center of the robot flange. All rotations can be set to 0 because the end effector is round and does not have a clear direction.
 
 On a Universal Robot the TCP needs to defined in the screen as shown below. Make sure to input the measured values of your own end effector.
 
