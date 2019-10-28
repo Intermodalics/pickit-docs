@@ -58,7 +58,7 @@ Stäubli
 
 For Stäubli software version 7 and higher.
 
-- `Download the Pickit Stäubli files <https://drive.google.com/uc?export=download&id=0ByhqgEqwu5R8ZGRrZ1VlVkJkN1E>`__
+- `Download the Pickit Stäubli files <https://drive.google.com/uc?export=download&id=1u87VZHQ53NugI5pW_HIGKr7DDXyhVlSf>`__
 
 Universal Robots
 ----------------
