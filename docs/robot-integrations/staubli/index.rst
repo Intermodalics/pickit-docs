@@ -35,7 +35,7 @@ This Ethernet cable should be plugged in:
 - The **robot controller**.
 
 IP configuration
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 To allow communication between Pickit and the robot controller both must have a different IP address in the same subnet.
 
@@ -43,7 +43,9 @@ By default, the Ethernet port on the Pickit processor labeled ROBOT is configure
 
 If this setting is kept, the following has to be done on the robot controller:
 
-Go to :guilabel:`MENU` > :guilabel:`CONTROL PANEL` > :guilabel:`CONTROLLER CONFIGURATION` > :guilabel:`NETWORK` > :guilabel:`J204 or J205`.
+For the **CS8 controller**, go to :guilabel:`MENU` > :guilabel:`CONTROL PANEL` > :guilabel:`CONTROLLER CONFIGURATION` > :guilabel:`NETWORK` > :guilabel:`J204 or J205`.
+
+For the **CS9 controller** this can be found in :guilabel:`HOME` > :guilabel:`SETTINGS` > :guilabel:`NETWORK` > :guilabel:`J204 or J205`.
 
 - Set the IP address of the robot to **169.254.5.182** which is an IP address in the same subnet as the Pickit IP address.
 - Set the subnet mask to **255.255.0.0**.
@@ -55,13 +57,18 @@ The IP address of the robot can of course not be the same as the IP address of t
 .. image:: /assets/images/robot-integrations/staubli/staubli-step-3.png
 
 Setup socket
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
-Go to :guilabel:`MENU` > :guilabel:`CONTROL PANEL` > :guilabel:`IO` > :guilabel:`SOCKETS` > :guilabel:`TCP CLIENTS` > :guilabel:`NEW`.
+For the **CS8 controller**, go to :guilabel:`MENU` > :guilabel:`CONTROL PANEL` > :guilabel:`IO` > :guilabel:`SOCKETS` > :guilabel:`TCP CLIENTS` > :guilabel:`NEW`.
+
+For the **CS9 controller** this can be found in :guilabel:`HOME` > :guilabel:`IO` > :guilabel:`SOCKETS` > :guilabel:`TCP CLIENTS` > :guilabel:`+`.
 
 - Choose Type: Client
-- Add name: pickit
+- Add name: **pickit**
 - Add the Pickit IP address
+
+  - IP: **169.254.5.180**
+  - Port: **5001**
 
 .. image:: /assets/images/robot-integrations/staubli/staubli-step-4.png
 
