@@ -28,7 +28,7 @@ The program implements a simple pick and place task, where Pickit is used to con
 No assumptions are made on how objects are laid out in the detection region, so the program is a good starting point to build a wide range of applications.
 Objects can be stacked randomly, or in a pattern, touching or not.
 
-.. image:: /assets/images/examples/urcap-program-step-1.png
+.. image:: /assets/images/robot-integrations/techman/tm-pap-overview.png
 
 Inputs
 ~~~~~~
