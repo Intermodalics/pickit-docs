@@ -33,10 +33,9 @@ Objects can be stacked randomly, or in a pattern, touching or not.
 Inputs
 ~~~~~~
 
-The program requires the user to specify the following inputs:
-
 Component parameters
 ^^^^^^^^^^^^^^^^^^^^
+The following two inputs are configurable from components in the :ref:`main program <techman-main-program>` logic:
 
 -  **Pickit IP address**: See :ref:`tm-init` component.
 -  **Pickit configuration**: Setup and product IDs, see :ref:`tm-configure` component.
@@ -44,7 +43,7 @@ Component parameters
 Points
 ^^^^^^
 
-There are six points relevant to the application, of which three are fixed and need to be taught by the user, and three are automatically computed from Pickit’s results (prefixed with ``pickit_``).
+There are six points relevant to the application, of which three are fixed and need to be taught by the user, and three are automatically computed from Pickit’s results.
 They are listed in the **Point Manager**.
 
     .. image:: /assets/images/robot-integrations/techman/tm-pap-point-manager.png
@@ -56,37 +55,49 @@ Fixed points
 
 These points need to be taught by the user:
 
--  ``detect_pose`` from where to perform object detection.
--  ``dropoff_pose`` where to place objects.
--  ``ref_pose`` a waypoint from which the above two can be reached without collision.
-   In simple scenarios, it can be the same as ``detect_pose``.
+-  ``Detect`` from where to perform object detection.
+-  ``Dropoff`` where to place objects.
+-  ``AbovePickArea`` a point roughly above the pick area from which the above two can be reached without collision.
+   In simple scenarios, it can be the same as ``Detect``.
+
+   It is recommended that they are taught using the tool that will be used for the pick and place operation.
+   The active tool can be changed in the top-right bar (right-most drop-down below).
+
+  .. image:: /assets/images/robot-integrations/techman/tm-pap-tool-selector.png
+       :scale: 50%
+       :align: center
 
 .. _techman-auto-points:
 
 Automatically computed points
 '''''''''''''''''''''''''''''
 
-These points are computed from Pickit’s results, and need **tool shifting** to be applied to them:
+These points are computed from Pickit’s results:
 
--  ``pickit_pose`` The actual picking pose.
--  ``pickit_pre_pose`` Used for the linear approach motion before the pick takes place.
-   It consists of ``pickit_pose`` offset along its z-axis,. i.e. it tilts with the object.
--  ``pickit_post_pose`` Used for the linear retreat motion after the pick takes place. It consists of ``pickit_pose`` offset along the robot base z-axis, which typically means straight up.
+-  ``Pick`` The actual picking pose.
+-  ``PrePick`` Used for the linear approach motion before the pick takes place.
+   It consists of the ``Pick`` point offset along its z-axis, i.e. it tilts with the object.
+-  ``PostPick`` Used for the linear retreat motion after the pick takes place. It consists of the ``Pick`` point offset along the robot base z-axis, which typically means straight up.
 
-Tool shifting compensates for the offset of the TCP to be used.
-In the :ref:`pick sequence <techman-pick-sequence>` subflow, you must edit each of these points, and select **Tool shift** in the advanced options of the point editor.
+.. note::
+  These points are initially specified with respect to tool ``T0`` (no tool).
 
-    .. image:: /assets/images/robot-integrations/techman/tm-pap-tool-shift.png
-       :scale: 32%
+  .. image:: /assets/images/robot-integrations/techman/tm-pap-before-tool-change.png
+       :scale: 50%
        :align: center
 
-Then, apply tool shifting with the following options:
+  When using a tool other than ``T0``, you should re-teach these points with the tool of interest.
+  For instance, if the pick is to be performed with tool ``T1``, you should:
 
--  The **TCP** to be used for reaching this point.
--  The **keep path** option (as opposed to keep pose).
+  - Select ``T1`` as active tool.
 
-    .. image:: /assets/images/robot-integrations/techman/tm-pap-tool-shift-keep-path.png
-       :scale: 40%
+  - Open the **Point Manager** and re-teach ``Pick``, ``PrePick``, and ``PostPick`` to a dummy robot pose.
+    Note that its value is irrelevant, as it will be overwritten by Pickit, the important thing is to correctly set the tool used for reaching the point.
+
+  - Close and re-open the **Point Manager**, confirm that points are now shown relative to ``T1``.
+
+  .. image:: /assets/images/robot-integrations/techman/tm-pap-after-tool-change.png
+       :scale: 50%
        :align: center
 
 Gripper command
@@ -101,10 +112,11 @@ You should either set the correct variable (e.g. toggle a digital output) or rep
 
 These variables have reasonable default values, but can be overridden if desired:
 
--  **var_picks** How many objects to pick before successfully terminating the program.
+-  **var_target_picks** How many objects to pick before successfully terminating the program.
    The default value of zero indicates “pick all”.
 -  **var_max_detection_retries** How many times to retry object detection when no objects are found before bailing out.
    Defaults to five.
+- **var_pre_pick_offset** and **var_post_pick_offset** Offsets applied to the ``Pick`` point to compute ``PrePick`` and ``PostPick``, respectively.
 
 Program breakdown
 -----------------
@@ -130,14 +142,7 @@ This sequence computes ``pickit_pre_pose`` and ``pickit_post_pose`` relative to 
 It also enables the gripper.
 
 .. image:: /assets/images/robot-integrations/techman/tm-pap-0.png
-   :scale: 60 %
-   :align: center
-
-Remember to :ref:`apply tool shifting <techman-auto-points>` with **keep path** to ``pickit_pose``, ``pickit_pre_pose`` and ``pickit_post_pose``.
-The below image shows how a tool-shifted Point is displayed (see the TCP identifier to the left).
-
-.. image:: /assets/images/robot-integrations/techman/tm-pap-1.png
-   :scale: 40 %
+   :scale: 70 %
    :align: center
 
 Some grippers allow to check pick success (e.g. vacuum check, finger position or force).
@@ -151,7 +156,7 @@ Place sequence
 Uses fixed points and the gripper command to place the picked object.
 
 .. image:: /assets/images/robot-integrations/techman/tm-pap-2.png
-   :scale: 60 %
+   :scale: 50 %
    :align: center
 
 Object detection
@@ -161,7 +166,7 @@ This is a trivial sequence that consists of a single point.
 It rarely needs to be modified.
 
 .. image:: /assets/images/robot-integrations/techman/tm-pap-3.png
-   :scale: 40 %
+   :scale: 50 %
    :align: center
 
 .. _techman-main-program:
