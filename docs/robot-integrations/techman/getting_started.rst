@@ -24,6 +24,7 @@ Robot
 
 The **TMflow** versions supported by the Pickit components are listed on our :ref:`downloads page <downloads_omron_tm>`.
 The TMFlow version can be checked by clicking on the information button on the top bar (highlighted in red below).
+
     .. image:: /assets/images/robot-integrations/techman/tm-check-version.png
        :scale: 50%
        :align: center
