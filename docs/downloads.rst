@@ -38,12 +38,12 @@ The product number for this module is **91B300-020** and can be purchased throug
 
 .. _downloads_omron_tm:
 
-Omron TM (beta)
----------------
+Omron TM
+--------
 
 The Pickit TMflow components are available for TMflow version 1.72 and higher.
 
-- `Download the Pickit TMflow components 1.0 beta <https://drive.google.com/uc?export=download&id=1hugTdzZF--Vfz0IvtCG-8VEddrVLPnm1>`__
+- `Download the Pickit TMflow components 1.0 <https://drive.google.com/uc?export=download&id=1bODON186ZfTK01LcBMbHXVjKiOR6nsyJ>`__
 
 ROS
 ---

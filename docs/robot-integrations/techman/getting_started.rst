@@ -23,6 +23,10 @@ Robot
 ~~~~~
 
 The **TMflow** versions supported by the Pickit components are listed on our :ref:`downloads page <downloads_omron_tm>`.
+The TMFlow version can be checked by clicking on the information button on the top bar (highlighted in red below).
+    .. image:: /assets/images/robot-integrations/techman/tm-check-version.png
+       :scale: 50%
+       :align: center
 
 Installing the Pickit TM integration files
 ------------------------------------------
@@ -30,12 +34,17 @@ Installing the Pickit TM integration files
 To install the Pickit TM integration files, follow these steps:
 
 #. :ref:`Download the Pickit TM integration files <downloads_omron_tm>`.
-#. Unzip the archive and copy its contents to a USB drive.
+#. Unzip the archive and copy the contents of the ``tm_pickit`` directory to a USB drive under ``TM_Export\<your-robot-serial>``.
 
    .. note::
-     TMflow requires USB drives to adhere to a specific directory structure for importing contents into the robot. The files contained in the above archive respect this layout and should not be altered.
+     TMflow requires USB drives to adhere to a specific directory structure for importing contents into the robot. The above step adheres to this layout.
 
 #. From a Windows PC, open the TMflow application and **Get control** of your TM robot.
+
+    .. image:: /assets/images/robot-integrations/techman/tm-get-control.png
+          :scale: 60%
+          :align: center
+
 #. Click the `hamburger icon <https://en.wikipedia.org/wiki/Hamburger_button>`__ on the top-left corner of the user interface to display a panel on the left side of the screen.
 
 #. Click on **System** on the left panel, to display the **System setting screen**.

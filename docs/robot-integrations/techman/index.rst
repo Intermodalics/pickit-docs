@@ -1,7 +1,7 @@
 .. _techman-index:
 
-Omron TM (beta)
-===============
+Omron TM
+========
 
 .. toctree::
   :glob:
