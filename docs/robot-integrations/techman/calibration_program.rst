@@ -26,25 +26,25 @@ Note that since robot mode doesn't need to be enabled to perform calibration, bo
   .. note::
     If your Pickit system is not using the default 169.254.5.180 IP address, you should set it in the configuration of the :ref:`init <tm-init>` component.
 
-  .. image:: /assets/images/robot-integrations/techman/tm-init-3.png
-       :scale: 50%
+  .. image:: /assets/images/robot-integrations/techman/tm-calibration-init.png
+       :scale: 40%
        :align: center
 
 Then, the following sequence is repreated five times:
 
-#. Move the robot to a waypoint where the calibration plate is visible.
+  .. image:: /assets/images/robot-integrations/techman/tm-calibration-iteration.png
+       :scale: 40%
+       :align: center
 
-    When teaching the waypoints, it is recommended to have the :guilabel:`Calibration` page open in the Pickit web interface, where the user can verify whether the calibration plate is visible.
+#. Move the robot to a point where the calibration plate is visible.
+
+    When teaching the points, it is recommended to have the :guilabel:`Calibration` page open in the Pickit web interface, where the user can verify whether the calibration plate is visible.
 
     .. note::
-      This program is a template, and the waypoints need to be retaught by the user since they depend on the physical environment and location of the calibration plate.
-      Refer to the :ref:`multi-poses calibration <multi-poses-calibration>` article for guidelines on how the five waypoints should be taught.
+      This program is a template, and the points need to be retaught by the user since they depend on the physical environment and location of the calibration plate.
+      Refer to the :ref:`multi-poses calibration <multi-poses-calibration>` article for guidelines on how the five points should be taught.
 
 #. Send a request to find the calibration plate by means of the :ref:`tm-find-calibration-plate` component.
-
-    .. image:: /assets/images/robot-integrations/techman/tm-findcalibrationplate-1.png
-       :scale: 50%
-       :align: center
 
 It is possible to follow the progress of the calibration procedure from the :guilabel:`Calibration` page.
 
@@ -52,3 +52,9 @@ Single pose calibration
 -----------------------
 
 For :ref:`single pose calibration <single-pose-calibration>`, the program is similar, but only performs a single calibration request.
+
+Running the program
+-------------------
+
+Before running the calibration program, make sure that the Pickit web interface is in the :guilabel:`Calibration` page, which provides feedback on calbiration plate visibility and progress of the calibration process (:ref:`more <multi-poses-calibration-calibrating>`).
+

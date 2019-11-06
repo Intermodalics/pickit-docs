@@ -70,6 +70,9 @@ image, but tilted in different directions.
 
 .. image:: /assets/images/Documentation/calibration_multi_pose_camera_on_robot.png
 
+
+.. _multi-poses-calibration-calibrating:
+
 Calibrating
 -----------
 
