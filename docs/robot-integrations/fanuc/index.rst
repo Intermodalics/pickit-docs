@@ -185,7 +185,7 @@ Uploading the files can be done using an FTP server or by manually loading them 
 
 .. warning:: The available binary files contain a configuration file for defining macros: ``SYSMACRO.SV``.
   When this file is uploaded it automatically **removes** all existing macros and **replaces** them with the Pickit macros.
-  To prevent the **removal** of the existing macros don't upload ``SYSMACRO.SV`` but configure the new macros manually in :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
+  To prevent the **removal** of the existing macros, don't upload ``SYSMACRO.SV``, but configure the new macros manually in :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
 
 In case all binaries are loaded correctly, you can check if the macros are available via :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
 
@@ -199,7 +199,7 @@ The Karel program ``pick_it_communication13_C.kl``, which takes care of the low-
 
 - Data communicated from Pickit via the Karel program to the Teach Pendant application program:
 
-  -  **PR[1]**: an object pose detected by Pickit.
+  -  **PR[1]**: pose of an object detected by Pickit.
   -  **R[2]**: the Pickit status.
   -  **R[6]**: Pickit object dimension x.
   -  **R[7]**: Pickit object dimension y.
@@ -213,11 +213,11 @@ The Karel program ``pick_it_communication13_C.kl``, which takes care of the low-
 
 - Additional pose registers used in the **EXAMPLE_PICK_IT** program:
 
-  -  **PR[2]**: the current configuration of the robot. This pose is calculated by calling **SET_PICK_POSE**.
+  -  **PR[2]**: the current configuration of the robot. This configuration is calculated by calling **SET_PICK_POSE**.
   -  **PR[3]**: the final pose where the robot will pick the part.
 
 .. tip:: If these registers are already used on your robot. Please contact us at
-  `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`__ and we'll help you figure out a solution.
+  `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`__ and we will assist you in finding a solution.
 
 .. tip:: To make the Karel programs visible on the Teach Pendant, you have to set the ``KAREL_ENB`` value to 1 via :guilabel:`MENU` > :guilabel:`NEXT` > :guilabel:`SYSTEM` > :guilabel:`SYSVARS`.
 
