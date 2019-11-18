@@ -29,7 +29,7 @@ Pickit is compatible with controllers as of version **R-J3iB** and the software 
 Hanwha
 ------
 
-Pickit is compatible with controllers as of version **2.001** and **Rodi 2.001 for socket communication** is required.
+Pickit is compatible with controllers as of version **2.001**. **Rodi 2.001 for socket communication** is required.
 
 - `Download the Pickit Hanwha HCR files <https://drive.google.com/uc?export=download&id=1QpYqo5fPwAS9DBWDbLf0pXLNUz9zl2g8>`__
 
