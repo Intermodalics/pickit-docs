@@ -17,7 +17,7 @@ Run the docker container:
 
 .. code-block:: bash
 
-    docker run -it --rm -p 8080:8080 --name pickit-docs -v $PWD/docs:/docs pickit-docs
+    docker run -it --rm -p 8080:8080 --name pickit-docs -v $PWD/docs:/home/python/docs pickit-docs
 
 You can now access the documentation at http://localhost:8080.
 
@@ -25,6 +25,6 @@ If you want to get the static html files, you can copy them from the running con
 
 .. code-block:: bash
 
-    docker cp pickit-docs:/home/python/_build/html /tmp/
+    docker cp pickit-docs:/home/python/dist/ /tmp/
 
 The errors of the build process are printed on the screen.
