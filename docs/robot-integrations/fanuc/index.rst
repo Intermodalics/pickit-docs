@@ -183,7 +183,11 @@ Uploading the files can be done using an FTP server or by manually loading them 
 .. image:: /assets/images/robot-integrations/fanuc/fanuc-10.png
     :width: 550
 
-The uploaded binary files also contain a configuration file for defining macros: ``SYSMACRO.SV``. In case all binaries are loaded correctly, you can check if the macros are available via :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
+.. warning:: The available binary files contain a configuration file for defining macros: ``SYSMACRO.SV``.
+  When this file is uploaded it automatically **removes** all existing macros and **replaces** them with the Pickit macros.
+  To prevent the **removal** of the existing macros don't upload ``SYSMACRO.SV`` but configure the new macros manually in :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
+
+In case all binaries are loaded correctly, you can check if the macros are available via :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
 
 .. image:: /assets/images/robot-integrations/fanuc/fanuc-11.png
     :width: 550
@@ -193,19 +197,27 @@ Registers used by the Karel program
 
 The Karel program ``pick_it_communication13_C.kl``, which takes care of the low-level communication between the controller and Pickit, uses the following IO and registers to pass on data from the low-level communication to a Teach Pendant application program:
 
--  Data communicated from Pickit via the Karel program to the Teach Pendant application program:
+- Data communicated from Pickit via the Karel program to the Teach Pendant application program:
 
-   -  **R[1]**: the Pickit status
-   -  **PR[1]**: an object pose detected by Pickit
+  -  **PR[1]**: an object pose detected by Pickit.
+  -  **R[2]**: the Pickit status.
+  -  **R[6]**: Pickit object dimension x.
+  -  **R[7]**: Pickit object dimension y.
+  -  **R[8]**: Pickit object dimension z.
 
--  Data communicated from the Teach Pendant application program via the Karel program to Pickit:
+- Data communicated from the Teach Pendant application program via the Karel program to Pickit:
 
-   -  **R[2]**: the command for Pickit
-   -  **R[4]**: the desired setup
-   -  **R[5]**: the desired product
-   -  **R[6]**: Pickit object dimension x
-   -  **R[7]**: Pickit object dimension y
-   -  **R[8]**: Pickit object dimension z
+  -  **R[1]**: the command for Pickit.
+  -  **R[4]**: the desired setup.
+  -  **R[5]**: the desired product.
+
+- Additional pose registers used in the **EXAMPLE_PICK_IT** program:
+
+  -  **PR[2]**: the current configuration of the robot. This pose is calculated by calling **SET_PICK_POSE**.
+  -  **PR[3]**: the final pose where the robot will pick the part.
+
+.. tip:: If these registers are already used on your robot. Please contact us at
+  `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`__ and we'll help you figure out a solution.
 
 .. tip:: To make the Karel programs visible on the Teach Pendant, you have to set the ``KAREL_ENB`` value to 1 via :guilabel:`MENU` > :guilabel:`NEXT` > :guilabel:`SYSTEM` > :guilabel:`SYSVARS`.
 
