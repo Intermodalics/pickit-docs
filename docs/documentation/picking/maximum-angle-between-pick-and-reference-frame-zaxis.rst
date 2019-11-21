@@ -1,3 +1,5 @@
+.. _max_angle_pick_z_ref_z:
+
 Maximum angle between pick and reference frame Z-axis
 -----------------------------------------------------
 
