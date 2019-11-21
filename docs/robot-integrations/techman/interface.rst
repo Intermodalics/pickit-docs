@@ -27,9 +27,7 @@ To insert a component instance into your robot program, click on one of the Pick
   Pickit components only differ on the ``Function`` name, so throughout this article the common prefix is omitted for brevity.
 
 .. note::
-  All Pickit component icons are displayed with the label ``pickit_Vxx`` on the left panel, which can be inconvenient, as it's not possible to differentiate them before dropping them on the program.
-  This is because TMflow displays the ``Vendor_Version`` fields as the icon label for the component, which is the same for all Pickit components.
-
+  Currently, all Pickit components are displayed with the same icons and the same label ``pickit_Vxx`` on the left panel, but their function names are shown when they are dropped into the program flow.
 
 A general note on introspecting component behavior is that the ``g_perception_pickit_user_msg`` global variable holds human-readable status updates from all components.
 For instance, when a component exists with an error state, the value of this variable can be shown in a **Display** node to get an insight on the failure reason.
@@ -175,7 +173,12 @@ Pickit can discriminate the following scenarios, for which the robot program can
 .. image:: /assets/images/robot-integrations/techman/tm-getresult-1.png
 
 .. warning:: As of version 1.72 of TMflow, it is not possible to programmatically check if a pose is reachable by the robot before it gets executed.
-  This means that program execution might stop if an unreachable object is detected by Pickit, and human intervention is required to restart it.
+  It is currently recommended that end users focus on applications in which parts are known to be always reachable.
+  When parts can overlap, as in bin picking scenarios, the below methods help in making sure that objects are reachable.
+
+  - For suction and magnetic grippers that exhibit compliant behavior, enforce :ref:`pick points with the z-axis pointing up <enforce-alignment-z-parallel-z>`. This constraint modifies the pick point orientation such that the tool always approaches the part straight down. This can be set in the **Picking** tab, under **Pick strategy**.
+
+  - For fingered grippers, ignore parts that are :ref:`too tilted wit respect to the reference frame Z-axis <max_angle_pick_z_ref_z>`. This setting is also in the **Picking** tab, under **Collision prevention**. Set the maximum angle to a low value such as 15 degrees.
 
 saveSnapshot
 ~~~~~~~~~~~~
