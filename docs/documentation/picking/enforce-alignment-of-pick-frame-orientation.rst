@@ -1,16 +1,16 @@
-.. _enforce-alignment-of-pick-frame-orientation:
+.. _enforce-alignment-of-pick-point-orientation:
 
-Enforce alignment of Pick frame orientation
+Enforce alignment of pick point orientation
 -------------------------------------------
 
 This setting is used to enforce aligning an object frame with the
-reference frame. The newly created aligned frame is the pick frame that
+reference frame. The newly created aligned frame is the pick point that
 will be sent to the robot. This setting will make sure that one or more
-resulting pick frame axes have a parallel or perpendicular axis to the
+resulting pick point axes have a parallel or perpendicular axis to the
 reference frame axes.
 
 .. warning:: 
-   Enforcing a pick frame orientation takes precedence over the
+   Enforcing a pick point orientation takes precedence over the
    object to reference frame alignment.
 
 Short overview
@@ -21,7 +21,7 @@ this article.:
 
 -  :ref:`enforce-alignment-no-alignment`: If the there is no tolerance for the gripper to pick
    the part.
--  :ref:`enforce-alignment-y-perpendicular-z`: For parts with cylindrical symmetry. Orients the pick frame as close as possible with the vertical direction.
+-  :ref:`enforce-alignment-y-perpendicular-z`: For parts with cylindrical symmetry. Orients the pick point as close as possible with the vertical direction.
 -  :ref:`enforce-alignment-z-parallel-z`: If the gripper has enough compliance to pick the parts
    straight upwards.
 -  :ref:`enforce-alignment-xyz-parallel-xyz`: If the gripper has compliance to pick the objects
@@ -32,7 +32,7 @@ this article.:
 No alignment
 ~~~~~~~~~~~~
 
-No alignment will be done, this option does not modify the pick frame.
+No alignment will be done, this option does not modify the pick point.
 This is typically applied if there is only one correct way for the
 gripper to approach the object.
 
@@ -41,8 +41,8 @@ gripper to approach the object.
 Y ⊥ Z
 ~~~~~
 
-Aligns the Y-axis of the pick frame to be in the XY plane of the
-reference frame. This setting allows the pick frames to point as much as
+Aligns the Y-axis of the pick point to be in the XY plane of the
+reference frame. This setting allows the pick points to point as much as
 possible upwards when only rotating around his X-axis. This freedom is
 typically seen when picking cylinders. As can be seen on the image
 below, if the X-axis is the center of rotation, for the gripper to pick
@@ -57,21 +57,21 @@ with the Y ⊥ Z option.
 .. image:: /assets/images/Documentation/yperpz-alignment.png
 
 For this to work it is important that the X-axis is in the center of
-rotation of the object. For flex cylinders the pick frames have to be
+rotation of the object. For flex cylinders the pick points have to be
 set to default. For Teach this has to be done manually by changing the
-pick frame offset.  
+pick point offset.  
 
 Together with this setting an additional offset can be created around
 the x-axis if the object is lying close to the side of the bin. Below it
 is shown if an object it lying close to the border of the bin an
-additional rotation is enforced so that the pick frames tilt away from
+additional rotation is enforced so that the pick points tilt away from
 the sides of the bin.
 
 .. image:: /assets/images/Documentation/yperpz-box-avoidance.png
 
 For this following parameters are used:
 
--  **Distance from box for avoidance:** Pick frames lying within this
+-  **Distance from box for avoidance:** Pick points lying within this
    distance towards the sides of the ROI box are corrected. Set this
    value to 0 to not apply any additional rotation.
 -  **Angular modification away from box:** The angle on how much is
@@ -82,7 +82,7 @@ For this following parameters are used:
    image below the left object is in angle of 0 degrees and the object
    on the right is in an angle of 20 degrees towards the side of the ROI
    box.
--  **Allowed correction along pick frame Y axis:** For this correction
+-  **Allowed correction along pick point Y axis:** For this correction
    to work this value should always be set to 0 degree.
 
 .. image:: /assets/images/Documentation/allowed-correction-axis-deviation.png
@@ -92,36 +92,36 @@ For this following parameters are used:
 Z || Z
 ~~~~~~
 
-This option aligns the Z-axis of the pick frame to be parallel to the Z
+This option aligns the Z-axis of the pick point to be parallel to the Z
 axis of the reference frame. In most applications, the Z axis points up
-from the table or bin, so this option enforces the pick frame to point
+from the table or bin, so this option enforces the pick point to point
 upwards. This is typically used when there is a flexible gripper to pick
 the objects, e.g. a vacuum cup to pick cardboard boxes. See image below
 for the effect on a real scene in Pickit. The image on the left is with
 no alignment, on the right z\|\|z alignment is used. Note that the
-X-axis of all pick frames are still pointing in the same orientation.
-This correction has no influence on the orientation of the pick frames.
+X-axis of all pick points are still pointing in the same orientation.
+This correction has no influence on the orientation of the pick points.
 
 .. image:: /assets/images/Documentation/zz-alignment.png
 
 Together with this setting an additional offset can be created around
 the if the object is lying close to the side of the bin. Below it is
 shown if an object it lying close to the border of the bin an additional
-rotation is enforced so that the pick frames tilt away from the sides of
+rotation is enforced so that the pick points tilt away from the sides of
 the bin.
 
 .. image:: /assets/images/Documentation/zz-box-avoidance.png
 
 For this following parameters are used:
 
--  **Distance from box for avoidance:** Pick frames lying within this
+-  **Distance from box for avoidance:** Pick points lying within this
    distance towards the sides of the ROI box are corrected. Set this
    value to 0 to not apply any additional rotation.
 -  **Angular modification away from box:** The angle on how much is
    tilted away from the box.
 -  **Allowed correction axis deviation:** For this correction to work
    this value should always be set to 0 degree.
--  **Allowed correction along pick frame Y axis:** Typically this value
+-  **Allowed correction along pick point Y axis:** Typically this value
    is set the same as the angular modification away from box. If the
    gripper has different flexibility around his Y-axis than around his
    X-axis this can be set to a lower value.
@@ -131,7 +131,7 @@ For this following parameters are used:
 XYZ || XYZ
 ~~~~~~~~~~
 
-This option aligns all three axis of the pick frame with all three axis
+This option aligns all three axes of the pick point with all three axis
 of the reference frame. This setting is typically used when there is a
 flexible gripper to pick the objects, e.g. a vacuum cup to pick
 cardboard boxes. See image below for the effect on a real scene in
@@ -148,19 +148,19 @@ influence on the cycle time of your application.
 Together with this setting an additional offset can be created around
 the if the object is lying close to the side of the bin. Below it is
 shown if an object it lying close to the border of the bin an additional
-rotation is enforced so that the pick frames tilt away from the sides of
+rotation is enforced so that the pick points tilt away from the sides of
 the bin.
 
 .. image:: /assets/images/Documentation/xyzxyz-box-avoidance.png
 
--  **Distance from box for avoidance:** Pick frames lying within this
+-  **Distance from box for avoidance:** Pick points lying within this
    distance towards the sides of the ROI box are corrected. Set this
    value to 0 to not apply any additional rotation.
 -  **Angular modification away from box:** The angle on how much is
    tilted away from the box.
 -  **Allowed correction axis deviation:** For this correction to work
    this value should always be set to 0 degree.
--  **Allowed correction along pick frame Y axis:** Typically this value
+-  **Allowed correction along pick point Y axis:** Typically this value
    is set the same as the angular modification away from box. If the
    gripper has different flexibility around his Y-axis than around his
    X-axis this can be set to a lower value.

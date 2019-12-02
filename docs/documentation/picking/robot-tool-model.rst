@@ -38,10 +38,10 @@ The screenshots below show an example of robot tool modelling for the
 
 Every tool model can be customized to closely resemble the actual robot
 tool. Besides the tool dimensions, one can also adapt distance and
-orientation of the tool wrt. the object’s pick frame. However, be aware
+orientation of the tool wrt. the object’s pick point. However, be aware
 that this doesn’t influence how the robot picks an object. These values
 are only used for collision checking and have no effect on an object’s
-pick frame.
+pick point.
 
 .. note:: The tool modelling view is hidden when collision checks are
    disabled (Neither “Bin” or “Other objects” are selected).

@@ -41,7 +41,7 @@ If this detection is successful, the part is dropped off neatly on the peg.
 Otherwise, the part is dropped back in the bin:
 since accuracy is important, if we are not entirely sure of how the part is presented, it is better to simply try again with a different part.
 
-The example program can be downloaded 
+The example program can be downloaded
 `here <https://drive.google.com/uc?export=download&id=1yBcGJEkV0K-By5QvIRH6QiTLySjjsDGB>`__.
 
 .. image:: /assets/images/examples/ur-in-hand-check.png
@@ -62,8 +62,8 @@ If the gripper is grasping the washer from the side, when dropping off, the robo
 .. image:: /assets/images/examples/in-hand-check-tcp-pick-frame-correction.png
 
 .. note::
-  The **drop** waypoint is important for the application to work as expected, and is closely tied to the pick frame of the Teach model used during the in-hand check.
-  The **drop** waypoint and the pick frame should be such that, if the gripper was grasping the part perfectly aligned with the pick frame, the robot could go to the **drop** waypoint and accurately drop the part on the peg, without any correction. 
+  The **drop** waypoint is important for the application to work as expected, and is closely tied to the pick point of the Teach model used during the in-hand check.
+  The **drop** waypoint and the pick point should be such that, if the gripper was grasping the part perfectly aligned with the pick point, the robot could go to the **drop** waypoint and accurately drop the part on the peg, without any correction.
   There is an alerting popup message in the template, highlighting this attention point.
 
 
@@ -81,9 +81,9 @@ Bin picking setup/product file
 For this application, a simple :ref:`setup` file with a ROI box with similar dimensions as the actual bin is created.
 
 In the product file, the :ref:`teach` detection engine is used to find the washers.
-To maximize the number of detections, the model consists of a half of the washer, and the pick frame is positioned on the surface.
+To maximize the number of detections, the model consists of a half of the washer, and the pick point is positioned on the surface.
 
-These files need to be filled in twice in the robot program, in a `Select` command, 
+These files need to be filled in twice in the robot program, in a `Select` command,
 once at the beginning and once after the second step.
 
 In-hand check setup/product file
@@ -92,7 +92,7 @@ In-hand check setup/product file
 The ROI in this :ref:`setup` should include the isolated washer while it is being grasped by the robot gripper.
 
 The product file is again a :ref:`teach` detection.
-This time, a full model of the washer is taught. In this tutorial, we place the pick frame in the center of the model.
+This time, a full model of the washer is taught. In this tutorial, we place the pick point in the center of the model.
 
 .. note::
-  Keep in mind that the Teach model pick frame must be defined such that, when dropping off the washer with the robot on **drop**, it falls on the peg.
+  Keep in mind that the Teach model pick point must be defined such that, when dropping off the washer with the robot on **drop**, it falls on the peg.

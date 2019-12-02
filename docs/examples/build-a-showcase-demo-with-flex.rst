@@ -108,7 +108,7 @@ Define the picking strategy
 
 Finally the picking strategy is defined. For this application bin
 collision is checked. This means that Pickit checks if the gripper can
-pick the parts without hitting the bin. Also, the pick frames are
+pick the parts without hitting the bin. Also, the pick points are
 attached to the top surface of the cylinders. More information about
 the picking strategies can be found in the 
 :ref:`Picking` article.
@@ -127,7 +127,7 @@ Calibration
 
 Next step is the robot camera calibration. This process teaches Pickit
 where the robot base is located w.r.t. to the camera. This information
-is used to transform the object pick-frames into robot coordinates. A
+is used to transform the object pick points into robot coordinates. A
 detailed description in robot-camera calibration can be found in the article :ref:`robot-camera-calibration`. 
 
 Your first pick (Program the robot)

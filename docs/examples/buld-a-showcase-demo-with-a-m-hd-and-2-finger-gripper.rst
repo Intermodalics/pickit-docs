@@ -57,7 +57,7 @@ Product file
 
 The models that are being used correspond to the shape of the top and bottom of the part.
 The difference lies within the height of both models.
-The **pick frame** of each model is put in the center.
+The **pick point** of each model is put in the center.
 The **matching score** and **tolerance** is set to 85% and 1.8 mm.
 No **downsampling** is applied and the **detection speed** is set to Fast.
 
@@ -65,7 +65,7 @@ Need help with these settings? See the :ref:`Teach` article for more information
 
 In the **Picking** page no alignments are **enforced**. For this demo, **collision prevention**
 is enabled.
-It is checked that the calculated pick frames are not steeper than 30 degrees.
+It is checked that the calculated pick points are not steeper than 30 degrees.
 Also, collisions between the tool and the bin or other objects are checked.
 For this check it is important that a good tool model is defined.
 See below for the used model for the two finger gripper in the video.
@@ -81,7 +81,7 @@ Calibration
 
 Next step is the robot-camera calibration. This process teaches Pickit
 where the robot base is located w.r.t. to the camera. This information
-is used to transform the object pick-frames into robot coordinates. A
+is used to transform the object pick points into robot coordinates. A
 detailed description in robot-camera calibration can be found in the article :ref:`robot-camera-calibration`. 
 
 Setting up the robot program
@@ -121,7 +121,7 @@ This will result in nice robot movements to pick these parts.
 .. image:: /assets/images/examples/teach-mhd-demo-red-parts-scene-1.png
 
 If parts are positioned on their side Pickit can still find them.
-But they are not send back to the robot because the calculated pick frame is to steep.
+But they are not send back to the robot because the calculated pick point is to steep.
 If all parts would be dropped like this the robot will not be able to pick any part.
 That is why it is advised to have some interaction with the demo while it is running.
 

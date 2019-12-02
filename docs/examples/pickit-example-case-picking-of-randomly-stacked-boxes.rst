@@ -82,12 +82,12 @@ Enforce alignment
 -----------------
 
 In this first step the orientation of the part is from no importance.
-This means that the pick frames can be forced to be orientated in exactly the same way.
-By using the option XYZ||XYZ all pick frames will be orientated exactly as the reference frame.
+This means that the pick points can be forced to be orientated in exactly the same way.
+By using the option XYZ||XYZ all pick points will be orientated exactly as the reference frame.
 This allows further optimization of the movement speed of the robot, because the last wrist movement of the robot is not used.
 By applying this strategy it means that in the first step all parts will be picked and dropped with the same orientation.
 
-Interested in enforce alignment? See this article about :ref:`enforce-alignment-of-pick-frame-orientation`.
+Interested in enforce alignment? See this article about :ref:`enforce-alignment-of-pick-point-orientation`.
 
 Robot program
 -------------

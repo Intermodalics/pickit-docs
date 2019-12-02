@@ -3,7 +3,7 @@
 Check collisions with the robot tool
 ------------------------------------
 
-This setting allows you to discard pick frames that would result in collision. The pick frames can be checked for possible collisions with the bin and/or other objects.
+This setting allows you to discard pick points that would result in collision. The pick points can be checked for possible collisions with the bin and/or other objects.
 
 When collision checking yields that a certain object pose will result in
 a collision,  the object will be labeled as unpickable and not sent to

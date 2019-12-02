@@ -69,7 +69,7 @@ successfully defined, the viewer will open the :ref:`Model view <model-view>` a
 widget.
 
 The :ref:`Model view <model-view>` shows a 3D visual representation of your model, a
-mgreen odel bounding box and the Pick frame. Note the
+mgreen odel bounding box and the pick point. Note the
 number in round brackets in the :ref:`Model view <model-view>` tab name, this is the model
 ID.
 
