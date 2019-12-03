@@ -64,9 +64,9 @@ Product file
 
 For this demo, one product file is defined with a single :ref:`Teach model <how-to-good-model>`.
 The model that is being used is the shape from the side.
-The **pick frame** of this model is located in the center of the cylinder.
-Here it is important that the X-axis of the pick frame is in the center and is pointing in the length direction of the bottle.
-This allows for pick frame alignment (more on this below).
+The **pick point** of this model is located in the center of the cylinder.
+Here it is important that the X-axis of the pick point is in the center and is pointing in the length direction of the bottle.
+This allows for pick point alignment (more on this below).
 The **matching score** and **tolerance** is set to 80% and 2.4 mm.
 No **fusion** or **downsampling** is applied and the **detection speed** is set to Normal.
 
@@ -74,13 +74,13 @@ No **fusion** or **downsampling** is applied and the **detection speed** is set 
 
 Need help with these settings? See the :ref:`Teach` article for more information.
 
-In the **Picking** page, the :ref:`pick frames are enforced <enforce-alignment-of-pick-frame-orientation>` to Y ⊥ Z alignment.
-This setting gives Pickit the freedom to rotate around the X-axis of the pick frame.
-If a bottle is found in the middle of the bin the pick frame will point as much as possible upwards.
-Since we are also using **box avoidance**, if a bottle is close to the side of the bin, the pick frame will not be pointing upwards but will be slightly tilted away from the side of the bin.
+In the **Picking** page, the :ref:`pick points are enforced <enforce-alignment-of-pick-point-orientation>` to Y ⊥ Z alignment.
+This setting gives Pickit the freedom to rotate around the X-axis of the pick point.
+If a bottle is found in the middle of the bin the pick point will point as much as possible upwards.
+Since we are also using **box avoidance**, if a bottle is close to the side of the bin, the pick point will not be pointing upwards but will be slightly tilted away from the side of the bin.
 
 Also :ref:`check-collisions-with` is used. A simple cylinder shaped tool is used here.
-Note that since the pick frame is in the center an pick offset in tool is used to compensate for this.
+Note that since the pick point is in the center an pick offset in tool is used to compensate for this.
 
 Need help with these settings? See the :ref:`Picking` article for more information.
 
@@ -89,7 +89,7 @@ Calibration
 
 The next step is the robot-camera calibration.
 This process teaches Pickit where the robot base is located w.r.t. to the camera.
-This information is used to transform the object pick-frames into robot coordinates.
+This information is used to transform the object pick points into robot coordinates.
 A detailed description in robot-camera calibration can be found in the article :ref:`robot-camera-calibration`.
 
 Setting up the robot program

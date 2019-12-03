@@ -6,7 +6,7 @@ Object to reference frame alignment
 
 
 This setting aligns the object frame axis with a reference frame axis.
-The newly created aligned frame is the pick frame that will be sent to
+The newly created aligned frame is the pick point that will be sent to
 the robot. The setting smartly makes use of the symmetry of an object to
 decide if object axes can be flipped so they point to the same direction
 as the selected reference frame axes.

@@ -31,7 +31,7 @@ Follow the steps below to do your first detection with Pickit:
 
 .. image:: /assets/images/First-steps/Model-soda-can.png
 
--  Go back to the :ref:`2D view <2d-view>` and press :guilabel:`Detect`. A Pick Frame (red-green-blue
+-  Go back to the :ref:`2D view <2d-view>` and press :guilabel:`Detect`. A pick point (red-green-blue
    arrows) appears above the soda can.
 -  Place the soda can somewhere else in between the markers and press
    :guilabel:`Detect` again.

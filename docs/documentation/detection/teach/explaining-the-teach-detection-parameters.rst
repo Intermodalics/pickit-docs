@@ -74,17 +74,17 @@ Enable or disable a model
 
 A model is enabled by default, and can be disabled through the toggle switch at the left of the respective table row. If a model is disabled, it will be ignored in subsequent detection runs. Disabling models is a quick and useful way to check the effect of different combinations of models, or to test distinct models in isolation (by disabling all others).
 
-.. _pick-frame-teach:
+.. _pick-point-teach:
 
-Pick frame
+Pick point
 ^^^^^^^^^^
 
-The pick frame is the location where the Tool Center Point (TCP) of the robot will be guided to.
-The location of the pick frame can be visualized from the :ref:`Model view <model-view>`.
-By default, Pickit Teach provides an initial pick frame,
+The pick point is the location where the Tool Center Point (TCP) of the robot will be guided to.
+The location of the pick point can be visualized from the :ref:`Model view <model-view>`.
+By default, Pickit Teach provides an initial pick point,
 but this will in general not be the best choice. It's possible to
-specify the desired  **pick frame** as a positional and rotational
-offset with respect to the object model. The following article goes more into depth on :ref:`how-to-pick-frame`.
+specify the desired  **pick point** as a positional and rotational
+offset with respect to the object model. The following article goes more into depth on :ref:`how-to-pick-point`.
 
 .. image:: /assets/images/Documentation/Teach-pick-frame.png
 

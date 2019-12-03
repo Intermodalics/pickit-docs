@@ -59,18 +59,18 @@ Product file
 ~~~~~~~~~~~~
 
 The model that is being used is the shape from the top, which is a circle.
-The **pick frame** of this model is located in the center of the circle.
+The **pick point** of this model is located in the center of the circle.
 The **matching score** and **tolerance** is set to 90% and 1.5 mm.
 No **fusion** or **downsampling** is applied and the **detection speed** is set to Fast.
 
 Need help with these settings? See the :ref:`Teach` article for more information.
 
-In the **Picking** page the **pick frames are enforced** to XYZ||XYZ alignment.
-This setting makes sure that all calculated pick frames have the same orientation.
+In the **Picking** page the **pick points are enforced** to XYZ||XYZ alignment.
+This setting makes sure that all calculated pick points have the same orientation.
 So if one of the boxes is tilted it is still picked straight from the top.
 This is possible since the vacuum cup has quite some flexibility.
 Another benefit is that the head of the robot doesn't need to turn so there are no problems with cable entanglement.
-To ensure that the robot will not try to pick boxes that are too tilted the **maximum angle between pick frame Z-axis and surface normal** is set to 30 degrees.
+To ensure that the robot will not try to pick boxes that are too tilted the **maximum angle between pick point Z-axis and surface normal** is set to 30 degrees.
 No other settings in the **Picking** page are being used for this demo.
 
 Need help with these settings? See the :ref:`Picking` article for more information.
@@ -80,7 +80,7 @@ Calibration
 
 Next step is the robot-camera calibration. This process teaches Pickit
 where the robot base is located w.r.t. to the camera. This information
-is used to transform the object pick-frames into robot coordinates. A
+is used to transform the object pick points into robot coordinates. A
 detailed description in robot-camera calibration can be found in the article :ref:`robot-camera-calibration`. 
 
 Setting up the robot program

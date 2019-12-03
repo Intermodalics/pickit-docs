@@ -97,7 +97,7 @@ Objects view
 Displays the 3D point clouds of all objects found in the last Pickit
 detection. Each object cloud is shown in a different color. 
 
-For all engines, it overlays the Pick frame of each object with
+For all engines, it overlays the pick point of each object with
 the picking order identifiers.
 
 For the Pickit :ref:`Flex <Flex>` and :ref:`Pattern <Pattern>`  engines, it
