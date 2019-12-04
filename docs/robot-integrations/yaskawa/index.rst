@@ -121,6 +121,8 @@ Example program: TEST_CALIB
 
 This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
 
+The program helps you by executing robot camera :ref:`robot-camera-calibration`.
+
 Define tool
 ~~~~~~~~~~~
 
@@ -162,7 +164,7 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
 The idea of this program is the following.
 First a detection is triggered.
 If an object is found, the robot moves to the object to pick it and drop it off at a fixed position.
-Once the robot is out the field of view of the robot immediately a new Pickit detection is triggered.
+Once the robot is out the field of view of the robot, immediately a new Pickit detection is triggered.
 If the ROI is empty the program stops.
 
 Define tool
@@ -218,17 +220,27 @@ Variables used by the Pickit system
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | I097     | product           | A number matching to a product file known by the Pickit system.                                                                          |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| I096     | Frame ID          | A number matching to the frame ID used during calibration and picking.                                                                   |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| I095     | Tool ID           | A number matching to the tool ID used for picking                                                                                        |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| I094     | Timeout           | Value of timeout that is used for communication with Pickit                                                                              |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| I091     | object_type       | The type of detected object.                                                                                                             |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| I090     | status            | Contains the Pickit status or a response to previously received robot commands.                                                          |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| I080-089 | status of cycles  | Used for keeping track of communication cycle with Pickit.                                                                               |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | S099     | IP Pickit         | IP address of Pickit, by default 169.254.5.180.                                                                                          |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | P099     | object_pose       | An object pose expressed relatively to the robot base frame.                                                                             |
-+----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| D090     | object_age        | The amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot.  |
-+----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| I091     | object_type       | The type of detected object.                                                                                                             |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | P098     | object_dimension  | [0]: length or diameter (m) [1]: width or diameter (m) [2]: height (m)                                                                   |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | D091     | object_remaining  |  If this field is non-zero, it contains the number of remaining objects that can be sent in next messages to the robot.                  |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| I090     | status            | Contains the Pickit status or a response to previously received robot commands.                                                          |
+| D090     | object_age        | The amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot.  |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. tip:: If these registers are already used on your robot. Please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__ and we will assist you in finding a solution.
