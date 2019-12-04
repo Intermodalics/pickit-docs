@@ -56,5 +56,5 @@ For :ref:`single pose calibration <single-pose-calibration>`, the program is sim
 Running the program
 -------------------
 
-Before running the calibration program, make sure that the Pickit web interface is in the :guilabel:`Calibration` page, which provides feedback on calbiration plate visibility and progress of the calibration process (:ref:`more <multi-poses-calibration-calibrating>`).
+Before running the calibration program, make sure that the Pickit web interface is in the :guilabel:`Calibration` page, which provides feedback on calibration plate visibility and progress of the calibration process (:ref:`more <multi-poses-calibration-calibrating>`).
 
