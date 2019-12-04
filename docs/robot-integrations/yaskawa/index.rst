@@ -14,18 +14,16 @@ setup of Pickit with a Yaskawa robot consists of 4 steps:
 Check controller and software compatibility
 -------------------------------------------
 
-Pickit is compatible with controllers **FS100,** **DX200** and **YRC1000**.
+Pickit is compatible with controllers **FS100,** **DX200** and **YRC1000(Micro)**.
 
-The following parameters must be declared on the controller to allow the correct operation of the application. These settings must be enabled by Yaskawa:
+The following parameters must be declared on the controller to allow the correct operation of the application.
+Ask your local Yaskawa affiliate to check this.
 
 -  **LAN INTERFACE SETTING** function set to **MANUAL SETTING**
 -  **MotoPlus** function set to **USED**
 -  **MACRO INST.** function set to **USED**
 -  **MotoPlus - Number of files** set to **1** (Default setting)
 -  **MotoPlus - Number of tasks** set to **5** (Default setting)
-
-These settings can be found in :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`OPTION FUNCTION`.
-Please contact your local Yaskawa affiliate if you need to connect multiple devices to the Ethernet port to check compatibility of all this equipment.
 
 Setup the network connection
 ----------------------------
@@ -67,8 +65,7 @@ The robot controller should still be in **maintenance mode** and the security mo
 
 #. Insert USB device in the robot pendant.
 #. Load the correct USB device under :guilabel:`MotoPlus APL` → :guilabel:`DEVICE`.
-#. Open the folder where the MotoPlus application is stored
-   under :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
+#. Select the folder **Pickit** > **MotoPlus** on the USB device under :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
 #. Load the MotoPlus application under :guilabel:`MotoPlus APL` → :guilabel:`LOAD(USER APPLICATION)`. 
 
 Press :guilabel:`Select`, :guilabel:`Enter` and confirm.
@@ -76,13 +73,32 @@ Now reboot the controller in **Normal mode** with USB device still attached.
 After rebooting set security to **management mode**.
 
 #. Load the correct USB device under :guilabel:`EX. MEMORY` → :guilabel:`DEVICE`.
+#. Select the folder **Pickit** > **Program** on the USB device under :guilabel:`EX. MEMORY` → :guilabel:`FOLDER`.
 #. Load the **I/O DATA**, **SYSTEM DATA** and  **JOB** files under :guilabel:`EX. MEMORY` → :guilabel:`LOAD` (the order of loading the files is important).
 
+Define the Pickit macros
+------------------------
+
+Still in **normal mode**, the macros should be defined manually.
+To do this go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`MACRO INST.`.
+
+.. note:: In order to use the example Pickit files the macros should be defined in the exact same order as shown in the image below.
+
+.. image:: /assets/images/robot-integrations/yaskawa/yaskawa-macro.jpg
+
+Load the Pickit example jobs
+----------------------------
+
+In the Pickit folder there are two example jobs available.
+These can be uploaded to the controller so you can get easily started with picking.
+
+#. Select the folder **Pickit** > **Program** > **Examples** on the USB device under :guilabel:`EX. MEMORY` → :guilabel:`FOLDER`.
+#. Load the **JOB** files under :guilabel:`EX. MEMORY` → :guilabel:`LOAD`.
 
 Setting the Pickit IP address on the robot controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Still in **normal mode**, the address of Pickit needs to be entered in a **String**. To do this:
+Still in **normal mode**, the IP address of Pickit needs to be entered in a **String**. To do this:
 
   #. Go to :guilabel:`Main menu` → :guilabel:`VARIABLE` → :guilabel:`STRING` → :guilabel:`S099`.
   #. Set **S099** to value **169.254.5.180**.
@@ -104,6 +120,12 @@ Example program: TEST_CALIB
 ---------------------------
 
 This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
+
+Define tool
+~~~~~~~~~~~
+
+When using Pickit it is important that **tool0** is set equal to the robot flange.
+This is done by setting all the values of **tool0** to 0.
 
 Set user frame
 ~~~~~~~~~~~~~~
@@ -130,21 +152,29 @@ Execute robot program
 ~~~~~~~~~~~~~~~~~~~~~
 
 After defining the positions, the Pickit must be set in calibration mode and the robot program can be executed.
+To run this program either do **Play + Start**, **Interlock + FWD** or **Interlock + Test**.
 
-Example program: TEST_PICKING
------------------------------
+Example program: TEST_SIMPLEPICK
+--------------------------------
 
 This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
+
+The idea of this program is the following.
+First a detection is triggered.
+If an object is found, the robot moves to the object to pick it and drop it off at a fixed position.
+Once the robot is out the field of view of the robot immediately a new Pickit detection is triggered.
+If the ROI is empty the program stops.
 
 Define tool
 ~~~~~~~~~~~
 
 Create a tool frame with the actual TCP values.
+Again it is important that **tool0** is not changed, any other tool can be used.
 
 Set PIT_CFG
 ~~~~~~~~~~~
 
-On line 3 of the example program following values have to be set:
+In this command following values have to be set:
 
 - **Setup**: Pickit setup file number.
 - **Product**: Pickit product file number.
@@ -154,20 +184,27 @@ On line 3 of the example program following values have to be set:
 .. note:: If something is wrong here, you can expect the following message: Undefined user frame.
    The example program by default uses frame 5 and tool 1, but these might not exist. 
 
-Set positions
-~~~~~~~~~~~~~
+Set robot positions
+~~~~~~~~~~~~~~~~~~~
 
-- **Moving position 1**: Starting position of the robot, this position needs to be defined by the user.
-- **Moving position 2**: Pre pick position, this position does not need to be defined.
-- **Moving position 3**: Picking position, this position does not need to be defined.
-- **Moving position 4**: Pre pick position, this position does not need to be defined.
-- **Moving position 5**: Starting position of the robot, this position needs to be defined by the user.
+- **C00000**: **Home position** starting position of the robot, this position needs to be defined by the user.
+- **P025**: **Detect position** a position not blocking the camera to trigger a detection, this position needs to be defined by the user.
+- **P023**: **Above pick area position** a transition position to enter the pick area, this position needs to be defined by the user.
+- **LP000**: **Pre Picking position**, this position does not need to be defined.
+- **P099**: **Picking position**, this position does not need to be defined.
+- **LP001**: **Post pick position**, this position does not need to be defined.
+- **P029**: **Drop off position** a position where the parts will be dropped, this position needs to be defined by the user.
 
 Add grasping/releasing logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+At the **Picking position** and **Drop off position** grasping and releasing logic needs to be added.
+
 Execute robot program
 ~~~~~~~~~~~~~~~~~~~~~
+
+To run this program either do **Play + Start**, **Interlock + FWD** or **Interlock + Test**.
+Enjoy your pickings!
 
 Variables used by the Pickit system
 -----------------------------------
