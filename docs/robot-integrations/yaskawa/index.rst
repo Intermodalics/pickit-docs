@@ -187,18 +187,18 @@ In this command the following values have to be set:
 Set robot positions
 ~~~~~~~~~~~~~~~~~~~
 
-- **C00000**: **Home position:** Starting position of the robot. This position needs to be defined by the user.
-- **P025**: **Detect position:** For a fixed camera mount, it should not occlude the camera view volume, while for a robot-mounted-camera it should place the camera so it fully captures the desired view volume.
-- **P023**: **Above pick area position:** A transition position to enter the pick area. This position needs to be defined by the user.
-- **LP000**: **Pre pick position:** This position does not need to be defined.
-- **P099**: **Pick position:** This position does not need to be defined.
-- **LP001**: **Post pick position:** This position does not need to be defined.
-- **P029**: **Drop off position:** A position where the parts will be dropped. This position needs to be defined by the user.
+- **C00000**: **Home:** Starting position of the robot. This position needs to be defined by the user.
+- **P025**: **Detect:** For a fixed camera mount, this position should not occlude the camera view volume, while for a robot-mounted-camera it should place the camera so it fully captures the desired view volume.
+- **P023**: **Above pick area:** A transition position to enter the pick area. This position needs to be defined by the user.
+- **LP000**: **Pre pick:** This position does not need to be defined.
+- **P099**: **Pick:** This position does not need to be defined.
+- **LP001**: **Post pick:** This position does not need to be defined.
+- **P029**: **Dropoff:** A position where the parts will be dropped. This position needs to be defined by the user.
 
 Add grasping/releasing logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the **Pick** and **Drop off** positions, grasping and releasing logic needs to be added, respectively.
+At the **Pick** and **Dropoff** positions, grasping and releasing logic needs to be added, respectively.
 
 Execute the robot program
 ~~~~~~~~~~~~~~~~~~~~~~~~~
