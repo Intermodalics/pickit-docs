@@ -195,6 +195,8 @@ Set robot positions
 - **LP001**: **Post pick:** This position does not need to be defined.
 - **P029**: **Dropoff:** A position where the parts will be dropped. This position needs to be defined by the user.
 
+.. note:: The positions P023-P029 can be changed in the position variable menu. 
+
 Add grasping/releasing logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
