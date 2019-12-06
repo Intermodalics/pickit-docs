@@ -3,6 +3,10 @@ FROM keimlink/sphinx-doc:1.7.1
 RUN . .venv/bin/activate \
     && python -m pip install sphinx-autobuild sphinx_rtd_theme
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD ["sphinx-autobuild", "--host", "0.0.0.0", "--port", "8080", "/docs", "/home/python/_build/html"]
+COPY docs docs
+RUN /home/python/.venv/bin/sphinx-build docs dist
+WORKDIR /home/python/dist
+
+CMD ["sphinx-autobuild", "--host", "0.0.0.0", "--port", "8080", "/home/python/docs", "/home/python/dist"]
