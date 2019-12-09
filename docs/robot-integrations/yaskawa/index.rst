@@ -16,6 +16,8 @@ Check controller and software compatibility
 
 Pickit is compatible with controllers **FS100,** **DX200** and **YRC1000 (Micro)**.
 
+.. note:: Pickit is not yet compatible with the **HC10** nor the **Smart Pendant**.
+
 The parameters listed below must be declared on the controller to allow the correct operation of the application.
 Ask your local Yaskawa affiliate to check this.
 
