@@ -110,6 +110,9 @@ Minimum matching score
 Minimum percentage of model points that need to be confirmed by scene
 points, for the detected object to be considered valid.
 
+.. note:: For CAD models, only the points that could be visible from the camera 
+          are used in the computation of the matching score.
+
 The following guide will help you find a good value for this parameter, :ref:`how-to-matching-parameters`.
 
 Optimize detections
