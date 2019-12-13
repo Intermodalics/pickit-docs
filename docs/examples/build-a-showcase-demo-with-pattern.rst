@@ -83,7 +83,7 @@ In this demo, the following parameters are used:
 -  **Expected length:** 115 mm
 -  **Expected width:** 65 mm
 -  **Expected orientation:** either X||X or X||Y depending on
-   the pattern orientation w.r.t. the reference frame in the :ref:`3D view <3d-view>`.
+   the pattern orientation w.r.t. the :ref:`reference frame <reference-frame>` in the :ref:`3D view <3d-view>`.
 -  **2D contour score:** 45%
 -  **2D surface score:** 95%
 -  **Fusion:** None

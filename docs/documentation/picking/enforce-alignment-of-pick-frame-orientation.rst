@@ -3,21 +3,25 @@
 Enforce alignment of pick point orientation
 -------------------------------------------
 
-This setting is used to enforce aligning an object frame with the
-reference frame. The newly created aligned frame is the pick point that
+This setting is used to enforce aligning a pick frame with the
+:ref:`reference frame <reference-frame>`. The newly created aligned frame is the pick point that
 will be sent to the robot. This setting will make sure that one or more
 resulting pick point axes have a parallel or perpendicular axis to the
 reference frame axes.
 
+.. note::
+  This feature targets users of the Pickit :ref:`Flex <Flex>` and :ref:`Pattern <Pattern>` detection engines.
+  If using Pickit :ref:`Teach <teach>`, refer to the more powerful :ref:`flexible pick orientation <flexible-pick-orientation>` feature.
+
 .. warning:: 
    Enforcing a pick point orientation takes precedence over the
-   object to reference frame alignment.
+   preferred pick point orientation.
 
 Short overview
 ~~~~~~~~~~~~~~
 
 There are multiple alignment options, which will all be discussed in
-this article.:
+this article:
 
 -  :ref:`enforce-alignment-no-alignment`: If the there is no tolerance for the gripper to pick
    the part.
@@ -42,7 +46,8 @@ Y ⊥ Z
 ~~~~~
 
 Aligns the Y-axis of the pick point to be in the XY plane of the
-reference frame. This setting allows the pick points to point as much as
+:ref:`reference frame <reference-frame>`.
+This setting allows the pick points to point as much as
 possible upwards when only rotating around his X-axis. This freedom is
 typically seen when picking cylinders. As can be seen on the image
 below, if the X-axis is the center of rotation, for the gripper to pick
@@ -93,7 +98,8 @@ Z || Z
 ~~~~~~
 
 This option aligns the Z-axis of the pick point to be parallel to the Z
-axis of the reference frame. In most applications, the Z axis points up
+axis of the :ref:`reference frame <reference-frame>`.
+In most applications, the Z axis points up
 from the table or bin, so this option enforces the pick point to point
 upwards. This is typically used when there is a flexible gripper to pick
 the objects, e.g. a vacuum cup to pick cardboard boxes. See image below
@@ -132,7 +138,8 @@ XYZ || XYZ
 ~~~~~~~~~~
 
 This option aligns all three axes of the pick point with all three axis
-of the reference frame. This setting is typically used when there is a
+of the :ref:`reference frame <reference-frame>`.
+This setting is typically used when there is a
 flexible gripper to pick the objects, e.g. a vacuum cup to pick
 cardboard boxes. See image below for the effect on a real scene in
 Pickit. The image on the left is with no alignment, on the right
@@ -164,3 +171,16 @@ the bin.
    is set the same as the angular modification away from box. If the
    gripper has different flexibility around his Y-axis than around his
    X-axis this can be set to a lower value.
+
+Maximum angle between pick point Z-axis and surface normal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting becomes visible whenever an alignment is enforced.
+With this setting, you can specify the maximum angular difference
+between the Z axis of your adapted pick point and the original pick
+frame. As seen in the image below, if the new frame is tilted more than
+the maximum specified angle, the object will be labeled as unpickable
+and not sent to the robot. In the Pickit web interface, unpickable
+objects are displayed orange in the :ref:`Objects view <objects-view>` and the :ref:`detection-grid`.
+
+.. image:: /assets/images/Documentation/Max-angle-normal.png

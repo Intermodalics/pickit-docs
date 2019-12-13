@@ -12,6 +12,8 @@ shape categories, like cylinders, spheres, squares, rectangles, circles or ellip
     :local:
     :depth: 1
 
+.. _teach-a-model:
+
 Teach a model based on your product
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

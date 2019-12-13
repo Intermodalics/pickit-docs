@@ -75,18 +75,6 @@ A model is enabled by default, and can be disabled through the toggle switch at 
 
 .. _pick-point-teach:
 
-Pick point
-^^^^^^^^^^
-
-The pick point is the location where the Tool Center Point (TCP) of the robot will be guided to.
-The location of the pick point can be visualized from the :ref:`Model view <model-view>`.
-By default, Pickit Teach provides an initial pick point,
-but this will in general not be the best choice. It's possible to
-specify the desired  **pick point** as a positional and rotational
-offset with respect to the object model. The following article goes more into depth on :ref:`how-to-pick-point`.
-
-.. image:: /assets/images/Documentation/Teach-pick-frame.png
-
 .. _matching-tolerance:
 
 Matching tolerance
@@ -109,7 +97,7 @@ Minimum matching score
 Minimum percentage of model points that need to be confirmed by scene
 points, for the detected object to be considered valid.
 
-.. note:: For CAD models, only the points that could be visible from the camera 
+.. note:: For CAD models, only the points that could be visible from the camera
           are used in the computation of the matching score.
 
 The following guide will help you find a good value for this parameter, :ref:`how-to-matching-parameters`.

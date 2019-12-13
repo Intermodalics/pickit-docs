@@ -1,7 +1,7 @@
 .. _how-to-mhd-preset:
 
 How to choose the correct HD camera preset
-=========================================
+==========================================
 
 The Pickit HD cameras are high-end cameras with many different options on how to capture a point cloud of the scene.
 For instance, the camera can be optimized to better detect bright or dark parts.

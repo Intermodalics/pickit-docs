@@ -27,7 +27,7 @@ Dynamic Box-based ROI filter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Removes all points in the point cloud that are located at a lower height than the topmost point by more than the specified threshold.
-For example, if the highest point has a height of 1 m above the Pickit reference frame and the threshold is 0.2 m, all points with height under 0.8 m are discarded.
+For example, if the highest point has a height of 1 m above the :ref:`Pickit reference frame <reference-frame>` and the threshold is 0.2 m, all points with height under 0.8 m are discarded.
 
 This feature is handy for depalletizing applications, making sure that all objects in the top layer are picked before any object in the next layer.
 
