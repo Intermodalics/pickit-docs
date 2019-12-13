@@ -115,16 +115,3 @@ The objects view also renders the same additional elements listed for
 the the 3D view.
 
 .. image:: /assets/images/Documentation/viewer-21-objects.png
-
-.. _model-view:
-
-Model view
-~~~~~~~~~~
-
-Visualizes the taught model together with its Reference frame and Pick
-frame. The model bounding box is shown in dashed green lines to indicate
-the extent of the model and help detect undesired outliers in models.
-
-This view is only available for the Pickit :ref:`Teach <Teach>` detection engine.
-
-.. image:: /assets/images/Documentation/viewer-21-model.png
