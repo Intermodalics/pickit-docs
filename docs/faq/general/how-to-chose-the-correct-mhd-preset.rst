@@ -1,9 +1,9 @@
 .. _how-to-mhd-preset:
 
-How to chose the correct M-HD preset
-====================================
+How to choose the correct HD camera preset
+=========================================
 
-The Pickit M-HD camera is a high end camera with many different options on how to capture a point cloud of the scene.
+The Pickit HD cameras are high-end cameras with many different options on how to capture a point cloud of the scene.
 For instance, the camera can be optimized to better detect bright or dark parts.
 When set to detect bright parts typically the captured point cloud is darker, to compensate for the brightness of the parts.
 On the contrary when it is set to detect darker parts the point cloud becomes brighter.
@@ -18,7 +18,7 @@ Here you can clearly see that the dark parts of the plates are detected but the 
 
 .. image:: /assets/images/faq/mhd-preset-dnrp.png
 
-Next to different settings to capture a point cloud the Pickit M-HD camera also has the possibility to trigger multiple captures in a row.
+Next to different settings to capture a point cloud the Pickit HD cameras also have the possibility to trigger multiple captures in a row.
 Each capture uses a different setting and the combined image of multiple captures leads to a point cloud which can be better than a single capture.
 Taking multiple captures typically results in a better point cloud but also increases point cloud capture time.
 
@@ -31,8 +31,8 @@ Pickit provides a few M-HD settings presets, which are suitable for capturing th
 
 -  **Light reflective plastic** (1 capture).
 -  **Light non-reflective plastic** (1 capture).
--  **Dark non-reflective plastic** (1 capture).
--  **Dark reflective plastic** (1 capture).
+-  **Dark non-reflective plastic** (3 captures).
+-  **Dark reflective plastic** (4 captures).
 -  **Mixed-color plastic** (3 captures).
 -  **Sandblasted metal** (2 captures).
 -  **Polished metal** (3 captures).

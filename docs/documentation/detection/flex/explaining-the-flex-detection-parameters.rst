@@ -15,12 +15,12 @@ categories.
 
 .. _M-HD-preset:
 
-M-HD preset (M-HD camera only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+HD camera settings (HD camera only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/m-hd-preset-21.png
+.. image:: /assets/images/Documentation/hd-preset-22.png
 
-The M-HD camera presets are a set of predefined configurations that optimize point cloud capture to specific materials.
+The HD camera presets are a set of predefined configurations that optimize the captures of images for specific materials.
 
 This guide helps you chosing a good preset for your application: :ref:`how-to-mhd-preset`.
 
