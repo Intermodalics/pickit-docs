@@ -65,6 +65,8 @@ problems.
 Network settings
 ----------------
 
+.. _settings-network-robot:
+
 Pickit port labeled ROBOT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
