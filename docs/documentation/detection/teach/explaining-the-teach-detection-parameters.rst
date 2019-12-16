@@ -11,10 +11,10 @@ The Pickit Teach detection engine is designed to detect complex
     :local:
     :depth: 1
 
-M-HD preset (M-HD camera only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+HD camera settings (HD camera only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The M-HD preset settings are explained in :ref:`M-HD-preset`.
+The HD camera settings are explained in :ref:`M-HD-preset`.
 
 Define your model(s)
 ~~~~~~~~~~~~~~~~~~~~
