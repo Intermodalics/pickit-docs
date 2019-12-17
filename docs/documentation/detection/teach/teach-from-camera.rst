@@ -48,19 +48,14 @@ Adding a model
 ^^^^^^^^^^^^^^
 
 In this step, the actual model will be taught and saved. Go to the
-**Detection** page and select the Pickit Teach engine. Open the ‘Define your
-model(s)’ section. Here you will see a widget that allows adding models.
+**Detection** page and select the Pickit Teach engine. Open the ‘Define
+models’ section. Here you will see a widget that allows adding models.
 
 To add a new model, click :guilabel:`Add a model`. Before clicking
-this button, make sure that the previous steps are completed so that a correct side of the object is oriented to the
-camera. When a new model is
-successfully defined, the viewer will open the :ref:`Model view <model-view>` automatically and a **Model row** will be added to the models'
-widget.
-
-The :ref:`Model view <model-view>` shows a 3D visual representation of your model, a
-mgreen odel bounding box and the pick point. Note the
-number in round brackets in the :ref:`Model view <model-view>` tab name, this is the model
-ID.
+this button, make sure that the previous steps are completed so that the correct side of the object is oriented to the
+camera. When a new model is successfully defined, a new model tab will be created. 
+The number in the tab represents the model ID. 
+A 3D visualization of the model also appears in the tab.
 
 Previous steps can be repeated to Teach different models to Pickit Teach.
 In one product file up to 8 different models can be taught.

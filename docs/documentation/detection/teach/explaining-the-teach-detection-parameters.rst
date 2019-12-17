@@ -16,10 +16,10 @@ HD camera settings (HD camera only)
 
 The HD camera settings are explained in :ref:`M-HD-preset`.
 
-Define your model(s)
+Define models
 ~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/teach-model-grid-21.png
+.. image:: /assets/images/Documentation/teach-model-grid-22.png
 
 A list of thaught models is shown accompanied by their ID and
 the number of points. By default, there are no models defined.
@@ -27,20 +27,19 @@ the number of points. By default, there are no models defined.
 Add a model
 ^^^^^^^^^^^
 
-Press :guilabel:`Add a model` to teach your first model, the points
+Press :guilabel:`Teach from camera` or :guilabel:`Teach from CAD` to teach your first model. The points
 currently visible within the ROI are now saved into a model. When the
 model is successfully created, the model will automatically be shown in
-the :ref:`Model view <model-view>`.
+the tab.
 
-In one product file up to 8 different models can be taught.
+To add extra models, press :guilabel:`+` in the model tab. In one product file, up to 8 different models can be taught.
 This means that Pickit Teach is capable of looking for 8 different shapes in one detection.
 See :ref:`how-to-multiple-models` on how you can use the model ID in a robot program.
 
 Re-teach a model
 ^^^^^^^^^^^^^^^^
 
-You can always re-teach a model by pressing :guilabel:`Re-teach` for
-a specific model.
+A model taught from the camera can be retaught by pressing :guilabel:`Re-teach`.
 By pressing this button, the points currently visible within the ROI
 are saved into the model.
 
@@ -66,13 +65,13 @@ The action needs to be confirmed in a popup.
 Select and visualize a model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A model can be selected by clicking on the respective table row. When the model is
-loaded, it will automatically be shown in the :ref:`Model view <model-view>`.
+A model can be selected by clicking on the respective tab. The open model can then be visualized in a specific
+window inside the tab.
 
 Enable or disable a model
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A model is enabled by default, and can be disabled through the toggle switch at the left of the respective table row. If a model is disabled, it will be ignored in subsequent detection runs. Disabling models is a quick and useful way to check the effect of different combinations of models, or to test distinct models in isolation (by disabling all others).
+A model is enabled by default, and can be disabled through the toggle switch at the left of the respective tab. If a model is disabled, it will be ignored in subsequent detection runs. Disabling models is a quick and useful way to check the effect of different combinations of models, or to test distinct models in isolation (by disabling all others).
 
 .. _pick-point-teach:
 

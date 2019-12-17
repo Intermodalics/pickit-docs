@@ -34,10 +34,8 @@ Detecting object(s)
 Now that you've added your models, it's time to detect objects. 
 
 Place your objects below the camera and create a new region of interest box and press the
-Detect button. On a successful detection, you will see in the :ref:`2D view <2d-view>`
-that a frame appears on the detected objects and yellow lines indicate
-the bounding box. (For the yellow lines enable the "Show model box" in
-the Viewer options.)
+:guilabel:`Detect` button. On a successful detection, you will see in the :ref:`2D view <2d-view>`
+that a frame appears on the detected objects.
 
 .. image:: /assets/images/Documentation/teach-scene-picture.jpg
 
