@@ -34,7 +34,7 @@ pipeline {
     }
     stage('Update public repository') {
       when {
-        expression { BRANCH_NAME ==~ /(2.1)/ }
+        expression { BRANCH_NAME ==~ /(2.2)/ }
       }
       steps {
         sh "echo Pushing branch ${BRANCH_NAME} to public repo..."
