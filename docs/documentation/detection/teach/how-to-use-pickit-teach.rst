@@ -44,8 +44,8 @@ that a frame appears on the detected objects.
 In the :ref:`Objects view <objects-view>`, the point cloud models are visualized as a colored
 cloud on top of the detected objects. When a detection failed because
 for example a threshold parameter was exceeded, the model cloud will be
-colored in red. At this point the other objects are colored in orange because no pick point
-has been defined yet.
+colored in red. At this point the other objects are colored in orange because no
+:ref:`Pick point<pick-points-teach>` has been defined yet.
 
 .. image:: /assets/images/Documentation/teach-objects.png
 
