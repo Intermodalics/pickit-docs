@@ -3,6 +3,14 @@
 Build ROI box
 -------------
 
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
+
+    reference-frame
+
+
 There are three methods in Pickit for defining the ROI box:
 
 .. contents::
@@ -10,7 +18,7 @@ There are three methods in Pickit for defining the ROI box:
     :local:
     :depth: 1
 
-When a ROI box is defined, it specifies the **Pickit reference frame**.
+When a ROI box is built, it sets the location of the :ref:`Pickit reference frame <reference-frame>`.
 The axes of this frame are aligned with the box, and box bounds are
 reported with respect to this frame, as mentioned in the :ref:`fine-tune-roi-box`. Furthermore, the
 position of the detected objects displayed in the :ref:`detection-grid`
@@ -41,8 +49,7 @@ The markers are not interchangeable.
 #. If required, manually adjust the ROI box size as described in
    the :ref:`fine-tune-roi-box` section.
 
-.. note:: When defining the ROI box, the **Pickit reference
-   frame** is defined in the left bottom corner of the ROI box.
+.. note:: When building the ROI box, the :ref:`Pickit reference frame <reference-frame>` location is set to the left bottom corner of the ROI box.
 
 Automatically
 ~~~~~~~~~~~~~
@@ -55,8 +62,7 @@ plane in the field of view of the camera.
 #. If required, manually adjust the ROI box size as described in
    the :ref:`fine-tune-roi-box` section.
 
-.. note:: When defining the ROI box, the **Pickit reference
-   frame** is defined in the middle of the bottom of the ROI box.
+.. note:: When building the ROI box, the :ref:`Pickit reference frame <reference-frame>` location is set to the middle of the ROI box bottom.
 
 From camera
 ~~~~~~~~~~~
@@ -68,5 +74,4 @@ In this way the ROI box is defined based of the camera frame.
 #. If required, manually adjust the ROI box size as described in
    the :ref:`fine-tune-roi-box` section.
 
-.. note:: This method simply defines the camera frame as the **Pickit
-   reference frame**.
+.. note:: When building the ROI box, the :ref:`Pickit reference frame <reference-frame>` location is set to coincide with the camera frame.

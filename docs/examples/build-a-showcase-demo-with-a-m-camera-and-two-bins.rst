@@ -53,7 +53,7 @@ Setup file
 For this demo, two :ref:`setup` files are defined, one for each bin.
 For both files the :ref:`region-of-interest` (ROI) has similar dimensions as the real bin.
 The height is set to be higher than the real bin, so if the parts are stacked they can still be detected.
-A separate :ref:`bin-box <bin-box>` is defined to model the bin and :ref:`enable collision checks <check-collisions-with>` between the tool and bin.
+A separate :ref:`bin-box <bin-box>` is defined to model the bin and :ref:`enable collision checks <collision-prevention>` between the tool and bin.
 Also a :ref:`empty ROI box <detecting-an-empty-roi>` value is defined, so we are able to determine if a bin is empty.
 Last, the ROI boxes are attached to the Robot base frame. No other settings are used for this demo.
 
@@ -79,7 +79,7 @@ This setting gives Pickit the freedom to rotate around the X-axis of the pick po
 If a bottle is found in the middle of the bin the pick point will point as much as possible upwards.
 Since we are also using **box avoidance**, if a bottle is close to the side of the bin, the pick point will not be pointing upwards but will be slightly tilted away from the side of the bin.
 
-Also :ref:`check-collisions-with` is used. A simple cylinder shaped tool is used here.
+Also, :ref:`collision prevention <collision-prevention>` is used. A simple cylinder shaped tool is used here.
 Note that since the pick point is in the center an pick offset in tool is used to compensate for this.
 
 Need help with these settings? See the :ref:`Picking` article for more information.

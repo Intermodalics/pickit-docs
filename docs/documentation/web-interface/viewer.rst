@@ -42,11 +42,11 @@ connected and no snapshot is loaded:
 Live 2D camera image stream when a camera is connected. It always
 overlays on top of the image:
 
--  The Region of Interest box.
--  The Pickit Reference frame.
+-  The :ref:`Region of Interest <region-of-interest>` box.
+-  The :ref:`Pickit reference frame <reference-frame>`.
 
-After each detection, object frames, picking order identifiers and
-contour are also shown for a brief period of time.
+After each detection, pick frames, picking order identifiers and
+object markers are also shown for a brief period of time.
 
 .. image:: /assets/images/Documentation/viewer-21-2d.png
 
@@ -57,8 +57,8 @@ contour are also shown for a brief period of time.
 
 Live 3D camera image stream when a camera is connected. It also renders:
 
--  The Region of Interest box.
--  The Pickit Reference, robot base and robot end-effector frames.
+-  The :ref:`Region of Interest <region-of-interest>` box.
+-  The :ref:`Pickit reference frame <reference-frame>`, robot base and robot end-effector frames.
 -  Optionally: The Pickit camera(s) and robot (Universal Robots only)
    3D models.
 
