@@ -107,7 +107,7 @@ Still in **normal mode**, the IP address of Pickit needs to be entered in a **St
 
 .. note:: There is no communication yet between the Pickit and the robot.
   So don't worry if the connection is not shown in the Pickit web interface :ref:`web-interface-top-bar`.
-  The robot can be pinged from the Pickit web interface to check the IP settings. 
+  The robot can be pinged from the Pickit web interface to check the IP settings.
   Details on testing this connection can be found on: :ref:`test-robot-connection`.
 
 Test the robot connection
@@ -123,8 +123,8 @@ Example program: TEST_CALIB
 
 This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`, and allows executing robot camera :ref:`robot-camera-calibration`.
 
-Define the tool
-~~~~~~~~~~~~~~~
+Define the tool for picking
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When using Pickit it is important that **tool0** is set equal to the robot flange.
 This is done by setting all the values of **tool0** to 0.
@@ -150,8 +150,8 @@ Teach calibration points
 The calibration program requires five points to be defined.
 For more information on how to define these points, see the article on :ref:`multi-poses-calibration`.
 
-Execute the robot program
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Execute the calibration program
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before running the calibration program, make sure that the Pickit web interface is in the :guilabel:`Calibration` page, which provides feedback on calibration plate visibility and progress of the calibration process (:ref:`more <multi-poses-calibration-calibrating>`).
 To run this program either do **Play + Start**, **Interlock + FWD** or **Interlock + Test**.
@@ -167,8 +167,8 @@ If an object is found, the robot moves to the object to pick it, and drops it of
 Once the robot is out the field of view of the camera, a new Pickit detection is immediately triggered.
 If the ROI is empty, the program stops.
 
-Define the tool
-~~~~~~~~~~~~~~~
+Define the tool for calibration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a tool frame with the actual TCP values.
 Again it is important that **tool0** is not changed. Any other tool can be used.
@@ -184,7 +184,7 @@ In this command the following values have to be set:
 - **Tool**: Number of the tool frame defined in the previous step.
 
 .. note:: If something is wrong here, you can expect the following message: Undefined user frame.
-   The example program by default uses frame 5 and tool 1, but these might not exist. 
+   The example program by default uses frame 5 and tool 1, but these might not exist.
 
 Set robot positions
 ~~~~~~~~~~~~~~~~~~~
@@ -197,15 +197,15 @@ Set robot positions
 - **LP001**: **Post pick:** This position does not need to be defined.
 - **P029**: **Dropoff:** A position where the parts will be dropped. This position needs to be defined by the user.
 
-.. note:: The positions P023-P029 can be changed in the position variable menu. 
+.. note:: The positions P023-P029 can be changed in the position variable menu.
 
 Add grasping/releasing logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At the **Pick** and **Dropoff** positions, grasping and releasing logic needs to be added, respectively.
 
-Execute the robot program
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Execute the picking program
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To run this program either do **Play + Start**, **Interlock + FWD** or **Interlock + Test**.
 Happy picking!
