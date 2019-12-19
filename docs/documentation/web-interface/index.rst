@@ -44,8 +44,8 @@ buttons that remain visible at all times.
 
 The left part of the bar displays the following contents:
 
-.. image:: /assets/images/Documentation/pickit-webinterface-top-bar-left.png
-   :scale: 70%
+.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-top-bar-left-22.png
+   :scale: 90%
 
 - The Pickit logo.
 - The Pickit version. By clicking on it, you can access the changelog of what's
@@ -57,9 +57,10 @@ The left part of the bar displays the following contents:
 
 The right part of the bar displays the following contents:
 
-.. image:: /assets/images/Documentation/pickit-webinterface-top-bar-right.png
-   :scale: 70%
+.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-top-bar-right-22.png
+   :scale: 90%
 
+- The layout for toggling visualization of the main interface elements (:ref:`viewer <Viewer>`, :ref:`detection grid <detection-grid>` and :ref:`configuration <web-interface-right-panel>`).
 - The status of the Pickit connection with the robot.
   An active robot communication is indicated by **✓**, otherwise **∅**.
 - The :guilabel:`Settings` button, which opens a page with user :ref:`Settings`.
@@ -71,6 +72,8 @@ The right part of the bar displays the following contents:
   listening for incoming robot commands and prevents the user from modifying
   the Pickit configuration.
 
+.. _web-interface-right-panel:
+
 Right panel
 ~~~~~~~~~~~
 
@@ -81,7 +84,9 @@ configuration. There are different pages where you can define:
 - :ref:`Detection: <detection>` What type of object to look for.
 - :ref:`Picking: <Picking>` How to pick the detected objects.
 
-.. image:: /assets/images/Documentation/pickit-webinterface-right-side.png
+.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-right-side-22.png
+
+.. _web-interface-left-panel:
 
 Left panel
 ~~~~~~~~~~
@@ -93,7 +98,7 @@ These allow you to have both qualitative and quantitative feedback on the
 performance of object detection, and are powerful tools for inspecting and
 optimizing your application.
 
-.. image:: /assets/images/Documentation/pickit-webinterface-left-side.png
+.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-left-side-22.png
 
 .. toctree::
     :maxdepth: 1
