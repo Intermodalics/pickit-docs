@@ -18,7 +18,7 @@ external computer to your Pickit system.
 When successfully connected to the Pickit web interface, you should expect to
 see something similar to the below image:
 
-.. image:: /assets/images/Documentation/pickit-webinterface-21.png
+.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-22.png
 
 If you cannot manage to successfully visualize the Pickit web interface, contact
 us at `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`__.
