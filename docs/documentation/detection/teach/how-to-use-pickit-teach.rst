@@ -44,15 +44,14 @@ that a frame appears on the detected objects.
 In the :ref:`Objects view <objects-view>`, the point cloud models are visualized as a colored
 cloud on top of the detected objects. When a detection failed because
 for example a threshold parameter was exceeded, the model cloud will be
-colored in red.
+colored in red. At this point the other objects are colored in orange because no pick point
+has been defined yet.
 
 .. image:: /assets/images/Documentation/teach-objects.png
 
 In the Objects table, you can see the detected object dimensions,
 matching score and the Model ID that was found. Take a look at this
 article to learn how to interpret the :ref:`detection-grid`.
-
-.. image:: /assets/images/Documentation/Teach-detection-grid.png
 
 If you want to optimize your detections, the article :ref:`Explaining-the-teach-detection-parameters`
 goes more in depth on the different parameters of Pickit Teach. We
@@ -61,3 +60,7 @@ different settings (tilted, on top of each other,..)
 
 .. note:: There is a hard limit on the Teach matching time of 5 seconds.
    Before applying any optimization, this limit could be reached.
+
+The next step is to define on or more :ref:`Pick points<pick-points-teach>`. Once the pick points
+are defined, the valid and pickable objects are shown in different colors in the Object viewer.
+
