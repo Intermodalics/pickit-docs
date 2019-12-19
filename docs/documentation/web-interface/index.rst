@@ -44,7 +44,7 @@ buttons that remain visible at all times.
 
 The left part of the bar displays the following contents:
 
-.. image:: /assets/images/Documentation/pickit-webinterface-top-bar-left.png
+.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-top-bar-left-22.png
    :scale: 70%
 
 - The Pickit logo.
@@ -57,7 +57,7 @@ The left part of the bar displays the following contents:
 
 The right part of the bar displays the following contents:
 
-.. image:: /assets/images/Documentation/pickit-webinterface-top-bar-right.png
+.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-top-bar-right-22.png
    :scale: 70%
 
 - The status of the Pickit connection with the robot.
@@ -81,7 +81,7 @@ configuration. There are different pages where you can define:
 - :ref:`Detection: <detection>` What type of object to look for.
 - :ref:`Picking: <Picking>` How to pick the detected objects.
 
-.. image:: /assets/images/Documentation/pickit-webinterface-right-side.png
+.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-right-side-22.png
 
 Left panel
 ~~~~~~~~~~
@@ -93,7 +93,7 @@ These allow you to have both qualitative and quantitative feedback on the
 performance of object detection, and are powerful tools for inspecting and
 optimizing your application.
 
-.. image:: /assets/images/Documentation/pickit-webinterface-left-side.png
+.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-left-side-22.png
 
 .. toctree::
     :maxdepth: 1
