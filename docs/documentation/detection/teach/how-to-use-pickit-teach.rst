@@ -14,53 +14,53 @@ shape categories, like cylinders, spheres, squares, rectangles, circles or ellip
 
 .. _teach-a-model:
 
-Teach a model based on your product
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Pickit provides 2 ways to teach a model of your product.
-
-1. **from camera**: show an object to the camera to teach its shape.
-2. **from CAD**: upload a Computer Aided Design (CAD) file of your object.
-
-More details on how to teach model with both methods are given in:
+Teach a model based on your part
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
+    :hidden:
 
     teach-from-camera
     teach-from-cad
+
+Pickit provides 2 ways to teach a model of your part:
+
+1. :ref:`Teach from camera <teach-from-camera>`: show an object to the camera to teach its shape.
+2. :ref:`Teach from CAD <teach-from-cad>`: upload a Computer Aided Design (CAD) file of your object.
+
 
 Detecting object(s)
 ~~~~~~~~~~~~~~~~~~~
 
 Now that you've added your models, it's time to detect objects. 
 
-Place your objects below the camera and create a new region of interest box and press the
-:guilabel:`Detect` button. On a successful detection, you will see in the :ref:`2D view <2d-view>`
-that a frame appears on the detected objects.
+Place your objects below the camera as shown below, build a new :ref:`region of interest <region-of-interest>` box and press the :guilabel:`Detect` button.
 
-.. image:: /assets/images/Documentation/teach-scene-picture.jpg
+.. image:: /assets/images/Documentation/detection/teach/scene-picture.jpg
+  :scale: 25%
+  :align: center
 
-In the :ref:`Objects view <objects-view>`, the point cloud models are visualized as a colored
-cloud on top of the detected objects. When a detection failed because
-for example a threshold parameter was exceeded, the model cloud will be
-colored in red. At this point the other objects are colored in orange because no
-:ref:`Pick point<pick-points-teach>` has been defined yet.
+At this point, it's possible to verify in the :ref:`Objects view <objects-view>` if the objects are detected.
+Note that at this point, all valid detections will be displayed as unpickable (in orange) because the model doesn't have any :ref:`pick points <pick-points-teach>` defined.
 
-.. image:: /assets/images/Documentation/teach-objects.png
+.. image:: /assets/images/Documentation/detection/teach/objects-all-unpickable.png
+  :scale: 70%
+  :align: center
 
-In the Objects table, you can see the detected object dimensions,
-matching score and the Model ID that was found. Take a look at this
-article to learn how to interpret the :ref:`detection-grid`.
+Once :ref:`pick points <pick-points-teach>` have been defined for a model, Pickit can determine if an object is pickable and display the pick points in the :ref:`2D <2d-view>` (below left) and :ref:`Objects <objects-view>` (below right) views.
+
+.. image:: /assets/images/Documentation/detection/teach/objects-pickable.png
+  :align: center
+
+Apart from the qualitative information available in the viewer, the :ref:`detection grid <detection-grid>` provides quantitative information for each detection, such as the detected model, the chosen pick point, the matching score, and the object size and position.
 
 If you want to optimize your detections, the article :ref:`Explaining-the-teach-detection-parameters`
 goes more in depth on the different parameters of Pickit Teach. We
-advice you to experiment with different settings and multiple objects in
+recommend to experiment with different settings and multiple objects in
 different settings (tilted, on top of each other,..)
 
 .. note:: There is a hard limit on the Teach matching time of 5 seconds.
    Before applying any optimization, this limit could be reached.
 
-The next step is to define on or more :ref:`Pick points<pick-points-teach>`. Once the pick points
-are defined, the valid and pickable objects are shown in different colors in the Object viewer.
 

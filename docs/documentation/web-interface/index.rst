@@ -98,7 +98,16 @@ These allow you to have both qualitative and quantitative feedback on the
 performance of object detection, and are powerful tools for inspecting and
 optimizing your application.
 
+The following color code is used to classify detections:
+
+-  **Green - Pickable object:** These are the only objects sent to the robot for picking.
+-  **Orange - Unpickable object:** Pickit successfully detected the object, but it's not pickable for reasons such as :ref:`robot tool collisions <collision-prevention>` or :ref:`too tilted <max_angle_pick_z_ref_z>` pick points.
+-  **Red - Invalid object:** The object failed to pass a detection quality check, such as the matching score being too low.
+ 
+
 .. image:: /assets/images/Documentation/web-interface/pickit-webinterface-left-side-22.png
+    :scale: 40%
+    :align: center
 
 .. toctree::
     :maxdepth: 1

@@ -103,13 +103,6 @@ the picking order identifiers.
 For the Pickit :ref:`Flex <Flex>` and :ref:`Pattern <Pattern>`  engines, it
 overlays a 2D or 3D model of the geometric shape (e.g. cylinder, rectangle).
 For the :ref:`Teach <Teach>`  engine, it overlays the 3D model cloud.
-They are colored according to the following criteria:
-
--  Green: Valid object
--  Red: Invalid object
--  Orange: Unpickable object, e.g. due to collisions between robot tool
-   and bin or other objects. When this is the case, the ROI box and
-   robot tool are also rendered in orange. 
 
 The objects view also renders the same additional elements listed for
 the the 3D view.
