@@ -65,12 +65,8 @@ No **fusion** or **downsampling** is applied and the **detection speed** is set 
 
 Need help with these settings? See the :ref:`Teach` article for more information.
 
-In the **Picking** page the **pick points are enforced** to XYZ||XYZ alignment.
-This setting makes sure that all calculated pick points have the same orientation.
-So if one of the boxes is tilted it is still picked straight from the top.
-This is possible since the vacuum cup has quite some flexibility.
-Another benefit is that the head of the robot doesn't need to turn so there are no problems with cable entanglement.
-To ensure that the robot will not try to pick boxes that are too tilted the **maximum angle between pick point Z-axis and surface normal** is set to 30 degrees.
+In the **Picking** page, the **pick point** has :ref:`flexible pick orientation <flexible-pick-orientation>` enabled, set to allow tilt in XY (due to the compliant gripper bellows) plus full rotation about Z (due to the part's circular symmetry).
+This setting will favor picking parts vertically from the top, and will reduce robot wrist motions, hence faster cycle times and less likelihood of cable entanglement problems.
 No other settings in the **Picking** page are being used for this demo.
 
 Need help with these settings? See the :ref:`Picking` article for more information.

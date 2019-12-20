@@ -116,7 +116,6 @@ picking strategies can be found in the :ref:`Picking` article.
 
 For this demo, the following parameters are used:
 
--  **Enforce alignment:** No alignment
 -  **Check collision with:** Bin
 -  **Ordering Strategy:** Highest product center
 
