@@ -65,8 +65,8 @@ No **fusion** or **downsampling** is applied and the **detection speed** is set 
 
 Need help with these settings? See the :ref:`Teach` article for more information.
 
-In the **Picking** page, the **pick point** has :ref:`flexible pick orientation <flexible-pick-orientation>` enabled, set to allow tilt in XY (due to the compliant gripper bellows) plus full rotation about Z (due to the part's circular symmetry).
-This setting will favor picking parts vertically from the top, and will reduce robot wrist motions, hence faster cycle times and less likelihood of cable entanglement problems.
+In the **Picking** page, the **pick point** has :ref:`flexible pick orientation <flexible-pick-orientation>` enabled, set to allow tilting 20° in XY (due to the compliant gripper bellows) plus full rotation about Z (due to the part's circular symmetry).
+This setting will favor picking parts vertically from the top, and will reduce robot wrist motions, hence yielding faster cycle times and less likelihood of cable entanglement problems.
 No other settings in the **Picking** page are being used for this demo.
 
 Need help with these settings? See the :ref:`Picking` article for more information.
