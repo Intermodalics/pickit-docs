@@ -27,7 +27,7 @@ Teach a model based on your part
 Pickit provides 2 ways to teach a model of your part:
 
 1. :ref:`Teach from camera <teach-from-camera>`: show an object to the camera to teach its shape.
-2. :ref:`Teach from CAD <teach-from-cad>`: upload a Computer Aided Design (CAD) file of your object.
+2. :ref:`Teach from CAD <teach-from-cad>`: upload a Computer Aided Design (CAD) file of your part.
 
 
 Detecting object(s)
@@ -42,7 +42,7 @@ Place your objects below the camera as shown below, build a new :ref:`region of 
   :align: center
 
 At this point, it's possible to verify in the :ref:`Objects view <objects-view>` if the objects are detected.
-Note that at this point, all valid detections will be displayed as unpickable (in orange) because the model doesn't have any :ref:`pick points <pick-points-teach>` defined.
+Note that at this point, all valid detections will be displayed as unpickable (in orange) because the model doesn't have any :ref:`pick points <pick-points-teach>` defined yet.
 
 .. image:: /assets/images/Documentation/detection/teach/objects-all-unpickable.png
   :scale: 70%
@@ -62,5 +62,4 @@ different settings (tilted, on top of each other,..)
 
 .. note:: There is a hard limit on the Teach matching time of 5 seconds.
    Before applying any optimization, this limit could be reached.
-
 
