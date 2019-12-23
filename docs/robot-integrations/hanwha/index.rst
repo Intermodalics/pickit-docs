@@ -61,7 +61,7 @@ The provided example program file, called `HCR_Pickit_Example.file`, contains a 
 :ref:`Download the Pickit Hanwha HCR files <downloads:Hanwha>`
 
 Message structure
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 The structure of the command message that the robot sends to Pickit is shown below, through an example. Details on the low-level socket communication can be found on: :ref:`socket-communication`.
 
@@ -71,15 +71,15 @@ The structure of the command message that the robot sends to Pickit is shown bel
 +----------------------------+------------------------------------------------+
 | actual_pose[7]             | x, y, z, rz, ry, rx, 0                         |
 +----------------------------+------------------------------------------------+
-| command                    | Pickit command (RC_PICKIT_XXXX)      |
+| command                    | Pickit command (RC_PICKIT_XXXX)                |
 +----------------------------+------------------------------------------------+
-| Setup file number                      | 15 (example)                                            |
+| Setup file number          | 15 (example)                                   |
 +----------------------------+------------------------------------------------+
-| Product file number                    | 22 (example)                                            |
+| Product file number        | 22 (example)                                   |
 +----------------------------+------------------------------------------------+
-| Robot type            | 5                                              |
+| Robot type                 | 5                                              |
 +----------------------------+------------------------------------------------+
-| Interface version     | 11                                             |
+| Interface version          | 11                                             |
 +----------------------------+------------------------------------------------+
 
 Calibration step
