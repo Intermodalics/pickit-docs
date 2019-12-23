@@ -1,3 +1,5 @@
+.. _universal-robots-scripts-example-program:
+
 Universal Robots Example Program
 ================================
 
@@ -28,7 +30,7 @@ picking task using Pickit.
 
 .. code-block:: bash
 
-    Init Variables 
+    Init Variables
     BeforeStart
           pickit_port≔5001
           pickit_ip≔"169.254.5.180"
@@ -38,7 +40,7 @@ picking task using Pickit.
           Script: pickit_functions
           pickit_socket_open()
           Script: pickit_communication
-          Script: pickit_transformations 
+          Script: pickit_transformations
     Robot Program
           MoveJ
                actual_pose

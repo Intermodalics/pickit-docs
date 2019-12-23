@@ -3,7 +3,7 @@
 URScript legacy interface
 =========================
 
-.. note:: 
+.. attention::
    This article describes the legacy way of using Pickit with a Universal Robots. For new systems, please use the :ref:`universal-robots-urcap` plugin instead.
 
 The setup of **Pickit** with a **Universal** **robot** consists of **3 steps**:
@@ -125,3 +125,15 @@ Test robot connection on Pickit
 --------------------------------
 
 Details on testing this connection can be found on: :ref:`test-robot-connection`
+
+Example program
+---------------
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
+
+    universal_robots_example_program
+
+A :ref:`Universal Robots example program <universal-robots-scripts-example-program>` article provides a detailed description of a robto program using the Pickit scripting commands.

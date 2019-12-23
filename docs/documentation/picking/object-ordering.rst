@@ -10,11 +10,11 @@ The following strategies are available:
    to smallest :ref:`reference frame <reference-frame>` Z-coordinate. This is the most common option.
 -  **Lowest product:** The reverse order of 'Highest product'.
 -  **Highest product part:** Sort objects by the highest detected point.
--  **Lowest X value first:** Sort objects by their pick point location, from smallest to largest :ref:`reference frame <reference-frame>` X-coordinate.
--  **Highest X value first:** The reverse order of 'Lowest X value
+-  **Lowest X:** Sort objects by their pick point location, from smallest to largest :ref:`reference frame <reference-frame>` X-coordinate.
+-  **Highest X:** The reverse order of 'Lowest X value
    first'.
--  **Lowest Y value first:** Sort objects by their pick point location, from smallest to largest :ref:`reference frame <reference-frame>` Y-coordinate.
--  **Highest Y value first:** The reverse order of 'Lowest Y value
+-  **Lowest Y:** Sort objects by their pick point location, from smallest to largest :ref:`reference frame <reference-frame>` Y-coordinate.
+-  **Highest Y:** The reverse order of 'Lowest Y value
    first'.
 -  **Largest product (Flex only):** Objects are sorted from big to small volume or
    surface.
