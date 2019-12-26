@@ -23,7 +23,7 @@ The gripper performs a centered, internal grasp, and each pick point has the fol
     :align: center
 
 .. note::
-  In a real deployemnt of the application, it would be valuable to add an additional pick point for picking parts lying on their side. This has been omitted from the example for brevity's sake.
+  In a real deployment of the application, it would be valuable to add an additional pick point for picking parts lying on their side. This has been omitted from the example for brevity's sake.
 
 .. note::
   This example can be interactively explored by opening the ``examples/cad/red_rings.snapshot`` :ref:`snapshot <Snapshots>`.
