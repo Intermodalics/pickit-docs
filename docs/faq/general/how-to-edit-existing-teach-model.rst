@@ -32,7 +32,7 @@ details. In that case, you may want to :guilabel:`Re-teach` it from a closer dis
 Cropping and expanding a model cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When clicking :guilabel:`Add a model` or :guilabel:`Re-teach`, the resulting model
+When clicking :guilabel:`Teach from camera` or :guilabel:`Re-teach`, the resulting model
 corresponds to the content of the current ROI. The
 model point cloud can be cropped or expanded afterwards, using the arrows in the
 **Model** view.

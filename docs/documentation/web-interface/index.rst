@@ -16,7 +16,7 @@ Connecting to the web interface
 Follow :ref:`these instructions <connect-computer>` on how to connect an
 external computer to your Pickit system.
 When successfully connected to the Pickit web interface, you should expect to
-see something similar to the below image:
+see something similar to the image below:
 
 .. image:: /assets/images/Documentation/web-interface/pickit-webinterface-22.png
 

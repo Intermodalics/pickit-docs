@@ -39,7 +39,7 @@ A single object can often be picked from more than one point. Having multiple pi
 The **Define pick points** section of the :ref:`picking <Picking>` page allows to create and manage the pick points of Teach models:
 
 - Create a new pick point by clicking :guilabel:`Add pick point`.
-  Once creted, a pick point can be enabled/disabled and its visibility can be toggled.
+  Once created, a pick point can be enabled/disabled and its visibility can be toggled.
 - Duplicate or delete an existing pick point by clicking on the  :guilabel:`⋮` button.
 - Set the :guilabel:`Point position and orientation`, which specifies its location with respect to the object origin, or optionally with respect to an existing point by changing the :guilabel:`Reference point`.
 - Optionally, specify a :guilabel:`Flexible pick orientation` (:ref:`more <flexible-pick-orientation>`).

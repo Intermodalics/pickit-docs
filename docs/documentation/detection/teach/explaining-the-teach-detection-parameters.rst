@@ -21,7 +21,7 @@ Define models
 
 .. image:: /assets/images/Documentation/teach-model-grid-22.png
 
-A list of thaught models is shown accompanied by their ID and
+A list of taught models is shown accompanied by their ID and
 the number of points. By default, there are no models defined.
 
 Add a model
