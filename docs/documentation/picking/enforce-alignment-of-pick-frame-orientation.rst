@@ -49,9 +49,9 @@ Aligns the Y-axis of the pick point to be in the XY plane of the
 :ref:`reference frame <reference-frame>`.
 This setting allows the pick points to point as much as
 possible upwards when only rotating around his X-axis. This freedom is
-typically seen when picking cylinders. As can be seen on the image
+typically used when picking cylinders. As shown in the image
 below, if the X-axis is the center of rotation, for the gripper to pick
-the object it doesn’t matter how the other axises are orientated.
+the object it doesn’t matter how the other axes are oriented.
 
 .. image:: /assets/images/Documentation/yperpz-cylinder.png
 
@@ -68,7 +68,7 @@ pick point offset.  
 
 Together with this setting an additional offset can be created around
 the x-axis if the object is lying close to the side of the bin. Below it
-is shown if an object it lying close to the border of the bin an
+is shown if an object is lying close to the border of the bin an
 additional rotation is enforced so that the pick points tilt away from
 the sides of the bin.
 
@@ -104,7 +104,7 @@ from the table or bin, so this option enforces the pick point to point
 upwards. This is typically used when there is a flexible gripper to pick
 the objects, e.g. a vacuum cup to pick cardboard boxes. See image below
 for the effect on a real scene in Pickit. The image on the left is with
-no alignment, on the right z\|\|z alignment is used. Note that the
+no alignment, on the right Z\|\|Z alignment is used. Note that the
 X-axis of all pick points are still pointing in the same orientation.
 This correction has no influence on the orientation of the pick points.
 
@@ -112,7 +112,7 @@ This correction has no influence on the orientation of the pick points.
 
 Together with this setting an additional offset can be created around
 the if the object is lying close to the side of the bin. Below it is
-shown if an object it lying close to the border of the bin an additional
+shown if an object is lying close to the border of the bin an additional
 rotation is enforced so that the pick points tilt away from the sides of
 the bin.
 
@@ -137,7 +137,7 @@ For this following parameters are used:
 XYZ || XYZ
 ~~~~~~~~~~
 
-This option aligns all three axes of the pick point with all three axis
+This option aligns all three axes of the pick point with all three axes
 of the :ref:`reference frame <reference-frame>`.
 This setting is typically used when there is a
 flexible gripper to pick the objects, e.g. a vacuum cup to pick
@@ -154,7 +154,7 @@ influence on the cycle time of your application.
 
 Together with this setting an additional offset can be created around
 the if the object is lying close to the side of the bin. Below it is
-shown if an object it lying close to the border of the bin an additional
+shown if an object is lying close to the border of the bin an additional
 rotation is enforced so that the pick points tilt away from the sides of
 the bin.
 

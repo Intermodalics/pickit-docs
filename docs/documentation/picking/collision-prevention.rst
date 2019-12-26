@@ -6,7 +6,7 @@ Collision prevention
 In constrained picking scenarios like bin picking, it is important to prevent the robot tool from colliding with the bin or other objects, such that the application runs without interruption.
 
 In the :ref:`Picking page <Picking>`, under **Prevent collision with tool**, one can check whether reaching a pick point with a specific robot tool would result in collision.
-When picking an object would lead to a collision, the object is labeled as unpickable and is not sent to the robot.
+If picking an object would lead to a collision, the object is labeled as unpickable and is not sent to the robot.
 In the Pickit web interface, unpickable objects are displayed in orange in the :ref:`Objects view <objects-view>` and :ref:`detection-grid`.
 
 .. note::
@@ -15,9 +15,9 @@ In the Pickit web interface, unpickable objects are displayed in orange in the :
 Collision checks: Bin and other objects
 ---------------------------------------
 
-For collision prevention to take place, the users needs to define a :ref:`robot tool model <robot-tool-model>`, and specify whether to check for collisions with the **bin** and/or **other objects** in the scene.
+For collision prevention to take place, the user needs to define a :ref:`robot tool model <robot-tool-model>`, and specify whether to check for collisions with the **bin** and/or **other objects** in the scene.
 
-The below examples show a pick point being rejected due to collisions that would result between the robot tool and the bin (left), or between the robot tool and another object (right).
+The examples below show a pick point being rejected due to collisions that would result between the robot tool and the bin (left), and between the robot tool and another object (right).
 
 .. image:: /assets/images/Documentation/picking/example_tool_collision.png
   :scale: 40%
@@ -45,7 +45,7 @@ Currently, three different models are supported:
   :scale: 50%
   :align: center
 
-It is possible to modify a tool's characteristic dimensions, as well as adapt its realtive distance and orientation with respect to an object’s pick point.
+It is possible to modify a tool's characteristic dimensions, as well as adapt its relative distance and orientation with respect to an object’s pick point.
 The image below shows the tool model editor for the **Box-shaped tool**.
 
 .. image:: /assets/images/Documentation/picking/tool_model_box_ui_22.png
@@ -57,7 +57,7 @@ The image below shows the tool model editor for the **Box-shaped tool**.
 Some tool models have optional geometries that can be enabled or disabled.
 Two common ones are the **Base sphere**, which typically contains (part of) the robot wrist, and the **Camera box**, which represents the camera volume in robot-mounted camera setups.
 
-The below example compares the actual robot tool with the model used by Pickit.
+The example below compares the actual robot tool with the model used by Pickit.
 It shows a tool model consisting of a gripper attached to a long extension cylinder, a robot-mounted camera and a sphere around the robot wrist.
 
 .. image:: /assets/images/Documentation/picking/tool_model_real_vs_model.png

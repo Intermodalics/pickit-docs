@@ -16,19 +16,19 @@ Universal Robots
 ----------------
 
 The variable **pickit_type** is available to use after using the Pickit
-URCap **Find object(s)** command. This variable represents the detected model id.
+URCap **Find object(s)** command. This variable represents the detected model ID.
 In the example program this id is used to define both a different picking as dropping strategy.
 
 .. image:: /assets/images/faq/simple-picking-mulitple-models-ur.png
 
-This example program can be downloaded 
+This example program can be downloaded
 `here <https://drive.google.com/uc?export=download&id=1IpIrAboDHPQ14zruUoEY2_Gzz4oOkCh5>`__.
 
 ABB
 ---
 
 The variable **pickit_object.type** is available to use after using the combination of commands **pickit_look_for_object** and
-**WaitUntil pickit_has_response()** command. This variable represents the detected model id.
+**WaitUntil pickit_has_response()** command. This variable represents the detected model ID.
 In the example program this id is used to define a different picking and dropping strategy.
 
 ::

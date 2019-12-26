@@ -25,8 +25,8 @@ Follow the steps below to do your first detection with Pickit:
    the new product file 'Test\_Pickit'. Press :guilabel:`Create`. 
 -  Make sure that **Pickit Teach** is selected.
 -  Now place a soda can on its side in the middle of the marks.
--  Under section **Define your models** press :guilabel:`Add a model`. Now the model view is
-   opened and a point cloud of the soda can is shown.
+-  Under section **Define your models** press :guilabel:`Teach from camera`. Now a point
+   cloud of the soda can is shown in the right side of the tab.
 -  Press the :guilabel:`Save` button on top of the **Detection** tab.
 
 .. image:: /assets/images/First-steps/Model-soda-can.png

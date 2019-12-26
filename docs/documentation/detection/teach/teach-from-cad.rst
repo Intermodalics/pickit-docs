@@ -21,8 +21,8 @@ Another important benefit is absolute accuracy when defining :ref:`pick points <
 If the origin of the CAD file with respect to the part geometry is known, pick points can be positioned by specifying exact offsets with respect to the origin.
 
 .. note:: Pickit supports **stl**, **obj** and **ply** formats. Most CAD design editors can export CAD into such formats.
-          However, if you do not have such CAD formats, free online converter are available on the internet.
+          However, if you do not have such CAD formats, free online converters are available on the internet.
 
 .. note:: If you do not know the length unit of your CAD, the simplest is probably to try one
           (mm being the most common) and trigger a detection with it.
-          You will directly see in the :ref:`Objects view <objects-view>` if it is the correct lenght unit.
+          You will directly see in the :ref:`Objects view <objects-view>` if it is the correct length unit.
