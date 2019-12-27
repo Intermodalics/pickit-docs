@@ -64,7 +64,7 @@ The second step consists in setting up the Pickit Pattern detection
 engine. In this application Pickit will look for fixed sized
 rectangular shapes.
 
-The below images show the results of the clustering and fitting
+The images below show the results of the clustering and fitting
 steps. See the
 following article on how to use Pickit :ref:`Pattern`.
 

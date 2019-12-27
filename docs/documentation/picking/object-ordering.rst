@@ -11,11 +11,9 @@ The following strategies are available:
 -  **Lowest product:** The reverse order of 'Highest product'.
 -  **Highest product part:** Sort objects by the highest detected point.
 -  **Lowest X:** Sort objects by their pick point location, from smallest to largest :ref:`reference frame <reference-frame>` X-coordinate.
--  **Highest X:** The reverse order of 'Lowest X value
-   first'.
+-  **Highest X:** The reverse order of 'Lowest X'.
 -  **Lowest Y:** Sort objects by their pick point location, from smallest to largest :ref:`reference frame <reference-frame>` Y-coordinate.
--  **Highest Y:** The reverse order of 'Lowest Y value
-   first'.
+-  **Highest Y:** The reverse order of 'Lowest Y'.
 -  **Largest product (Flex only):** Objects are sorted from big to small volume or
    surface.
 -  **Pattern along the positive X-axis:** See image below.

@@ -28,7 +28,7 @@ First verify that the Pickit system is reachable from your local system. Execut
 
     ping <pickit-pc>
 
-The hostname of your Pickit system is shown on the top-left corner of the Pickit web interface, next to the Pickit logo. In the below example, it corresponds to  ``pickit-demo-002``.
+The hostname of your Pickit system is shown on the top-left corner of the Pickit web interface, next to the Pickit logo. In the example below, it corresponds to  ``pickit-demo-002``.
 
 .. image:: /assets/images/robot-integrations/ros/ros-pickit-hostname.png
 

@@ -11,7 +11,7 @@ For instance, when a rectangle is detected, it's X-axis points along the longest
     :align: center
 
 The **preferred pick point orientation** allows to align an axis of the pick point as close as possible to one of the :ref:`reference frame <reference-frame>` axes.
-Shape symmetries are used to determine to which extent the pick point can be flipped or rotated best align the requested axes.
+Shape symmetries are used to determine to which extent the pick point can be flipped or rotated to best align the requested axes.
 
 The pictures below show examples of how the preferred pick point orientation is resolved for rectangular and circular shapes.
 
