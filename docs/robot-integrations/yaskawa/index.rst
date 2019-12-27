@@ -70,6 +70,10 @@ The robot controller should still be in **maintenance mode** and the security mo
 #. Select the folder **Pickit** > **MotoPlus** on the USB device under :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
 #. Load the MotoPlus application under :guilabel:`MotoPlus APL` → :guilabel:`LOAD(USER APPLICATION)`. 
 
+.. warning:: In the next step, uploading the system data file **MACRO INST DEF DATA, MACRO.DAT** will remove all existing macro files on your controller, before pushing in the Pickit macros.
+   If this is unwanted, do not upload the file.
+   In that case, you should upload all other files as described below, and then :ref:`manually define the macros. <manually-define_macros>`
+
 Press :guilabel:`Select`, :guilabel:`Enter` and confirm.
 Now reboot the controller in **normal mode** with the USB device still attached.
 After rebooting, set security to **management mode**.
@@ -77,16 +81,6 @@ After rebooting, set security to **management mode**.
 #. Load the correct USB device under :guilabel:`EX. MEMORY` → :guilabel:`DEVICE`.
 #. Select the folder **Pickit** > **Program** on the USB device under :guilabel:`EX. MEMORY` → :guilabel:`FOLDER`.
 #. Load the **I/O DATA**, **SYSTEM DATA** and  **JOB** files under :guilabel:`EX. MEMORY` → :guilabel:`LOAD` (the order of loading the files is important).
-
-Define the Pickit macros
-------------------------
-
-Still in **normal mode**, the macros should be defined manually.
-To do this go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`MACRO INST.`.
-
-.. note:: In order to use the example Pickit files, the macros should be defined in the exact same order as shown in the image below.
-
-.. image:: /assets/images/robot-integrations/yaskawa/yaskawa-macro.jpg
 
 Load the Pickit example jobs
 ----------------------------
