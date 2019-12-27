@@ -72,7 +72,7 @@ The robot controller should still be in **maintenance mode** and the security mo
 
 .. warning:: In the next step uploading the system data file **MACRO INST DEF DATA, MACRO.DAT** will remove all existing macro files on your controller before pushing in the Pickit macros.
    If this is unwanted, don't upload the file.
-   All other files can be uploaded and :ref:`manually-define_macros`.
+   All other files should be uploaded as described below and then you can :ref:`manually-define_macros`.
 
 Press :guilabel:`Select`, :guilabel:`Enter` and confirm.
 Now reboot the controller in **normal mode** with the USB device still attached.
