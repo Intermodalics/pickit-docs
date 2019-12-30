@@ -70,9 +70,9 @@ The robot controller should still be in **maintenance mode** and the security mo
 #. Select the folder **Pickit** > **MotoPlus** on the USB device under :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
 #. Load the MotoPlus application under :guilabel:`MotoPlus APL` → :guilabel:`LOAD(USER APPLICATION)`. 
 
-.. warning:: In the next step uploading the system data file **MACRO INST DEF DATA, MACRO.DAT** will remove all existing macro files on your controller before pushing in the Pickit macros.
-   If this is unwanted, don't upload the file.
-   All other files should be uploaded as described below and then you can :ref:`manually-define_macros`.
+.. warning:: In the next step, uploading the system data file **MACRO INST DEF DATA, MACRO.DAT** will remove all existing macro files on your controller, before pushing in the Pickit macros.
+   If this is unwanted, do not upload the file.
+   In that case, you should upload all other files as described below, and then :ref:`manually define the macros. <manually-define_macros>`
 
 Press :guilabel:`Select`, :guilabel:`Enter` and confirm.
 Now reboot the controller in **normal mode** with the USB device still attached.
