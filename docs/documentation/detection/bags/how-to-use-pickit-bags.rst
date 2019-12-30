@@ -63,15 +63,12 @@ The 3-bag pattern consists of two horizontal bags and one vertical bag.
 4-bag pattern (crossing)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the 4-bag (crossing) pattern, the bags form a square:
+In the 4-bag (crossing) pattern, there are two horizontal and two vertical bags,
+forming a square. If there is significant overlap between the horizontal and vertical 
+bags, it is important that the overlaying bags are picked first. Pickit should detect 
+the correct picking order.
 
-.. image:: /assets/images/Documentation/bags_4-bag_crossing_nonoverl.png
-
-If there is significant overlap between the horizontal
-and vertical bags, it is important that the overlaying bags are picked
-first. Pickit should detect the correct picking order.
-
-.. image:: /assets/images/Documentation/bags_4-bag_crossing_overl.png
+.. image:: /assets/images/Documentation/bags_4-bag_crossing.png
 
 4-bag pattern (parallel)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,10 +93,10 @@ Finally, the 8-bag pattern consists of six horizontal bags and two vertical bags
 .. image:: /assets/images/Documentation/bags_8-bag.png
 
 .. note:: The Pickit Bags detection algorithm detects the best picking order of the 4-bag
-          (crossing) bag pattern. For all other bag patterns, the preferred picking order
-          must be selected in the **Picking** page. Optionally, for the 5-bag pattern,
-          Pickit detects the preferred picking order of the two horizontal bags, if they
-          are overlapping (:ref:`more <Five-bag-horizontal-bags-order>`).
+          (crossing) bag pattern. For all other bag patterns, :ref:`the preferred picking 
+          order must be selected <Bag-picking-order>` in the **Picking** page. Optionally, 
+          for the 5-bag pattern, Pickit detects the preferred picking order of the two 
+          horizontal bags, if they are overlapping (:ref:`more <Five-bag-horizontal-bags-order>`).
 
 .. _Five-bag-horizontal-bags-order:
 
@@ -107,7 +104,7 @@ Horizontal overlapping bags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the 5-bag pattern, it is common that the horizontal bags overlap (left bag above right
-bag, or vice-versa). If you want Pickit to detect which bag is overlapping, enable the
+bag, or vice-versa). If you want Pickit to detect which bag is overlapping, enable the checkbox
 **Automatically compute which of the horizontal bags is overlapping**. Otherwise (if there
 is no or little overlap, or if the overlap is always consistent for all layers), keep this
 checkbox disabled, and instead specify a fixed :ref:`bag picking order <Bag-picking-order>`.
@@ -135,14 +132,14 @@ full**, if the top layer of the pallet contains all the bags in the pattern.
 
 .. warning:: The layer detection of incomplete layers assumes that only the top layer is
              incomplete, and that the next layer is full. The bags may be incorrectly detected
-             if more than on layer is incomplete.
+             if more than one layer is incomplete.
 
 
 Pallet dimensions
 ~~~~~~~~~~~~~~~~~
 
 Specify the length and width of the pallet.
-Except for the 4-bag pattern, the detection of the orientation assumes a rectangular
+Except for the 4-bag pattern, the detection of the layer orientation assumes a rectangular
 pallet shape (that is, one side is significantly longer than the other).
 
 .. image:: /assets/images/Documentation/bags_pallet_dimensions.png
@@ -150,7 +147,7 @@ pallet shape (that is, one side is significantly longer than the other).
 Minimum pallet height
 ~~~~~~~~~~~~~~~~~~~~~
 
-Finally, specify the minimum height of the last layer of bags. We recommend
+Specify the minimum height of the last layer of bags. We recommend
 measuring the height of the wooden pallet and adding around 40 mm. This value allows Pickit
 to know when the pallet is empty.
 
@@ -183,7 +180,7 @@ option in the **Picking** page, section **Bag pick point offset**.
 Bag picking order
 ~~~~~~~~~~~~~~~~~
 
-Finally, in section **Bag picking order**, you can specify the order at which you want the
+In section **Bag picking order**, you can specify the order at which you want the
 bags to be picked, for each possible layer orientation. If bags are overlapping on the pallet,
 the picking order is a crucial setting for a successful pick.
 
@@ -196,7 +193,7 @@ we want to first pick the two horizontal bags, as they overlap the vertical bag.
 .. note::
   If you are detecting a 5-bag pattern, and have enabled the checkbox **Automatically compute
   which of the horizontal bags is overlapping**, you can still choose the preferred picking order.
-  Pickit will only adjust the order of the horizontal bags depending on which of them is detected
+  Pickit will adjust the order of the horizontal bags depending on which of them is detected
   to be on top.
 
 .. note::
