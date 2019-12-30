@@ -203,3 +203,39 @@ we want to first pick the two horizontal bags, as they overlap the vertical bag.
   If you are detecting a 4-bag (crossing) pattern, Pickit automatically detects the best bag
   picking order for you. Thus, the **Bag picking order** section is not shown in the **Picking**
   page for that pattern.
+
+Robot programming with Pickit Bags
+----------------------------------
+
+Similarly as for the other detection engines, Pickit sends the individual detected bags to the 
+robot or PLC one by one: the first bag is sent upon triggering a detection, and the remaining
+bags are sent one at a time, upon requesting the next detected object. The robot program can, 
+however, have access to the actual layer orientation, too. The global variable **pickit_type**, 
+which gets filled in after receiving a detection response from Pickit, contains information on 
+the bag pattern and the detected layer orientation, according to the following table:
+
++------------------+-------------------+-----------------+
+| Bag pattern      | Layer orientation | **pickit_type** |
++==================+===================+=================+
+| 3-bag            | 0                 | 0               |
+|                  +-------------------+-----------------+
+|                  | 1                 | 1               |
++------------------+-------------------+-----------------+
+| 4-bag (crossing) | 0                 | 2               |
+|                  +-------------------+-----------------+
+|                  | 1                 | 3               |
+|                  +-------------------+-----------------+
+|                  | 2                 | 4               |
+|                  +-------------------+-----------------+
+|                  | 3                 | 5               |
++------------------+-------------------------------------+
+| 4-bag (parallel) | 0                 | 6               |
++------------------+-------------------------------------+
+| 5-bag            | 0                 | 7               |
+|                  +-------------------+-----------------+
+|                  | 1                 | 8               |
++------------------+-------------------+-----------------+
+| 8-bag            | 0                 | 9               |
+|                  +-------------------+-----------------+
+|                  | 1                 | 10              |
++------------------+-------------------+-----------------+
