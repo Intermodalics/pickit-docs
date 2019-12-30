@@ -4,11 +4,10 @@ Bags
 ====
 
 The Pickit Bags engine was designed for depalletizing bags, disposed in a pattern.
-This engine supports a variety  bag patterns, and is able to distinguish full
-from incomplete layers.
+Supporting a variety of bag patterns, this engine allows automating the hard and 
+non-ergonomic task of picking heavy bags from a pallet.
 
 .. image:: /assets/images/Documentation/bags_5bag_brownbags.gif
-
 
 .. toctree::
     :maxdepth: 1

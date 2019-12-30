@@ -130,10 +130,16 @@ full**, if the top layer of the pallet contains all the bags in the pattern.
 
 .. image:: /assets/images/Documentation/bags_4-bag_full_incomplete.png
 
+.. note:: Detecting whether the top layer is full or incomplete relies on two aspects: First,
+          it is important that the XY-plane of the Region of Interest is palallel to the floor, 
+          and not tilted. Second, the shape of the bags should be more or less regular. If the
+          bags have a very irregular shape, far from the typical brick or pillow shape, this 
+          detection can fail. In such cases we recommend to check the **always full** checkbox 
+          and ensure that the top layer is full, before letting the robot empty the pallet.
+
 .. warning:: The layer detection of incomplete layers assumes that only the top layer is
              incomplete, and that the next layer is full. The bags may be incorrectly detected
              if more than one layer is incomplete.
-
 
 Pallet dimensions
 ~~~~~~~~~~~~~~~~~
