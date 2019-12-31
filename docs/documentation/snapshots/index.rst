@@ -13,9 +13,8 @@ download and upload the snapshots of your Pickit system.
 
 .. image:: /assets/images/Documentation/snapshots-page.png
 
-You can choose to :ref:`automatically save a snapshot <Snapshot-automatically-save-snapshots>`
-everytime you trigger a detection from the web interface. These automatically saved snapshots
+:ref:`Automatically saved snapshots <Snapshot-automatically-save-snapshots>`
 are stored in the subfolder **snapshots/autosave**.
 
-:ref:`Snapshots saved from a running robot program <Snapshot-save-snapshots-from-robot>` are
-saved in the subfolder **snapshots/robot**.
+:ref:`Snapshots saved from a running robot program <Snapshot-save-snapshots-from-robot>`
+are saved in the subfolder **snapshots/robot**.

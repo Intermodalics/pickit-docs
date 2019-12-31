@@ -35,7 +35,7 @@ detection from the web interface. This is useful if you are fine-tuning
 detection settings, and would like to keep track of the settings and
 results.
 
-The number of automatically saved snapshots stored in you Pickit system
+The number of automatically saved snapshots stored in your Pickit system
 never exceeds the **max. number of snapshots to save**. Once this number is
 reached, the oldest automatically saved snapshot is deleted, giving place
 to the new snapshot.

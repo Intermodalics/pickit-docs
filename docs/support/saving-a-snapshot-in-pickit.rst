@@ -13,10 +13,10 @@ By saving and sending a Pickit snapshot to Pickit support. A Pickit
 support engineer will analyze your scenario and will give you feedback
 on your detection settings.
 
-There are three ways you can save a snapshot: either you save it manually,
+There are three ways you can save a snapshot: either you save it manually
 from the web interface, you save it automatically with every detection
 trigger, or you save it from a running robot program. The three options
-are detailed in the followin sections.
+are detailed in the following sections.
 
 Saving a snapshot from the web interface
 ----------------------------------------
@@ -73,10 +73,10 @@ Saving a snapshot from a robot program
 --------------------------------------
 
 At a more advanced stage of your project, while running a robot program, you may notice
-that Pickit is not always detecting as you expected. For example, you observe that Pickit
-struggles to detect any objects. You would like to have a closer look at that problematic
-case later, but you don't want to stop you application. If this is a situation that you can
-"catch" from the robot program, you can have the robot requesting Pickit to save a snapshot,
-by using the :ref:`socket interface <socket-communication>` command **RC_PICKIT_SAVE_SCENE**
-(see the documentation of the robot integration of your robot brand for the actual function
-name).
+that Pickit is not always detecting as you expect. For example, you observe that Pickit
+struggles to detect any objects. You would like to have a closer look at each problematic
+case later, but you don't want to stop your application every time it occurs. If this is a
+situation that you can "catch" from the robot program, you can have the robot requesting
+Pickit to save a snapshot, by using the :ref:`socket interface <socket-communication>`
+command **RC_PICKIT_SAVE_SCENE** (see the documentation of the robot integration of your
+robot brand for the actual function name).
