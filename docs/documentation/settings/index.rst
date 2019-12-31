@@ -25,6 +25,26 @@ Automatic detections
 
 .. image:: /assets/images/Documentation/settings-automatic-detections.png
 
+.. _Automatically-save-snapshots:
+
+Automatically save snapshots
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can choose to automatically save a snapshot everytime you trigger a
+detection from the web interface. This is useful if you are fine-tuning
+detection settings, and would like to keep track of the settings and
+results.
+
+The number of automatically saved snapshots stored in you Pickit system
+never exceeds the **max. number of snapshots to save**. Once this number is
+reached, the oldest automatically saved snapshot is deleted, giving place
+to the new snapshot.
+
+.. image:: /assets/images/Documentation/settings-automatically-save-snapshots.png
+
+.. note:: Snapshots are not automatically saved if the detections are triggered
+          while in snapshot mode.
+
 Share usage statistics
 ~~~~~~~~~~~~~~~~~~~~~~
 
