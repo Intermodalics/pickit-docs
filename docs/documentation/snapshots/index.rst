@@ -13,8 +13,8 @@ download and upload the snapshots of your Pickit system.
 
 .. image:: /assets/images/Documentation/snapshots-page.png
 
-:ref:`Automatically saved snapshots <Snapshot-automatically-save-snapshots>`
+:ref:`Automatically saved snapshots <Automatically-save-snapshots>`
 are stored in the subfolder **snapshots/autosave**.
 
-:ref:`Snapshots saved from a running robot program <Snapshot-save-snapshots-from-robot>`
-are saved in the subfolder **snapshots/robot**.
+Snapshots saved from a running robot program are saved in the subfolder
+**snapshots/robot**.
