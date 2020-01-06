@@ -120,7 +120,7 @@ Setting up the network connection
 The Pickit processor has to be connected to the **KUKA KR-C4** controller using an Ethernet cable. This Ethernet cable should connect:
 
 - The network port labeled **ROBOT** of the Pickit processor
-- The KLI Ethernet port of the KR-C4 controller (also referred to as X66). The location of this port may vary depending on the controller model. The below images show example locations: Cabinet door (left), built-in switch (right).
+- The KLI Ethernet port of the KR-C4 controller (also referred to as X66). The location of this port may vary depending on the controller model. The images below show example locations: Cabinet door (left), built-in switch (right).
 
 .. image:: /assets/images/robot-integrations/kuka/kuka-step-13.png
 

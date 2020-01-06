@@ -174,7 +174,7 @@ Pickit can discriminate the following scenarios, for which the robot program can
 
 .. warning:: As of version 1.72 of TMflow, it is not possible to programmatically check if a pose is reachable by the robot before it gets executed.
   It is currently recommended that end users focus on applications in which parts are known to be always reachable.
-  When parts can overlap, as in bin picking scenarios, the below methods help in making sure that objects are reachable.
+  When parts can overlap, as in bin picking scenarios, the methods below help in making sure that objects are reachable.
 
   - For suction and magnetic grippers that exhibit compliant behavior, enforce :ref:`pick points with the z-axis pointing up <enforce-alignment-z-parallel-z>`. This constraint modifies the pick point orientation such that the tool always approaches the part straight down. This can be set in the **Picking** tab, under **Pick strategy**.
 
