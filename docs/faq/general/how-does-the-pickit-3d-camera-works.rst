@@ -7,7 +7,7 @@ The Pickit 3D cameras use `structured light <https://en.wikipedia.org/wiki/Struc
 A known pattern is projected on the scene, and the deformations of the pattern as seen by the camera as it hits surfaces determines how far these surfaces are towards the camera.
 This results in a 3D point cloud.
 
-The below image illustrates the structured light principle.
+The image below illustrates the structured light principle.
 The red triangle represents the projected pattern, while the green triangle represents where the sensor can detect it.
 When there is an overlap between the two, 3D data in the form of a point cloud can be obtained, shown as a thick green line.
 In this case, there is 3D data for the upper part of the circle and for the flat surface below it.

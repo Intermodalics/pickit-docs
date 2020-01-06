@@ -27,7 +27,7 @@ detection takes place. 
 In many applications, the field of view of the Pickit camera is greater
 than the region where we want to perform object detection. For example,
 in a bin picking application we are only interested in the contents of
-the bin. In the below image, we compare the camera field of view
+the bin. In the image below, we compare the camera field of view
 (:ref:`3D <3d-view>` in the Pickit viewer), with the contents of the ROI box
 (:ref:`Points <points-view>` in the Pickit viewer).
 
