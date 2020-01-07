@@ -59,7 +59,7 @@ ROS
 To communicate with Pickit using the ROS interface, you need to have the
 ``im_pickit_msgs`` package in your workspace.
 
-- `Download the Pickit ROS interface files <http://download.pickit3d.com/ros/im_pickit_msgs_v2.1.tar.gz>`__
+- `Download the Pickit ROS interface files <https://drive.google.com/uc?export=download&id=1JEAY-ZEi3seUmB7O6s070Skqi7ivVGh2>`__
 
 Stäubli
 -------
