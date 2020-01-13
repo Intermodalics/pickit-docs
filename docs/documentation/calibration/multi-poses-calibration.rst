@@ -80,7 +80,8 @@ Calibrating
 #. Choose the camera mount: whether the camera is fixed to a **stationary** place or **robot mounted**.
 #. Select the correct robot type: **6 DOF** or **4 DOF**, depending on the number of
    degrees-of-freedom of your robot. If your robot has only 4 degrees-of-freedom, fill
-   in the distance between calibration plate and robot flange in the field **Flange Z-axis**.
+   in the distance between the robot flange and the camera in the field **Flange Z-axis**. Notice that,
+   if the camera is mounted at a higher location than the robot flange, this value is negative.
 #. Choose the **multi poses** robot camera calibration method.
 #. Follow the indicated steps, and run the robot program when instructed. The Pickit web interface shows
    the progress of the calibration process.
