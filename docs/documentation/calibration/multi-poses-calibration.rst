@@ -86,7 +86,7 @@ Calibrating
    The Pickit web interface shows the progress of the calibration process.
 #. Once the calibration is finished, if your robot has only 4 degrees-of-freedom, fill
    in the distance between the robot flange and the camera in the field **Flange to camera distance along
-   the flange Z-axis **. Notice that, if the camera is mounted at a higher location than the robot flange,
+   the flange Z-axis**. Notice that, if the camera is mounted at a higher location than the robot flange,
    this value should be negative.
 
 .. image:: /assets/images/Documentation/Calibration-progress-multi-poses.png
