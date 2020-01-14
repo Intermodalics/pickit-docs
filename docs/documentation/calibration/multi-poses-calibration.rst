@@ -84,10 +84,13 @@ Calibrating
 #. Follow the indicated steps, and run the robot program when instructed. Alternatively, you can also
    move your robot into the positions and press :guilabel:`Collect current pose` in the calibration wizard.
    The Pickit web interface shows the progress of the calibration process.
-#. Once the calibration is finished, if your robot has only 4 degrees-of-freedom, fill
-   in the distance between the robot flange and the camera in the field **Flange to camera distance along
-   the flange Z-axis **. Notice that, if the camera is mounted at a higher location than the robot flange,
-   this value should be negative.
+#. In the next step, you will see a 3D viewer showing the robot and camera models. Here you can confirm
+   whether the calibration is correct. If your robot has 4 degrees-of-freedom, you will also find a field
+   for inputing:
+   - The distance between the robot flange and the camera, if the camera is mounted on the robot. Notice
+     that, if the camera is mounted at a higher location than the robot flange, this value should be
+     negative.
+   - The distance between the robot base and the camera, if the camera is fixed.
 
 .. image:: /assets/images/Documentation/Calibration-progress-multi-poses.png
 
