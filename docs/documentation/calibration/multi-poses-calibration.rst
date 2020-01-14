@@ -91,6 +91,7 @@ Calibrating
      that, if the camera is mounted at a higher location than the robot flange, this value should be
      negative.
    - The distance between the robot base and the camera, if the camera is fixed.
+   Looking at the camera location in the 3D viewer will help you obtain the correct value.
 
 .. image:: /assets/images/Documentation/Calibration-progress-multi-poses.png
 
