@@ -23,7 +23,9 @@ Fanuc
 
 Pickit is compatible with controllers as of version **R-J3iB** and the software module **User Socket Msg** for socket communication is required. (The product number for this module is A05B-2600-R648).
 
-- `Download the Pickit Fanuc files <https://drive.google.com/uc?export=download&id=0BzZKo0Mfhw0RMDNULWxxY0dvcG8>`__
+- `Download the Pickit files for Fanuc R-J3ib <https://drive.google.com/uc?export=download&id=0BzZKo0Mfhw0RMDNULWxxY0dvcG8>`__
+- `Download the Pickit files for Fanuc R-30iB plus <https://drive.google.com/uc?export=download&id=1SrlZzc3o5dUdqS9WOYyCM5cclbFQEqas>`__
+
 
 
 Hanwha
