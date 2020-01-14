@@ -40,3 +40,6 @@ you send multiple snapshots of different situations:
 -  Scene with a few objects
 -  Scene in a starting situation
 -  The object you want to pick on its own (only when using the :ref:`Teach engine <Teach>`)
+
+Note that you can also save snapshots via the :ref:`socket interface <socket-communication>`
+or :ref:`automatically on each detection <Automatically-save-snapshots>`.
