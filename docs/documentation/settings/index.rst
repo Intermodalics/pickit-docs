@@ -125,6 +125,8 @@ Configuration options:
 
 Test connectivity to the internet by pressing the Check button.
 
+.. _upgrade-pickit-version:
+
 Upgrade Pickit version
 ~~~~~~~~~~~~~~~~~~~~~~
 
