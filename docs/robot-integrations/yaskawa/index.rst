@@ -240,3 +240,9 @@ Variables used by the Pickit system
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. tip:: If these registers are already used on your robot, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__, and we will assist you in finding a solution.
+
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+
+  manually-define-the-pickit-macros
