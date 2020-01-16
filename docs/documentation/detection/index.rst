@@ -8,7 +8,7 @@ type of shape or part arrangement.
 
 - :ref:`Teach <Teach>` is the most versatile engine, and well suited for most
   shapes, both simple and complex. You teach the part you want to detect by
-  showing it to the camera.
+  showing it to the camera or uploading a CAD model of it.
   It is the recommended detection engine for most applications.
 
 - :ref:`Flex <Flex>` is meant for detecting geometric shapes in 3D
