@@ -95,6 +95,7 @@ Calibrating
 
 If your robot has 4 degrees-of-freedom, in the last step of the calibration wizard you will also find
 a field for inputing:
+
 - The distance between the robot flange and the camera, if the camera is mounted on the robot. Notice
   that, if the camera is mounted at a higher location than the robot flange, this value should be
   negative.
