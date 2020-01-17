@@ -100,7 +100,7 @@ a field for inputing:
   negative.
 - The distance between the robot base and the camera, if the camera is fixed.
 
-Looking at the camera location in the 3D viewer will help you obtain the correct value.
+Looking at the camera location in the 3D viewer will help you obtaining the correct value.
 
 .. important::
   After finishing robot camera calibration, don't forget to check the calibration result. Go to
