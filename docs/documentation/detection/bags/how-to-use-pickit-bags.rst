@@ -58,9 +58,8 @@ The 3-bag pattern consists of two horizontal bags and one vertical bag.
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the 4-bag (crossing) pattern, there are two horizontal and two vertical bags,
-forming a square. If there is significant overlap between the horizontal and vertical 
-bags, it is important that the overlaying bags are picked first. Pickit should detect 
-the correct picking order.
+forming a square. There may be significant overlap between the horizontal and vertical
+bags.
 
 .. image:: /assets/images/Documentation/bags_4-bag_crossing.png
 
@@ -74,8 +73,7 @@ In the 4-bag (parallel) pattern, the bags are disposed in parallel, in two group
 5-bag pattern
 ^^^^^^^^^^^^^
 
-The 5-bag pattern includes three vertical bags and two horizontal bags. Overlapping may occur
-between the horizontal and vertical bags, and (or) among the two horizontal bags.
+The 5-bag pattern includes three vertical bags and two horizontal bags.
 
 .. image:: /assets/images/Documentation/bags_5-bag.png
 
@@ -85,12 +83,6 @@ between the horizontal and vertical bags, and (or) among the two horizontal bags
 Finally, the 8-bag pattern consists of six horizontal bags and two vertical bags.
 
 .. image:: /assets/images/Documentation/bags_8-bag.png
-
-.. note:: The Pickit Bags detection algorithm detects the best picking order of the 4-bag
-          (crossing) bag pattern. For all other bag patterns, :ref:`the preferred picking
-          order must be selected <Bag-picking-order>` in the **Picking** page. Optionally,
-          for the 5-bag pattern, Pickit detects the preferred picking order of the two
-          horizontal bags, if they are overlapping (:ref:`more <Five-bag-horizontal-bags-order>`).
 
 .. _Five-bag-horizontal-bags-order:
 
@@ -107,8 +99,9 @@ checkbox disabled, and instead specify a fixed :ref:`bag picking order <Bag-pick
 
 .. warning::
   The overlapping check can only be applied to the two horizontal bags of the 5-bag pattern.
-  For other patterns (except 4-bag crossing), the picking order must be set such that overlapping
-  bags are picked first.
+  For other overlapping bags (within the 5-bag pattern or other bag patterns), the picking order
+  must be set such that overlapping bags are picked first. The 4-bag (crossing) pattern is the only
+  exception: in case bags are overlapping, Pickit automatically detect an appropriate picking order.
 
 Pallet dimensions
 ~~~~~~~~~~~~~~~~~
