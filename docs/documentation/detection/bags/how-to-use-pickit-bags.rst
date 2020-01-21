@@ -41,7 +41,11 @@ The Pickit Bags engine supports five patterns: 3-bag, 4-bag (crossing and parall
 
 .. image:: /assets/images/Documentation/bags_supported_patterns.png
 
-Real-life examples of pallets for each supported bag pattern are shown below.
+.. note:: By default, the Pickit Bags engine assumes that the layers are full (no missing bags from
+          the pattern). There is an option to :ref:`detect whether the top layer is full or
+          incomplete <Full-incomplete-layer-detection>`, but it works only for specific cases.
+
+Real-life examples of pallets for each supported bag pattern are shown below:
 
 3-bag pattern
 ^^^^^^^^^^^^^
@@ -218,10 +222,6 @@ The image below shows the possible layer orientations for each bag pattern.
   bags is the same for orientations 0 and 2 and for 1 and 3, the difference being only the picking
   order. The picking order is relevant if neighboring bags are overlapping.
 - For the 4-bag pattern (parallel) there is only one possible orientation.
-
-.. note:: By default, the Pickit Bags engine assumes that the layers are full (no missing bags from
-          the pattern). There is an option to :ref:`detect whether the top layer is full or
-          incomplete <Full-incomplete-layer-detection>`, but it works only for specific cases.
 
 The detected bags are sent to the robot or PLC one by one: the first bag is sent upon triggering
 a detection, and the remaining bags are sent one at a time, upon requesting the next detected object.
