@@ -3,7 +3,10 @@
 Detection
 =========
 
-Pickit has three different detection engines, each optimized for a different
+General engines
+---------------
+
+Pickit has three general detection engines, each optimized for a different
 type of shape or part arrangement.
 
 - :ref:`Teach <Teach>` is the most versatile engine, and well suited for most
@@ -26,4 +29,15 @@ type of shape or part arrangement.
   Teach <teach/index>
   Flex <flex/index>
   Pattern <pattern/index>
+
+Application-specific engines
+----------------------------
+
+Pickit also offers a more application-specific engine, :ref:`Bags <Bags>`, which
+is specially designed for detecting bags on a pallet.
+
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+
   Bags <bags/index>
