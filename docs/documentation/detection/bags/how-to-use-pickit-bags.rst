@@ -41,23 +41,6 @@ The Pickit Bags engine supports five patterns: 3-bag, 4-bag (crossing and parall
 
 .. image:: /assets/images/Documentation/bags_supported_patterns.png
 
-Typically, the layers of the pallet are organized such that the orientation of the bag pattern
-alternates from layer to layer, flipping horizontally or vertically (depending on the pattern)
-from the previous layer.
-
-The Pickit Bags engine does not detect the individual bags, but the orientation of the whole pattern
-(also referred as layer orientation). The image below shows the possible layer orientations for each
-bag pattern.
-
-.. image:: /assets/images/Documentation/bags_layer_orientations.png
-
-- For 3, 5 and 8 bags, the layer orientation switches between 0 and 1.
-- For the 4-bag pattern (crossing) there are four possible orientations. Consecutive layers usually
-  switch between orientations 0 and 1 or between 2 and 3. Notice that the position of the individual
-  bags is the same for orientations 0 and 2 and for 1 and 3, the difference being only the picking
-  order. The picking order is relevant if neighboring bags are overlapping.
-- For the 4-bag pattern (parallel) there is only one possible orientation.
-
 Real-life examples of pallets for each supported bag pattern are shown below.
 
 3-bag pattern
@@ -100,10 +83,34 @@ Finally, the 8-bag pattern consists of six horizontal bags and two vertical bags
 .. image:: /assets/images/Documentation/bags_8-bag.png
 
 .. note:: The Pickit Bags detection algorithm detects the best picking order of the 4-bag
-          (crossing) bag pattern. For all other bag patterns, :ref:`the preferred picking 
-          order must be selected <Bag-picking-order>` in the **Picking** page. Optionally, 
-          for the 5-bag pattern, Pickit detects the preferred picking order of the two 
+          (crossing) bag pattern. For all other bag patterns, :ref:`the preferred picking
+          order must be selected <Bag-picking-order>` in the **Picking** page. Optionally,
+          for the 5-bag pattern, Pickit detects the preferred picking order of the two
           horizontal bags, if they are overlapping (:ref:`more <Five-bag-horizontal-bags-order>`).
+
+Detecting the layer orientation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Typically, the layers of the pallet are organized such that the orientation of the bag pattern
+alternates from layer to layer, flipping horizontally or vertically (depending on the pattern)
+from the previous layer.
+
+The Pickit Bags engine does not detect the individual bags, but the orientation of the whole pattern
+(also referred as layer orientation). The image below shows the possible layer orientations for each
+bag pattern.
+
+.. image:: /assets/images/Documentation/bags_layer_orientations.png
+
+- For 3, 5 and 8 bags, the layer orientation switches between 0 and 1.
+- For the 4-bag pattern (crossing) there are four possible orientations. Consecutive layers usually
+  switch between orientations 0 and 1 or between 2 and 3. Notice that the position of the individual
+  bags is the same for orientations 0 and 2 and for 1 and 3, the difference being only the picking
+  order. The picking order is relevant if neighboring bags are overlapping.
+- For the 4-bag pattern (parallel) there is only one possible orientation.
+
+.. note:: By default, the Pickit Bags engine assumes that the layers are full (no missing bags from
+          the pattern). There is an option to :ref:`detect whether the top layer is full or
+          incomplete <Full-incomplete-layer-detection>`, but it works only for specific cases.
 
 .. _Five-bag-horizontal-bags-order:
 
@@ -144,6 +151,8 @@ to know when the pallet is empty.
   important that the reference frame XY-plane is located at the floor.
 
 .. image:: /assets/images/Documentation/bags_min_pallet_height.png
+
+.._Full-incomplete-layer-detection:
 
 Full/incomplete layer detection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
