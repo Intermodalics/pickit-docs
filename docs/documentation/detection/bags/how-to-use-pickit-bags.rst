@@ -17,12 +17,14 @@ Pickit Bags engine.
 Teach the Region of Interest
 ----------------------------
 
-When teaching the :ref:`region-of-interest`, place the markers on the floor, but not on the pallet.
-The XY-plane of the **reference frame** should be the floor plane.
+When teaching the :ref:`region-of-interest`, make sure to attach its origin to the
+**Robot base frame**, if the camera is mounted on the robot flange. Place the markers on the
+floor, but not on the pallet. The XY-plane of the :ref:`reference frame <reference-frame>`
+should be the floor plane.
 
 .. image:: /assets/images/Documentation/bags_roi_markers.png
 
-Fine-tune the Region of Interest such that it includes the pallet, but not the floor. Make
+Fine-tune the Region of Interest such that it includes the top of the pallet, but not the floor. Make
 sure that the Region of Interest is large enough to include the whole pallet with bags.
 
 Pallet configuration
@@ -39,7 +41,7 @@ The Pickit Bags engine supports five patterns: 3-bag, 4-bag (crossing and parall
 
 .. image:: /assets/images/Documentation/bags_supported_patterns.png
 
-Usually, the layers of the pallet are organized such that the orientation of the bag pattern
+Typically, the layers of the pallet are organized such that the orientation of the bag pattern
 alternates from layer to layer, flipping horizontally or vertically (depending on the pattern)
 from the previous layer.
 
@@ -127,19 +129,19 @@ Layer type
 In the **Detection** page, section **Pallet configuration**, set the layer type to be **always
 full**, if the top layer of the pallet contains all the bags in the pattern.
 
-- If this checkbox is disabled, Pickit will first detect whether the layer is
+- If the **always full** checkbox is disabled, Pickit will first detect whether the layer is
   full or incomplete, and only then detect the layer orientation, detecting all
   present bags at once.
-- If the checkbox is enabled, Pickit assumes that the top layer is full and
+- If the **always full** checkbox is enabled, Pickit assumes that the top layer is full and
   jumps straight to the layer orientation detection.
 
 .. image:: /assets/images/Documentation/bags_4-bag_full_incomplete.png
 
 .. note:: Detecting whether the top layer is full or incomplete relies on two aspects: First,
-          it is important that the XY-plane of the Region of Interest is palallel to the floor, 
+          it is important that the XY-plane of the Region of Interest is parallel to the floor,
           and not tilted. Second, the shape of the bags should be more or less regular. If the
-          bags have a very irregular shape, far from the typical brick or pillow shape, this 
-          detection can fail. In such cases we recommend to check the **always full** checkbox 
+          bags have a very irregular shape, far from the typical brick or pillow shape, this
+          detection can fail. In such cases we recommend to check the **always full** checkbox
           and ensure that the top layer is full, before letting the robot empty the pallet.
 
 .. warning:: The layer detection of incomplete layers assumes that only the top layer is
@@ -202,10 +204,10 @@ we want to first pick the two horizontal bags, as they overlap the vertical bag.
 .. image:: /assets/images/Documentation/bags_picking_order.png
 
 .. note::
-  If you are detecting a 5-bag pattern, and have enabled the checkbox **Automatically compute
-  which of the horizontal bags is overlapping**, you can still choose the preferred picking order.
-  Pickit will adjust the order of the horizontal bags depending on which of them is detected
-  to be on top.
+  Suppose that you are detecting a 5-bag pattern, and have the checkbox **Automatically compute
+  which of the horizontal bags is overlapping** enabled. Pickit will respect the picking order
+  selected in this section, except for the order among the two horizontal bags, depending on
+  which of them is detected to be on top.
 
 .. note::
   If you are detecting a 4-bag (crossing) pattern, Pickit automatically detects the best bag
@@ -215,15 +217,15 @@ we want to first pick the two horizontal bags, as they overlap the vertical bag.
 Robot programming with Pickit Bags
 ----------------------------------
 
-Similarly as for the other detection engines, Pickit sends the individual detected bags to the 
+Similarly as for the other detection engines, Pickit sends the individual detected bags to the
 robot or PLC one by one: the first bag is sent upon triggering a detection, and the remaining
-bags are sent one at a time, upon requesting the next detected object. The robot program can, 
-however, have access to the actual layer orientation, too. The global variable **pickit_type**, 
-which gets filled in after receiving a detection response from Pickit, contains information on 
+bags are sent one at a time, upon requesting the next detected object. The robot program can,
+however, have access to the actual layer orientation, too. The global variable **object_type**,
+which gets filled in after receiving a detection response from Pickit, contains information on
 the bag pattern and the detected layer orientation, according to the following table:
 
 +------------------+-------------------+-----------------+
-| Bag pattern      | Layer orientation | **pickit_type** |
+| Bag pattern      | Layer orientation | **object_type** |
 +==================+===================+=================+
 | 3-bag            | 0                 | 0               |
 |                  +-------------------+-----------------+
