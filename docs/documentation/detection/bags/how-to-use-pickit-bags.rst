@@ -123,31 +123,6 @@ checkbox disabled, and instead specify a fixed :ref:`bag picking order <Bag-pick
   pattern. For other patterns (except 4-bag crossing), the picking order must be set such that
   overlapping bags are picked first.
 
-Layer type
-~~~~~~~~~~
-
-In the **Detection** page, section **Pallet configuration**, set the layer type to be **always
-full**, if the top layer of the pallet contains all the bags in the pattern.
-
-- If the **always full** checkbox is disabled, Pickit will first detect whether the layer is
-  full or incomplete, and only then detect the layer orientation, detecting all
-  present bags at once.
-- If the **always full** checkbox is enabled, Pickit assumes that the top layer is full and
-  jumps straight to the layer orientation detection.
-
-.. image:: /assets/images/Documentation/bags_4-bag_full_incomplete.png
-
-.. note:: Detecting whether the top layer is full or incomplete relies on two aspects: First,
-          it is important that the XY-plane of the Region of Interest is parallel to the floor,
-          and not tilted. Second, the shape of the bags should be more or less regular. If the
-          bags have a very irregular shape, far from the typical brick or pillow shape, this
-          detection can fail. In such cases we recommend to check the **always full** checkbox
-          and ensure that the top layer is full, before letting the robot empty the pallet.
-
-.. warning:: The layer detection of incomplete layers assumes that only the top layer is
-             incomplete, and that the next layer is full. The bags may be incorrectly detected
-             if more than one layer is incomplete.
-
 Pallet dimensions
 ~~~~~~~~~~~~~~~~~
 
@@ -169,6 +144,31 @@ to know when the pallet is empty.
   important that the reference frame XY-plane is located at the floor.
 
 .. image:: /assets/images/Documentation/bags_min_pallet_height.png
+
+Full/incomplete layer detection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable the checkbox **Detect if the layer is full or incomplete** for Pickit to detect whether
+the top layer of the pallet is full or incomplete. If the checkbox is disabled (default), Pickit
+skips this step and detects the layer orientation assuming that the layer is **full** (default)
+or **incomplete**, according to the **Layer status**.
+
+.. image:: /assets/images/Documentation/bags_4-bag_full_incomplete.png
+
+.. warning:: For a correct full/incomplete layer detection, it is important that the XY-plane of
+             the Region of Interest is parallel to the floor, and not tilted.
+
+.. warning:: For this feature to work well, the 3D shape of the top layer should be flat and
+             regular. For instance, ideally the bags are shaped like a brick and lying flat
+             (not too tilted relatively to the floor). Also, only points on the top of the
+             pallet should be visible to the Pickit camera, and not on the sides.
+
+             If that is not the case for your application, it is recommended to disable full/
+             incomplete layer detection and enforce **full** layers.
+
+.. warning:: The layer detection of incomplete layers assumes that only the top layer is
+             incomplete, and that the next layer is full. The bags may be incorrectly detected
+             if more than one layer is incomplete.
 
 Optimize detections
 -------------------
