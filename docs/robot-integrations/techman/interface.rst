@@ -17,7 +17,7 @@ This section describes the purpose of each component, the meaning of the input p
 To insert a component instance into your robot program, click on one of the Pickit components listed on the left panel and drag it into your program. This is how Pickit components look like:
 
 .. image:: /assets/images/robot-integrations/techman/tm-interface-component-icon.png
-    :scale: 50%
+    :scale: 100%
     :align: center
 
 .. note::
@@ -25,9 +25,6 @@ To insert a component instance into your robot program, click on one of the Pick
   ``Application_Provider_Vendor_Version_Function``, which for Pickit corresponds to
   ``perception_pickit_pickit_Vxx_Function``.
   Pickit components only differ on the ``Function`` name, so throughout this article the common prefix is omitted for brevity.
-
-.. note::
-  Currently, all Pickit components are displayed with the same icons and the same label ``pickit_Vxx`` on the left panel, but their function names are shown when they are dropped into the program flow.
 
 A general note on introspecting component behavior is that the ``g_perception_pickit_user_msg`` global variable holds human-readable status updates from all components.
 For instance, when a component exists with an error state, the value of this variable can be shown in a **Display** node to get an insight on the failure reason.

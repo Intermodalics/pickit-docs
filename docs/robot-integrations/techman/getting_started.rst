@@ -92,6 +92,28 @@ To install the Pickit TM integration files, follow these steps:
 
     .. image:: /assets/images/robot-integrations/techman/tm-installation-component-list-cropped.png
 
+Enable the Modbus slave
+-----------------------
+
+The Pickit integration requires the Modbus slave to be enabled, as it's used to read the robot flange pose and send it to Pickit.
+To do so, follow these steps:
+
+#. Click the `hamburger icon <https://en.wikipedia.org/wiki/Hamburger_button>`__, then **Setting**.
+
+    .. image:: /assets/images/robot-integrations/techman/tm-installation-left-panel-setting.png
+       :scale: 50%
+       :align: center
+
+#. Click on the **Connection** icon (called **Modbus** in earlier versions).
+
+    .. image:: /assets/images/robot-integrations/techman/tm-installation-robot-settings-connection.png
+       :scale: 60%
+       :align: center
+
+#. Toggle the TCP slave to be enabled.
+
+    .. image:: /assets/images/robot-integrations/techman/tm-installation-robot-settings-enable-modbus-slave.png
+
 
 Using the Pickit TMflow components
 ----------------------------------
