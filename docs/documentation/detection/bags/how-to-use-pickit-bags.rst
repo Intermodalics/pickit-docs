@@ -102,15 +102,15 @@ checkbox disabled, and instead specify a fixed :ref:`bag picking order <Bag-pick
 .. image:: /assets/images/Documentation/bags_5-bag_2overlapping.png
 
 .. warning::
-  Currently, the overlapping check can only be applied to the two horizontal bags of the 5-bag
-  pattern. For other patterns (except 4-bag crossing), the picking order must be set such that
-  overlapping bags are picked first.
+  The overlapping check can only be applied to the two horizontal bags of the 5-bag pattern.
+  For other patterns (except 4-bag crossing), the picking order must be set such that overlapping
+  bags are picked first.
 
 Pallet dimensions
 ~~~~~~~~~~~~~~~~~
 
 Specify the length and width of the pallet.
-Except for the 4-bag pattern, the detection of the layer orientation assumes a rectangular
+Except for the 4-bag (crossing) pattern, the detection of the layer orientation assumes a rectangular
 pallet shape (that is, one side is significantly longer than the other).
 
 .. image:: /assets/images/Documentation/bags_pallet_dimensions.png
@@ -118,7 +118,7 @@ pallet shape (that is, one side is significantly longer than the other).
 Minimum pallet height
 ~~~~~~~~~~~~~~~~~~~~~
 
-Specify the minimum height of the last layer of bags. We recommend
+Specify the minimum height of the last (bottom) layer of bags, relatively to the floor. We recommend
 measuring the height of the wooden pallet and adding around 40 mm. This value allows Pickit
 to know when the pallet is empty.
 
