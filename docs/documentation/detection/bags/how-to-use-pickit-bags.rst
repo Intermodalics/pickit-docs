@@ -4,6 +4,11 @@ How to use Pickit Bags
 This article guides you through the necessary steps to properly use the
 Pickit Bags engine.
 
+.. note::
+  By default the Pickit Bags engine is not exposed in the web interface. To enable it, open the
+  :ref:`settings`, click on **Advanced settings** and, in section **Bags engine**, enable the
+  **expert engine mode** toggle.
+
 .. contents::
     :backlinks: top
     :local:
