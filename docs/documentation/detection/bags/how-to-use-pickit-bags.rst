@@ -180,7 +180,8 @@ Bag picking order
 
 In section **Bag picking order**, you can specify the order at which you want the
 bags to be picked, for each possible layer orientation. If bags are overlapping on the pallet,
-the picking order is a crucial setting for a successful pick.
+the picking order is a crucial setting for a successful pick. Typically, the best is to pick the
+bags in the reverse order as they were palletized.
 
 The image below shows two different 3-bag pallets. On the left, the vertical bag is overlapping
 the horizontal bags, and therefore it is preferred to pick the vertical bag first. On the right,
