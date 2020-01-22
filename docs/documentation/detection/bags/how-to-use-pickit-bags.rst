@@ -128,7 +128,7 @@ to know when the pallet is empty.
 .. _Full-incomplete-layer-detection:
 
 Full/incomplete layer detection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 Enable the checkbox **Detect if the layer is full or incomplete** for Pickit to detect whether
 the top layer of the pallet is full or incomplete. If the checkbox is disabled (default), Pickit
