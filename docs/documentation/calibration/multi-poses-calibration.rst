@@ -82,10 +82,8 @@ Calibrating
    degrees-of-freedom of your robot. If your robot has only 4 degrees-of-freedom, fill
    in the field **Flange Z-axis** with the distance between the robot base and the camera (if the
    camera is fixed) or the distance between the robot flange and the camera (if the camera is mounted).
-   To confirm this value, open a 3D view and enable the camera and robot visualization in the viewer
-   options. The location of the camera relatively to the robot should correspond to reality. Notice that,
-   for a mounted camera, if the camera is mounted at a higher location than the robot flange, this value
-   should be negative.
+   Notice that, for a mounted camera, if the camera is mounted at a higher location than the robot flange,
+   this value should be negative.
 #. Choose the **multi poses** robot camera calibration method.
 #. Follow the indicated steps, and run the robot program when instructed. The Pickit web interface shows
    the progress of the calibration process.
@@ -94,7 +92,9 @@ Calibrating
 
 .. important::
   After finishing robot camera calibration, don't forget to check the calibration result. Go to
-  :ref:`checking-robot-camera-calibration` to know how.
+  :ref:`checking-robot-camera-calibration` to know how. If your robot has 4 degrees-of-freedom,
+  and you are not sure whether the distance between robot base (or flange) and camera is correct, you
+  can use the 3D viewer to check whether the distance between the frames corresponds to reality.
 
 .. warning::
   If after calibration the Pickit camera has been relocated or rotated relatively to the robot base,
