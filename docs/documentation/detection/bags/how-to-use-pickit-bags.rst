@@ -125,7 +125,7 @@ to know when the pallet is empty.
 
 .. image:: /assets/images/Documentation/bags_min_pallet_height.png
 
-.._Full-incomplete-layer-detection:
+.. _Full-incomplete-layer-detection:
 
 Full/incomplete layer detection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
