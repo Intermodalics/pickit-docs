@@ -101,7 +101,7 @@ checkbox disabled, and instead specify a fixed :ref:`bag picking order <Bag-pick
   The overlapping check can only be applied to the two horizontal bags of the 5-bag pattern.
   For other overlapping bags (within the 5-bag pattern or other bag patterns), the picking order
   must be set such that overlapping bags are picked first. The 4-bag (crossing) pattern is the only
-  exception: in case bags are overlapping, Pickit automatically detect an appropriate picking order.
+  exception: in case bags are overlapping, Pickit automatically detects an appropriate picking order.
 
 Pallet dimensions
 ~~~~~~~~~~~~~~~~~
@@ -145,8 +145,8 @@ or **incomplete**, according to the **Layer status**.
              (not too tilted relatively to the floor). Also, only points on the top of the
              pallet should be visible to the Pickit camera, and not on the sides.
 
-             If that is not the case for your application, it is recommended to disable full/
-             incomplete layer detection and enforce **full** layers.
+             If that is not the case for your application, it is recommended to disable
+             full/incomplete layer detection and enforce **full** layers.
 
 .. warning:: The layer detection of incomplete layers assumes that only the top layer is
              incomplete, and that the next layer is full. The bags may be incorrectly detected
