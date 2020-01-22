@@ -83,17 +83,25 @@ Calibrating
 #. Choose the **multi poses** robot camera calibration method.
 #. Follow the indicated steps, and run the robot program when instructed. Alternatively, you can also
    move your robot into the positions and press :guilabel:`Collect current pose` in the calibration wizard.
+   Notice that the latter is only possible if the robot is periodically sending its pose to Pickit.
    The Pickit web interface shows the progress of the calibration process.
 #. In the next step, you will see a 3D viewer showing the robot and camera models. Here you can confirm
-   whether the calibration is correct. If your robot has 4 degrees-of-freedom, you will also find a field
-   for inputing:
-   - The distance between the robot flange and the camera, if the camera is mounted on the robot. Notice
-     that, if the camera is mounted at a higher location than the robot flange, this value should be
-     negative.
-   - The distance between the robot base and the camera, if the camera is fixed.
-   Looking at the camera location in the 3D viewer will help you obtain the correct value.
+   whether the calibration is correct.
 
 .. image:: /assets/images/Documentation/Calibration-progress-multi-poses.png
+
+4 DoF robots
+~~~~~~~~~~~~
+
+If your robot has 4 degrees-of-freedom, in the last step of the calibration wizard you will also find
+a field for inputing:
+
+- The distance between the robot flange and the camera, if the camera is mounted on the robot. Notice
+  that, if the camera is mounted at a higher location than the robot flange, this value should be
+  negative.
+- The distance between the robot base and the camera, if the camera is fixed.
+
+Looking at the camera location in the 3D viewer will help you obtaining the correct value.
 
 .. important::
   After finishing robot camera calibration, don't forget to check the calibration result. Go to
