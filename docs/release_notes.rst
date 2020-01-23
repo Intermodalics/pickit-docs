@@ -53,7 +53,7 @@ To make sure that picking a part will not cause the robot tool to collide with t
 4. Pick bags out of pallets with our new Bags engine
 ----------------------------------------------------
 
-Are you still picking heavy bags from a pallet manually, in a less than ergonomic way? Pickit can lend a hand with its Bags engine. Specially designed to recognize a variety of common patterns of bags, this engine will relieve your back.
+Are you still picking heavy bags from a pallet manually, in a less than ergonomic way? Pickit can lend a hand with its :ref:`Bags engine <Bags>`. Specially designed to recognize a variety of common patterns of bags, this engine will relieve your back.
 
 .. raw:: html
 
