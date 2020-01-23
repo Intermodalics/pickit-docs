@@ -17,5 +17,5 @@ bags (shown in this video), succeeding on more than 97% of the cases.
 
 .. raw:: html
 
-  <iframe src="https://drive.google.com/open?id=1XHV_artsbLXGhNbQpvqvLRA0RThYyBu6/preview" frameborder="0" allowfullscreen width="640" height="480"></iframe>
+  <iframe src="https://drive.google.com/file/d/1XHV_artsbLXGhNbQpvqvLRA0RThYyBu6/preview" frameborder="0" allowfullscreen width="640" height="480"></iframe>
   <br>
