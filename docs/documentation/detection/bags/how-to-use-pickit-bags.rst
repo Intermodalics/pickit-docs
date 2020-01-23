@@ -6,8 +6,8 @@ Pickit Bags engine.
 
 .. note::
   By default the Pickit Bags engine is not exposed in the web interface. To enable it, open the
-  :ref:`settings`, click on **Advanced settings** and, in section **Bags engine**, enable the
-  **expert engine mode** toggle.
+  :ref:`settings`, click on **Advanced settings** and, in section **Application-specific engines**,
+  turn on the **Enable Bags engine** toggle.
 
 .. contents::
     :backlinks: top
@@ -132,7 +132,7 @@ Full/incomplete layer detection
 
 Enable the checkbox **Detect if the layer is full or incomplete** for Pickit to detect whether
 the top layer of the pallet is full or incomplete. If the checkbox is disabled (default), Pickit
-skips this step and detects the layer orientation assuming that the layer is **full** (default)
+skips this step and detects the bags assuming that the layer is **full** (default)
 or **incomplete**, according to the **Layer status**.
 
 .. image:: /assets/images/Documentation/bags_4-bag_full_incomplete.png
