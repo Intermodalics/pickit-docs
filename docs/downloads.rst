@@ -81,6 +81,7 @@ The Pickit URCap is only available for Polyscope versions 3.4.x and higher and 5
 Yaskawa
 -------
 
-Pickit is compatible with controllers **FS100**, **DX200** and **YRC1000**.
+Pickit is compatible with controllers **DX200** and **YRC1000**.
 
-- `Download the Pickit Yaskawa files <https://drive.google.com/uc?export=download&id=108H2H7xK74VX2rdbrmFim8hAuivsDnsH>`__
+- `Download the Pickit Yaskawa files for DX200 <https://drive.google.com/uc?export=download&id=14I9wRDQnHW-rnW1OsW60XxZPocm_mGiO>`__
+- `Download the Pickit Yaskawa files for YRC1000 <https://drive.google.com/uc?export=download&id=1DXl-C2WuP39CQU-871kbz80G8tSgLwLd>`__

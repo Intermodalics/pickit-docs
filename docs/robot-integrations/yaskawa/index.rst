@@ -14,7 +14,7 @@ setup of Pickit with a Yaskawa robot consists of 4 steps:
 Check controller and software compatibility
 -------------------------------------------
 
-Pickit is compatible with controllers **FS100,** **DX200** and **YRC1000 (Micro)**.
+Pickit is compatible with controllers **DX200** and **YRC1000 (Micro)**.
 
 .. note:: Pickit is not yet compatible with the **HC10** nor the **Smart Pendant**.
 
@@ -38,7 +38,6 @@ The connection between the Yaskawa controller and Pickit is done over ethernet. 
 .. image:: /assets/images/robot-integrations/yaskawa/yaskawa.png
 
 - For **DX200** controllers you need to connect the Pickit processor to the **CN104** port.
-- For **FS100** controllers you need to connect the Pickit processor to the **CN2** port.
 - For **YRC1000 (Micro)** controllers you need to connect the Pickit processor to the **CN106** or **CN107** port.
 
 IP configuration
@@ -48,7 +47,7 @@ IP configuration
   Before making these changes, the robot controller should be in **maintenance mode**, and the security mode should be **management mode**.
 
 Setting the IP address of the robot controller should be done in **maintenance mode**.
-Go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`OPTION FUNCTION` → :guilabel:`LAN interface setting` (or :guilabel:`Network` for DX200 and FS100) and set the following values:
+Go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`OPTION FUNCTION` → :guilabel:`LAN interface setting` (or :guilabel:`Network` for the DX200) and set the following values:
 
   - **IP ADDRESS SETTING**: MANUAL SETTING
   - **IP ADDRESS:** 169.254.5.182
@@ -156,10 +155,15 @@ Example program: TEST_SIMPLEPICK
 This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
 
 The idea of the program is the following:
-First, a detection is triggered.
-If an object is found, the robot moves to the object to pick it, and drops it off at a fixed position.
-Once the robot is out the field of view of the camera, a new Pickit detection is immediately triggered.
-If the ROI is empty, the program stops.
+
+- First, a detection is triggered.
+- If an object is found, the model and pick point ID is checked to know to which object and position the robot will be guided to.
+  According these ID's the robot moves to the object to pick it, then he moves to a fixed drop off position, and finally he moves to a corrected drop off position.
+  The corrected position is based on the pick offset and the fixed drop off position.
+  Once the robot is out the field of view of the camera, a new Pickit detection is immediately triggered.
+- If the ROI is empty, the program stops.
+- If no object is found but ROI is not empty, the robot moves outside the field of view of the camera and a new detection is triggered.
+  If three times no object is found, a snapshot is saved on the Pickit system and the robot program stops. 
 
 Define the tool for calibration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,18 +184,48 @@ In this command the following values have to be set:
 .. note:: If something is wrong here, you can expect the following message: Undefined user frame.
    The example program by default uses frame 5 and tool 1, but these might not exist.
 
-Set robot positions
-~~~~~~~~~~~~~~~~~~~
+Set variables used in TEST_SIMPLEPICK 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- **C00000**: **Home:** Starting position of the robot. This position needs to be defined by the user.
-- **P025**: **Detect:** For a fixed camera mount, this position should not occlude the camera view volume, while for a robot-mounted-camera it should place the camera so it fully captures the desired view volume.
-- **P023**: **Above pick area:** A transition position to enter the pick area. This position needs to be defined by the user.
-- **LP000**: **Pre pick:** This position does not need to be defined.
-- **P099**: **Pick:** This position does not need to be defined.
-- **LP001**: **Post pick:** This position does not need to be defined.
-- **P029**: **Dropoff:** A position where the parts will be dropped. This position needs to be defined by the user.
+Below you find an overview of the variables used in this example program.
+The Pickit variables, in 40 range, can't be changed.
+All other variables can be adapted according the changes you want to apply to this example program.
 
-.. note:: The positions P023-P029 can be changed in the position variable menu.
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| Variable  | Field name                 | Comment                                                                                           | Set by user |
++===========+============================+===================================================================================================+=============+
+| B021      | Detection counter          | This variable keeps track of the number of detections that are triggered                          | Yes         |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| P021      | Post pick offset           | Distance offset to calculate the post pick position                                               | Yes         |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| P022      | Pre pick offset            | Distance offset to calculate the pre pick position                                                | Yes         |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| P023      | Above pick area            | Position that is defined above the pick area                                                      | Yes         |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| P025      | Detect position            | Position not blocking the field of view of the camera when triggering detections                  | Yes         |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| P029      | Drop off position          | Position where the part is dropped off                                                            | Yes         |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| P047      | Pickit object offset       | Offset of the pick point                                                                          | No          |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| P049      | Pickit object pose         | Position of the object                                                                            | No          |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| LP000     | Pre pick position          | Position the robot moves to before picking the object                                             | No          |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| LP001     | Post pick position         | Position the robot moves to after picking the object                                              | No          |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| LP002     | Corrected drop off positon | Drop off position corrected with offset of the pick point                                         | No          |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| C000      | Home position              | Position where the robot starts his program                                                       | Yes         |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| I040      | Pickit status              | Contains a response to previously received robot commands: object found/empty roi/no object found | No          |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| I041      | Pickit object type         | Contains the model id of the current found object                                                 | No          |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+| I042      | Pickit pick point id       | Contains the pick point id of the current found object                                            | No          |
++-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
+
+.. tip:: The positions P021-P029 can be changed in the position variable menu.
 
 Add grasping/releasing logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -207,36 +241,45 @@ Happy picking!
 Variables used by the Pickit system
 -----------------------------------
 
+Below you find an overview of the variables used by Pickit.
+When using Pickit these variables cannot be used for anything else.
+
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | Variable | Field name        | Comment                                                                                                                                  |
 +==========+===================+==========================================================================================================================================+
-| I099     | command           | A single command from robot to Pickit.                                                                                                   |
+| I049     | command           | A single command from robot to Pickit.                                                                                                   |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| I098     | setup             | A number matching to a setup file known by the Pickit system.                                                                            |
+| I048     | setup             | A number matching to a setup file known by the Pickit system.                                                                            |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| I097     | product           | A number matching to a product file known by the Pickit system.                                                                          |
+| I047     | product           | A number matching to a product file known by the Pickit system.                                                                          |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| I096     | Frame ID          | A number matching the frame ID used during calibration and picking.                                                                      |
+| I046     | Frame ID          | A number matching the frame ID used during calibration and picking.                                                                      |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| I095     | Tool ID           | A number matching the tool ID used for picking                                                                                           |
+| I045     | Tool ID           | A number matching the tool ID used for picking                                                                                           |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| I094     | Timeout           | Value of the timeout used for communication with Pickit                                                                                  |
+| I044     | Timeout           | Value of the timeout used for communication with Pickit                                                                                  |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| I091     | object_type       | The type of detected object.                                                                                                             |
+| I041     | object_type       | The type of detected object.                                                                                                             |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| I090     | status            | Contains the Pickit status or a response to previously received robot commands.                                                          |
+| I040     | status            | Contains the Pickit status or a response to previously received robot commands.                                                          |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| I080-089 | status of cycles  | Used for keeping track of the communication cycle with Pickit.                                                                           |
+| I030-039 | status of cycles  | Used for keeping track of the communication cycle with Pickit.                                                                           |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| S099     | IP Pickit         | IP address of Pickit, by default 169.254.5.180.                                                                                          |
+| S049     | IP Pickit         | IP address of Pickit, by default 169.254.5.180.                                                                                          |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| P099     | object_pose       | An object pose expressed relatively to the robot base frame.                                                                             |
+| P049     | object_pose       | An object pose expressed relatively to the robot base frame.                                                                             |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| P098     | object_dimension  | [0]: length or diameter (m) [1]: width or diameter (m) [2]: height (m)                                                                   |
+| P048     | object_dimension  | [0]: length or diameter (m) [1]: width or diameter (m) [2]: height (m)                                                                   |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| D091     | object_remaining  |  If this field is non-zero, it contains the number of remaining objects that can be sent in next messages to the robot.                  |
+| P047     | object_offset     | pick point offset of the last requested object                                                                                           |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| D090     | object_age        | The amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot.  |
+| P046     | rx_flip           | A helper pose to calculate a correct offset pose                                                                                         |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| D042     | pick_ref_id       | ID of the selected pick point’s reference pick point                                                                                     |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| D041     | object_remaining  | If this field is non-zero, it contains the number of remaining objects that can be sent in next messages to the robot.                   |
++----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| D040     | object_age        | The amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot.  |
 +----------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. tip:: If these registers are already used on your robot, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__, and we will assist you in finding a solution.
