@@ -7,7 +7,7 @@ that allows it to pick parts of different shapes, materials and sizes.
 With Pickit you can automate any type of picking application such as bin picking,
 machine loading, depalletizing, kitting and assembly, and pick and place.
 
-:ref:`Find out what's new in the latest :ref:`Pickit release <release-notes>`.
+:ref:`Find out what's new in the latest :ref:`Pickit release. <release-notes-2.2>`
 
 The panel to the left of the page guides you through the different topics of your
 Pickit experience:
@@ -53,7 +53,7 @@ sending an email to `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`_
   faq/index
   support/index
 
-  Release notes <documentation/release_notes>
+  Release notes <documentation/release_notes/index>
 
 .. toctree::
   :hidden:

@@ -1,4 +1,4 @@
-.. _release-notes:
+.. _release-notes-2.2:
 
 Software release 2.2
 ====================
