@@ -46,7 +46,7 @@ By using together multiple pick points with :ref:`flexible orientation <flexible
 3. Be more robust to collisions with the robot tool
 ---------------------------------------------------
 
-To make sure that picking a part will not cause the robot tool to collide with the bin or other objects inside it, Pickit needs to know what the tool looks like. :ref:`New tool modelling features have been added <robot-tool-model>`, allowing you to model the tool more realistically. You can model a mounted camera, as well as the bulky joints of the robot, above the gripper. You can also model your tool even if it has a slanted end.
+To make sure that picking a part will not cause the robot tool to collide with the bin or other objects inside it, Pickit needs to know what the tool looks like. Additional :ref:`tool modelling<robot-tool-model>` features have been added, allowing you to model the tool more realistically. You can model a mounted camera, as well as the bulky joints of the robot, above the gripper. You can also model your tool even if it has a slanted end.
 
 .. image:: /assets/images/release-notes_tool-model.png
 
