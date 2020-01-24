@@ -8,6 +8,12 @@ in mind, each software release is a step further into solving the challenge of a
 
 Find out what's new in the latest Pickit release: :ref:`version 2.2 <release-notes-2.2>`
 
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+
+  2.2 <release_notes_2.2>
+
 ..
   Once we have more releases:
 
