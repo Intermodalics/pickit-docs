@@ -71,7 +71,7 @@ You can now also choose between different :ref:`visualization layouts <web-inter
 6. Save snapshots automatically
 -------------------------------
 
-Playing around with the settings to optimize your application, and would like to keep track of your changes and results? With this new feature, you can choose to :ref:`automatically save a snapshot on each detection trigger <Automatically-save-snapshots>`.
+Playing around with the settings to optimize your application, and would like to keep track of your changes and results? With this new feature, you can choose to :ref:`automatically save a snapshot <Automatically-save-snapshots>` on each detection trigger.
 
 Get the update now
 ------------------
