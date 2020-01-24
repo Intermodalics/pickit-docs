@@ -24,7 +24,7 @@ Pickit is not just about detecting parts, but also about being able to pick them
 Multiple pick points
 ~~~~~~~~~~~~~~~~~~~~
 
-If you ever felt limited because you could only set one pick point for your object, we have some good news: you can now :ref:`specify as many pick points as you want <multiple-pick-points>` for your part. The image below shows an example of a power socket being picked by a suction gripper.
+If you ever felt limited because you could only set one pick point for your object, we have some good news: you can now specify as many :ref:`pick points<multiple-pick-points>` as you want for your part. The image below shows an example of a power socket being picked by a suction gripper.
 
 .. image:: /assets/images/release-notes_multiple-pick-points.png
 
