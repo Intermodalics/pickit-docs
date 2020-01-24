@@ -24,5 +24,3 @@ The following video shows how to setup Pickit, going through all 7 steps:
     <iframe src="https://www.youtube.com/embed/C-tmc3yTrYQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
   </div>
   <br>
-
-Be up-to-date with the :ref:`latest Pickit features (version 2.2) <release-notes>`!

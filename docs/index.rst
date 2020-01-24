@@ -53,7 +53,7 @@ sending an email to `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`_
   faq/index
   support/index
 
-  Release notes <release_notes>
+  Release notes <documentation/release_notes>
 
 .. toctree::
   :hidden:
