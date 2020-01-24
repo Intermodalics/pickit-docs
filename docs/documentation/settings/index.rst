@@ -25,6 +25,28 @@ Automatic detections
 
 .. image:: /assets/images/Documentation/settings-automatic-detections.png
 
+.. _Automatically-save-snapshots:
+
+Automatically save snapshots
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can choose to automatically save a snapshot everytime you trigger a
+detection from the web interface. This is useful when you are trying out
+different detection settings, and would like to have them registered, or
+simply would like to store all detection results.
+
+To prevent running out of disk space, the number of saved snapshots is
+limited to **max. number of snapshots to save**. Old snapshots get removed
+once this number has been reached.
+
+.. image:: /assets/images/Documentation/settings-automatically-save-snapshots.png
+
+.. warning:: Since saving a snapshot takes some time, detections are slower when
+             automatic snapshot saving is enabled.
+
+.. note:: Snapshots are not automatically saved if the detections are triggered
+          while in snapshot mode.
+
 Share usage statistics
 ~~~~~~~~~~~~~~~~~~~~~~
 

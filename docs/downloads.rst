@@ -23,7 +23,9 @@ Fanuc
 
 Pickit is compatible with controllers as of version **R-J3iB** and the software module **User Socket Msg** for socket communication is required. (The product number for this module is A05B-2600-R648).
 
-- `Download the Pickit Fanuc files <https://drive.google.com/uc?export=download&id=0BzZKo0Mfhw0RMDNULWxxY0dvcG8>`__
+- `Download the Pickit files for Fanuc R-J3ib <https://drive.google.com/uc?export=download&id=0BzZKo0Mfhw0RMDNULWxxY0dvcG8>`__
+- `Download the Pickit files for Fanuc R-30iB plus <https://drive.google.com/uc?export=download&id=1SrlZzc3o5dUdqS9WOYyCM5cclbFQEqas>`__
+
 
 
 Hanwha
@@ -51,7 +53,7 @@ Omron TM
 
 The Pickit TMflow components are available for TMflow version 1.72 and higher.
 
-- `Download the Pickit TMflow components 1.0 <https://drive.google.com/uc?export=download&id=1bODON186ZfTK01LcBMbHXVjKiOR6nsyJ>`__
+- `Download the Pickit TMflow components 2.0 <https://drive.google.com/uc?export=download&id=1yYWVB8dlt7gbj4wD0vJTK2keE49aigeY>`__
 
 ROS
 ---
@@ -59,7 +61,7 @@ ROS
 To communicate with Pickit using the ROS interface, you need to have the
 ``im_pickit_msgs`` package in your workspace.
 
-- `Download the Pickit ROS interface files <http://download.pickit3d.com/ros/im_pickit_msgs_v2.1.tar.gz>`__
+- `Download the Pickit ROS interface files <https://drive.google.com/uc?export=download&id=1JEAY-ZEi3seUmB7O6s070Skqi7ivVGh2>`__
 
 Stäubli
 -------
