@@ -64,7 +64,7 @@ Are you still picking heavy bags from a pallet manually, in a less than ergonomi
 ---------------------------------------
 
 Making sure using Pickit is an enjoyable experience is a top priority for us. Teaching and tuning Teach models has become more intuitive and user-friendly.
-You can also choose between :ref:`different visualization options in the web interface <web-interface-top-bar>`. Just adapt your workspace to suit your needs!
+You can now also choose between different :ref:`visualization layouts <web-interface-top-bar>` in the web interface. Just adapt your workspace to suit your needs!
 
 .. image:: /assets/images/release-notes_ui-visualizations.gif
 
