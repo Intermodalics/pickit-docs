@@ -7,7 +7,7 @@ that allows it to pick parts of different shapes, materials and sizes.
 With Pickit you can automate any type of picking application such as bin picking,
 machine loading, depalletizing, kitting and assembly, and pick and place.
 
-:ref:`Checkout the latest Pickit features (version 2.2). <release-notes>`
+:ref:`Checkout the latest Pickit features<release-notes>`.
 
 The panel to the left of the page guides you through the different topics of your
 Pickit experience:
