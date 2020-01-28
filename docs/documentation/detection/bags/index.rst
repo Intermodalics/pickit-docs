@@ -12,10 +12,7 @@ non-ergonomic task of picking heavy bags from a pallet.
 
     how-to-use-pickit-bags
 
-The Pickit Bags engine was tested on hundreds of scenes with a large variety of
-bags (shown in this video), succeeding on more than 97% of the cases.
-
 .. raw:: html
 
-  <iframe src="https://drive.google.com/file/d/1XHV_artsbLXGhNbQpvqvLRA0RThYyBu6/preview" frameborder="0" allowfullscreen width="640" height="480"></iframe>
+  <iframe src="https://drive.google.com/file/d/1uwVekkW1dbO43J78bxwOxMBPF6FZM6l3/preview" frameborder="0" allowfullscreen width="640" height="480"></iframe>
   <br>
