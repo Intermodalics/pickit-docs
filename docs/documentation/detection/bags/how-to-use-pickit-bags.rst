@@ -43,7 +43,7 @@ The Pickit Bags engine supports five patterns: 3-bag, 4-bag (crossing and parall
 
 .. note:: By default, the Pickit Bags engine assumes that the layers are full (no missing bags from
           the pattern). There is an option to :ref:`detect whether the top layer is full or
-          incomplete <Full-incomplete-layer-detection>`, but it works only for specific cases.
+          incomplete <Full-incomplete-layer-detection>`, but it should only be used for specific cases.
 
 Real-life examples of pallets for each supported bag pattern are shown below:
 
@@ -148,10 +148,6 @@ or **incomplete**, according to the **Layer status**.
              If that is not the case for your application, it is recommended to disable
              full/incomplete layer detection and enforce **full** layers.
 
-.. warning:: The layer detection of incomplete layers assumes that only the top layer is
-             incomplete, and that the next layer is full. The bags may be incorrectly detected
-             if more than one layer is incomplete.
-
 Optimize detections
 -------------------
 
@@ -209,7 +205,7 @@ The image below shows the possible layer orientations for each bag pattern.
 
 .. image:: /assets/images/Documentation/bags_layer_orientations.png
 
-- For 3, 5 and 8 bags, the layer orientation switches between 0 and 1.
+- For 3, 5 and 8 bags, consecutive layers usually switch between orientations 0 and 1.
 - For the 4-bag pattern (crossing) there are four possible orientations. Consecutive layers usually
   switch between orientations 0 and 1 or between 2 and 3. Notice that the position of the individual
   bags is the same for orientations 0 and 2 and for 1 and 3, the difference being only the picking
@@ -218,8 +214,8 @@ The image below shows the possible layer orientations for each bag pattern.
 
 The detected bags are sent to the robot or PLC one by one: the first bag is sent upon triggering
 a detection, and the remaining bags are sent one at a time, upon requesting the next detected object.
-The robot program can, however, have access to the actual layer orientation, too. The global variable
-**object_type**, which gets filled in after receiving a detection response from Pickit, contains
+The robot program can, however, have access to the actual layer orientation, too. The socket interface
+variable **object_type**, which gets filled in after receiving a detection response from Pickit, contains
 information on the bag pattern and the detected layer orientation, according to the following table:
 
 +------------------+-------------------+-----------------+
