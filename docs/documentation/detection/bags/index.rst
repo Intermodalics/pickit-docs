@@ -12,7 +12,10 @@ non-ergonomic task of picking heavy bags from a pallet.
 
     how-to-use-pickit-bags
 
+The following video shows several pallets of different types of bags being detected
+by the Pickit Bags engine.
+
 .. raw:: html
 
-  <iframe src="https://drive.google.com/file/d/1uwVekkW1dbO43J78bxwOxMBPF6FZM6l3/preview" frameborder="0" allowfullscreen width="640" height="480"></iframe>
+  <iframe src="https://drive.google.com/file/d/1XaH31JdYE9SxFtI_V4cY3pVfSw0oFoxT/preview" frameborder="0" allowfullscreen width="640" height="480"></iframe>
   <br>
