@@ -121,7 +121,4 @@ This would be useful in the case when, for instance, the relative position of th
 Writing a robot program with vision-guided pick and place is straightforward with the Pickit :ref:`pick and place template <urcap-pick-and-place-template>`.
 Take a look at the :ref:`example program <urcap-pick-and-place-program>` to learn more about the easy and intuitive user experience it offers.
 
-Example programs
-----------------
-
-The Pickit URCap plugin installation makes available a few example programs under the ``/programs/pickit_samples`` folder of the robot. They can also be downloaded independently of the URCap \ `here <https://drive.google.com/uc?export=download&id=1Gf63Y35NaVxbP4mwc5YUC5SU8u8RYvyO>`__.
+Example programs are installed in the ``/programs/pickit_examples`` folder of the robot.
