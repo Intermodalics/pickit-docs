@@ -1,4 +1,4 @@
-.. _universal-robots-urcap-example:
+.. _universal-robots-urcap-example-v1:
 
 URCap example picking program
 =============================
@@ -11,7 +11,7 @@ URCap example picking program
 Loading the program
 -------------------
 
-This example program requires the **Pickit URCap plugin** to be installed in your robot. For installation instructions of both the URCap plugin and the example programs please refer to the :ref:`universal-robots-urcap-installation` article.
+This example program requires the **Pickit URCap plugin** to be installed in your robot. For installation instructions of both the URCap plugin and the example programs please refer to the :ref:`universal-robots-urcap-v1-installation` article.
 
 In the initialization screen, select :guilabel:`Program robot` and then :guilabel:`Load program`. Navigate to the ``pickit_samples/simple_picking`` folder and open the ``simple_picking.urp`` program. The program is then loaded. 
 
@@ -106,11 +106,11 @@ Running the program
 Program execution
 ~~~~~~~~~~~~~~~~~
 
-.. caution::
-   When running a program for the first time, it is advised to **set a low robot speed**. As such, non-expected behavior (for example due to incorrect programming or wrong calibration) can be identified early enough to prevent the robot from colliding with surrounding objects or people.
-
 .. warning::
-      Before running the program, there should exist a valid :ref:`robot camera calibration <robot-camera-calibration>` and that the **tool frame** must be correctly specified.
+  Before running the program, there should exist a valid :ref:`robot camera calibration <robot-camera-calibration>` and the **tool frame** must be correctly specified.
+
+.. caution::
+  When running a program for the first time, it is advised to **set a low robot speed**. As such, unexpected behavior (e.g. due to programming errors or wrong :ref:`calibration <robot-camera-calibration>`) can be identified early enough to prevent the robot from colliding with people or the environment.
 
 To allow Pickit to respond to robot requests, Pickit needs to be in **robot mode**. To enable robot mode, click on the following button on the Pickit web interface:
 
