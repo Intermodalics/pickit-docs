@@ -105,7 +105,7 @@ Below the image, all variables that need to be filled in the template are explai
 First step
 ----------
 
-The start of the program is similar as the :ref:`universal-robots-urcap-example`.
+The start of the program is similar as the :ref:`universal-robots-urcap-example-v1`.
 The waypoint **drop_2** is where the box is dropped to trigger a second detection.
 The waypoint **detect_pose_2** is defined so the robot doesn't block the camera when triggering the second detection.
 In this application the grasping and release logic is turning on and off the vacuum.
