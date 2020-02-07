@@ -113,9 +113,10 @@ Refer to the :ref:`Pickit-system-software-upgrade`
 for a step-by-step explanation how to upgrade the software on your
 system.
 
-System commands
-~~~~~~~~~~~~~~~
+System management
+~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/settings-system-commands.png
+.. image:: /assets/images/Documentation/settings-system-management-22.png
 
-Here you can **reboot** or **power off** the Pickit processor.
+Here you can monitor the ressources used by your system.
+You can also **reboot** or **power off** the Pickit processor.
