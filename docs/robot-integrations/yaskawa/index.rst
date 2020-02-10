@@ -158,10 +158,11 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
 The idea of the program is the following:
 
 - First, a detection is triggered.
-- If an object is found, the model and pick point ID is checked to know to which object and position the robot will be guided to.
-  According these ID's the robot moves to the object to pick it, then he moves to a fixed drop off position, and finally he moves to a corrected drop off position.
+- If an object is found, the model and pick point ID is checked to know to where the robot will be guided to.
+  According these ID's the robot moves to the object to pick it.
+  Next he moves to a fixed drop off position, and finally he moves to a corrected drop off position.
   The corrected position is based on the pick offset and the fixed drop off position.
-  Once the robot is out the field of view of the camera, a new Pickit detection is immediately triggered.
+  During these motions when the robot is out the field of view of the camera, a new Pickit detection is triggered immediately.
 - If the ROI is empty, the program stops.
 - If no object is found but ROI is not empty, the robot moves outside the field of view of the camera and a new detection is triggered.
   If three times no object is found, a snapshot is saved on the Pickit system and the robot program stops. 
@@ -189,7 +190,7 @@ Set variables used in TEST_SIMPLEPICK
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Below you find an overview of the variables used in this example program.
-The Pickit variables, in 40 range, can't be changed.
+The Pickit variables, in the 40 range, can't be changed by the user.
 All other variables can be adapted according the changes you want to apply to this example program.
 
 +-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
