@@ -14,9 +14,10 @@ setup of Pickit with a Yaskawa robot consists of 4 steps:
 Check controller and software compatibility
 -------------------------------------------
 
-Pickit is compatible with controllers **DX200** and **YRC1000 (Micro)**.
+Pickit is compatible with controllers **DX200**, **YRC1000** and **YRC1000 micro**.
+Also Pickit can be used with the **HC10** human-collaborative robot.
 
-.. note:: Pickit is not yet compatible with the **HC10** nor the **Smart Pendant**.
+.. note:: Pickit is not yet compatible with the **Smart Pendant**.
 
 The parameters listed below must be declared on the controller to allow the correct operation of the application.
 Ask your local Yaskawa affiliate to check this.
