@@ -61,17 +61,12 @@ That's it! We are now ready to run the program and pick some parts.
 Running the program
 -------------------
 
-.. warning::
-   Before running the program, there should exist a valid :ref:`robot camera calibration <robot-camera-calibration>` and the **tool frame** must be correctly specified.
+.. include:: ../../run_program_warning.rst
 
-.. caution::
-   When running a program for the first time, it is advised to **set a low robot speed**. As such, unexpected behavior (e.g. due to programming errors or wrong :ref:`calibration <robot-camera-calibration>`) can be identified early enough to prevent the robot from colliding with people or the environment.
-   Also, make sure the robot is in **normal mode** and not in **simulation**.
+Also, make sure the robot is in **normal mode** and not in **simulation**.
 
-   .. image:: /assets/images/robot-integrations/ur/run-program-polyscope-5.png
-     :align: center
-
-To allow Pickit to respond to robot requests, Pickit needs to be in **robot mode**, which is enabled in the :ref:`Pickit web interface <web-interface-top-bar>`.
+.. image:: /assets/images/robot-integrations/ur/run-program-polyscope-5.png
+  :align: center
 
 While the program runs, the state of Pickit object detections can be interactively monitored from Polyscope by clicking the top-level :ref:`pick and place <template-pick-and-place>` node, where a live camera stream is shown.
 

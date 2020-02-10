@@ -106,15 +106,7 @@ Running the program
 Program execution
 ~~~~~~~~~~~~~~~~~
 
-.. warning::
-  Before running the program, there should exist a valid :ref:`robot camera calibration <robot-camera-calibration>` and the **tool frame** must be correctly specified.
-
-.. caution::
-  When running a program for the first time, it is advised to **set a low robot speed**. As such, unexpected behavior (e.g. due to programming errors or wrong :ref:`calibration <robot-camera-calibration>`) can be identified early enough to prevent the robot from colliding with people or the environment.
-
-To allow Pickit to respond to robot requests, Pickit needs to be in **robot mode**. To enable robot mode, click on the following button on the Pickit web interface:
-
-|image8|
+.. include:: ../../run_program_warning.rst
 
 In order to run the program in the robot controller, at the bottom of the graphical interface, make sure that **Real robot** is selected and that the robot **speed** is set to a safe value. Click on the rewind button to make sure that the program starts from the beginning - the program line **Robot Program** shall be highlighted, meaning that’s the point at which the program will start. Finally, click on the play button to run the program.
 
@@ -206,7 +198,6 @@ As part of application monitoring, you can add a ``pickit_no_image_captured()`` 
 .. |image6| image:: /assets/images/examples/urcap-program-step-7.png
             :scale: 50 %
 .. |image7| image:: /assets/images/examples/urcap-program-step-8.png
-.. |image8| image:: /assets/images/examples/urcap-program-step-9.png
 .. |image9| image:: /assets/images/examples/urcap-program-step-10.png
 .. |image10| image:: /assets/images/examples/urcap-program-step-11.png
 .. |image11| image:: /assets/images/examples/urcap-program-step-12.png
