@@ -5,7 +5,7 @@ Support
     :maxdepth: 1
     :glob:
 
-    getting-ready-for-a-remote-software-update
+    connect-your-system-to-internet
     getting-ready-for-remote-service
     pickit-system-software-upgrades
     saving-a-snapshot-in-pickit
