@@ -1,9 +1,9 @@
 .. _connect-your-system-to-internet:
 
-Connect your Pickit processor to the internet
-=============================================
+Bring your Pickit system online
+===============================
 
-There are two methods to connect your Pickit processor to the Internet:
+There are two methods to bring your Pickit system online:
 
 -  The preferred method is to connect your Pickit processor via an
    Ethernet cable. 
