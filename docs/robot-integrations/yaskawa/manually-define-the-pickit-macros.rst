@@ -8,18 +8,42 @@ Here we'll explain how to define the Pickit macros manually without overwriting 
 Define macros
 -------------
 
-Still in **normal mode**, the macros should be defined manually.
+Booting the controller in **normal mode**, the macros can be defined manually.
 To do this go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`MACRO INST.`.
 
 .. note:: In order to use the example Pickit files, the macros should be defined in the exact same order as shown in the image below.
    Otherwise, the example files should be adapted with the correct macro ID's before being run.
 
-.. image:: /assets/images/robot-integrations/yaskawa/yaskawa-macro.jpg
++---------+-------------+-------------+
+|         | EXECUTE JOB | SUSPEND JOB |
++=========+=============+=============+
+| MACRO1  | PI_CALIB    | `********`  |
++---------+-------------+-------------+
+| MACRO2  | PI_LOOK     | `********`  |
++---------+-------------+-------------+
+| MACRO3  | PI_WAIT     | `********`  |
++---------+-------------+-------------+
+| MACRO4  | PI_NEXT     | `********`  |
++---------+-------------+-------------+
+| MACRO5  | PI_CFG      | `********`  |
++---------+-------------+-------------+
+| MACRO6  | PI_SAVE     | `********`  |
++---------+-------------+-------------+
+| MACRO7  | PI_RUN      | `********`  |
++---------+-------------+-------------+
+| MACRO8  | PI_GPPD     | `********`  |
++---------+-------------+-------------+
+| MACRO9  | PI_CAPTU    | `********`  |
++---------+-------------+-------------+
+| MACRO10 | PI_PROCE    | `********`  |
++---------+-------------+-------------+
+| MACRO11 | PI_BUILD    | `********`  |
++---------+-------------+-------------+
 
 Macro argument definition
 -------------------------
 
-For macro **PIT_CALB** and **PIT_CFG**, arguments need to be defined.
+For macro **PI_CALIB** and **PI_CFG**, arguments need to be defined.
 
 To do this select the **MACROXX** text and press :guilabel:`SELECT`.
 
@@ -32,9 +56,9 @@ The values that need to be filled in can be found in the table below.
 |              |            +--------------+----------+--------------+--------------+-------------+--------------+
 |              |            | **COMMENT1** | **TYPE** | **COMMENT2** | **COMMENT1** | **DISPLAY** | **EXPRES'N** |
 +--------------+------------+--------------+----------+--------------+--------------+-------------+--------------+
-| **PIT_CALB** | **1**      | USER FRAME   | B CONST  |              | USER FRAME   | ON          | U/FRAME:     |
+| **PI_CALIB** | **1**      | USER FRAME   | B CONST  |              | USER FRAME   | ON          | U/FRAME:     |
 +--------------+------------+--------------+----------+--------------+--------------+-------------+--------------+
-| **PIT_CFG**  | **1**      | SETUP        | I CONST  |              | SETUP        | ON          | SETUP:       |
+| **PI_CFG**   | **1**      | SETUP        | I CONST  |              | SETUP        | ON          | SETUP:       |
 |              +------------+--------------+----------+--------------+--------------+-------------+--------------+
 |              | **2**      | PRODUCT      | I CONST  |              | PRODUCT      | ON          | PRODUCT:     |
 |              +------------+--------------+----------+--------------+--------------+-------------+--------------+
