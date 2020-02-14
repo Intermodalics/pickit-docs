@@ -1,8 +1,48 @@
+.. _yaskawa_pickit_interface:
+
 Yaskawa Pickit interface
 ========================
 
-Variables used by the Pickit system
------------------------------------
+This article documents the interface of the Yaskawa Pickit integration.
+For installation instructions, please refer to the :ref:`yaskawa_installation_and_setup` article.
+
+Pickit macros
+-------------
+
+Below you find an overview of the macros defined by Pickit. 
+
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO   | Field name | Comment                                                                                                 |
++=========+============+=========================================================================================================+
+| MACRO1  | PI_CALIB   | Trigger detection of the robot-camera calibration plate.                                                |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO2  | PI_LOOK    | Trigger a Pickit object detection using the currently active setup and product configuration.           |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO3  | PI_WAIT    | Wait for Pickit reply with detection results. PI_WAIT should always be the next Pickit command after a  |
+|         |            | PI_LOOK or PI_NEXT request.                                                                             |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO4  | PI_NEXT    | Request the next detected object.                                                                       |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO5  | PI_CFG     | Loads the specified setup and product configuration.                                                    |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO6  | PI_SAVE    | Save a snapshot with the latest detection results.                                                      |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO7  | PI_RUN     | Check the current mode of Pickit.                                                                       |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO8  | PI_GPPD    | Requests the pick point ID and pick point offset of the last requested object.                          |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO9  | PI_CAPTU   | Trigger Pickit to capture a camera image to be used by a following PI_PROCE command.                    |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO10 | PI_PROCE   | Trigger an object detection on the camera image that was previously captured via PI_CAPTU command.      |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+| MACRO11 | PI_BUILD   | Build the background cloud used in advanced Region of Interest filters.                                 |
++---------+------------+---------------------------------------------------------------------------------------------------------+
+
+.. tip:: The ID's of the macros can be changed by :ref:`manually-define_macros`.
+  Note if the ID's are changed the provided example programs by Pickit need to be altered accordingly.
+
+Pickit registers
+----------------
 
 Below you find an overview of the variables used by Pickit.
 When using Pickit these variables cannot be used for anything else.

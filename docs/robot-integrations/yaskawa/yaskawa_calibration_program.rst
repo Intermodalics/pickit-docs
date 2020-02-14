@@ -1,10 +1,35 @@
+.. _yaskawa_calibration_program:
+
 Yaskawa calibration program
 ===========================
+
+This example program requires that Pickit is installed and set up with your robot.
+For installation instructions, please refer to the :ref:`yaskawa_installation_and_setup` article.
+
+Before following these Yaskawa specific instructions in this article, make sure you first understand the process of executing a robot camera calibration as explained on :ref:`robot-camera-calibration`.
 
 Example program: TEST_CALIB
 ---------------------------
 
-This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`, and allows executing robot camera :ref:`robot-camera-calibration`.
+This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
+
+::
+
+    NOP
+    MFRAME UF#(5) P008 BF
+    MOVJ C00000 VJ=10.00 PL=0
+    PI_CALIB
+    MOVJ C00001 VJ=10.00 PL=0
+    PI_CALIB
+    MOVJ C00002 VJ=10.00 PL=0
+    PI_CALIB
+    MOVJ C00003 VJ=10.00 PL=0
+    PI_CALIB
+    MOVJ C00004 VJ=10.00 PL=0
+    PI_CALIB
+    END
+
+Below it is explained step by step on how to run this program.
 
 Define the tool for picking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,5 +62,4 @@ Execute the calibration program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before running the calibration program, make sure that the Pickit web interface is in the :guilabel:`Calibration` page, which provides feedback on calibration plate visibility and progress of the calibration process (:ref:`more <multi-poses-calibration-calibrating>`).
-To run this program either do **Play + Start**, **Interlock + FWD** or **Interlock + Test**.
-
+To run the program either do **Play + Start**, **Interlock + FWD** or **Interlock + Test**.

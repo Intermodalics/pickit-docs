@@ -1,7 +1,7 @@
-.. _yaskawa:
+.. _yaskawa_installation_and_setup:
 
-Setting up Pickit with a Yaskawa robot
-======================================
+Yaskawa installation and setup
+==============================
 
 This setup manual helps you setup Pickit with a Yaskawa robot. The
 setup of Pickit with a Yaskawa robot consists of 4 steps:
@@ -36,7 +36,7 @@ Hardware connection
 
 The connection between the Yaskawa controller and Pickit is done over ethernet. You connect your robot controller to the **ROBOT** port on the Pickit processor as shown in the diagram below:
 
-.. image:: /assets/images/robot-integrations/yaskawa/yaskawa.png
+.. image:: /assets/images/robot-integrations/yaskawa/yaskawa-ethernet-ports.png
 
 - For **DX200** controllers you need to connect the Pickit processor to the **CN104** port.
 - For **YRC1000 (Micro)** controllers you need to connect the Pickit processor to the **CN106** or **CN107** port.
@@ -70,13 +70,16 @@ The robot controller should still be in **maintenance mode** and the security mo
 #. Select the folder **Pickit** > **MotoPlus** on the USB device under :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
 #. Load the MotoPlus application under :guilabel:`MotoPlus APL` → :guilabel:`LOAD(USER APPLICATION)`. 
 
-.. warning:: In the next step, uploading the system data file **MACRO INST DEF DATA, MACRO.DAT** will remove all existing macro files on your controller, before pushing in the Pickit macros.
-   If this is unwanted, do not upload the file.
-   In that case, you should upload all other files as described below, and then :ref:`manually define the macros. <manually-define_macros>`
-
 Press :guilabel:`Select`, :guilabel:`Enter` and confirm.
 Now reboot the controller in **normal mode** with the USB device still attached.
 After rebooting, set security to **management mode**.
+
+First check if the MotoPlus application is running by looking for robot output **#1024** under :guilabel:`IN/OUT` → :guilabel:`UNIVERSAL OUTPUT`, this output should be blinking.
+If the MotoPlus application is running you can continue with uploading the Pickit files.
+
+.. warning:: In the next step, uploading the system data file **MACRO INST DEF DATA, MACRO.DAT** will remove all existing macro files on your controller, before pushing in the Pickit macros.
+   If this is unwanted, do not upload the file.
+   In that case, you should upload all other files as described below, and then :ref:`manually define the macros. <manually-define_macros>`
 
 #. Load the correct USB device under :guilabel:`EX. MEMORY` → :guilabel:`DEVICE`.
 #. Select the folder **Pickit** > **Program** on the USB device under :guilabel:`EX. MEMORY` → :guilabel:`FOLDER`.
@@ -110,10 +113,18 @@ Test the robot connection
 To start the communication, you can run **PIT_RUN** on the robot.
 This job can be found in :guilabel:`JOB` → :guilabel:`SELECT MACRO JOB`.
 
-While the program is running, an indicator in the Pickit web interface :ref:`web-interface-top-bar` should confirm that the robot is connected .
+While the program is running, an indicator in the Pickit web interface :ref:`web-interface-top-bar` should confirm that the robot is connected.
 
-.. toctree::
-  :maxdepth: 1
-  :hidden:
+Run the example jobs
+--------------------
 
-  manually-define-the-pickit-macros
+The example jobs are a great way to get familiar with Pickit, and can serve as a template to build your own applications.
+The following articles provide detailed descriptions of the example programs:
+
+  - :ref:`yaskawa_calibration_program`
+  - :ref:`yaskawa_example_picking_program`
+
+Yaskawa Pickit interface
+------------------------
+
+See following article for a detailed explanation of the macros and registers used by Pickit: :ref:`yaskawa_pickit_interface`.
