@@ -1,9 +1,16 @@
-.. _universal-robots-urcap-installation:
+.. _universal-robots-urcap-v1-installation:
 
 URCap installation and setup
 ============================
 
-Pickit integrates seamlessly with Universal Robots by means of a URCap plugin. This plugin exposes a set of Pickit specific command blocks that make the creation of vision-guided programs simple and easy. This document explains how to install the Pickit URCap plugin and introduces the functionality it provides.
+.. attention::
+   These installation instructions are for **version 1** of the Pickit URCap plugin.
+   We highly recommend using **version 2**, if compatible with your system (:ref:`click to check <downloads_ur>`).
+
+
+Pickit integrates seamlessly with **Universal Robots** by means of a **URCap plugin**.
+This plugin exposes a set of Pickit specific command blocks that make the creation of vision-guided programs simple and easy.
+This document explains how to install the Pickit URCap plugin and introduces the functionality it provides.
 
 Some of the benefits of using the Pickit URCap plugin:
 
@@ -23,7 +30,8 @@ of the web interface. When the version is not displayed at the top left of the w
 .. image:: /assets/images/robot-integrations/ur/urcap-installation-1.png
 
 .. tip::
-    Still having an older Pickit version installed? Contact our support team to have your Pickit system updated: support@pickit3d.com.
+    Do you have an older Pickit version installed?
+    You can check if there is a more recent version available in the :ref:`Settings page <upgrade-pickit-version>`, or contact our support team at support@pickit3d.com.
 
 Robot
 ~~~~~
@@ -79,15 +87,15 @@ From the main screen, go to **Program Robot** and select the **Installation** 
 
 As long as the connection to Pickit has not been established, the status indicator at the lower left looks like this:
 
-.. image:: /assets/images/robot-integrations/ur/urcap-installation-9.png
+.. image:: /assets/images/robot-integrations/ur/urcap-installation-status-disconnected.png
 
 Establishing the connection to Pickit can take a few seconds, and while this takes place, the status indicator displays:
 
-.. image:: /assets/images/robot-integrations/ur/urcap-installation-10.png
+.. image:: /assets/images/robot-integrations/ur/urcap-installation-status-connecting.png
 
 When the connection to the Pickit system is successful, the status indicator at the lower left should look like this:
 
-.. image:: /assets/images/robot-integrations/ur/urcap-installation-11.png
+.. image:: /assets/images/robot-integrations/ur/urcap-installation-status-connected.png
 
 If you plan to run robot programs that don't use Pickit, you should disable (not uninstall) the Pickit URCap plugin, by unchecking the **Enable Pickit plugin** checkbox in the plugin's installation screen.
 
@@ -96,9 +104,9 @@ Example programs
 
 The Pickit URCap plugin installation makes available a few example programs under the ``/programs/pickit_samples`` folder of the robot. They can also be downloaded independently of the URCap \ `here <https://drive.google.com/uc?export=download&id=1Gf63Y35NaVxbP4mwc5YUC5SU8u8RYvyO>`__. These programs are a great way to get familiar with the Pickit URCap plugin, and can serve as a template to build your own applications. The following articles provide detailed descriptions of example programs:
 
--  :ref:`universal-robots-urcap-example`
+-  :ref:`universal-robots-urcap-example-v1`
 
--  :ref:`universal-robots-urcap-calibration`
+-  :ref:`universal-robots-urcap-calibration-v1`
 
 Running URScript programs
 -------------------------

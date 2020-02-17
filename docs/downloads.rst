@@ -71,13 +71,25 @@ For Stäubli software version 7 and higher.
 
 - `Download the Pickit Stäubli files <https://drive.google.com/uc?export=download&id=1u87VZHQ53NugI5pW_HIGKr7DDXyhVlSf>`__
 
+.. _downloads_ur:
+
 Universal Robots
 ----------------
 
-The Pickit URCap is only available for Polyscope versions 3.4.x and higher and 5.0.x and higher.
++-----------------------------------------------------------------------------------------------------------------------------+------------+----------------------+-----------------------+
+|                                                                                                                             | Supported versions                                        |
++-----------------------------------------------------------------------------------------------------------------------------+------------+----------------------+-----------------------+
+| Download link                                                                                                               | Pickit     | Polyscope (e-series) | Polyscope (CB-series) |
++=============================================================================================================================+============+======================+=======================+
+| `Pickit URCap 2.0.0 <https://drive.google.com/uc?export=download&id=1QPtIETcbdZnKOe618d0Tz6jzL8vT6hYd>`__ (recommended)     | **≥2.2.0** | **5.4** - 5.5*       | **3.10** - 3.11*      |
++-----------------------------------------------------------------------------------------------------------------------------+------------+----------------------+-----------------------+
+| `Pickit URCap 1.4.0 <https://drive.google.com/uc?export=download&id=15hsK3PCDgNbpdqzeIDDvHq-ewd9f8zcx>`__                   | ≥1.8.2     | 5.0 - 5.4*           | 3.4 - 3.10*           |
++-----------------------------------------------------------------------------------------------------------------------------+------------+----------------------+-----------------------+
+| `URScript legacy interface <https://drive.google.com/uc?export=download&id=1VedZYjVvlcyiE4iuqUuF67DsT8545ojU>`__            | ≥1.4       | 5.0 - 5.4*           | 3.0 - 3.10*           |
++-----------------------------------------------------------------------------------------------------------------------------+------------+----------------------+-----------------------+
 
-- `Download the Pickit URCap 1.3.7 <https://drive.google.com/uc?export=download&id=1CnF0oO3MaZupuSo7Oz2YriL6kztgQbd5>`__
-- `Download the Pickit URScript files <https://drive.google.com/uc?export=download&id=1VedZYjVvlcyiE4iuqUuF67DsT8545ojU>`__
+:sup:`*` The most recent supported Polyscope version represents what has been officially tested by Pickit.
+More recent Polyscope versions typically work out-of-the-box.
 
 Yaskawa
 -------

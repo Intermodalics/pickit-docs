@@ -1,7 +1,7 @@
-.. _techman-index:
+.. _universal-robots-urcap-v1:
 
-Setting up Pickit with an Omron TM robot
-========================================
+URCap 1
+=======
 
 .. toctree::
   :glob:
@@ -11,4 +11,3 @@ Setting up Pickit with an Omron TM robot
   pick_and_place_program.rst
   calibration_program.rst
   interface.rst
-

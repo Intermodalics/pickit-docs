@@ -62,6 +62,8 @@ your application. Application data lets you know where you stand in your
 application and it’s performance and may uncover important trends or
 problems.
 
+.. _settings-network:
+
 Network settings
 ----------------
 

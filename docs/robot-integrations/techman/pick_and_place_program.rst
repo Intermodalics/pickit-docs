@@ -219,10 +219,4 @@ A pattern that is used throughout the program is that whenever a non-recoverable
 Running the program
 -------------------
 
-.. caution::
-   When running a program for the first time, it is advised to **set a low robot speed**. As such, non-expected behavior (for example due to incorrect programming or wrong calibration) can be identified early enough to prevent the robot from colliding with surrounding objects or people.
-
-.. warning::
-   Before running the program, there should exist a valid :ref:`robot camera calibration <robot-camera-calibration>` and that the **tool frame** must be correctly specified.
-
-To allow Pickit to respond to robot requests, Pickit needs to be in **robot mode**, which is enabled in the :ref:`Pickit web interface <web-interface-top-bar>`.
+.. include:: ../run_program_warning.rst
