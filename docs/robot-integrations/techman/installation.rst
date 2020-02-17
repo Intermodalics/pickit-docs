@@ -16,9 +16,7 @@ Pickit
 Verify that the installed **Pickit version is 2.1 or greater**.
 The software version can be verified in the :ref:`top bar <web-interface-top-bar>` of the web interface.
 
-.. tip::
-    Do you have an older Pickit version installed?
-    You can check if there is a more recent version available in the :ref:`Settings page <upgrade-pickit-version>`, or contact our support team at support@pickit3d.com.
+.. include:: ../upgrade_pickit_tip.rst
 
 Robot
 ~~~~~

@@ -24,9 +24,7 @@ of the web interface.
 .. image:: /assets/images/robot-integrations/ur/urcap-installation-pickit-version.png
   :align: center
 
-.. tip::
-    Do you have an older Pickit version installed?
-    You can check if there is a more recent version available in the :ref:`Settings page <upgrade-pickit-version>`, or contact our support team at support@pickit3d.com.
+.. include:: ../../upgrade_pickit_tip.rst
 
 The **Polyscope version** can be verified by opening the **hamburger menu** at the upper-right corner and selecting :guilabel:`About`.
 
