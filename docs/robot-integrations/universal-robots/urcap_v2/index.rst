@@ -19,3 +19,6 @@ URCap 2
   :hidden:
 
   low_level_interface.rst
+
+.. image:: /assets/images/robot-integrations/ur/urcap-v2-overview.png
+  :align: center
