@@ -41,6 +41,27 @@ Below you find an overview of the macros defined by Pickit.
 .. tip:: The ID's of the macros can be changed by :ref:`manually defining the Pickit macros <manually-define_macros>`.
   Note if the ID's are changed the provided example programs by Pickit need to be altered accordingly.
 
+Following macros have input arguments that need to be filled in when you call them.
+
+PI_CALIB
+~~~~~~~~
+
+- **USER FRAME**: User frame created at start of TEST_CALIB. By default, this is **5**.
+
+.. _pi_cfg:
+
+PI_CFG
+~~~~~~
+
+- **SETUP**: Pickit setup file ID.
+- **PRODUCT**: Pickit product file ID.
+- **USER FRAME**: User frame that was created in TEST_CALIB. By default, this is **5**.
+- **TOOL**: Tool frame ID that is used by robot for picking.
+- **TIMEOUT**: Value of the timeout used for communication with Pickit.
+
+.. note:: If something is wrong here, you can expect the following message: Undefined user frame.
+   The example program by default uses frame 5 and tool 1, but these might not exist.
+
 Pickit registers
 ----------------
 

@@ -92,15 +92,8 @@ Again it is important that **tool0** is not changed. Any other tool can be used.
 Set PI_CFG
 ~~~~~~~~~~
 
-In this command the following values have to be set:
+In this command the input arguments have to be set. See :ref:`pi_cfg` for more information on how to do this.
 
-- **Setup**: Pickit setup file ID.
-- **Product**: Pickit product file ID.
-- **User Frame**: User frame that was created in TEST_CALIB. By default, this is **5**.
-- **Tool**: Number of the tool frame defined in the previous step.
-
-.. note:: If something is wrong here, you can expect the following message: Undefined user frame.
-   The example program by default uses frame 5 and tool 1, but these might not exist.
 
 Variables used in TEST_SIMPLEPICK 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
