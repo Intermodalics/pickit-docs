@@ -34,7 +34,7 @@ Setup the network connection
 Hardware connection
 ~~~~~~~~~~~~~~~~~~~
 
-The connection between the Yaskawa controller and Pickit is done over ethernet. You connect your robot controller to the **ROBOT** port on the Pickit processor as shown in the diagram below:
+The connection between the Yaskawa controller and Pickit is done over Ethernet. You connect your robot controller to the **ROBOT** port on the Pickit processor as shown in the diagram below:
 
 .. image:: /assets/images/robot-integrations/yaskawa/yaskawa-ethernet-ports.png
 
