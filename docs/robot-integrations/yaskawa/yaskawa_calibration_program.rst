@@ -29,7 +29,7 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
     PI_CALIB
     END
 
-Below it is explained step by step on how to run this program.
+Below, each step of the program is explained.
 
 Define the tool for picking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -4,7 +4,7 @@ Yaskawa installation and setup
 ==============================
 
 This setup manual helps you setup Pickit with a Yaskawa robot. The
-setup of Pickit with a Yaskawa robot consists of 4 steps:
+setup of Pickit with a Yaskawa robot consists of the following steps:
 
 .. contents::
     :backlinks: top
