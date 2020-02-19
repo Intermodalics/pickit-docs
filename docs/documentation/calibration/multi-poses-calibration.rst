@@ -76,19 +76,28 @@ image, but tilted in different directions.
 Calibrating
 -----------
 
-#. Click on the :guilabel:`Calibration` button, located on top of the Pickit web interface.
+#. Click on the :guilabel:`Calibration` button, located on :ref:`top bar <web-interface-top-bar>` of the Pickit web interface.
+
 #. Choose the camera mount: whether the camera is fixed to a **stationary** place or **robot mounted**.
+
 #. Select the correct robot type: **6 DOF** or **4 DOF**, depending on the number of
    degrees-of-freedom of your robot.
-#. Choose the **multi poses** robot camera calibration method.
-#. Follow the indicated steps, and run the robot program when instructed. Alternatively, you can also
-   move your robot into the positions and press :guilabel:`Collect current pose` in the calibration wizard.
-   Notice that the latter is only possible if the robot is periodically sending its pose to Pickit.
-   The Pickit web interface shows the progress of the calibration process.
-#. In the next step, you will see a 3D viewer showing the robot and camera models. Here you can confirm
-   whether the calibration is correct.
 
-.. image:: /assets/images/Documentation/Calibration-progress-multi-poses.png
+#. Choose the **multi poses** robot camera calibration method.
+
+#. Follow the indicated steps, and run the robot program when instructed.
+   The Pickit web interface shows the progress of the calibration process.
+
+    .. image:: /assets/images/Documentation/calibration/multi-poses-progress.png
+
+    .. _multi-poses-calibration-collect-current-pose:
+
+    Alternatively, some robot integrations allow manually collecting calibration poses without having to run a robot program.
+    When this is the case, the :guilabel:`Collect current pose` button is shown below the calibration progress, which should be pressed after manually bringing the robot to the next calibration pose (e.g. by jogging or free-driving):
+
+    .. image:: /assets/images/Documentation/calibration/collect-current-pose.png
+
+#. In the final step, you will see a 3D viewer showing the robot and camera models. Here you can confirm whether the calibration is correct.
 
 4 DoF robots
 ~~~~~~~~~~~~

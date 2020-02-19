@@ -9,4 +9,4 @@ COPY docs docs
 RUN /home/python/.venv/bin/sphinx-build docs dist
 WORKDIR /home/python/dist
 
-CMD ["sphinx-autobuild", "--host", "0.0.0.0", "--port", "8080", "/home/python/docs", "/home/python/dist"]
+CMD ["sphinx-autobuild", "-W", "--host", "0.0.0.0", "--port", "8080", "/home/python/docs", "/home/python/dist"]

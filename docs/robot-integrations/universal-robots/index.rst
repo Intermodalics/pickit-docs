@@ -4,8 +4,17 @@ Setting up Pickit with a Universal Robots
 =========================================
 
 .. toctree::
+  :hidden:
   :glob:
-  :maxdepth: 2
+  :maxdepth: 1
 
-  urcap/index.rst
+  urcap_v2/index.rst
+  urcap_v1/index.rst
   urscript/index.rst
+
+The Pickit integration with Universal Robots is available for different versions of Pickit and Polyscope.
+:ref:`Check here <downloads_ur>` which one is compatible with your setup.
+
+- :ref:`URCap version 2 <universal-robots-urcap>` (recommended)
+- :ref:`URCap version 1 <universal-robots-urcap-v1>`
+- :ref:`URScript legacy interface <universal-robots-scripts>`
