@@ -16,7 +16,7 @@ Connect your Pickit processor to the internet
 You can connect your system to the internet as explained in 
 :ref:`Connect your system to the internet <connect-your-system-to-internet>`.
 
-Connect your PC (with internet connection) to your Pickit processor
+Connect your PC (with Internet connection) to your Pickit processor
 --------------------------------------------------------------------
 
 In case connecting your Pickit processor to the internet is
