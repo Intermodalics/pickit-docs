@@ -3,15 +3,13 @@
 The Pickit URCap interface
 ==========================
 
-Pickit integrates seamlessly with Universal Robots by means of a URCap plugin. This plugin exposes a set of Pickit specific command blocks that make the creation of vision-guided programs simple and easy. This article documents the interface of the Pickit URCap plugin. For installation instructions please refer to the :ref:`universal-robots-urcap-installation` article.
+Pickit integrates seamlessly with Universal Robots by means of a URCap plugin. This plugin exposes a set of Pickit specific command blocks that make the creation of vision-guided programs simple and easy. This article documents the interface of the Pickit URCap plugin. For installation instructions please refer to the :ref:`universal-robots-urcap-v1-installation` article.
 
 .. contents::
     :backlinks: top
     :local:
     :depth: 1
 
-
-.. _urcap-global-variables:
 
 Global variables
 ----------------
@@ -40,7 +38,7 @@ To use one of the global variables defined by the Pickit plugin, you need to dec
 | #. Check that the robot can reach the pose by                            |
 |    calling ``pickit_object_reachable()``.                                |
 |                                                                          |
-| Refer to the :ref:`universal-robots-urcap-example` article for a         |
+| Refer to the :ref:`universal-robots-urcap-example-v1` article for a      |
 | detailed usecase description.                                            |
 |                                                                          |
 +--------------------------------------------------------------------------+
@@ -183,8 +181,8 @@ To insert a new command, navigate to the **Command** tab select an entry from th
 |    .. image:: /assets/images/robot-integrations/ur/urcap-find-2.png      |
 |                                                                          |
 | Refer to the cycle time optimization section of the                      |
-| :ref:`universal-robots-urcap-example` article for the motivation behind  |
-| performing robot motions while a Pickit detection is.                    |
+| :ref:`universal-robots-urcap-example-v1` article for the motivation      |
+| behind performing robot motions while a Pickit detection is.             |
 +--------------------------------------------------------------------------+
 
 .. _command-get-next-object:
@@ -292,7 +290,6 @@ To insert a new command, navigate to the **Command** tab select an entry from th
 | pose used for object detection.                                          |
 +--------------------------------------------------------------------------+
 
-.. _urcap-global-helper-functions:
 
 Helper functions
 ----------------

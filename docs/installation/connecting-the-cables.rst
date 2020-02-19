@@ -45,7 +45,7 @@ M-HD camera
 ^^^^^^^^^^^
 
 Connect the power and data cables to the M-HD camera, in the corresponding
-connectors. Plug the USB cable to the Pickit processor, in the **CAMERA** port.
+connectors. Ensure that all connections are screwed tightly in. Plug the USB cable to the Pickit processor, in the **CAMERA** port.
 To power the camera, connect the power chord to the power supply, and plug
 the other end to a power outlet. The camera fan should immediately start
 spinning.
@@ -53,6 +53,9 @@ spinning.
 .. important::
    A USB hub is not allowed between the Pickit processor and any of the Pickit
    cameras.
+
+.. warning::
+   When using the optical extension cables provided by Pickit, make sure that these are paired with the provided shorter, 0.5m, copper cable (blue).
 
 .. _connect-computer:
 

@@ -1,4 +1,4 @@
-.. _universal-robots-urcap-example:
+.. _universal-robots-urcap-example-v1:
 
 URCap example picking program
 =============================
@@ -11,7 +11,7 @@ URCap example picking program
 Loading the program
 -------------------
 
-This example program requires the **Pickit URCap plugin** to be installed in your robot. For installation instructions of both the URCap plugin and the example programs please refer to the :ref:`universal-robots-urcap-installation` article.
+This example program requires the **Pickit URCap plugin** to be installed in your robot. For installation instructions of both the URCap plugin and the example programs please refer to the :ref:`universal-robots-urcap-v1-installation` article.
 
 In the initialization screen, select :guilabel:`Program robot` and then :guilabel:`Load program`. Navigate to the ``pickit_samples/simple_picking`` folder and open the ``simple_picking.urp`` program. The program is then loaded. 
 
@@ -106,15 +106,7 @@ Running the program
 Program execution
 ~~~~~~~~~~~~~~~~~
 
-.. caution::
-   When running a program for the first time, it is advised to **set a low robot speed**. As such, non-expected behavior (for example due to incorrect programming or wrong calibration) can be identified early enough to prevent the robot from colliding with surrounding objects or people.
-
-.. warning::
-      Before running the program, there should exist a valid :ref:`robot camera calibration <robot-camera-calibration>` and that the **tool frame** must be correctly specified.
-
-To allow Pickit to respond to robot requests, Pickit needs to be in **robot mode**. To enable robot mode, click on the following button on the Pickit web interface:
-
-|image8|
+.. include:: ../../run_program_warning.rst
 
 In order to run the program in the robot controller, at the bottom of the graphical interface, make sure that **Real robot** is selected and that the robot **speed** is set to a safe value. Click on the rewind button to make sure that the program starts from the beginning - the program line **Robot Program** shall be highlighted, meaning that’s the point at which the program will start. Finally, click on the play button to run the program.
 
@@ -206,7 +198,6 @@ As part of application monitoring, you can add a ``pickit_no_image_captured()`` 
 .. |image6| image:: /assets/images/examples/urcap-program-step-7.png
             :scale: 50 %
 .. |image7| image:: /assets/images/examples/urcap-program-step-8.png
-.. |image8| image:: /assets/images/examples/urcap-program-step-9.png
 .. |image9| image:: /assets/images/examples/urcap-program-step-10.png
 .. |image10| image:: /assets/images/examples/urcap-program-step-11.png
 .. |image11| image:: /assets/images/examples/urcap-program-step-12.png

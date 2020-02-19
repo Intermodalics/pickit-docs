@@ -1,281 +1,512 @@
 .. _socket-communication:
 
-The low-level communication structures between a robot and Pickit on the TCP/IP socket level
-=============================================================================================
+Pickit socket interface
+=======================
 
-This article documents the low-level communication structures between a robot and Pickit on the TCP/IP socket level. This information is only required to interface a new robot brand to Pickit.
+Pickit offers a low-level interface based on a TCP/IP socket communication which can be used to connect
+your robot (or PLC) with Pickit. Using the socket interface, the robot can for instance trigger detections,
+retrieve object poses and change the Pickit configuration.
+
+The following article describes the technical details of the socket interface. This is relevant if you
+are planning to interface a new robot brand with Pickit.
+
+.. note::
+   Before starting, make sure that the robot integration
+   does not already exist and confirm with support@pickit3d.com that the integration is not under development.
+
+Overview
+--------
+
+The robot and Pickit exchange information in a request-response pattern, where the robot acts as the client
+and Pickit as the server. The robot sends a request, such as e.g. an object detection, to Pickit, which replies
+with a corresponding response. All requests are implemented in a purely synchronous fashion, and it is up to
+the client to ensure that no new requests are sent before having received a response for the previous request.
+
+Next to this request-response exchange, Pickit also expects to receive periodic **robot flange** pose
+updates from the client. Note that the robot pose update is the only request for which the Pickit
+system does not reply with a matching response message.
+
+.. figure:: /assets/images/robot-integrations/socket/socket-2.png
+   :align: center
+   :width: 500
+
+
+Connection details
+------------------
+
++----------------+--------------------------------+
+| **Type**       | TCP/IP socket                  |
++----------------+--------------------------------+
+| **Port**       | 5001 (TCP)                     |
++----------------+--------------------------------+
+| **Byte order** | Network order (big endian)     |
++----------------+--------------------------------+
+
+Once a Pickit system is started, it listens to TCP port ``5001`` and waits until the robot initiates
+a connection. This is done on the robot side by opening a TCP socket targeting the IP address of the Pickit system
+and the given port.
+
+The IP address of the Pickit system can be found and changed in the Pickit :ref:`network settings <settings-network-robot>`.
+The default IP for the Ethernet port labeled `ROBOT` is ``169.254.5.180``.
 
 Protocol
 --------
 
-The robot Pickit communication is based on TCP/IP socket communication. Pickit is the server (slave) and the robot is the client (master). Hence, the robot is responsible for opening the socket communication and needs to know:
+Request and response messages that are exchanged between a robot and Pickit have a fixed size. A fixed-size message
+protocol has the advantage that it is easy to implement on the robot side, even with limited programming features.
 
--  The **IP address** of the Pickit port labelled ROBOT,
--  The **port number** which is **5001** by default.
--  Pickit communicates data packages using the **network byte order** convention (Big Endian).
+.. note::
+   Request and response messages have a fixed size and do not have a begin and/or end character. While the TCP/IP protocol
+   prevents data loss, the robot client implementation is responsible for keeping track of the boundary between messages by
+   counting the number of sent/received bytes and comparing with the expected message size.
 
-.. image:: /assets/images/robot-integrations/socket/socket-1.png
+.. _MULT:
 
-Above you can find an example of the different behaviour between network byte order and host byte order.
+Request and response messages consist of a number of fields, each represented by an ``int32`` (4 bytes). Floating-point data, such
+as distances and angles, are multiplied by a constant factor ``MULT = 10000`` and truncated, before being sent as an ``int32``. The receiving side
+then decodes this field by dividing the received value by ``MULT`` again. Negative numbers are encoded using
+`two's complement <https://en.wikipedia.org/wiki/Two%27s_complement>`_.
 
-.. warning::
-    The robot client sends requests using the `command message <#command-message>`__, and the Pickit server answers with the `response message <#response-message>`__. These messages **have a static size**, and **don’t have a begin and/or end character**. While the TCP/IP protocol prevents data loss, the robot client implementation is responsible for keeping track of the boundary between messages by counting the number of sent/received bytes and comparing with the expected message size.
+Request message
+~~~~~~~~~~~~~~~
 
-    There is **no explicit coupling between a command and a response** in the communication. Therefore, the robot client should not send a second command before having confirmed that a response to the first command has been received. It is the responsibility of the client implementation or the robot program to prevent this from happening.
+The request message that is sent from the robot to Pickit is ``48 bytes`` long and consists of the following fields:
 
-The Pickit server only sends `response messages <#response-message>`__ after having received an explicit request from the robot client in a `command message <#command-message>`__. Apart from this request-response exchange, Pickit also expects to receive periodic **robot flange** pose updates from the client. The rate of these periodic updates depends on the robot brand, but is typically in the range of 10 to 50 messages per second. Note that both command requests and robot flange pose updates use the same message structure, ``robot_to_pickit_data``, described in more detail in the `command message <#command-message>`__ section. The structure of the response messages, ``pickit_to_robot_data``, is described in the `response message <#response-message>`__ section.
+.. table:: Request message structure
 
-.. image:: /assets/images/robot-integrations/socket/socket-2.png
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
+   | Field       | Type     | Length  | Description                                                                   |
+   +=============+==========+=========+===============================================================================+
+   | position    | int32[3] | 12 bytes| Robot flange position (XYZ, in meters) expressed in the right-handed robot    |
+   |             |          |         | base frame. Each field has to be multiplied by the MULT_ factor.              |
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
+   | orientation | int32[4] | 16 bytes| Robot flange orientation expressed in the right-handed robot base frame.      |
+   |             |          |         | The orientation encoding and units depend on the chosen                       |
+   |             |          |         | :ref:`orientation convention <meta-msg>`. Each field has to be                |
+   |             |          |         | multiplied by the MULT_ factor.                                               |
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
+   | command     | int32    | 4 bytes | One of the possible :ref:`request commands <request-cmds>`.                   |
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
+   | payload     | int32[2] | 8 bytes | Optional payload fields.                                                      |
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
+   | meta        | int32[2] | 8 bytes | Orientation convention and protocol version. See the                          |
+   |             |          |         | :ref:`detailed meta field explanation <meta-msg>`.                            |
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
 
-A Pickit data package consists of a number of **int32s** in network byte order. As such, floating-point data like distances and angles are multiplied by a factor MULT before being sent as an int32, and are divided by MULT after being received. This integer conversion factor **MULT** has the value of **10000**.
+Except for the optional ``payload`` fields, all fields are mandatory, and have to be set to sane values for every request.
+The payload fields are only required for certain commands, and are otherwise not used by Pickit.
 
-For **position** information Pickit sends and expects to receive values in **meter** before/after compensating with the MULT factor. For the **orientation** information it depends on the robot type. For UR **radians** are used, for ABB **unit quaternions** are used and for the other brands **degrees** are used. Also here, this is the unit before/after compensating with the MULT factor. 
+The ``command`` field indicates which operation Pickit should execute. Possible commands and their
+corresponding response messages are explained in more detail :ref:`below <request-response-pairs>`.
 
-.. _command-message:
+Response message
+~~~~~~~~~~~~~~~~
 
-Command message from robot to Pickit
-------------------------------------
+Except for the pose-update request, all requests are answered with a ``64 byte`` long response message
+with the following structure:
 
-The data package communicated to Pickit contains the actual robot pose, an (optional) robot command and the desired configuration. The latter allows to request Pickit to configure according to an existing setup and product type. To find out the number associated to a setup or product file, go to the **Setup** page (for setup file) or **Detection** or **Picking** page (for product file) and press the :guilabel:`Open` button on top of the page. The number appears next to the file name.
+.. table:: Response message structure
 
-In summary, the robot is required to send this structure to the Pickit Socket Interface:
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
+   | Field       | Type     | Length  | Description                                                                   |
+   +=============+==========+=========+===============================================================================+
+   | position    | int32[3] | 12 bytes| Object position or pick point offset translation (XYZ, in meters), depending  |
+   |             |          |         | on the response status. See also the                                          |
+   |             |          |         | :ref:`detailed command explanation<request-response-pairs>`. Each value       |
+   |             |          |         | has to be divided by MULT_.                                                   |
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
+   | orientation | int32[4] | 16 bytes| Object orientation or pick point offset rotation, depending on the            |
+   |             |          |         | response status. See also the                                                 |
+   |             |          |         | :ref:`detailed command explanation<request-response-pairs>`. Encoding and     |
+   |             |          |         | units depend on the chosen :ref:`orientation convention<meta-msg>` and have   |
+   |             |          |         | to be divided by MULT_.                                                       |
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
+   | payload     | int32[6] | 24 bytes| Optional payload fields.                                                      |
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
+   | status      | int32    | 4 bytes | One of the defined :ref:`status values <response-status>`.                    |
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
+   | meta        | int32[2] | 8 bytes | Orientation convention and protocol version. See the                          |
+   |             |          |         | :ref:`detailed meta field explanation <meta-msg>`.                            |
+   +-------------+----------+---------+-------------------------------------------------------------------------------+
 
-::
+Not every command response conveys pose information or additional payload. The ``status`` field determines if (and how)
+``position``, ``orientation`` and ``payload`` fields have to be interpreted. In the following sections, the individual
+commands and their corresponding responses are explained in more detail.
 
-    struct robot_to_pickit_data {
-        int32 actual_pose[7];
-        int32 command;
-        int32 setup;
-        int32 product;
-        meta_data meta;
-    };
+.. _request-response-pairs:
 
-Metadata fields are documented in the  `Message metadata <#message-metadata>`__ section of this article. The remaining fields are explained below.
+Available commands
+~~~~~~~~~~~~~~~~~~
 
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Field name         | Type / units                     | Comment                                                                                                                                                                                                                          |
-+====================+==================================+==================================================================================================================================================================================================================================+
-| **actual\_pose**   | **int32[7]**                     | | Actual robot flange pose in robot base frame consisting of position in Cartesian space and orientation in axis angle, quaternion or Euler angles convention. The orientation convention and units depend on the robot brand.   |
-|                    | [0-2] : position (m)             | | To populate array elements, each value has to be multiplied by the  **MULT** factor before being sent.                                                                                                                         |
-|                    | [3-6] : orientation (rad,o,/)    |                                                                                                                                                                                                                                  |
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **command**        | **int32**                        | A single command from robot to Pickit.                                                                                                                                                                                           |
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                    | RC\_PICKIT\_NO\_COMMAND          | Use when sending a periodic pose update. Pickit does not reply to these requests.                                                                                                                                                |
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                    | RC\_PICKIT\_CHECK\_MODE          | Check the current mode of Pickit (RUNNING, IDLE or CALIBRATION)                                                                                                                                                                  |
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                    | RC\_PICKIT\_FIND\_CALIB\_PLATE   | Trigger the localisation of the Pickit camera-to-robot calibration plate.                                                                                                                                                        |
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                    | RC\_PICKIT\_LOOK\_FOR\_OBJECTS   | Trigger camera to look for new objects in its current workspace. Pickit will respond with the amount of objects currently found in the workspace, which may be zero, as well as the pose of the first object if one was detected.|
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                    | RC\_PICKIT\_NEXT\_OBJECT         | Request camera to return next localised object stored in the Pickit buffer and which was found with RC\_PICKIT\_LOOK\_FOR\_OBJECTS. Please note that the RC\_PICKIT\_LOOK\_FOR\_OBJECTS command already returns the first object,|
-|                    |                                  | if one was detected.                                                                                                                                                                                                             |
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                    | RC\_PICKIT\_CONFIGURE            | Request Pickit to load a specific setup and product type.                                                                                                                                                                        |
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                    | RC\_PICKIT\_SAVE\_SCENE          | Request Pickit to save a :ref:`snapshot <Saving-a-snapshot>`. This is useful when your application is not behaving as you expect (for example, no objects detected in a non-empty bin). If you don't want to stop your           |
-|                    |                                  | application everytime such a situation occurs, you can instead save a snapshot from the robot program, and use it later to understand the problem and possibly improve the settings.                                             |
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **setup**          | **int32**                        | A number matching to a setup known by the Pickit system.                                                                                                                                                                         |
-|                    |                                  | Used only when the command type is RC\_PICKIT\_CONFIGURE.                                                                                                                                                                        |
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **product**        | **int32**                        | A number matching to a product type known by the Pickit system.                                                                                                                                                                  |
-|                    |                                  | Used only when the command type is RC\_PICKIT\_CONFIGURE.                                                                                                                                                                        |
-+--------------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. _RC_PICKIT_NO_COMMAND:
 
-Below are the values for the robot command constants expected by Pickit:
+RC_PICKIT_NO_COMMAND (Robot pose update)
+________________________________________
 
-::
+Send the current robot flange pose to Pickit. This information is used by Pickit to determine if the robot is
+still connected, as well as to update the 3D views in the Pickit web interface.
 
-        #define RC_PICKIT_NO_COMMAND         -1
-        #define RC_PICKIT_CHECK_MODE         0
-        #define RC_PICKIT_FIND_CALIB_PLATE   10
-        #define RC_PICKIT_LOOK_FOR_OBJECTS   20
-        #define RC_PICKIT_NEXT_OBJECT        30
-        #define RC_PICKIT_CONFIGURE          40
-        #define RC_PICKIT_SAVE_SCENE         50
+Robot pose updates should be sent periodically to Pickit, typically in the range of 10 messages per second. This
+command does not trigger a response, so it can be sent also while waiting for a response for a different command.
 
-All command messages (not just periodic pose updates) should contain a valid ``actual_pose`` field.
+.. _RC_PICKIT_CHECK_MODE:
 
-.. _response-message:
+RC_PICKIT_CHECK_MODE
+____________________
 
-Response message from Pickit to robot
--------------------------------------
+Check the current mode of Pickit. Pickit can be in the following modes: ``ROBOT``, ``CALIBRATION`` or ``IDLE``.
 
-Except for the ``RC_PICKIT_NO_COMMAND`` command, each robot command sent to Pickit will result in one response message from Pickit. These messages contain a Pickit status value as well as the actual object data for one object.
+**Response**
 
-The robot receives this structure from the Pickit interface:
++--------+--------------------------------------------------+---------------------------------------------------------+
+| Field  | Value                                            | Description                                             |
++========+==================================================+=========================================================+
+| status | :ref:`PICKIT_ROBOT_MODE <response-status>`       | Pickit is in robot mode and able to send object poses to|
+|        |                                                  | the robot. After booting, the Pickit system is in robot |
+|        |                                                  | mode, which can be disabled and re-enabled via the      |
+|        |                                                  | :ref:`web interface <web-interface-top-bar>`.           |
+|        +--------------------------------------------------+---------------------------------------------------------+
+|        | :ref:`PICKIT_CALIBRATION_MODE <response-status>` | Pickit is in calibration mode and able to localize the  |
+|        |                                                  | calibration plate. The system is in calibration mode    |
+|        |                                                  | while the calibration wizard in the web interface is    |
+|        |                                                  | open.                                                   |
+|        +--------------------------------------------------+---------------------------------------------------------+
+|        | :ref:`PICKIT_IDLE_MODE <response-status>`        | When not in robot or calibration mode, Pickit is in idle|
+|        |                                                  | mode, and can be configured via the web interface.      |
++--------+--------------------------------------------------+---------------------------------------------------------+
 
-::
+RC_PICKIT_FIND_CALIB_PLATE
+__________________________
 
-         struct pickit_to_robot_data {
-              int32 object_pose[7];
-              int32 object_age;
-              int32 object_type;
-              int32 object_dimensions[3];
-              int32 objects_remaining;
-              int32 status;
-              meta_data meta;
-         };
+Trigger Pickit to localize the calibration plate. If sufficient calibration poses have been collected,
+Pickit will additionally trigger the computation of the :ref:`robot-camera calibration<robot-camera-calibration>`.
+Note that Pickit has to be in calibration mode when this command is sent.
 
-Metadata fields are documented in the `Message metadata <#metadata>`__ section of this article. The remaining fields are explained below.
+**Response**
 
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Field name               | Type / units                       | Comment                                                                                                                                                                                                                                     |
-+==========================+====================================+=============================================================================================================================================================================================================================================+
-| **object\_pose**         | **int32[7]**                       | An object pose expressed relative to the robot base frame consisting of position in cartesian space and orientation in axis angle, quaternion or Euler angles convention. This convention as well as the units depend on the robot brand.   |
-|                          | [0-2] : position (m)               | When reading array elements, each value has to be divided by the  **MULT** factor.                                                                                                                                                          |
-|                          | [3-6] : orientation (rad, o,/)     |                                                                                                                                                                                                                                             |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **object\_age**          | **int32**                          | The amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot.                                                                                                     |
-|                          | (seconds)                          | This value has to be divided by the  **MULT** factor.                                                                                                                                                                                       |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **object\_type**         | **int32**                          | The type of object detected at object\_pose                                                                                                                                                                                                 |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_TYPE\_SQUARE               | A square has been detected with center at object\_pose                                                                                                                                                                                      |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_TYPE\_RECTANGLE            | A rectangle has been detected with center at object\_pose                                                                                                                                                                                   |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_TYPE\_CIRCLE               | A circle has been detected with center at object\_pose                                                                                                                                                                                      |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_TYPE\_ELLIPSE              | An ellipse has been detected with center at object\_pose                                                                                                                                                                                    |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_TYPE\_CYLINDER             | A cylinder has been detected with center at object\_pose                                                                                                                                                                                    |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_TYPE\_SPHERE               | A sphere has been detected with center at object\_pose                                                                                                                                                                                      |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_TYPE\_POINT\_CLOUD         | A Pickit Teach model has been detected                                                                                                                                                                                                      |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_TYPE\_BLOB                 | An object without a specified shape has been detected                                                                                                                                                                                       |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **object\_dimensions**   | **int32[3]**                       | | **PICKIT_TYPE_SQUARE**                                                                                                                                                                                                                    |
-|                          | [0]: length or diameter (m)        | | [0] and [1] contain the side length of the square                                                                                                                                                                                         |
-|                          | [1]: width or diameter (m)         |                                                                                                                                                                                                                                             |
-|                          | [2]: height (m)                    | | **PICKIT\_TYPE\_RECTANGLE**                                                                                                                                                                                                               |
-|                          |                                    | | [0] and [1] respectively contain the length and width of the rectangle                                                                                                                                                                    |
-|                          |                                    |                                                                                                                                                                                                                                             |
-|                          |                                    | | **PICKIT\_TYPE\_CIRCLE**                                                                                                                                                                                                                  |
-|                          |                                    | | [0] and [1] contain the diameter of the circle                                                                                                                                                                                            |
-|                          |                                    |                                                                                                                                                                                                                                             |
-|                          |                                    | | **PICKIT\_TYPE\_ELLIPSE**                                                                                                                                                                                                                 |
-|                          |                                    | | [0] and [1] respectively contain the length and width of the ellipse                                                                                                                                                                      |
-|                          |                                    |                                                                                                                                                                                                                                             |
-|                          |                                    | | **PICKIT\_TYPE\_CYLINDER**                                                                                                                                                                                                                |
-|                          |                                    | | [0] and [1] respectively contain cylinder length and diameter                                                                                                                                                                             |
-|                          |                                    |                                                                                                                                                                                                                                             |
-|                          |                                    | | **PICKIT\_TYPE\_SPHERE**                                                                                                                                                                                                                  |
-|                          |                                    | | [0] and [1] contain the diameter of the sphere                                                                                                                                                                                            |
-|                          |                                    |                                                                                                                                                                                                                                             |
-|                          |                                    | | **PICKIT\_TYPE\_POINT\_CLOUD**                                                                                                                                                                                                            |
-|                          |                                    | | [0], [1] and [2] respectively contain the length, width and height of the point cloud bounding box                                                                                                                                        |
-|                          |                                    |                                                                                                                                                                                                                                             |
-|                          |                                    | | **PICKIT\_TYPE\_BLOB**                                                                                                                                                                                                                    |
-|                          |                                    | | [0], [1] and [2] respectively contain the length, width and height of the blob bounding box                                                                                                                                               |
-|                          |                                    |                                                                                                                                                                                                                                             |
-|                          |                                    | When reading array elements, each value has to be divided by the  **MULT** factor.                                                                                                                                                          |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **objects\_remaining**   | **int32**                          | Only one object per pickit\_to\_robot\_data message can be communicated. If this field is non-zero, it contains the number of remaining objects that can be sent in next messages to the robot.                                             |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **status**               | **int32**                          | Contains the Pickit status or a response to previously received robot commands.                                                                                                                                                             |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_UNKNOWN\_COMMAND           | Pickit received an unknown command.                                                                                                                                                                                                         |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_RUNNING\_MODE              | Pickit is in running mode.                                                                                                                                                                                                                  |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_IDLE\_MODE                 | Pickit is in idle mode.                                                                                                                                                                                                                     |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_CALIBRATION\_MODE          | Pickit is in calibration mode.                                                                                                                                                                                                              |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_FIND\_CALIB\_PLATE\_OK     | The calibration plate has been successfully detected.                                                                                                                                                                                       |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_FIND\_CALIB\_PLATE\_FAILED | The calibration plate has not been detected.                                                                                                                                                                                                |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_OBJECT\_FOUND              | A pickable object has been detected.                                                                                                                                                                                                        |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_NO\_OBJECTS                | No pickable objects were detected.                                                                                                                                                                                                          |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_NO\_IMAGE\_CAPTURED        | Pickit failed to capture a camera image, most possibly due to a hardware failure (e.g. disconnected camera).                                                                                                                                |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_EMPTY\_ROI                 | An empty Region of Interest (ROI) has been detected.                                                                                                                                                                                        |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_CONFIG\_OK                 | Loading the requested Pickit configuration suceeded.                                                                                                                                                                                        |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_CONFIG\_FAILED             | Loading the requested Pickit configuration failed.                                                                                                                                                                                          |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_SAVE\_SCENE\_OK            | Pickit snapshot saving succeeded.                                                                                                                                                                                                           |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          | PICKIT\_SAVE\_SCENE\_FAILED        | Pickit snapshot saving failed.                                                                                                                                                                                                              |
-+--------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+---------------------------------------------------------+--------------------------------------------------+
+| Field  | Value                                                   | Description                                      |
++========+=========================================================+==================================================+
+| status | :ref:`PICKIT_FIND_CALIB_PLATE_OK <response-status>`     | Successfully localized calibration plate.        |
+|        +---------------------------------------------------------+--------------------------------------------------+
+|        | :ref:`PICKIT_FIND_CALIB_PLATE_FAILED <response-status>` | Failed to localize calibration plate.            |
++--------+---------------------------------------------------------+--------------------------------------------------+
 
-Below are the values of the Pickit status constants communicated by Pickit:
+.. _RC_PICKIT_LOOK_FOR_OBJECTS:
 
-::
+RC_PICKIT_LOOK_FOR_OBJECTS
+__________________________
 
-         #define PICKIT_UNKNOWN_COMMAND           -99
-         #define PICKIT_RUNNING_MODE                0
-         #define PICKIT_IDLE_MODE                   1
-         #define PICKIT_CALIBRATION_MODE            2
+Request Pickit to find objects in the current scene. This command performs an image capture and image processing in a single request.
 
-         #define PICKIT_FIND_CALIB_PLATE_OK        10
-         #define PICKIT_FIND_CALIB_PLATE_FAILED    11
-         #define PICKIT_OBJECT_FOUND               20
-         #define PICKIT_NO_OBJECTS                 21
-         #define PICKIT_NO_IMAGE_CAPTURED          22
-         #define PICKIT_EMPTY_ROI                  23
+**Response**
 
-         #define PICKIT_CONFIG_OK                  40
-         #define PICKIT_CONFIG_FAILED              41
-         #define PICKIT_SAVE_SCENE_OK              50
-         #define PICKIT_SAVE_SCENE_FAILED          51
+Due to the fixed-size structure of the response message, only one object can be transmitted
+at a time. If more than one object has been detected, the information of the first object is
+communicated in the response message of a detection request, and the remaining objects can be obtained using the
+:ref:`RC_PICKIT_NEXT_OBJECT` request, one at a time.
 
-Below are the values of the object type constants communicated by Pickit:
++-------------+-------------------------------------------------------------------------------------------------------+
+| Field       | Value / Description                                                                                   |
++=============+=======================================================================================================+
+| position    | Object position (XYZ, in meters) expressed in the robot base frame. Each field has to be divided by   |
+|             | MULT_.                                                                                                |
++-------------+-------------------------------------------------------------------------------------------------------+
+| orientation | Object orientation expressed in the robot base frame. The orientation encoding and units depend on    |
+|             | the chosen :ref:`orientation convention <meta-msg>`. Each field has to be divided by MULT_.           |
++-------------+-------------------------------------------------------------------------------------------------------+
+| payload[0]  | The duration (in seconds) elapsed between the capturing of the camera                                 |
+|             | image and the moment the object information is sent to the robot. This value has to be                |
+|             | divided by MULT_.                                                                                     |
++-------------+-------------------------------------------------------------------------------------------------------+
+| payload[1]  | - For a Teach detection, this field contains the model ID of the current object.                      |
+|             | - For a Flex/Pattern detection, this field contains the :ref:`object type <response-object-type>`.    |
++-------------+-------------------------------------------------------------------------------------------------------+
+| payload[2]  | Object length (:ref:`SQUARE, RECTANGLE, ELLIPSE, CYLINDER, POINTCLOUD, BLOB <response-object-type>`)  |
+|             | or diameter (:ref:`CIRCLE, SPHERE <response-object-type>`) in meters. Needs to be divided by MULT_.   |
++-------------+-------------------------------------------------------------------------------------------------------+
+| payload[3]  | Object width (:ref:`RECTANGLE, ELLIPSE, POINTCLOUD, BLOB <response-object-type>`)                     |
+|             | or diameter (:ref:`CYLINDER <response-object-type>`) in meters. Needs to be divided by MULT_.         |
++-------------+-------------------------------------------------------------------------------------------------------+
+| payload[4]  | Object height (:ref:`POINTCLOUD, BLOB <response-object-type>`) in meters.                             |
+|             | Needs to be divided by MULT_.                                                                         |
++-------------+-------------------------------------------------------------------------------------------------------+
+| payload[5]  | If this field is non-zero, it contains the number of remaining                                        |
+|             | objects that can be retrieved via consecutive RC_PICKIT_NEXT_OBJECT_ requests.                        |
++-------------+---------------------------------------------------+---------------------------------------------------+
+| status      | :ref:`PICKIT_OBJECT_FOUND <response-status>`      | At least one object has been detected.            |
+|             +---------------------------------------------------+---------------------------------------------------+
+|             | :ref:`PICKIT_NO_OBJECTS <response-status>`        | No objects have been detected, but the ROI is not |
+|             |                                                   | empty.                                            |
+|             +---------------------------------------------------+---------------------------------------------------+
+|             | :ref:`PICKIT_NO_IMAGE_CAPTURED <response-status>` | No camera image has been captured.                |
+|             +---------------------------------------------------+---------------------------------------------------+
+|             | :ref:`PICKIT_EMPTY_ROI <response-status>`         | An :ref:`empty ROI <detecting-an-empty-roi>` has  |
+|             |                                                   | been detected.                                    |
++-------------+---------------------------------------------------+---------------------------------------------------+
 
-::
+.. _pose-flipping:
 
-        #define PICKIT_TYPE_SQUARE               21
-        #define PICKIT_TYPE_RECTANGLE            22
-        #define PICKIT_TYPE_CIRCLE               23
-        #define PICKIT_TYPE_ELLIPSE              24
-        #define PICKIT_TYPE_CYLINDER             32
-        #define PICKIT_TYPE_SPHERE               33
-        #define PICKIT_TYPE_POINT_CLOUD          35 // See remark below for Teach on 1.9+ versions.
-        #define PICKIT_TYPE_BLOB                 50
+.. attention::
+   Object poses communicated by Pickit, via the ``position`` and ``orientation`` fields,
+   have their Z-axis pointing upwards. Depending on the orientation of your robot's flange frame, it might be necessary
+   to flip the received poses by 180 degrees around the X-axis, such that the tool correctly aligns with the object at the moment of picking.
 
-.. warning::
-    From version 1.9+, ``PICKIT_TYPE_POINT_CLOUD`` is no longer 35 with the Pickit Teach detection engine, but representing the ID Teach model the object was detected from.
+.. _RC_PICKIT_NEXT_OBJECT:
 
-.. _message-metadata:
+RC_PICKIT_NEXT_OBJECT
+_____________________
+
+Request to return the next detected (valid *and* pickable) object in the :ref:`detection grid<detection-grid>`. Use this command when a single object detection run yields
+multiple detected objects. Note that the RC_PICKIT_LOOK_FOR_OBJECTS_ (or RC_PICKIT_PROCESS_IMAGE_) command already returns
+the first object, if at least one was detected.
+
+**Response**
+
+See response message of RC_PICKIT_LOOK_FOR_OBJECTS_.
+
+If RC_PICKIT_NEXT_OBJECT_ is called after the last detected object has been sent to the robot, Pickit replies with a
+:ref:`PICKIT_NO_OBJECTS <response-status>` status.
+
+
+.. _RC_PICKIT_CAPTURE_IMAGE:
+
+RC_PICKIT_CAPTURE_IMAGE
+_______________________
+
+Trigger Pickit to capture a camera image to be used by a following RC_PICKIT_PROCESS_IMAGE_ request. This command allows
+to wait until image capture is done and afterwards parallelize image processing with robot motion. This is especially relevant
+for robot-mounted cameras where the robot has to stand still during image capture.
+
+However, in most cases, it is sufficient and more convenient to call RC_PICKIT_LOOK_FOR_OBJECTS_, which performs image capture and
+processing in a single request.
+
+**Response**
+
++--------+---------------------------------------------------------+--------------------------------------------------+
+| Field  | Value                                                   | Description                                      |
++========+=========================================================+==================================================+
+| status | :ref:`PICKIT_IMAGE_CAPTURED <response-status>`          | Successfully captured camera image.              |
+|        +---------------------------------------------------------+--------------------------------------------------+
+|        | :ref:`PICKIT_NO_IMAGE_CAPTURED <response-status>`       | Failed to capture camera image.                  |
++--------+---------------------------------------------------------+--------------------------------------------------+
+
+.. _RC_PICKIT_PROCESS_IMAGE:
+
+RC_PICKIT_PROCESS_IMAGE
+_______________________
+
+Trigger an object detection on the camera image that was previously captured via RC_PICKIT_CAPTURE_IMAGE_ (or RC_PICKIT_LOOK_FOR_OBJECTS_).
+
+**Response**
+
+See response message of RC_PICKIT_LOOK_FOR_OBJECTS_.
+
+
+RC_PICKIT_CONFIGURE
+___________________
+
+Request Pickit to load a specific setup and product :ref:`configuration<Configuration>`. Each setup and product configuration
+have a unique ID assigned, which is shown in the web interface, next to the configuration name.
+
+**Request:**
+
++-------------+-----------------------------------------------------------+
+| Field       | Value /  Description                                      |
++=============+===========================================================+
+| payload[0]  | ID of the setup configuration.                            |
++-------------+-----------------------------------------------------------+
+| payload[1]  | ID of the product configuration.                          |
++-------------+-----------------------------------------------------------+
+
+**Response**
+
++--------+---------------------------------------------------+--------------------------------------------------+
+| Field  | Value                                             | Description                                      |
++========+===================================================+==================================================+
+| status | :ref:`PICKIT_CONFIG_OK <response-status>`         | Successfully loaded the specified configurations.|
+|        +---------------------------------------------------+--------------------------------------------------+
+|        | :ref:`PICKIT_CONFIG_FAILED <response-status>`     | Failed to load the specified configurations.     |
++--------+---------------------------------------------------+--------------------------------------------------+
+
+
+RC_PICKIT_SAVE_SNAPSHOT
+_______________________
+
+Request Pickit to save a :ref:`snapshot<Snapshots>` with the last captured scene and the current configuration.
+Snapshots will be saved in the ``robot`` subfolder, which can be accessed from the web interface.
+
+**Response**
+
++--------+------------------------------------------------------+--------------------------------------------------+
+| Field  | Value                                                | Description                                      |
++========+======================================================+==================================================+
+| status | :ref:`PICKIT_SAVE_SNAPSHOT_OK <response-status>`     | Successfully saved a snapshot.                   |
+|        +------------------------------------------------------+--------------------------------------------------+
+|        | :ref:`PICKIT_SAVE_SNAPSHOT_FAILED <response-status>` | Failed to save a snapshot.                       |
++--------+------------------------------------------------------+--------------------------------------------------+
+
+RC_PICKIT_BUILD_BACKGROUND
+__________________________
+
+Request Pickit to capture the current scene as background for :ref:`background removal <Point-based-roi-filter>`.
+
+**Response**
+
++--------+-------------------------------------------------------+-------------------------------------------------+
+| Field  | Value                                                 | Description                                     |
++========+=======================================================+=================================================+
+| status | :ref:`PICKIT_BUILD_BKG_CLOUD_OK <response-status>`    | Successfully built background scene.            |
+|        +-------------------------------------------------------+-------------------------------------------------+
+|        | :ref:`PICKIT_BUILD_BKG_CLOUD_FAILED <response-status>`| Failed to built background scene.               |
++--------+-------------------------------------------------------+-------------------------------------------------+
+
+.. _RC_PICKIT_GET_PICK_POINT_DATA:
+
+RC_PICKIT_GET_PICK_POINT_DATA
+_____________________________
+
+With multiple or flexible :ref:`pick points <pick-points-teach>`, the robot needs to know how an object is being picked in order to drop it off
+at a fixed position. This information can be retrieved via RC_PICKIT_GET_PICK_POINT_DATA_, which requests the
+pick point ID and pick point offset of the last requested object.
+
+In the simplest case, the pick point ID is sufficient to know how an object was picked and how it should be dropped off.
+For applications with multiple pick points and/or pick points with flexible orientations, it is advised to make use of
+the pick point offset as well. Using the pick point offset, you don't need to define a drop off point for every pick point.
+Instead, you only have to define a drop off point for every pick point reference, and apply the inverse pick point offset to this point.
+
+Note that, due to the :ref:`flipping of object poses<pose-flipping>`, it is necessary to correct the communicated pick point offset on the robot side.
+This corrected offset is computed by ``pick_offset_to_apply = Rx × inv(offset_from_pickit) × Rx``, where ``Rx`` denotes a rotation of 180 degrees
+around the X-axis. The pick point offset ``fpp_T_ppr`` is the transform between the final pick point and the pick point's
+reference.
+
+**Response**
+
++-------------+-------------------------------------------------------------------------------------------------------+
+| Field       | Value / Description                                                                                   |
++=============+=======================================================================================================+
+| position    | Pick point offset position (XYZ, in meters) expressed in the final pick point frame.                  |
+|             | Values have to be divided by MULT_.                                                                   |
++-------------+-------------------------------------------------------------------------------------------------------+
+| orientation | Pick point offset orientation expressed in the final pick point frame. The encoding and units depend  |
+|             | on the chosen :ref:`orientation convention <meta-msg>`. Values have to be divided by MULT_.           |
++-------------+-------------------------------------------------------------------------------------------------------+
+| payload[0]  | ID of the selected pick point's reference pick point.                                                 |
++-------------+-------------------------------------------------------------------------------------------------------+
+| payload[1]  | ID of the pick point that was selected for the given object.                                          |
++-------------+------------------------------------------------------------+------------------------------------------+
+| status      | :ref:`PICKIT_GET_PICK_POINT_DATA_OK <response-status>`     | Successfully retrieved pick point data.  |
+|             +------------------------------------------------------------+------------------------------------------+
+|             | :ref:`PICKIT_GET_PICK_POINT_DATA_FAILED <response-status>` | Failed to retrieve pick point data.      |
++-------------+------------------------------------------------------------+------------------------------------------+
+
+Constants
+---------
+
+.. _request-cmds:
+.. code-block:: python
+   :caption: Request command constants
+
+   RC_PICKIT_NO_COMMAND              = -1
+   RC_PICKIT_CHECK_MODE              = 0
+   RC_PICKIT_FIND_CALIB_PLATE        = 10
+   RC_PICKIT_LOOK_FOR_OBJECTS        = 20
+   RC_PICKIT_CAPTURE_IMAGE           = 22
+   RC_PICKIT_PROCESS_IMAGE           = 23
+   RC_PICKIT_NEXT_OBJECT             = 30
+   RC_PICKIT_CONFIGURE               = 40
+   RC_PICKIT_SAVE_SCENE              = 50
+   RC_PICKIT_BUILD_BACKGROUND        = 60
+   RC_PICKIT_GET_PICK_POINT_DATA     = 70
+
+.. _response-status:
+.. code-block:: python
+   :caption: Response status constants
+
+   PICKIT_UNKNOWN_COMMAND            = -99
+   PICKIT_ROBOT_MODE                 =   0
+   PICKIT_IDLE_MODE                  =   1
+   PICKIT_CALIBRATION_MODE           =   2
+   PICKIT_FIND_CALIB_PLATE_OK        =  10
+   PICKIT_FIND_CALIB_PLATE_FAILED    =  11
+   PICKIT_OBJECT_FOUND               =  20
+   PICKIT_NO_OBJECTS                 =  21
+   PICKIT_NO_IMAGE_CAPTURED          =  22
+   PICKIT_EMPTY_ROI                  =  23
+   PICKIT_IMAGE_CAPTURED             =  26
+   PICKIT_CONFIG_OK                  =  40
+   PICKIT_CONFIG_FAILED              =  41
+   PICKIT_SAVE_SNAPSHOT_OK           =  50
+   PICKIT_SAVE_SNAPSHOT_FAILED       =  51
+   PICKIT_BUILD_BKG_CLOUD_OK         =  60
+   PICKIT_BUILD_BKG_CLOUD_FAILED     =  61
+   PICKIT_GET_PICK_POINT_DATA_OK     =  70
+   PICKIT_GET_PICK_POINT_DATA_FAILED =  71
+
+.. _response-object-type:
+.. code-block:: python
+   :caption: Object type constants
+
+   PICKIT_TYPE_SQUARE                =  21
+   PICKIT_TYPE_RECTANGLE             =  22
+   PICKIT_TYPE_CIRCLE                =  23
+   PICKIT_TYPE_ELLIPSE               =  24
+   PICKIT_TYPE_CYLINDER              =  32
+   PICKIT_TYPE_SPHERE                =  33
+   PICKIT_YTPE_POINTCLOUD            =  35
+   PICKIT_TYPE_BLOB                  =  50
+
+.. _meta-msg:
 
 Message metadata
 ----------------
 
-To guarantee correct interpretation of the data on both the robot and the Pickit side, the following metadata is always sent along with the structures:
+To guarantee correct interpretation of the data on both the robot and the Pickit side,
+the following metadata is always sent along with both request and response messages:
 
-::
+.. table:: Metadata message
 
-        struct meta_data {
-            int32 robot_type;
-            int32 interface_version;
-        };
+   +------------------------+------------------------------------------------------------------------------------------+
+   | Field                  | Value / Description                                                                      |
+   +========================+==========================================================================================+
+   | orientation convention | Convention that is being used to encode object or robot flange orientations.             |
+   |                        | The following conventions are supported:                                                 |
+   |                        |                                                                                          |
+   |                        | 1. Angle-axis (3D vector consisting of the unit axis multiplied by the angle in radians) |
+   |                        |    → UNIVERSAL ROBOTS                                                                    |
+   |                        | 2. Quaternions (w,x,y,z) → **GENERIC**, ABB                                              |
+   |                        | 3. Euler Angles (x-y’-z”, in degrees) → STÄUBLI                                          |
+   |                        | 4. Fixed Angles (x-y-z, in degrees) → FANUC, NACHI, OMRON TM, YASKAWA                    |
+   |                        | 5. Euler Angles (z-y’-x”, in degrees) → HANWHA, KUKA                                     |
+   |                        | 6. Euler Angles (z-y’-z”, in degrees) → COMAU, DOOSAN, OMRON                             |
+   +------------------------+------------------------------------------------------------------------------------------+
+   | protocol version       | The version of the robot-Pickit communication. The current version number is ``11`` and  |
+   |                        | is not expected to change in the near future.                                            |
+   +------------------------+------------------------------------------------------------------------------------------+
 
-Each field is explained below. All **int32** are expressed in Network Byte Format.
+If your robot does not adhere to any of the above orientation conventions, it is recommended to use the **GENERIC** (quaternions)
+convention. The robot-side interface would then take the responsibility of converting back and forth between quaternions and
+the representation used by the robot.
 
-+--------------------------+----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Field name               | Type / units   | Comment                                                                                                                                                |
-+==========================+================+========================================================================================================================================================+
-| **robot\_type**          | **int32**      | The type of robot Pickit is connected to:                                                                                                              |
-|                          |                |                                                                                                                                                        |
-|                          |                |   #. UNIVERSAL ROBOT → Angle-axis                                                                                                                      |
-|                          |                |   #. ABB, **GENERIC** → Quaternions (w,x,y,z)                                                                                                          |
-|                          |                |   #. STAUBLI → Euler Angles (x-y’-z”)                                                                                                                  |
-|                          |                |   #. FANUC, YASKAWA → Fixed Angles (x-y-z)                                                                                                             |
-|                          |                |   #. KUKA → Euler Angles (z-y’-x”)                                                                                                                     |
-|                          |                |   #. COMAU → Euler Angles (z-y’-z”)                                                                                                                    |
-+--------------------------+----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **interface\_version**   | **int32**      | | The version of the robot-Pickit communication.                                                                                                       |
-|                          |                | | To get this number, all dots are removed from the actual version number.                                                                             |
-|                          |                | | The current version is ``1.1``, so the communicated value is ``11``.                                                                                 |
-+--------------------------+----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+Communication flow
+------------------
 
-To add support for a robot type not adhering to one of the above conventions, it's recommended to use the **GENERIC** (quaternions) convention above. The robot-side interface would then take the responsibility of converting back and forth between the representation used by Pickit and the robot.
+An example communication flow is as follows:
+
+#. The robot checks the Pickit mode using RC_PICKIT_CHECK_MODE_.
+#. After confirming that Pickit is in robot mode, the robot initiates a background thread that periodically sends
+   robot pose updates (RC_PICKIT_NO_COMMAND_) to Pickit.
+#. To configure Pickit for the given product and workspace, the robot loads the desired product and setup configurations
+   via RC_PICKIT_CONFIGURE_.
+#. The robot requests an object detection with RC_PICKIT_LOOK_FOR_OBJECTS_. For this example, Pickit
+   responds that two objects were found, of which the first object is part of the response message.
+#. The robot requests specific pick point data for the first object with RC_PICKIT_GET_PICK_POINT_DATA_.
+#. After the first object has been picked, the robot requests the second and final object with RC_PICKIT_NEXT_OBJECT_. This
+   is again followed by RC_PICKIT_GET_PICK_POINT_DATA_, to retrieve the pick point data of the last requested object.
+
+.. figure:: /assets/images/robot-integrations/socket/socket-1.png
+   :align: center
+   :width: 500
+   :alt: Socket communication flow
+
+   Example communication flow between robot and Pickit.

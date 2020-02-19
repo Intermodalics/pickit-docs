@@ -1,7 +1,7 @@
 .. _techman-calibration-program:
 
-Example robot camera calibration program
-========================================
+Example calibration program
+===========================
 
 Loading the program
 -------------------

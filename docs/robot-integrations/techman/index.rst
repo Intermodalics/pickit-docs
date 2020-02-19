@@ -1,13 +1,13 @@
 .. _techman-index:
 
-Omron TM
-========
+Setting up Pickit with an Omron TM robot
+========================================
 
 .. toctree::
   :glob:
   :maxdepth: 1
 
-  getting_started.rst
+  installation.rst
   pick_and_place_program.rst
   calibration_program.rst
   interface.rst
