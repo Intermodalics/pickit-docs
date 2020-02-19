@@ -75,7 +75,7 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
 The idea of the program is the following:
 
 - If an object is found, its model and pick point ID are retrieved.
-  According to these ID's the robot moves to the object to pick it.
+  The robot moves to the object to pick it.
   Next, the robot moves to a fixed drop off position, and finally it moves to a corrected drop off position.
   The corrected position is based on the pick offset and the fixed drop off position.
   During these motions when the robot is out the field of view of the camera, a new Pickit detection is triggered immediately.

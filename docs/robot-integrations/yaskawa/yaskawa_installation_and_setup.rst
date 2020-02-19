@@ -105,7 +105,7 @@ Still in **normal mode**, the IP address of Pickit needs to be entered in a **St
 .. note:: There is no communication yet between the Pickit and the robot.
   So don't worry if the connection is not shown in the Pickit web interface :ref:`web-interface-top-bar`.
   The robot can be pinged from the Pickit web interface to check the IP settings.
-  Details on testing this connection can be found on: :ref:`test-robot-connection`.
+  Details on testing this connection can be found in: :ref:`test-robot-connection`.
 
 Test the robot connection
 -------------------------

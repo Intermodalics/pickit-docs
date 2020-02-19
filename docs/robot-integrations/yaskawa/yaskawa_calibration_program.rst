@@ -8,6 +8,10 @@ For installation instructions, please refer to the :ref:`yaskawa_installation_an
 
 Before following these Yaskawa specific instructions in this article, make sure you first understand the process of executing a robot camera calibration as explained on :ref:`robot-camera-calibration`.
 
+.. note::
+  If you want to perform calibration once or infrequently, you don't need to use this example program.
+  You can teach the calibration poses manually using free-drive and the :guilabel:`Collect current pose` in the calibration wizard of the Pickit web interface.
+
 Example program: TEST_CALIB
 ---------------------------
 
