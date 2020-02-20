@@ -94,6 +94,6 @@ More recent Polyscope versions typically work out-of-the-box.
 Yaskawa
 -------
 
-Pickit is compatible with controllers **FS100**, **DX200** and **YRC1000**.
+Pickit is compatible with controllers **DX200**, **YRC1000** and **YRC1000 micro**.
 
-- `Download the Pickit Yaskawa files <https://drive.google.com/uc?export=download&id=108H2H7xK74VX2rdbrmFim8hAuivsDnsH>`__
+- `Download the Pickit Yaskawa files <https://drive.google.com/uc?export=download&id=1TC3pY4PBpYuflZLtPs148T0n9cFu2jKF>`__
