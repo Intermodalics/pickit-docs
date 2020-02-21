@@ -113,7 +113,7 @@ Pickit port labeled LAN
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 This port has the purpose of connecting your Pickit processor to a
-network, to bring the system online for remote support (see article :ref:`support-remote-service`). 
+network, to bring the system online (see article :ref:`connect-your-system-to-internet`). 
 
 .. image:: /assets/images/Documentation/settings-port-lan.png
 

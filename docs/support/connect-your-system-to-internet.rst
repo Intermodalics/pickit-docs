@@ -1,15 +1,16 @@
-.. _support-remote-update:
+.. _connect-your-system-to-internet:
 
-Getting ready for a remote software update
-==========================================
+Bring your Pickit system online
+===============================
 
-To receive an update of the Pickit software, your Pickit processor
-needs to be connected to the Internet:
+There are two methods to bring your Pickit system online:
 
 -  The preferred method is to connect your Pickit processor via an
    Ethernet cable. 
 -  If this is not possible you can connect your Pickit processor via
    the 3G USB dongle.
+
+.. image:: /assets/images/First-steps/Connecting-instructions-full.png
 
 Connecting via Ethernet cable
 -----------------------------
