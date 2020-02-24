@@ -303,9 +303,14 @@ class Details(Directive):
                                 element)
 
         # Wrap contents inside a collapsible <details> HTML element.
-        summary_str = '<summary style="cursor:pointer"><strong>' + self.arguments[0] + \
-                      '</strong></summary>'
+        # Note that the first added node is an empty comment. It's a trick to
+        # allow adding a label before this directive, so it can be cross-ref'd.
+        # Maybe there's a cleaner way to do it, but without it, cross-refs were
+        # not working.
+        summary_str = '<summary style="cursor:pointer"><strong>' + \
+                      self.arguments[0] + '</strong></summary>'
         out_nodes = []
+        out_nodes.append(nodes.comment(''))  # Trick, read above comment block.
         out_nodes.append(nodes.raw('', '<details>', format='html'))
         out_nodes.append(nodes.raw('', summary_str, format='html'))
         out_nodes.extend(element.children)
