@@ -14,7 +14,7 @@ setup of **Pickit** with a **Fanuc** **robot** consists of **4 steps**:
 Check controller and software compatibility
 -------------------------------------------
 
-Pickit is compatible with controllers as of version **R-J3iB** and the
+Pickit is compatible with controllers as of version **R-J30iA** and the
 software module **User Socket Msg** for socket communication is
 required. (The product number for this module is A05B-2600-R648).
 
