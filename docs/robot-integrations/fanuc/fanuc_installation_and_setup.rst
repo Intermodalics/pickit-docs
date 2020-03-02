@@ -1,5 +1,7 @@
-Setting up Pickit with a Fanuc robot
-====================================
+.. _fanuc_installation_and_setup:
+
+Fanuc installation and setup
+============================
 
 This setup manual helps you setup Pickit with a **Fanuc robot**. The
 setup of **Pickit** with a **Fanuc** **robot** consists of **4 steps**:
@@ -12,9 +14,8 @@ setup of **Pickit** with a **Fanuc** **robot** consists of **4 steps**:
 Check controller and software compatibility
 -------------------------------------------
 
-Pickit is compatible with controllers as of version **R-J30iA** (i.e. R-J30iA, R-J30iB and R-J30iB plus) and the
-software module **User Socket Msg** for socket communication is
-required. (The product number for this module is A05B-2600-R648).
+Pickit is compatible with controllers as of version **R-J30iA** (i.e. R-J30iA - V7.X , R-J30iB - V8.X and R-J30iB plus - V9.X) and the
+software module **User Socket Msg** for socket communication is required. (The product number for this module is A05B-2600-R648).
 
 To verify if that software module is installed open the Status version
 ID page by opening :guilabel:`MENU` > :guilabel:`STATUS` > :guilabel:`Version ID` and then click the :guilabel:`ORDER FI` button.
@@ -37,7 +38,7 @@ To get you started as quickly as possible, Pickit provides:
 
 -  All ASCII files for both the low-level communication as well as an
    example program.  
--  Binaries generated from these ASCII files for software version V8.30.
+-  Binaries generated from these ASCII files for software version V7.70, V8.30 and V9.10.
    In case of using an older software version, you might have to
    recompile the ASCII files first.
 
@@ -60,7 +61,7 @@ The Pickit processor has to be connected to the Fanuc controller using
 an Ethernet cable. This Ethernet cable should be plugged in:
 
  - The **ROBOT** port of the **Pickit processor**; 
- - The **Port 1** port of **Fanuc controller**.
+ - **Port 1** or **Port 2** port of **Fanuc controller**.
 
 The location of port 1 on the Fanuc is shown for different controller
 types in the images below.
@@ -90,7 +91,7 @@ If this setting is kept, the following has to be done at the Fanuc
 controller via  :guilabel:`MENU` > :guilabel:`SETUP` :guilabel:`Host Comm`: 
 
  - To obtain a static IP, **DHCP** has to be **disabled** on the controller.
- - A **static IP should be set** to e.g. 169.254.5.182 which is an IP in the same subnet as the Pickit IP.
+ - A **static IP should be set** to e.g. **169.254.5.182** which is an IP in the same subnet as the Pickit IP.
 
 .. image:: /assets/images/robot-integrations/fanuc/fanuc-5.png
     :width: 550
@@ -102,9 +103,9 @@ And select the **TCP/IP protocol**:
 
 Next, you have to take the following steps: 
 
- - **Disable DHCP** by pressing the :guilabel:`DHCP` 
- - **Set the correct IP address** and subnet mask for Port#1 
- - **Activate** these new settings via :guilabel:`NEXT` > :guilabel:`INIT`
+ - **Disable DHCP** by pressing :guilabel:`DHCP`.
+ - **Set the correct IP address** and subnet mask for **Port 1** or **Port 2**.
+ - **Activate** these new settings via :guilabel:`NEXT` > :guilabel:`INIT`.
 
 To verify now if a network connection can be made between Pickit and
 the robot controller, you can create a new host name ‘pickit’ and give
@@ -157,21 +158,22 @@ Download the right files
 
 The .zip folder contains the following ASCII files:
 
-- ``pick_it_communication13_C.kl`` is a Karel program that cares of the low level communication. This files should not be adapted.
+- ``pick_it_communication15_C.kl`` is a Karel program that cares of the low level communication. This files should not be adapted.
 
-- ``EXAMPLE_PICK_IT.LS`` is a Teach Pendant program that shows a simple pick application for FANUC using Pickit.
+- ``PICKIT_SIMPLE_PICKING.LS`` is a Teach Pendant program that shows a simple pick application for FANUC using Pickit.
+  More infomation about this example program can be found in the following article, :ref:`fanuc-example-picking-program`.
 
 - For calibration we provide two Teach Pendant programs;
 
-  - ``MP_CALIBRATE.LS`` for :ref:`multi-poses-calibration`
+  - ``PICKIT_MP_CALIBRATE.LS`` for :ref:`multi-poses-calibration`, this program is explained in full in the following article, :ref:`fanuc-calibration-program`.
 
-  - ``CALIBRATE.LS`` for :ref:`single-pose-calibration`
+  - ``PI_CALIBRATE.LS`` for :ref:`single-pose-calibration`.
 
-- The other ``*.LS`` file define short Teach Pendant program that abstract some of the Pickit logic into more user readable functions. They can also serve as macros that can be called manually. More about that later. 
+- The other ``PI_**.LS`` files define short Teach Pendant programs that abstract some of the Pickit logic into more user readable functions. They can also serve as macros that can be called manually. More about that later. 
 
-.. tip:: In case of using Fanuc software version v8.30, you can directly use the binaries available in the downloaded folder. In the other case, you first have to compile the above files into binaries. 
+.. tip:: In case of using Fanuc software version V7.X, V8.X and V9.X , you can directly use the binaries available in the downloaded folder. In the other case, you first have to compile the above files into binaries. 
 
-.. Warning:: Modifying the ``pick_it_communication13_C.kl`` file should only be considered after talking to a Pickit support engineer.
+.. Warning:: Modifying the ``pick_it_communication15_C.kl`` file should only be considered after talking to a Pickit support engineer.
 
 Upload the files to the robot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -181,38 +183,17 @@ Uploading the files can be done using an FTP server or by manually loading them 
 .. image:: /assets/images/robot-integrations/fanuc/fanuc-10.png
     :width: 550
 
-.. warning:: The available binary files contain a configuration file for defining macros: ``SYSMACRO.SV``.
-  When this file is uploaded it automatically **removes** all existing macros and **replaces** them with the Pickit macros.
-  To prevent the **removal** of the existing macros, don't upload ``SYSMACRO.SV``, but configure the new macros manually in :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
-
-In case all binaries are loaded correctly, you can check if the macros are available via :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
-
-.. image:: /assets/images/robot-integrations/fanuc/fanuc-11.png
-    :width: 550
-
 Registers used by the Karel program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Karel program ``pick_it_communication13_C.kl``, which takes care of the low-level communication between the controller and Pickit, uses the following IO and registers to pass on data from the low-level communication to a Teach Pendant application program:
+The Karel program ``pick_it_communication15_C.kl``, which takes care of the low-level communication between the controller and Pickit, uses the following IO and registers to pass on data from the low-level communication to a Teach Pendant application program:
 
 - Data communicated from Pickit via the Karel program to the Teach Pendant application program:
 
-  -  **PR[1]**: pose of an object detected by Pickit.
-  -  **R[2]**: the Pickit status.
-  -  **R[6]**: Pickit object dimension x.
-  -  **R[7]**: Pickit object dimension y.
-  -  **R[8]**: Pickit object dimension z.
+  -  Pose Registers: **PR[51]** - **PR[53]**
+  -  Registers: **R[141]** - **R[159]**
 
-- Data communicated from the Teach Pendant application program via the Karel program to Pickit:
-
-  -  **R[1]**: the command for Pickit.
-  -  **R[4]**: the desired setup.
-  -  **R[5]**: the desired product.
-
-- Additional pose registers used in the **EXAMPLE_PICK_IT** program:
-
-  -  **PR[2]**: the current configuration of the robot. This configuration is calculated by calling **SET_PICK_POSE**.
-  -  **PR[3]**: the final pose where the robot will pick the part.
+More information about what all registers are used for can be found in the following article, :ref:`fanuc-pickit-interface`.
 
 .. tip:: If these registers are already used on your robot. Please contact us at
   `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`__ and we will assist you in finding a solution.
@@ -220,7 +201,7 @@ The Karel program ``pick_it_communication13_C.kl``, which takes care of the low-
 .. tip:: To make the Karel programs visible on the Teach Pendant, you have to set the ``KAREL_ENB`` value to 1 via :guilabel:`MENU` > :guilabel:`NEXT` > :guilabel:`SYSTEM` > :guilabel:`SYSVARS`.
 
 Start and verify communication
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 Starting and verifying communication for a Fanuc robot consists of 2 steps:
 
@@ -255,6 +236,6 @@ Pickit interface
 You can verify the connection from within the Pickit web interface by checking if there is a checkmark next to the robot status label in the top bar.
 
 Test robot connection on Pickit
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Details on testing this connection can be found on: :ref:`test-robot-connection`
