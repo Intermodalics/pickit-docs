@@ -127,13 +127,12 @@ to know when the pallet is empty.
 
 .. _Full-incomplete-layer-detection:
 
-Full/incomplete layer detection
--------------------------------
+Full and/or incomplete layers
+-----------------------------
 
-Enable the checkbox **Detect if the layer is full or incomplete** for Pickit to detect whether
-the top layer of the pallet is full or incomplete. If the checkbox is disabled (default), Pickit
-skips this step and detects the bags assuming that the layer is **full** (default)
-or **incomplete**, according to the **Layer status**.
+Select the layer status of the top layer to be **full** (all bags in the pattern are present) or
+**incomplete** (at least one bag is missing from the pattern). Select **Detect automatically** for
+Pickit to detect whether the top layer of the pallet is full or incomplete.
 
 .. image:: /assets/images/Documentation/bags_4-bag_full_incomplete.png
 
@@ -145,8 +144,8 @@ or **incomplete**, according to the **Layer status**.
              (not too tilted relatively to the floor). Also, only points on the top of the
              pallet should be visible to the Pickit camera, and not on the sides.
 
-             If that is not the case for your application, it is recommended to disable
-             full/incomplete layer detection and enforce **full** layers.
+             If that is not the case for your application, it is recommended to always enforce
+             **full** layers.
 
 Optimize detections
 -------------------
