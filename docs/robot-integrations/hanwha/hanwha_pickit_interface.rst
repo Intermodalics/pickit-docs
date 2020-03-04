@@ -52,49 +52,56 @@ Pickit functions
 ----------------
 
 First download the integration files :ref:`here <downloads:Hanwha>`.
+Copy all the .script files on a USB drive and plug it in the teach pendant.
 To add a Pickit function in your robot program do :guilabel:`Commands` → :guilabel:`script`.
-Now a new **script** node will be created.
+A new **script** node will be created.
 Press this node and :guilabel:`edit` → :guilabel:`file` → :guilabel:`load`.
 Now you can select the **.script** function that you want to add.
 
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| Variable | Field name       | Comment                                                                                                                                 | Type     |
-+==========+==================+=========================================================================================================================================+==========+
-| I049     | command          | command from robot to Pickit                                                                                                            | Input    |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| I048     | setup            | setup file ID known by the Pickit system                                                                                                | Input    |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| I047     | product          | product file ID known by the Pickit system                                                                                              | Input    |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| I046     | Frame ID         | frame ID used during calibration and picking                                                                                            | Input    |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| I045     | Tool ID          | tool ID used for picking                                                                                                                | Input    |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| I044     | Timeout          | timeout used for communication with Pickit [ms]                                                                                         | Input    |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| I042     | pick_id          | ID of the pick point that was selected for the given object                                                                             | Output   |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| I041     | object_type      | ID type of the detected object                                                                                                          | Output   |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| I040     | status           | Pickit status or a response to previously received robot commands                                                                       | Output   |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| I030-039 | status of cycles | used for keeping track of the communication cycle with Pickit                                                                           | Internal |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| S049     | IP Pickit        | IP address of Pickit, by default 169.254.5.180                                                                                          | Input    |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| P049     | object_pose      | object pose expressed relatively to the robot base frame                                                                                | Output   |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| P048     | object_dimension | [0]: length or diameter (m) [1]: width or diameter (m) [2]: height (m)                                                                  | Output   |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| P047     | object_offset    | pick point offset of the last requested object                                                                                          | Output   |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| P046     | rx_flip          | helper pose to calculate a correct offset pose                                                                                          | Internal |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| D042     | pick_ref_id      | ID of the selected pick point’s reference pick point                                                                                    | Output   |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| D041     | object_remaining | number of remaining objects that can be sent in next messages to the robot                                                              | Output   |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| D040     | object_age       | amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot      | Output   |
-+----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
+Below there is an overview of the different functions available.
 
-.. tip:: If these registers are already used on your robot, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__, and we will assist you in finding a solution.
++------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| Function name          | Comment                                                                                                                      |
++========================+==============================================================================================================================+
+| Build background       | Build the background cloud used in :ref:`advanced-roi-filters`.                                                              |
++------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| Calibration            | Trigger a detection of the robot-camera calibration plate.                                                                   |
++------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| Capture image          | Trigger Pickit to capture a camera image to be used by a following Process image function.                                   |
++------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| Configuration          | Load the specified setup and product :ref:`Configuration`.                                                                   |
++------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| Detection with retries | Trigger a Pickit object detection, if nothing is found and ROI is not empty Pickit will automatically retry a new detection. |
++------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| Detection              | Trigger a Pickit object detection using the currently active setup and product :ref:`Configuration`.                         |
++------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| Next object            | Request the next detected object.                                                                                            |
++------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| Process image          | Trigger an object detection on the camera image that was previously captured via Capture image function (or Detection).      |
++------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| Save scene             | Save a :ref:`Snapshots` with the latest detection results.                                                                   |
++------------------------+------------------------------------------------------------------------------------------------------------------------------+
+
+Defining the IP adress of Pickit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Before any of these functions can be used, please make sure to set the correct IP adress of the Pickit system.
+This is done by pressing on the node and :guilabel:`edit`.
+Here you can set the IP adress, by default this is set to **169.254.5.180**.
+
+Setting the correct input values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the following functions some input values have to be set manually.
+This is done by pressing on the node and :guilabel:`edit`.
+
+Configuration
+^^^^^^^^^^^^^
+
+- **Setup**: Pickit setup file ID.
+- **Product**: Pickit product file ID.
+
+Detection with retries
+^^^^^^^^^^^^^^^^^^^^^^
+
+- **Retries**: max number of retries before returning no object found.
