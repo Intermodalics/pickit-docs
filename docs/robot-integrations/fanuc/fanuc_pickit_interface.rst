@@ -92,3 +92,10 @@ More information about the variables can be found in :ref:`socket-communication`
 +---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
 
 .. tip:: If these registers are already used on your robot, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__, and we will assist you in finding a solution.
+
+Using pick offset in a robot program
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To use the **pick offset** in a robot program, first a fixed pose has to be taught.
+Then the offset can be applied to this fixed pose to correct from picking with an offset.
+Following example shows how the pose **drop off** is corrected: ``J P[3:drop off] 100% FINE Tool_Offset,PR[52:pi pick offset]``.
