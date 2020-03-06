@@ -16,29 +16,29 @@ Once a variable is created, its name should be changed according to the table be
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
 | Variable name | Type     | Comment                                                                                                                            |
 +===============+==========+====================================================================================================================================+
-| piAge         | number   | amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot |
+| piAge         | number   | Amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot.|
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piDim1        | number   | length or diameter (mm)                                                                                                            |
+| piDim1        | number   | Length or diameter (mm).                                                                                                           |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piDim2        | number   | width or diameter (mm)                                                                                                             |
+| piDim2        | number   | Width or diameter (mm).                                                                                                            |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piDim3        | number   | height (mm)                                                                                                                        |
+| piDim3        | number   | Height (mm).                                                                                                                       |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piPickId      | number   | ID of the pick point that was selected for the given object                                                                        |
+| piPickId      | number   | ID of the pick point that was selected for the given object.                                                                       |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piPose        | position | object pose expressed relatively to the robot base frame                                                                           |
+| piPose        | position | Object pose expressed relatively to the robot base frame.                                                                          |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piPrePose     | joint    | joint pose relatively to the piPose, used to approach the piPose                                                                   |
+| piPrePose     | joint    | Joint pose relatively to the piPose, used to approach the piPose.                                                                  |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piRefId       | number   | ID of the selected pick point’s reference pick point                                                                               |
+| piRefId       | number   | ID of the selected pick point’s reference pick point.                                                                              |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piRefJoint    | joint    | joint position used for robot joint configuration, typically defined in the middle of the picking area                             |
+| piRefJoint    | joint    | Joint position used for robot joint configuration, typically defined in the middle of the picking area.                            |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piRemain      | number   | number of remaining objects that can be sent to the robot in the next messages                                                     |
+| piRemain      | number   | Number of remaining objects that can be sent to the robot in the next messages.                                                    |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piStatus      | number   | Pickit status or a response to previously received robot commands                                                                  |
+| piStatus      | number   | Pickit status or a response to previously received robot commands.                                                                 |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piType        | number   | ID type of the detected object                                                                                                     |
+| piType        | number   | ID type of the detected object.                                                                                                    |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Define piRefJoint
@@ -91,4 +91,4 @@ Here you can set the IP address, which is set to **169.254.5.180** by default.
 
 .. hint:: In some functions, input values have to be set manually.
   This is done by pressing on the node and :guilabel:`edit`.
-  The mentioned input variables can be found in the 20 first lines of each function.
+  The mentioned input variables can be found under the header **Input** at the beginning of each function.
