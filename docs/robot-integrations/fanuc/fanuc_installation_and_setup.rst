@@ -4,7 +4,7 @@ Fanuc installation and setup
 ============================
 
 This setup manual helps you setup Pickit with a **Fanuc robot**. The
-setup of **Pickit** with a **Fanuc** **robot** consists of **4 steps**:
+setup of **Pickit** with a **Fanuc robot** consists of **4 steps**:
 
 .. contents::
     :backlinks: top
@@ -15,7 +15,7 @@ Check controller and software compatibility
 -------------------------------------------
 
 Pickit is compatible with controllers as of version **R-J30iA** (i.e. R-J30iA - V7.X , R-J30iB - V8.X and R-J30iB plus - V9.X) and the
-software module **User Socket Msg** for socket communication is required. (The product number for this module is A05B-2600-R648).
+software module **User Socket Msg** for socket communication is required. (The product number for this module is **A05B-2600-R648**).
 
 To verify if that software module is installed open the Status version
 ID page by opening :guilabel:`MENU` > :guilabel:`STATUS` > :guilabel:`Version ID` and then click the :guilabel:`ORDER FI` button.
@@ -148,8 +148,7 @@ Loading the program files for a Fanuc robot consists of:
     :local:
     :depth: 1
 
-Additionally we provide  `some extra insights on registers <#karel>`__
-used by the Karel program.
+Additionally we provide some extra insights on registers used by the Karel program.
 
 Download the right files
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,7 +168,7 @@ The .zip folder contains the following ASCII files:
 
   - ``PI_CALIBRATE.LS`` for :ref:`single-pose-calibration`.
 
-- The other ``PI_**.LS`` files define short Teach Pendant programs that abstract some of the Pickit logic into more user readable functions. They can also serve as macros that can be called manually. More about that later. 
+- The other ``PI_**.LS`` files define short Teach Pendant programs that abstract some of the Pickit logic into more user readable functions. They can also serve as macros that can be called manually.
 
 .. tip:: In case of using Fanuc software version V7.X, V8.X and V9.X , you can directly use the binaries available in the downloaded folder. In the other case, you first have to compile the above files into binaries. 
 
@@ -186,14 +185,14 @@ Uploading the files can be done using an FTP server or by manually loading them 
 Registers used by the Karel program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Karel program ``pick_it_communication15_C.kl``, which takes care of the low-level communication between the controller and Pickit, uses the following IO and registers to pass on data from the low-level communication to a Teach Pendant application program:
+The Karel program ``pick_it_communication15_C.kl``, which takes care of the low-level communication between the controller and Pickit, uses the following registers to pass on data from the low-level communication to a Teach Pendant application program:
 
 - Data communicated from Pickit via the Karel program to the Teach Pendant application program:
 
   -  Pose Registers: **PR[51]** - **PR[53]**
   -  Registers: **R[141]** - **R[159]**
 
-More information about what all registers are used for can be found in the following article, :ref:`fanuc-pickit-interface`.
+More information about what all registers are used for can be found in the following article, :ref:`fanuc_pickit_registers`.
 
 .. tip:: If these registers are already used on your robot. Please contact us at
   `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`__ and we will assist you in finding a solution.
@@ -213,16 +212,10 @@ Starting and verifying communication for a Fanuc robot consists of 2 steps:
 Start communication
 ~~~~~~~~~~~~~~~~~~~
 
-To start the communication manually, on the robot you have to go to :guilabel:`MENU` > :guilabel:`MANUAL FCTNS`, select ``P_OpenCommunication`` and press :guilabel:`SHIFT+EXEC`.
-
-.. image:: /assets/images/robot-integrations/fanuc/fanuc-12.png
-    :width: 550
+To start the communication manually, on the robot you have to run ``PI_OPEN_COMMUNICATION`` manually.
 
 Verify communication
 ~~~~~~~~~~~~~~~~~~~~
-
-Verify on the robot:
-^^^^^^^^^^^^^^^^^^^^
 
 In case the communication was started successfully, you can see the
 following on the robot Teach Pendant:
@@ -234,8 +227,3 @@ Pickit interface
     :width: 550
 
 You can verify the connection from within the Pickit web interface by checking if there is a checkmark next to the robot status label in the top bar.
-
-Test robot connection on Pickit
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Details on testing this connection can be found on: :ref:`test-robot-connection`

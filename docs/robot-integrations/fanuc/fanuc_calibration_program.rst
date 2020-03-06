@@ -6,7 +6,7 @@ Fanuc calibration program
 This example program requires that Pickit is installed and set up with your robot.
 For installation instructions, please refer to the :ref:`fanuc_installation_and_setup` article.
 
-Before following these Yaskawa specific instructions in this article, make sure you first understand the process of executing a robot camera calibration as explained on :ref:`robot-camera-calibration`.
+Before following these Fanuc specific instructions in this article, make sure you first understand the process of executing a robot camera calibration as explained on :ref:`robot-camera-calibration`.
 
 .. note::
   If you want to perform calibration once or infrequently, you don't need to use this example program.
@@ -34,11 +34,12 @@ This example program can be found in :guilabel:`Select`.
 
 Below, each step of the program is explained.
 
-Define the tool for picking
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Define the tool for calibration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When using Pickit it is important that **UTOOL9** is set equal to the robot flange.
-This is done by setting all the values of **UTOOL9** to 0.
+In the calibration program the plate can be mounted to flange of the robot or clamped tightly with a gripper.
+The tool settings for the calibration program can be set to anything that suits best your setup.
+In the example program by default **UTOOL9** is used.
 
 Set user frame
 ~~~~~~~~~~~~~~
