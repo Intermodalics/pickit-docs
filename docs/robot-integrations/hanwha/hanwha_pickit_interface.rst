@@ -11,7 +11,7 @@ Pickit variables
 
 The following variables need to be defined before you can use the Pickit functions.
 To do this go to :guilabel:`Programming` → :guilabel:`Variables` → :guilabel:`Add`.
-Once a variable is created, its name should be changed according the table below.
+Once a variable is created, its name should be changed according to the table below.
 
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
 | Variable name | Type     | Comment                                                                                                                            |
@@ -34,7 +34,7 @@ Once a variable is created, its name should be changed according the table below
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
 | piRefJoint    | joint    | joint position used for robot joint configuration, typically defined in the middle of the picking area                             |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| piRemain      | number   | number of remaining objects that can be sent to the robot in the next messages                                                        |
+| piRemain      | number   | number of remaining objects that can be sent to the robot in the next messages                                                     |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
 | piStatus      | number   | Pickit status or a response to previously received robot commands                                                                  |
 +---------------+----------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -60,28 +60,6 @@ This allows you to select the **.script** function that you want to add.
 
 All available functions are briefly explained below.
 
-+------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| Function name          | Comment                                                                                                                      |
-+========================+==============================================================================================================================+
-| Build background       | Build the background cloud used in :ref:`advanced-roi-filters`.                                                              |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| Calibration            | Trigger a detection of the robot-camera calibration plate.                                                                   |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| Capture image          | Trigger Pickit to capture a camera image to be used by a following **Process image** function.                                   |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| Configuration          | Load the specified setup and product :ref:`Configuration`.                                                                   |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| Detection with retries | Repeatedly trigger a Pickit object detection as long as nothing is found and the ROI is not empty, up to a number of attempts. |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| Detection              | Trigger a Pickit object detection using the currently active setup and product :ref:`Configuration`.                         |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| Next object            | Request the next detected object.                                                                                            |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| Process image          | Trigger an object detection on the camera image that was previously captured via the **Capture image** function (or one of the **Detection** functions).      |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| Save scene             | Save a :ref:`Snapshots` with the latest detection results.                                                                   |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------+
-
 Defining the IP adress of Pickit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -89,19 +67,28 @@ Before any of these functions can be used, please make sure to set the correct I
 This is done by pressing on the node and :guilabel:`edit`.
 Here you can set the IP address, which is set to **169.254.5.180** by default.
 
-Setting the correct input values
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+| Function name          | Comment                                                                                                                                                  | Input                  |
++========================+==========================================================================================================================================================+========================+
+| Build background       | Build the background cloud used in :ref:`advanced-roi-filters`.                                                                                          | /                      |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+| Calibration            | Trigger a detection of the robot-camera calibration plate.                                                                                               | /                      |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+| Capture image          | Trigger Pickit to capture a camera image to be used by a following **Process image** function.                                                           | /                      |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+| Configuration          | Load the specified setup and product :ref:`Configuration`.                                                                                               | setup, product         |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+| Detection with retries | Repeatedly trigger a Pickit object detection as long as nothing is found and the ROI is not empty, up to a number of attempts.                           | retries, pickit_offset |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+| Detection              | Trigger a Pickit object detection using the currently active setup and product :ref:`Configuration`.                                                     | pickit_offset          |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+| Next object            | Request the next detected object.                                                                                                                        | pickit_offset          |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+| Process image          | Trigger an object detection on the camera image that was previously captured via the **Capture image** function (or one of the **Detection** functions). | pickit_offset          |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+| Save scene             | Save a :ref:`Snapshots` with the latest detection results.                                                                                               | /                      |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 
-In the following functions, some input values have to be set manually.
-This is done by pressing on the node and :guilabel:`edit`.
-
-Configuration
-^^^^^^^^^^^^^
-
-- **Setup**: Pickit setup file ID.
-- **Product**: Pickit product file ID.
-
-Detection with retries
-^^^^^^^^^^^^^^^^^^^^^^
-
-- **Retries**: max number of retries before returning no object found.
+.. hint:: In some functions, input values have to be set manually.
+  This is done by pressing on the node and :guilabel:`edit`.
+  The mentioned variables can be found in the 20 first lines of each function.
