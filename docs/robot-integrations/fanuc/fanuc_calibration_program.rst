@@ -10,7 +10,7 @@ Before following these Fanuc specific instructions in this article, make sure y
 
 .. note::
   If you want to perform calibration once or infrequently, you don't need to use this example program.
-  You can teach the calibration poses manually using free-drive and the :guilabel:`Collect current pose` in the calibration wizard of the Pickit web interface.
+  You can teach the calibration poses manually using the pendant and the :guilabel:`Collect current pose` in the calibration wizard of the Pickit web interface.
 
 Example program: PICKIT_MP_CALIBRATE
 ------------------------------------
