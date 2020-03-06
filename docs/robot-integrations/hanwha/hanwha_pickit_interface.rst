@@ -91,4 +91,4 @@ Here you can set the IP address, which is set to **169.254.5.180** by default.
 
 .. hint:: In some functions, input values have to be set manually.
   This is done by pressing on the node and :guilabel:`edit`.
-  The mentioned variables can be found in the 20 first lines of each function.
+  The mentioned input variables can be found in the 20 first lines of each function.
