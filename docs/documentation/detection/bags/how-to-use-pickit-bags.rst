@@ -131,7 +131,7 @@ Full and/or incomplete layers
 -----------------------------
 
 Select the status of the top layer to be **full** (all bags in the pattern are present) or
-**incomplete** (at least one bag is missing from the pattern). Select **Detect automatically** for
+**incomplete** (one or more bags are missing from the pattern). Select **Detect automatically** for
 Pickit to detect whether the top layer of the pallet is full or incomplete.
 
 .. image:: /assets/images/Documentation/bags_4-bag_full_incomplete.png
