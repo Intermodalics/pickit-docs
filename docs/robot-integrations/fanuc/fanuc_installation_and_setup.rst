@@ -15,7 +15,7 @@ Check controller and software compatibility
 -------------------------------------------
 
 Pickit is compatible with controllers as of version **R-J30iA** (i.e. R-J30iA - V7.X , R-J30iB - V8.X and R-J30iB plus - V9.X) and the
-software module **User Socket Msg** for socket communication is required. (The product number for this module is **A05B-2600-R648**).
+software module **User Socket Msg** for socket communication is required (the product number for this module is **A05B-2600-R648**).
 
 To verify if that software module is installed open the Status version
 ID page by opening :guilabel:`MENU` > :guilabel:`STATUS` > :guilabel:`Version ID` and then click the :guilabel:`ORDER FI` button.
@@ -61,7 +61,7 @@ The Pickit processor has to be connected to the Fanuc controller using
 an Ethernet cable. This Ethernet cable should be plugged in:
 
  - The **ROBOT** port of the **Pickit processor**; 
- - **Port 1** or **Port 2** port of **Fanuc controller**.
+ - **Port 1** or **Port 2** of the **Fanuc controller**.
 
 The location of port 1 on the Fanuc is shown for different controller
 types in the images below.

@@ -79,7 +79,7 @@ This example program can be found in :guilabel:`Select`.
 The idea of the program is the following:
 
 - First it is checked if Pickit is set to :ref:`Robot mode <web-interface-top-bar>`.
-- If so, the robot moves to his detect pose and a detection is triggered.
+- If so, the robot moves to its detect pose and a detection is triggered.
 - If an object is found, its model and pick point ID are retrieved.
   The robot moves to the object to pick it.
   Next, the robot moves to a fixed drop off position.
@@ -105,27 +105,27 @@ Variables used in PICKIT_SIMPLE_PICKING
 
 Below you find an overview of the variables used in this example program.
 The Pickit registers, in the 140-160 range, and the Pickit pose registers, in the 50 range, can't be changed by the user, an overview of these can be found in the :ref:`fanuc-pickit-interface` article.
-All other variables can be adapted according the changes you want to apply to this example program.
+All other variables should be adapted according the changes you want to apply to this example program.
 
-+-----------+------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| Variable  | Field name             | Comment                                                                                           | Set by user |
-+===========+========================+===================================================================================================+=============+
-| R[1]      | Setup                  | Requested Pickit setup ID                                                                         | Yes         |
-+-----------+------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| R[2]      | Product                | Requested Pickit product ID                                                                       | Yes         |
-+-----------+------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| R[3]      | Retries                | Maximum number of detection retries                                                               | Yes         |
-+-----------+------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| P[1]      | Detect pose            | Position not blocking the field of view of the camera when triggering detections                  | Yes         |
-+-----------+------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| P[2]      | Above bin pose         | Position above the picking area                                                                   | Yes         |
-+-----------+------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| P[3]      | Drop off pose          | Position where the object is dropped off                                                          | Yes         |
-+-----------+------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| PR[1]     | Before pick            | Position offset the robot moves to before picking the object                                      | Yes         |
-+-----------+------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| PR[2]     | After pick             | Position offset the robot moves to after picking the object                                       | Yes         |
-+-----------+------------------------+---------------------------------------------------------------------------------------------------+-------------+
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
+| Variable  | Field name             | Comment                                                                                           |
++===========+========================+===================================================================================================+
+| R[1]      | Setup                  | Requested Pickit setup ID                                                                         |
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
+| R[2]      | Product                | Requested Pickit product ID                                                                       |
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
+| R[3]      | Retries                | Maximum number of detection retries                                                               |
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
+| P[1]      | Detect pose            | Position not blocking the field of view of the camera when triggering detections                  |
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
+| P[2]      | Above bin pose         | Position above the picking area                                                                   |
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
+| P[3]      | Drop off pose          | Position where the object is dropped off                                                          |
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
+| PR[1]     | Before pick            | Position offset the robot moves to before picking the object (relative to tool frame)             |
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
+| PR[2]     | After pick             | Position offset the robot moves to after picking the object (relative to world frame)             |
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
 
 Add grasping/releasing logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -11,7 +11,7 @@ For installation instructions, please refer to the :ref:`fanuc_installation_and_
 Pickit macros
 -------------
 
-Below you find an overview of the macros defined by Pickit. 
+Below you find an overview of the macros defined by Pickit. For more details on these macros, refer to :ref:`socket-communication`.
 
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | Macro name                | Comment                                                                                                                                                                         | Input arguments |
@@ -48,6 +48,8 @@ Below you find an overview of the macros defined by Pickit.
 .. tip:: The macros can be assigned to hotkeys on the teach pendant.
   This is done in :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
 
+.. _fanuc_pickit_registers:
+
 Pickit registers
 ----------------
 
@@ -78,7 +80,8 @@ More information about the variables can be found in :ref:`socket-communication`
 +---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
 | R[154]-R[156] | obj dim 1-3   | [0]: length or diameter (mm) [1]: width or diameter (mm) [2]: height (mm)                                                          | Input    |
 +---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[157]        | model id      | ID type of the detected object                                                                                                     | Input    |
+| R[157]        | model id      | - for a :ref:`Teach` detection, ID type of the detected object                                                                     | Input    |
+|               |               | - for a :ref:`Flex`/:ref:`Pattern` detection, the object type of the detected object                                               |          |
 +---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
 | R[158]        | pick id       | ID of the pick point that was selected for the given object                                                                        | Input    |
 +---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
