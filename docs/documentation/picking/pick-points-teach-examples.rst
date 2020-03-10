@@ -73,4 +73,4 @@ Each pick point has the following flexible pick orientations:
 
 This article covers concrete examples on how to benefit from multiple pick points and pick orientation flexibility to pick more objects from the bin, or to optimize robot motions.
 In some cases, however, you may want to drop the picked objects in a consistent way, without any offsets, while keeping the robot program as simple as possible.
-Check out :ref:`this article` <smart-place-examples> with examples of different objects being smartly placed, after being picked with the techniques mentioned above.
+Check out :ref:`this article <smart-place-examples>` with examples of different objects being smartly placed, after being picked with the techniques mentioned above.
