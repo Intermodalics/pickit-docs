@@ -70,3 +70,7 @@ Each pick point has the following flexible pick orientations:
 
 .. note::
   This example can be interactively explored by opening the ``examples/cad/white_sockets_suction.snapshot`` :ref:`snapshot <Snapshots>`.
+
+This article covers concrete examples on how to benefit from multiple pick points and pick orientation flexibility to pick more objects from the bin, or to optimize robot motions.
+In some cases, however, you may want to drop the picked objects in a consistent way, without any offsets, while keeping the robot program as simple as possible.
+Check out :ref:`this article` <smart-place-examples> with examples of different objects being smartly placed, after being picked with the techniques mentioned above.
