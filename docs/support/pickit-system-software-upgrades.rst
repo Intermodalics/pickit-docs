@@ -36,13 +36,14 @@ To upgrade your system follow these steps:
 
 .. _here: https://client.pickit3d.com/upgrade/v2/
 
-.. warning:: Note that for Pickit versions < 2.1.2, the web interface can show
-  the error message **ERROR: Something went wrong during upgrading**, even though the
-  upgrade process is still running without problems.
+Known Errors
+------------
+**Version 1.x**: The Pickit 2.x software is not compatible with the 1.x Pickit processors. Please reach out to a Pickit support engineer to discuss your options in case you want to get started with the 2.x software.
 
-  If you see this message, **DO NOT REBOOT THE PICKIT SYSTEM YOURSELF**. Instead
-  **WAIT FOR IT TO REBOOT AUTOMATICALLY**. After the reboot, the web
-  interface will refresh automatically and show the newest version.
+**For versions 2.1.0-x** : The upgrade procedure described here is not working. Please contact a Pickit support engineer to help you through the remote upgrade procedure.
 
-  In the exceptional case where the Pickit system does not reboot within
-  15 minutes after starting the upgrade, please contact **support@pickit3d.com**.
+**For versions 2.1.1-x** : The web interface can show the error message **ERROR: Something went wrong during upgrading**, even though the upgrade process is still running without problems.
+
+If you see this message, **DO NOT REBOOT THE PICKIT SYSTEM YOURSELF**. Instead **WAIT FOR IT TO REBOOT AUTOMATICALLY**. After the reboot, the web interface will refresh automatically and show the newest version.
+
+In the exceptional case where the Pickit system does not reboot within 15 minutes after starting the upgrade, please contact **support@pickit3d.com**.
