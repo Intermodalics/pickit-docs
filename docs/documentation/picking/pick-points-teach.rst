@@ -9,6 +9,8 @@ It is specified as a position and orientation relative to the object, where the 
 What constitutes a good pick point depends on both the gripping device and the object to be picked.
 
 This article focuses on how pick points are created and managed, and the companion :ref:`example applications <pick-points-teach-examples>` article presents a number of real scenarios and how to make the best use of this feature.
+The way in which an object is picked can also be used to determine how to correctly place it at a drop-off location.
+A number of useful and easy to program place strategies are exemplified in :ref:`smart-place-examples`.
 
 .. toctree::
     :hidden:
@@ -16,6 +18,7 @@ This article focuses on how pick points are created and managed, and the compani
     :glob:
 
     pick-points-teach-examples
+    smart-place-examples
 
 .. _multiple-pick-points:
 
@@ -48,7 +51,19 @@ The **Define pick points** section of the :ref:`picking <Picking>` page allows t
     :scale: 60%
     :align: center
 
+Having multiple pick points may affect the way you want to drop-off the object, after picking it.
+For example, :ref:`this article <smart-place-pick-point-id>` shows a case where the robot places the object in a different drop-off position depending on the used pick point.
 
+.. _pick-point-reference:
+
+Pick point reference
+~~~~~~~~~~~~~~~~~~~~
+
+The pick point reference plays an important role for drop-off compensation.
+By default, the position and orientation of a **pick point A** is expressed relatively to its origin.
+However, this can be specified with respect to another pick point B instead, by setting **pick point B** to be the **reference** of **pick point A**.
+This is useful if you want to benefit from multiple pick points, and still drop off the object at the same location, for all pick points.
+In this example, your robot program would only need to define a placing position for the reference pick point (**B**), and the object would be dropped off always the same way, whether it was picked using **pick point A** or **B**. Learn how to achieve this with :ref:`this example of such a case <smart-place-pick-point-reference>`.
 
 .. _flexible-pick-orientation:
 
@@ -84,6 +99,8 @@ The :ref:`example applications <pick-points-teach-examples>` section describes f
 .. tip::
   Flexible pick orientations, in combination with the :ref:`preferred pick point orientation <preferred-orientation-teach>` can be used to favor picks that are easier and faster to reach by the robot (e.g. less wrist motion, lower occurrence of unreachable points).
 
+In some applications, you may want to drop-off the object in the same location independently of how it was picked (which pick point and how orientation flexibility was used).
+:ref:`This article <smart-place-pick-point-offset>` shows two different examples where this goal is achieved.
 
 .. _selecting-a-pick-point:
 

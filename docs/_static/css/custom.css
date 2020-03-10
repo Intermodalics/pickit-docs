@@ -68,8 +68,21 @@ a:visited {
           this as on RTD they are loaded after this stylesheet */
        white-space: normal !important;
     }
- 
+
     .wy-table-responsive {
        overflow: visible !important;
     }
  }
+
+.toggle .header {
+    display: block;
+    clear: both;
+}
+
+.toggle .header::before {
+    content: "►";
+}
+
+.toggle .header.open:before {
+    content: "▼";
+}
