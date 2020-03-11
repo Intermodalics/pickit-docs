@@ -30,25 +30,34 @@ A single object can often be picked from more than one point. Having multiple pi
 - Increase the likelihood that objects are pickable even if they overlap or are close to bin walls. Below, two possible pick points for picking a socket with a suction gripper are shown: the left one (in orange) is unpickabe due to collisions with the bin, while the right one (in green) is pickable.
 
 .. image:: /assets/images/documentation/picking/pick_point_bin_collision.png
-    :scale: 60%
-    :align: center
+  :scale: 60%
+  :align: center
 
 - Specify pick points for models where only one part is visible at a time. This is the case for full object models :ref:`taught from CAD <teach-from-cad>`. Below, pick points for the top (left) and bottom (right) sides of a socket are shown.
 
 .. image:: /assets/images/documentation/picking/socket_top_bottom_pick_points.png
-    :scale: 50%
-    :align: center
+  :scale: 50%
+  :align: center
 
 The **Define pick points** section of the :ref:`picking <Picking>` page allows to create and manage the pick points of Teach models:
 
 - Create a new pick point by clicking :guilabel:`Add pick point`.
   Once created, a pick point can be enabled/disabled and its visibility can be toggled.
 - Duplicate or delete an existing pick point by clicking on the  :guilabel:`⋮` button.
+- Set the :ref:`robot tool model <robot-tool-model>` to use for this pick point. Learn more about applications with multiple tool models :ref:`here <robot-tool-multiple-example>`.
 - Set the :guilabel:`Point position and orientation`, which specifies its location with respect to the object origin, or optionally with respect to an existing point by changing the :guilabel:`Reference point`.
 - Optionally, specify a :guilabel:`Flexible pick orientation` (:ref:`more <flexible-pick-orientation>`).
 
-.. image:: /assets/images/documentation/picking/pick_point_ui_22.png
-    :scale: 60%
+.. image:: /assets/images/documentation/picking/pick_point_ui.png
+  :align: center
+
+.. note::
+  The :guilabel:`Point position and orientation` can be specified in two ways:
+
+  - Exact values, manually entering the six coordinates for position and orientation.
+  - Interactively, by clicking :guilabel:`Enable drag handles in 3D view`. This will show interactive handles that you can click and drag. You can modify the position or orientation by selecting one of the icons below, which appear on the top-left of the 3D view.
+
+  .. image:: /assets/images/documentation/picking/pick_point_drag_markers.png
     :align: center
 
 When an object has multiple pick points, Pickit smartly selects the best one to use.
@@ -66,7 +75,7 @@ When an object has multiple pick points, Pickit smartly selects the best one to 
   3. **No pickable points?** If no pickable point is found, the object is labeled as unpickable.
 
   .. tip::
-    If you click on a particular detection in the :ref:`detection grid <detection-grid>`, you can learn which pick point was selected for picking. Also, if an object is unpickable, you can learn the reason why its pick points were not pickable.
+    If you click on a particular detection in the :ref:`detection grid <detection-grid>`, you can learn which pick point was selected for picking. Also, if an object is unpickable, you can learn the reason why its pick points were not considered pickable.
 
 |
 
@@ -91,26 +100,35 @@ Flexible pick orientation
 
 In practice, many applications can tolerate some variation with respect to the nominal pick orientation without compromising pick success.
 Taking advantage of this can increase the likelihood that individual pick points are pickable by the robot.
-This flexibility is typically due to shape symmetries, (e.g. a circular object, below left), or robot tool compliance (e.g. suction cup bellows, below right), and is represented in Pickit by a pick point's :guilabel:`Flexible pick orientation`.
+This flexibility is typically due to shape symmetries (e.g. a circular object, below left), robot tool compliance (e.g. suction cup bellows, below center), or application-specific considerations (e.g. clearance between the tool and object at a specific pickpoint, below right). It is represented in Pickit by a pick point's :guilabel:`Flexible pick orientation`.
 
-.. image:: /assets/images/documentation/picking/flexibility_real_pic.png
-    :scale: 60%
-    :align: center
+.. image:: /assets/images/documentation/picking/flexibility_real_examples.png
+  :scale: 60%
+  :align: center
 
 Pickit allows the pick point orientation to tilt around the X and/or Y axes, as well as to rotate around the Z-axis (below, left).
 Flexibility around each axis is represented in the 3D model view as a circular sector as wide as the specified interval size (below, right).
 
-.. image:: /assets/images/documentation/picking/flexible_pick_orientation_ui_with_3d_22.png
-    :scale: 80%
-    :align: center
+.. image:: /assets/images/documentation/picking/flexible_pick_orientation_ui_with_3d.png
+  :scale: 80%
+  :align: center
+
+The following three examples show, from left to right:
+
+- A picture of the real application.
+- The 3D visualization of the :ref:`object model <teach>`, :ref:`robot tool model <robot-tool-model>`, pick point and flexible pick orientation.
+- The flexible pick orientation specification.
+
+.. image:: /assets/images/documentation/picking/flexibility_real_examples_full.png
+  :align: center
 
 The image below highlights the beneficial effect of flexible pick orientations on increasing the likelihood of finding pickable objects.
 Without it, the shown objects would be labeled as unpickable by Pickit due to :ref:`collisions <collision-prevention>` between the tool and the bin or other objects.
 The :ref:`example applications <pick-points-teach-examples>` section describes further scenarios where flexible pick orientations can be used.
 
 .. image:: /assets/images/documentation/picking/flexible_pick_orientation_comparison.png
-    :scale: 55%
-    :align: center
+  :scale: 55%
+  :align: center
 
 .. note::
   Both **multiple pick points** and **flexible pick orientations** are complementary strategies for increasing the likelihood that an object is pickable.
