@@ -99,7 +99,7 @@ Setting the Pickit IP address on the robot controller
 
 Still in **normal mode**, the IP address of Pickit needs to be entered in a **String**. To do this:
 
-  #. Go to :guilabel:`Main menu` → :guilabel:`VARIABLE` → :guilabel:`STRING` → :guilabel:`S099`.
+  #. Go to :guilabel:`Main menu` → :guilabel:`VARIABLE` → :guilabel:`STRING` → :guilabel:`S049`.
   #. Set **S049** to value **169.254.5.180**.
 
 .. note:: There is no communication yet between the Pickit and the robot.
