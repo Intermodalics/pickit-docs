@@ -1,3 +1,5 @@
+.. _kuka-installation-and-setup:
+
 KUKA installation and setup
 ===========================
 
