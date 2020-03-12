@@ -1,6 +1,5 @@
 .. _smart-place-examples:
 
-
 Smart placing using pick point data
 -----------------------------------
 
@@ -103,6 +102,7 @@ The **pick point offset**, which is the offset between the actual pick point and
 
 .. note:: This article shows examples where the pick point data is used for smart object **placing**.
           However, pick point information can also be used for smart object **picking**, such as:
+
             - Different gripper settings depending on the pick point (see example below).
             - Different grippers for different pick points.
             - Different approach or retreat motions depending on the pick point.

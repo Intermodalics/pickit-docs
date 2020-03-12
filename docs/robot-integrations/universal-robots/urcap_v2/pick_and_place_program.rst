@@ -48,6 +48,10 @@ The minimum inputs required to run the pick and place program are:
 - **Three waypoints:** ``Detect``, ``AbovePickArea`` and ``Dropoff`` (:ref:`learn more <template-waypoints>`).
 - **Tool actions** for :ref:`grasping <template-pick>` and :ref:`releasing <template-place>` an object.
 
+.. note::
+
+  Make sure the Tool Center Point (TCP) is correctly specified for your robot tool before teaching the above waypoints.
+
 .. image:: /assets/images/robot-integrations/ur/pick-and-place-waypoints.png
   :align: center
 
