@@ -1,10 +1,10 @@
-.. _kuka-pickit-interface:
+.. _kuka-krc4-pickit-interface:
 
 KUKA Pickit interface
 =====================
 
 This article documents the interface of the KUKA Pickit integration.
-For installation instructions, please refer to the :ref:`kuka-installation-and-setup` article.
+For installation instructions, please refer to the :ref:`kuka-krc4-installation-and-setup` article.
 
 Pickit communication functions
 ------------------------------
@@ -47,14 +47,14 @@ Using the Pickit functions with return value
 
 Some Pickit functions mentioned above have a return value.
 These functions are used in the program in a different way than the other functions.
-See :ref:`kuka-example-picking-program` on how they are typically implemented in a robot program.
+See :ref:`kuka-krc4-example-picking-program` on how they are typically implemented in a robot program.
 
 Pickit helper functions
 -----------------------
 
 Following functions don't communicate with a Pickit system but are functions that make your robot program more readable.
 The return value of these functions is a boolean and the status of the return value gets updated after using the Pickit function **Pickit_has_response()** or **Pickit_get_results()**.
-See :ref:`kuka-example-picking-program` on how they are typically implemented in a robot program.
+See :ref:`kuka-krc4-example-picking-program` on how they are typically implemented in a robot program.
 
 +----------------------------+--------------------------------------------------------------------------------+
 | Function                   | Comment                                                                        |

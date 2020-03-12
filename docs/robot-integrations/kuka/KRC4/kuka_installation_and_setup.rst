@@ -1,4 +1,4 @@
-.. _kuka-installation-and-setup:
+.. _kuka-krc4-installation-and-setup:
 
 KUKA installation and setup
 ===========================

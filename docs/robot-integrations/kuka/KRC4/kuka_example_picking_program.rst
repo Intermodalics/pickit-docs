@@ -1,13 +1,13 @@
-.. _kuka-example-picking-program:
+.. _kuka-krc4-example-picking-program:
 
 KUKA example picking program
 ============================
 
 This example program requires that Pickit is installed and set up with your robot.
-For installation instructions, please refer to the :ref:`kuka_installation_and_setup` article.
+For installation instructions, please refer to the :ref:`kuka-krc4-installation-and-setup` article.
 
 Make sure that :ref:`robot-camera-calibration` is done.
-This can be done by running the :ref:`kuka-calibration-program`.
+This can be done by running the :ref:`kuka-krc4-calibration-program`.
 
 Example program: PickitSimplePicking
 ------------------------------------

@@ -1,10 +1,10 @@
-.. _kuka-calibration-program:
+.. _kuka-krc4-calibration-program:
 
 KUKA calibration program
 ========================
 
 This example program requires that Pickit is installed and set up with your robot.
-For installation instructions, please refer to the :ref:`kuka-installation-and-setup` article.
+For installation instructions, please refer to the :ref:`kuka-krc4-installation-and-setup` article.
 
 Before following these KUKA specific instructions in this article, make sure you first understand the process of executing a robot camera calibration as explained on :ref:`robot-camera-calibration`.
 
