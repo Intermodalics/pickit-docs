@@ -35,7 +35,8 @@ Module installation
 
 The **KUKA Connect KRC** module can be purchased directly from KUKA, and consists of: a set of files that you should copy to a NTFS formatted USB drive, and a 16-digit license key with the format **xxxx-xxxx-xxxx-xxxx** that depends on the robot’s serial number.
 
-Generation of temporary license keys by KUKA is possible for validating an application before the actual purchase of a Pickit system.
+.. tip::
+   Generation of temporary license keys by KUKA is possible for validating an application before the actual purchase of a Pickit system.
 
 Plug in the USB drive containing the **KUKA Connect KRC** module files in the external USB port of the **KR-C4** controller cabinet.
 
