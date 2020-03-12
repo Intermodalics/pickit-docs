@@ -46,7 +46,7 @@ This example program can be found in **R1** > **Program** > **Pickit**.
 
         PTP home
 
-        END
+    END
 
 Below, each step of the program is explained.
 
