@@ -22,7 +22,7 @@ When teaching the :ref:`region-of-interest`, make sure to attach its origin to t
 floor, but not on the pallet. The XY-plane of the :ref:`reference frame <reference-frame>`
 should be the floor plane.
 
-.. image:: /assets/images/Documentation/bags_roi_markers.png
+.. image:: /assets/images/documentation/bags_roi_markers.png
 
 Fine-tune the Region of Interest such that it includes the top of the pallet, but not the floor. Make
 sure that the Region of Interest is large enough to include the whole pallet with bags.
@@ -39,7 +39,7 @@ disposed on the pallet.
 The Pickit Bags engine supports five patterns: 3-bag, 4-bag (crossing and parallel),
 5-bag and 8-bag patterns.
 
-.. image:: /assets/images/Documentation/bags_supported_patterns.png
+.. image:: /assets/images/documentation/bags_supported_patterns.png
 
 .. note:: By default, the Pickit Bags engine assumes that the layers are full (no missing bags from
           the pattern). There is an option to :ref:`detect whether the top layer is full or
@@ -52,7 +52,7 @@ Real-life examples of pallets for each supported bag pattern are shown below:
 
 The 3-bag pattern consists of two horizontal bags and one vertical bag.
 
-.. image:: /assets/images/Documentation/bags_3-bag.png
+.. image:: /assets/images/documentation/bags_3-bag.png
 
 4-bag pattern (crossing)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,28 +61,28 @@ In the 4-bag (crossing) pattern, there are two horizontal and two vertical bags,
 forming a square. There may be significant overlap between the horizontal and vertical
 bags.
 
-.. image:: /assets/images/Documentation/bags_4-bag_crossing.png
+.. image:: /assets/images/documentation/bags_4-bag_crossing.png
 
 4-bag pattern (parallel)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the 4-bag (parallel) pattern, the bags are disposed in parallel, in two groups of two.
 
-.. image:: /assets/images/Documentation/bags_4-bag_parallel.png
+.. image:: /assets/images/documentation/bags_4-bag_parallel.png
 
 5-bag pattern
 ^^^^^^^^^^^^^
 
 The 5-bag pattern includes three vertical bags and two horizontal bags.
 
-.. image:: /assets/images/Documentation/bags_5-bag.png
+.. image:: /assets/images/documentation/bags_5-bag.png
 
 8-bag pattern
 ^^^^^^^^^^^^^
 
 Finally, the 8-bag pattern consists of six horizontal bags and two vertical bags.
 
-.. image:: /assets/images/Documentation/bags_8-bag.png
+.. image:: /assets/images/documentation/bags_8-bag.png
 
 .. _Five-bag-horizontal-bags-order:
 
@@ -95,7 +95,7 @@ bag, or vice-versa). If you want Pickit to detect which bag is overlapping, enab
 is no or little overlap, or if the overlap is always consistent for all layers), keep this
 checkbox disabled, and instead specify a fixed :ref:`bag picking order <Bag-picking-order>`.
 
-.. image:: /assets/images/Documentation/bags_5-bag_2overlapping.png
+.. image:: /assets/images/documentation/bags_5-bag_2overlapping.png
 
 .. warning::
   The overlapping check can only be applied to the two horizontal bags of the 5-bag pattern.
@@ -110,7 +110,7 @@ Specify the length and width of the pallet.
 Except for the 4-bag (crossing) pattern, the detection of the layer orientation assumes a rectangular
 pallet shape (that is, one side is significantly longer than the other).
 
-.. image:: /assets/images/Documentation/bags_pallet_dimensions.png
+.. image:: /assets/images/documentation/bags_pallet_dimensions.png
 
 Minimum pallet height
 ~~~~~~~~~~~~~~~~~~~~~
@@ -123,7 +123,7 @@ to know when the pallet is empty.
   The minimum pallet height is expressed relatively to the reference frame. It is therefore
   important that the reference frame XY-plane is located at the floor.
 
-.. image:: /assets/images/Documentation/bags_min_pallet_height.png
+.. image:: /assets/images/documentation/bags_min_pallet_height.png
 
 .. _Full-incomplete-layer-detection:
 
@@ -134,7 +134,7 @@ Select the status of the top layer to be **full** (all bags in the pattern are p
 **incomplete** (one or more bags are missing from the pattern). Select **Detect automatically** for
 Pickit to detect whether the top layer of the pallet is full or incomplete.
 
-.. image:: /assets/images/Documentation/bags_4-bag_full_incomplete.png
+.. image:: /assets/images/documentation/bags_4-bag_full_incomplete.png
 
 .. warning:: For a correct full/incomplete layer detection, it is important that the XY-plane of
              the Region of Interest is parallel to the floor, and not tilted.
@@ -163,7 +163,7 @@ the heaviest part is sometimes located towards the bottom of the bag. For this r
 can provide an offset to the pick pose, along the X-axis (red) of the bag. You can find this
 option in the **Picking** page, section **Bag pick point offset**.
 
-.. image:: /assets/images/Documentation/bags_pick_frame_offset.png
+.. image:: /assets/images/documentation/bags_pick_frame_offset.png
 
 .. _Bag-picking-order:
 
@@ -179,7 +179,7 @@ The image below shows two different 3-bag pallets. On the left, the vertical bag
 the horizontal bags, and therefore it is preferred to pick the vertical bag first. On the right,
 we want to first pick the two horizontal bags, as they overlap the vertical bag.
 
-.. image:: /assets/images/Documentation/bags_picking_order.png
+.. image:: /assets/images/documentation/bags_picking_order.png
 
 .. note::
   Suppose that you are detecting a 5-bag pattern, and have the checkbox **Automatically compute
@@ -202,7 +202,7 @@ layer orientation) is the first step to correctly detect the bags.
 
 The image below shows the possible layer orientations for each bag pattern.
 
-.. image:: /assets/images/Documentation/bags_layer_orientations.png
+.. image:: /assets/images/documentation/bags_layer_orientations.png
 
 - For 3, 5 and 8 bags, consecutive layers usually switch between orientations 0 and 1.
 - For the 4-bag pattern (crossing) there are four possible orientations. Consecutive layers usually

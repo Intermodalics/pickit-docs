@@ -17,7 +17,7 @@ To upgrade your system follow these steps:
 - Download the latest version of Pickit here_.
 - Press the **Settings** button in the top bar of Pickit's web interface.
 
-     .. image:: /assets/images/Documentation/settings-button-21.png
+     .. image:: /assets/images/documentation/settings-button-21.png
 
 - In the **Network settings** section of the left menu, select the **Upgrade
   Pickit version** drawer, and press the **Upload and
@@ -32,7 +32,7 @@ To upgrade your system follow these steps:
 
 - While the upgrade is in progress you should see the following:
 
-   .. image:: /assets/images/Documentation/pickit-upgrading.png
+   .. image:: /assets/images/documentation/pickit-upgrading.png
 
 .. _here: https://client.pickit3d.com/upgrade/v2/
 

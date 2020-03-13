@@ -13,4 +13,4 @@ on the individual object lines, like for **object 2** below.
 On top of the grid, you can see a summary of all detected objects and
 the detection time.
 
-.. image:: /assets/images/Documentation/web-interface/detection-grid-22.png
+.. image:: /assets/images/documentation/web-interface/detection-grid-22.png

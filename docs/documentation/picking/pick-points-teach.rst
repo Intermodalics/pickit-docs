@@ -29,13 +29,13 @@ A single object can often be picked from more than one point. Having multiple pi
 
 - Increase the likelihood that objects are pickable even if they overlap or are close to bin walls. Below, two possible pick points for picking a socket with a suction gripper are shown: the left one (in orange) is unpickabe due to collisions with the bin, while the right one (in green) is pickable.
 
-.. image:: /assets/images/Documentation/picking/pick_point_bin_collision.png
+.. image:: /assets/images/documentation/picking/pick_point_bin_collision.png
     :scale: 60%
     :align: center
 
 - Specify pick points for models where only one part is visible at a time. This is the case for full object models :ref:`taught from CAD <teach-from-cad>`. Below, pick points for the top (left) and bottom (right) sides of a socket are shown.
 
-.. image:: /assets/images/Documentation/picking/socket_top_bottom_pick_points.png
+.. image:: /assets/images/documentation/picking/socket_top_bottom_pick_points.png
     :scale: 50%
     :align: center
 
@@ -47,7 +47,7 @@ The **Define pick points** section of the :ref:`picking <Picking>` page allows t
 - Set the :guilabel:`Point position and orientation`, which specifies its location with respect to the object origin, or optionally with respect to an existing point by changing the :guilabel:`Reference point`.
 - Optionally, specify a :guilabel:`Flexible pick orientation` (:ref:`more <flexible-pick-orientation>`).
 
-.. image:: /assets/images/Documentation/picking/pick_point_ui_22.png
+.. image:: /assets/images/documentation/picking/pick_point_ui_22.png
     :scale: 60%
     :align: center
 
@@ -74,14 +74,14 @@ In practice, many applications can tolerate some variation with respect to the n
 Taking advantage of this can increase the likelihood that individual pick points are pickable by the robot.
 This flexibility is typically due to shape symmetries, (e.g. a circular object, below left), or robot tool compliance (e.g. suction cup bellows, below right), and is represented in Pickit by a pick point's :guilabel:`Flexible pick orientation`.
 
-.. image:: /assets/images/Documentation/picking/flexibility_real_pic.png
+.. image:: /assets/images/documentation/picking/flexibility_real_pic.png
     :scale: 60%
     :align: center
 
 Pickit allows the pick point orientation to tilt around the X and/or Y axes, as well as to rotate around the Z-axis (below, left).
 Flexibility around each axis is represented in the 3D model view as a circular sector as wide as the specified interval size (below, right).
 
-.. image:: /assets/images/Documentation/picking/flexible_pick_orientation_ui_with_3d_22.png
+.. image:: /assets/images/documentation/picking/flexible_pick_orientation_ui_with_3d_22.png
     :scale: 80%
     :align: center
 
@@ -89,7 +89,7 @@ The image below highlights the beneficial effect of flexible pick orientations o
 Without it, the shown objects would be labeled as unpickable by Pickit due to :ref:`collisions <collision-prevention>` between the tool and the bin or other objects.
 The :ref:`example applications <pick-points-teach-examples>` section describes further scenarios where flexible pick orientations can be used.
 
-.. image:: /assets/images/Documentation/picking/flexible_pick_orientation_comparison.png
+.. image:: /assets/images/documentation/picking/flexible_pick_orientation_comparison.png
     :scale: 55%
     :align: center
 

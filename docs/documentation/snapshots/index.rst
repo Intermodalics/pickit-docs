@@ -11,7 +11,7 @@ Pressing the :guilabel:`Snapshots` button of the Pickit web interface
 :ref:`top bar <web-interface-top-bar>` takes you to a page where you can browse,
 download and upload the snapshots of your Pickit system.
 
-.. image:: /assets/images/Documentation/snapshots-page.png
+.. image:: /assets/images/documentation/snapshots-page.png
 
 :ref:`Automatically saved snapshots <Automatically-save-snapshots>`
 are stored in the subfolder **snapshots/autosave**.

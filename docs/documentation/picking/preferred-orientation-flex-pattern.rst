@@ -6,7 +6,7 @@ Preferred pick point orientation in Pickit Flex and Pattern
 When specifying the :ref:`pick point <pick-points-flex-pattern>` for a :ref:`Flex <Flex>` or :ref:`Pattern <Pattern>` shape, there can be some freedom in how the pick point is oriented.
 For instance, when a rectangle is detected, it's X-axis points along the longest rectangle dimension, but there are two possible solutions, shown below.
 
-.. image:: /assets/images/Documentation/picking/rectangle_flexibility.png
+.. image:: /assets/images/documentation/picking/rectangle_flexibility.png
     :scale: 80%
     :align: center
 
@@ -15,4 +15,4 @@ Shape symmetries are used to determine to which extent the pick point can be fli
 
 The pictures below show examples of how the preferred pick point orientation is resolved for rectangular and circular shapes.
 
-.. image:: /assets/images/Documentation/Object-to-reference-frame-alignment.png
+.. image:: /assets/images/documentation/Object-to-reference-frame-alignment.png

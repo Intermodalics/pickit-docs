@@ -37,20 +37,20 @@ Now that you've added your models, it's time to detect objects. 
 
 Place your objects below the camera as shown below, build a new :ref:`region of interest <region-of-interest>` box and press the :guilabel:`Detect` button.
 
-.. image:: /assets/images/Documentation/detection/teach/scene-picture.jpg
+.. image:: /assets/images/documentation/detection/teach/scene-picture.jpg
   :scale: 25%
   :align: center
 
 At this point, it's possible to verify in the :ref:`Objects view <objects-view>` if the objects are detected.
 Note that at this point, all valid detections will be displayed as unpickable (in orange) because the model doesn't have any :ref:`pick points <pick-points-teach>` defined yet.
 
-.. image:: /assets/images/Documentation/detection/teach/objects-all-unpickable.png
+.. image:: /assets/images/documentation/detection/teach/objects-all-unpickable.png
   :scale: 70%
   :align: center
 
 Once :ref:`pick points <pick-points-teach>` have been defined for a model, Pickit can determine if an object is pickable and display the pick points in the :ref:`2D <2d-view>` (below left) and :ref:`Objects <objects-view>` (below right) views.
 
-.. image:: /assets/images/Documentation/detection/teach/objects-pickable.png
+.. image:: /assets/images/documentation/detection/teach/objects-pickable.png
   :align: center
 
 Apart from the qualitative information available in the viewer, the :ref:`detection grid <detection-grid>` provides quantitative information for each detection, such as the detected model, the chosen pick point, the matching score, and the object size and position.

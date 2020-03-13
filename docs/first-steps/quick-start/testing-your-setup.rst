@@ -9,14 +9,14 @@ things you can check for:
    -  Open a :ref:`supported web browser <supported-browsers>` on your external PC and enter http://192.168.66.1 in the address bar.
    -  Now the Pickit user interface is visible inside your web browser.
 
-   .. image:: /assets/images/Documentation/web-interface/pickit-webinterface-22.png
+   .. image:: /assets/images/documentation/web-interface/pickit-webinterface-22.png
 
 #. Pickit can successfully reach the IP address of the robot:
 
    -  From the top bar of the web interface, navigate to the :guilabel:`Settings` page, under **Pickit port labeled 'ROBOT'**.
    -  Insert the **IP address of your robot** in the Robot IP field and press :guilabel:`Check`.
 
-   .. image:: /assets/images/Documentation/pickit-robot-connection.png
+   .. image:: /assets/images/documentation/pickit-robot-connection.png
       :scale: 70%
 
 If the above steps work as expected, you're ready to go, happy picking!

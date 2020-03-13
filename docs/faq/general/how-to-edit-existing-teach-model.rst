@@ -25,7 +25,7 @@ details. In that case, you may want to :guilabel:`Re-teach` it from a closer dis
 
 **Left: model taught at a long distance to the camera. Right: model re-taught at a short distance to the camera.**
 
-.. image:: /assets/images/Documentation/Teach-model-taught-far-close.png
+.. image:: /assets/images/documentation/Teach-model-taught-far-close.png
 
 .. _crop-and-expand-model:
 
@@ -44,18 +44,18 @@ contains undesired points that are difficult to spot.
 
 **If there are no undesired points in the model, the auto-snapped model box bounds the model points cleanly.**
 
-.. image:: /assets/images/Documentation/Teach-model-autosnap-on-clean.png
+.. image:: /assets/images/documentation/Teach-model-autosnap-on-clean.png
 
 If the model contains undesired points that are difficult to see, the auto-snapped model box
 seems larger than the actual model. In the model shown below, undesired points can be found on the
 top right corner of the model bounding box.
 
-.. image:: /assets/images/Documentation/Teach-model-autosnap-on-ghostpoints.png
+.. image:: /assets/images/documentation/Teach-model-autosnap-on-ghostpoints.png
 
 If the auto-snap option is disabled, the green model box is set to whatever you define
 using the model arrows.
 
-.. image:: /assets/images/Documentation/Teach-model-autosnap-off.png
+.. image:: /assets/images/documentation/Teach-model-autosnap-off.png
 
 .. note::
   Cropping and expanding operations do not replace the model with the content of the
@@ -80,14 +80,14 @@ to re-teaching it from scratch:
    difficult to filter out bad fits. The image below illustrates this behavior for an almost symmetrical
    tube, which has one of the tips slightly wider than the other.
 
-   .. image:: /assets/images/Documentation/Teach-full-model-symmetric.png
+   .. image:: /assets/images/documentation/Teach-full-model-symmetric.png
 
    A way to increase the score gap between good and bad fits is to crop out some of the redundant
    side of the part, keeping  mainly the small detail in the model. Using the cropped model, a 180
    degree flipped fit will have a much worse matching score than a good fit, since now the percentage
    of unmatched points is larger relatively to the total amount of model points.
 
-   .. image:: /assets/images/Documentation/Teach-cropped-model-symmetric.png
+   .. image:: /assets/images/documentation/Teach-cropped-model-symmetric.png
 
 #. As one can guess by the example given above, finding a good Teach model can sometimes be a
    trial-and-error process. Compared to re-teaching a model, cropping an existing one is much
@@ -95,4 +95,4 @@ to re-teaching it from scratch:
    Interest to be adjusted. This ease of use allows you to quickly try out different cropped
    versions of the model and compare results.
 
-   .. image:: /assets/images/Documentation/Teach-crop-experiment.png
+   .. image:: /assets/images/documentation/Teach-crop-experiment.png
