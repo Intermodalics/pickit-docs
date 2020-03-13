@@ -31,7 +31,7 @@ If an entry named **Connect** is listed, then the module is installed and you ca
 
 Module installation
 ~~~~~~~~~~~~~~~~~~~
-:ref:`Download the Pickit KUKA files here. <downloads:KUKA>`
+:ref:`Download the Pickit KUKA files here. <downloads_kuka>`
 
 The **KUKA Connect KRC** module can be purchased directly from KUKA, and consists of: a set of files that you should copy to a NTFS formatted USB drive, and a 16-digit license key with the format **xxxx-xxxx-xxxx-xxxx** that depends on the robot’s serial number.
 

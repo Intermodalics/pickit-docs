@@ -9,10 +9,10 @@ Check controller and software compatibility
 -------------------------------------------
 
 .. warning::
-   It works only for all KRC2 robots that are build on Windows XP systems and later (e.g. not Windows 98). 
+   It works only for all KRC2 robots that are build on Windows XP systems and later (e.g. not Windows 98).
    The robot software version has at least to be V5.x.x.
 
 Module installation
 ~~~~~~~~~~~~~~~~~~~
 
-:ref:`Download the Pickit KUKA files here. <downloads:KUKA>`
+:ref:`Download the Pickit KUKA files here. <downloads_kuka>`

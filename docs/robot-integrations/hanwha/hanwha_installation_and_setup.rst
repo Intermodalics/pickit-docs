@@ -44,7 +44,7 @@ IP configuration
 
 To allow communication between Pickit and the HCR controller, both must have an IP address in the same subnet.
 
-By default, the Pickit ROBOT connection (Ethernet port on the Pickit processor labeled ROBOT) is configured to have the static IP address **169.254.5.180** with a subnet mask of **255.255.0.0**. 
+By default, the Pickit ROBOT connection (Ethernet port on the Pickit processor labeled ROBOT) is configured to have the static IP address **169.254.5.180** with a subnet mask of **255.255.0.0**.
 
 Set the IP address of the controller preferably to **169.254.5.182**, which is an IP address in the same subnet as the Pickit IP, and set the subnet mask to **255.255.255.0** via :guilabel:`SW Configuration` → :guilabel:`Network Setting`:
 
@@ -52,13 +52,13 @@ Set the IP address of the controller preferably to **169.254.5.182**, which is 
 
 .. image:: /assets/images/robot-integrations/hanwha/network-settings-2.png
 
- 
+
 Load example program
 --------------------
 
-The provided example program file, called `HCR_Pickit_Example.file`, contains a calibration step and a detection test. 
+The provided example program file, called `HCR_Pickit_Example.file`, contains a calibration step and a detection test.
 
-:ref:`Download the Pickit Hanwha HCR files <downloads:Hanwha>`
+:ref:`Download the Pickit Hanwha HCR files <downloads_hanwha>`
 
 Message structure
 ~~~~~~~~~~~~~~~~~
