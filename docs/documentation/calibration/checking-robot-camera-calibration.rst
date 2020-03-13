@@ -12,9 +12,9 @@ correspond to the actual transformations between robot base, flange and camera i
 It is recommended to have a look from different viewpoints to verify that the position and
 orientation of the robot base and flange frames look correct.
 
-.. image:: /assets/images/Documentation/Verify-calibration.png
+.. image:: /assets/images/documentation/Verify-calibration.png
 
-.. image:: /assets/images/Documentation/Verify-calibration-2.png
+.. image:: /assets/images/documentation/Verify-calibration-2.png
 
 Checking robot camera calibration with a UR robot
 -------------------------------------------------
@@ -24,16 +24,16 @@ make it easier to verify the correctness of calibration. To do so, follow these 
 
 #. Make sure there is communication between Pickit and the robot:
 
-   .. image:: /assets/images/Documentation/Communication-robot-2.png
+   .. image:: /assets/images/documentation/Communication-robot-2.png
 
 #. Navigate to the 3D view and click on the settings button on the lower right of the viewer.
 
-   .. image:: /assets/images/Documentation/Settings-button-2.png
+   .. image:: /assets/images/documentation/Settings-button-2.png
 
 
 #. Toggle the **Visualize Robot** check box.
 
-   .. image:: /assets/images/Documentation/Visualize-robot-2.png
+   .. image:: /assets/images/documentation/Visualize-robot-2.png
 
 This allows you to intuitively check whether the virtual 3D robot aligns well with the displayed
 coordinate frames and captured point cloud. For example, the following images show a fixed-camera
@@ -42,8 +42,8 @@ the robot as seen by the camera does not align with the virtual 3D robot. After 
 nicely align. Similarly, the attached calibration plate (only visible to the camera, not part of
 the virtual 3D robot) is correctly aligned with respect to the robot flange after calibration.
 
-.. image:: /assets/images/Documentation/Before-calibration.png
-.. image:: /assets/images/Documentation/After-calibration.png
+.. image:: /assets/images/documentation/Before-calibration.png
+.. image:: /assets/images/documentation/After-calibration.png
 
 Wrong robot camera calibration?
 -------------------------------

@@ -28,7 +28,7 @@ possible to the camera to capture the most details while making sure
 that the object is lying fully in the field of view of the camera. It's
 useful to keep the :ref:`2D view <2d-view>` open so you see what the camera sees.
 
-.. image:: /assets/images/Documentation/teach-model-picture.jpg
+.. image:: /assets/images/documentation/teach-model-picture.jpg
 
 Isolating the object
 ^^^^^^^^^^^^^^^^^^^^
@@ -42,7 +42,7 @@ box boundaries until only points that belong to your objects are inside
 the ROI box. When you're done adapting the boundaries, you're ready to
 go to the next step.
 
-.. image:: /assets/images/Documentation/teach-model-3d-points.png
+.. image:: /assets/images/documentation/teach-model-3d-points.png
 
 Adding a model
 ^^^^^^^^^^^^^^
@@ -65,7 +65,7 @@ See :ref:`how-to-multiple-models` on how you can use the model ID in a robot pro
 Below 2 models of the same part are shown. The first model is the shape of the top of the part.
 The second model is the shape of the bottom of the part.
 
-.. image:: /assets/images/Documentation/teach-models.png
+.. image:: /assets/images/documentation/teach-models.png
 
 After teaching a model for the first time, it is possible to alter it in different ways.
 Refer to the article :ref:`How-to-edit-existing-model` for further details.

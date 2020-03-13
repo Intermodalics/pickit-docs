@@ -10,7 +10,7 @@ There are two methods to bring your Pickit system online:
 -  If this is not possible you can connect your Pickit processor via
    the 3G USB dongle.
 
-.. image:: /assets/images/First-steps/Connecting-instructions-full.png
+.. image:: /assets/images/first-steps/Connecting-instructions-full.png
 
 Connecting via Ethernet cable
 -----------------------------
@@ -20,13 +20,13 @@ Connecting via Ethernet cable
 #. Navigate to the **Network settings**, by clicking on the Settings
    button at the top-right of the web interface.
 
-   .. image:: /assets/images/Documentation/settings-button-21.png
+   .. image:: /assets/images/documentation/settings-button-21.png
 
 #. In the **Pickit port labeled 'LAN’** section, make sure that the
    **IP address** field has a valid value (blue arrow in the image
    below).
 
-   .. image:: /assets/images/Documentation/network-settings-21.png
+   .. image:: /assets/images/documentation/network-settings-21.png
 
 If an **IP address** shows up, you are good to go. A Pickit engineer
 can now connect to your system.
@@ -73,7 +73,7 @@ with your Pickit system.
 Type 1
 ~~~~~~
 
-.. image:: /assets/images/Documentation/3g-dongle-type-1.jpg
+.. image:: /assets/images/documentation/3g-dongle-type-1.jpg
 
 The USB dongle can be plugged into any available USB port of your
 Pickit system. No configuration is required.
@@ -94,7 +94,7 @@ Pickit system. No configuration is required.
 Type 2
 ~~~~~~
 
-.. image:: /assets/images/Documentation/3g-dongle-type-2.jpg
+.. image:: /assets/images/documentation/3g-dongle-type-2.jpg
 
 The USB dongle can be plugged into any available USB port of your
 Pickit system. No configuration is required.

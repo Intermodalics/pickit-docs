@@ -19,7 +19,7 @@ For collision prevention to take place, the user needs to define a :ref:`robot t
 
 The examples below show a pick point being rejected due to collisions that would result between the robot tool and the bin (left), and between the robot tool and another object (right).
 
-.. image:: /assets/images/Documentation/picking/example_tool_collision.png
+.. image:: /assets/images/documentation/picking/example_tool_collision.png
   :scale: 40%
   :align: center
 
@@ -41,14 +41,14 @@ Robot tool model
 Pickit allows modeling robot tools that closely resemble commonly used end-effectors.
 Currently, three different models are supported:
 
-.. image:: /assets/images/Documentation/picking/tool_models.png
+.. image:: /assets/images/documentation/picking/tool_models.png
   :scale: 50%
   :align: center
 
 It is possible to modify a tool's characteristic dimensions, as well as adapt its relative distance and orientation with respect to an object’s pick point.
 The image below shows the tool model editor for the **Box-shaped tool**.
 
-.. image:: /assets/images/Documentation/picking/tool_model_box_ui_22.png
+.. image:: /assets/images/documentation/picking/tool_model_box_ui_22.png
   :scale: 60%
   :align: center
 
@@ -60,7 +60,7 @@ Two common ones are the **Base sphere**, which typically contains (part of) the 
 The example below compares the actual robot tool with the model used by Pickit.
 It shows a tool model consisting of a gripper attached to a long extension cylinder, a robot-mounted camera and a sphere around the robot wrist.
 
-.. image:: /assets/images/Documentation/picking/tool_model_real_vs_model.png
+.. image:: /assets/images/documentation/picking/tool_model_real_vs_model.png
     :scale: 80%
     :align: center
 

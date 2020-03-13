@@ -18,7 +18,7 @@ external computer to your Pickit system.
 When successfully connected to the Pickit web interface, you should expect to
 see something similar to the image below:
 
-.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-22.png
+.. image:: /assets/images/documentation/web-interface/pickit-webinterface-22.png
 
 If you cannot manage to successfully visualize the Pickit web interface, contact
 us at `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`__.
@@ -44,7 +44,7 @@ buttons that remain visible at all times.
 
 The left part of the bar displays the following contents:
 
-.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-top-bar-left-22.png
+.. image:: /assets/images/documentation/web-interface/pickit-webinterface-top-bar-left-22.png
    :scale: 90%
 
 - The Pickit logo.
@@ -57,7 +57,7 @@ The left part of the bar displays the following contents:
 
 The right part of the bar displays the following contents:
 
-.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-top-bar-right-22.png
+.. image:: /assets/images/documentation/web-interface/pickit-webinterface-top-bar-right-22.png
    :scale: 90%
 
 - The layout for toggling visualization of the main interface elements (:ref:`viewer <Viewer>`, :ref:`detection grid <detection-grid>` and :ref:`configuration <web-interface-right-panel>`).
@@ -84,7 +84,7 @@ configuration. There are different pages where you can define:
 - :ref:`Detection: <detection>` What type of object to look for.
 - :ref:`Picking: <Picking>` How to pick the detected objects.
 
-.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-right-side-22.png
+.. image:: /assets/images/documentation/web-interface/pickit-webinterface-right-side-22.png
 
 .. _web-interface-left-panel:
 
@@ -105,7 +105,7 @@ The following color code is used to classify detections:
 -  **Red - Invalid object:** The object failed to pass a detection quality check, such as the matching score being too low.
  
 
-.. image:: /assets/images/Documentation/web-interface/pickit-webinterface-left-side-22.png
+.. image:: /assets/images/documentation/web-interface/pickit-webinterface-left-side-22.png
     :scale: 40%
     :align: center
 

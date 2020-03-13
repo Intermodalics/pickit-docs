@@ -27,12 +27,12 @@ The following overlays are shown in all views:
 -  Lower right: View settings for
    customizing a particular view.
 
-.. image:: /assets/images/Documentation/viewer-21-objects.png
+.. image:: /assets/images/documentation/viewer-21-objects.png
 
 Also common to all views, a notification is displayed when no camera is
 connected and no snapshot is loaded:
 
-.. image:: /assets/images/Documentation/no-connected-camera-21.png
+.. image:: /assets/images/documentation/no-connected-camera-21.png
 
 .. _2d-view:
 
@@ -48,7 +48,7 @@ overlays on top of the image:
 After each detection, pick frames, picking order identifiers and
 object markers are also shown for a brief period of time.
 
-.. image:: /assets/images/Documentation/viewer-21-2d.png
+.. image:: /assets/images/documentation/viewer-21-2d.png
 
 .. _3d-view:
 
@@ -62,7 +62,7 @@ Live 3D camera image stream when a camera is connected. It also renders:
 -  Optionally: The Pickit camera(s) and robot (Universal Robots only)
    3D models.
 
-.. image:: /assets/images/Documentation/viewer-21-3d.png
+.. image:: /assets/images/documentation/viewer-21-3d.png
 
 .. _points-view:
 
@@ -73,7 +73,7 @@ Displays the 3D point cloud used in the last Pickit detection. Only
 points contained in the ROI box are shown. It also renders the same
 additional elements listed for the the 3D view.
 
-.. image:: /assets/images/Documentation/viewer-21-points.png
+.. image:: /assets/images/documentation/viewer-21-points.png
 
 .. _clusters-view:
 
@@ -87,7 +87,7 @@ the same additional elements listed for the the 3D view.
 This view is only available for the Pickit :ref:`Flex <Flex>` and
 :ref:`Pattern <Pattern>` detection engines.
 
-.. image:: /assets/images/Documentation/viewer-21-clusters.png
+.. image:: /assets/images/documentation/viewer-21-clusters.png
 
 .. _objects-view:
 
@@ -107,4 +107,4 @@ For the :ref:`Teach <Teach>`  engine, it overlays the 3D model cloud.
 The objects view also renders the same additional elements listed for
 the the 3D view.
 
-.. image:: /assets/images/Documentation/viewer-21-objects.png
+.. image:: /assets/images/documentation/viewer-21-objects.png

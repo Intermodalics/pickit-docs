@@ -15,7 +15,7 @@ with a certain color. Several use cases for the color filter are:
 Example of detecting thin parts on a flat surface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/Color-filter-2d.png
+.. image:: /assets/images/documentation/Color-filter-2d.png
 
 This is an example case where we want to detect thin parts at the bottom of a bin.
 Since these parts are very thin, their 3D shape does not stand out from the bin bottom,
@@ -26,7 +26,7 @@ without any points from the bin.
 1. Define your ROI
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: /assets/images/Documentation/Color-filter-points.png
+.. image:: /assets/images/documentation/Color-filter-points.png
 
 When :ref:`building the ROI box <build-roi-box>`
 without the color filter, we can see 2 problems:
@@ -40,7 +40,7 @@ bottom, or lower the Z-min to make the parts more visible.
 2. Lower the Z-min of the ROI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: /assets/images/Documentation/Color-filter-points-lower.png
+.. image:: /assets/images/documentation/Color-filter-points-lower.png
 
 We lower the Z-min of the ROI to include the whole bottom of the bin,
 this makes our point cloud unusable for detections.
@@ -48,7 +48,7 @@ this makes our point cloud unusable for detections.
 3. Exclude the color of the bin bottom
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: /assets/images/Documentation/color-filter-exclude.png
+.. image:: /assets/images/documentation/color-filter-exclude.png
 
 We can exclude all the points of the yellow bin by following these steps:
 
@@ -64,4 +64,4 @@ We can exclude all the points of the yellow bin by following these steps:
 
 In the resulting point cloud, the parts are cleanly visible, without any points of the bin.
 
-.. image:: /assets/images/Documentation/Color-filter-points-result.png
+.. image:: /assets/images/documentation/Color-filter-points-result.png

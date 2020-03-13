@@ -32,9 +32,9 @@ sending an email to `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`_
   :caption: First steps
   :maxdepth: 1
 
-  quick-start/index
-  installation/index
-  Downloads <downloads>
+  first-steps/quick-start/index
+  first-steps/installation/index
+  Downloads <first-steps/downloads>
 
 .. toctree::
   :hidden:

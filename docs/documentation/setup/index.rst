@@ -31,7 +31,7 @@ the bin. In the image below, we compare the camera field of view
 (:ref:`3D <3d-view>` in the Pickit viewer), with the contents of the ROI box
 (:ref:`Points <points-view>` in the Pickit viewer).
 
-.. image:: /assets/images/Documentation/Region-of-interest-example.png
+.. image:: /assets/images/documentation/Region-of-interest-example.png
 
 By specifying a correct ROI box, we get \ **faster detection times**, as
 Pickit doesn't have to look for objects where they are not expected. In

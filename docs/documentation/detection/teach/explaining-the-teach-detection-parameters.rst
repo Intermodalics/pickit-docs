@@ -19,7 +19,7 @@ The HD camera settings are explained in :ref:`M-HD-preset`.
 Define models
 ~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/teach-model-grid-22.png
+.. image:: /assets/images/documentation/teach-model-grid-22.png
 
 A list of taught models is shown accompanied by their ID and
 the number of points. By default, there are no models defined.
@@ -87,7 +87,7 @@ of the :ref:`minimum-matching-score`.
 
 The following guide will help you find a good value for this parameter, :ref:`how-to-matching-parameters`.
 
-.. image:: /assets/images/Documentation/Teach-matching-tolerance.png
+.. image:: /assets/images/documentation/Teach-matching-tolerance.png
 
 .. _minimum-matching-score:
 

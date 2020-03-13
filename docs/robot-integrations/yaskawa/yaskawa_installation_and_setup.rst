@@ -60,7 +60,7 @@ Press :guilabel:`ENTER` and :guilabel:`CONFIRM` to modify the values.
 Load the program files
 ----------------------
 
-Before starting, :ref:`Download the Pickit Yaskawa files here <downloads:Yaskawa>`.
+Before starting, :ref:`Download the Pickit Yaskawa files here <downloads_yaskawa>`.
 The Pickit folder should be copied to a USB pen drive.
 
 The robot controller should still be in **maintenance mode** and the security mode set to **management mode** before making these changes.

@@ -89,7 +89,7 @@ Loading the program files consists of 4 steps:
 Download the right files
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Download the Pickit Stäubli files <downloads:Stäubli>`
+:ref:`Download the Pickit Stäubli files <downloads_staubli>`
 
 Upload the files to the robot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
