@@ -192,6 +192,8 @@ we want to first pick the two horizontal bags, as they overlap the vertical bag.
   picking order for you. Thus, the **Bag picking order** section is not shown in the **Picking**
   page for that pattern.
 
+.. _Bags-robot-program:
+
 Robot programming with Pickit Bags
 ----------------------------------
 

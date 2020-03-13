@@ -275,5 +275,49 @@ htmlhelp_basename = 'PickitDocs'
 
 autosectionlabel_prefix_document = True
 
+# Custom directive for creating collapsible HTML content.
+from docutils import nodes
+from docutils.parsers.rst import Directive, directives, states
+
+class Details(Directive):
+    '''
+    Custom directive for showing a clickable summary string, that when clicked
+    shows detailed additional content.
+    It uses HTML's <details> and <summary> under the hood.
+
+    Example usage:
+
+    .. details:: This is the summary string.
+
+      These contents can be shown or hidden by clicking on the summary string.
+    '''
+    required_arguments = 1  # Summary string.
+    final_argument_whitespace = True
+    has_content = True
+
+    def run(self):
+        self.assert_has_content()
+        text = '\n'.join(self.content)
+        element = nodes.Element(text)
+        self.state.nested_parse(self.content, self.content_offset,
+                                element)
+
+        # Wrap contents inside a collapsible <details> HTML element.
+        # Note that the first added node is an empty comment. It's a trick to
+        # allow adding a label before this directive, so it can be cross-ref'd.
+        # Maybe there's a cleaner way to do it, but without it, cross-refs were
+        # not working.
+        summary_str = '<summary style="cursor:pointer"><strong>' + \
+                      self.arguments[0] + '</strong></summary>'
+        out_nodes = []
+        out_nodes.append(nodes.comment(''))  # Trick, read above comment block.
+        out_nodes.append(nodes.raw('', '<details>', format='html'))
+        out_nodes.append(nodes.raw('', summary_str, format='html'))
+        out_nodes.extend(element.children)
+        out_nodes.append(nodes.raw('', '</details>', format='html'))
+
+        return out_nodes
+
 def setup(app):
     app.add_stylesheet('css/custom.css')
+    directives.register_directive('details', Details)

@@ -69,9 +69,9 @@ If this parallel execution is not desired, it can be disabled in the :ref:`advan
 
 The motions involved in pick and place involve a number of waypoints, some of which are :ref:`computed by Pickit <urcap-global-variables-picking>` (prefixed with ``Pickit`` and shown in green below), and three (in blue) which are user-defined:
 
--  ``Detect`` from where to perform :ref:`object detection <template-object-detection>`. Refer to :ref:`this article <robot-position-during-capture>` for guidelines on how to make a good choice.
--  ``Dropoff`` where to :ref:`place <template-place>` objects.
--  ``AbovePickArea`` a point roughly above the :ref:`pick <template-pick>` area from which the above two can be reached without collision. In simple scenarios, it can be the same as ``Detect``.
+-  ``Detect`` Where to perform :ref:`object detection <template-object-detection>` from. Refer to :ref:`this article <robot-position-during-capture>` for guidelines on how to make a good choice.
+-  ``Dropoff`` Where to :ref:`place <template-place>` objects.
+-  ``AbovePickArea`` A point roughly above the :ref:`pick <template-pick>` area from which the above two can be reached without collision. In simple scenarios, it can be the same as ``Detect``.
 
 .. image:: /assets/images/robot-integrations/ur/pick-and-place-waypoints.png
   :align: center
@@ -170,7 +170,10 @@ This sequence places the picked object at the specified dropoff location.
 - ``Dropoff`` user-defined :ref:`waypoint <template-waypoints>`.
 
   .. tip::
-    Some applications require a non-constant dropoff point, such as when parts need to be stacked or palletized.
+    The robot sometimes needs to know about the way the object was picked, in order to place it appropriately.
+    Refer to the :ref:`smart placing <smart-place-examples>` examples to learn how to do this with minimal programming effort.
+
+    It can also be the case that the drop-off point is not constant, as when parts need to be stacked or palletized.
     In such a case, ``Dropoff`` can be replaced with an instance of Universal Robot's **Palletizing** template, for instance.
 
 - ``Tool action: Release``: Populate with user-defined release logic.

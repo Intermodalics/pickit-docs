@@ -175,6 +175,8 @@ Check the current mode of Pickit. Pickit can be in the following modes: ``ROBOT`
 |        |                                                  | mode, and can be configured via the web interface.      |
 +--------+--------------------------------------------------+---------------------------------------------------------+
 
+.. _RC_PICKIT_FIND_CALIB_PLATE:
+
 RC_PICKIT_FIND_CALIB_PLATE
 __________________________
 
@@ -198,6 +200,8 @@ RC_PICKIT_LOOK_FOR_OBJECTS
 __________________________
 
 Request Pickit to find objects in the current scene. This command performs an image capture and image processing in a single request.
+
+.. _RC_PICKIT_LOOK_FOR_OBJECTS_response:
 
 **Response**
 
@@ -252,6 +256,27 @@ communicated in the response message of a detection request, and the remaining o
    have their Z-axis pointing upwards. Depending on the orientation of your robot's flange frame, it might be necessary
    to flip the received poses by 180 degrees around the X-axis, such that the tool correctly aligns with the object at the moment of picking.
 
+.. _RC_PICKIT_LOOK_FOR_OBJECTS_WITH_RETRIES:
+
+RC_PICKIT_LOOK_FOR_OBJECTS_WITH_RETRIES
+_______________________________________
+
+Request Pickit to find objects in the current scene *with retries*.
+This command is similar to RC_PICKIT_LOOK_FOR_OBJECTS_, but when no objects are found (but the :ref:`Region of Interest (ROI) <region-of-interest>` is not empty), Pickit will retry up to *n* times to find objects before giving up.
+
+**Request:**
+
++-------------+-----------------------------------------------------------+
+| Field       | Value /  Description                                      |
++=============+===========================================================+
+| payload[0]  | Maximum number of detection retries.                      |
++-------------+-----------------------------------------------------------+
+
+**Response**
+
+See response message of RC_PICKIT_LOOK_FOR_OBJECTS_.
+
+
 .. _RC_PICKIT_NEXT_OBJECT:
 
 RC_PICKIT_NEXT_OBJECT
@@ -302,6 +327,7 @@ Trigger an object detection on the camera image that was previously captured via
 
 See response message of RC_PICKIT_LOOK_FOR_OBJECTS_.
 
+.. _RC_PICKIT_CONFIGURE:
 
 RC_PICKIT_CONFIGURE
 ___________________
@@ -329,6 +355,7 @@ have a unique ID assigned, which is shown in the web interface, next to the conf
 |        | :ref:`PICKIT_CONFIG_FAILED <response-status>`     | Failed to load the specified configurations.     |
 +--------+---------------------------------------------------+--------------------------------------------------+
 
+.. _RC_PICKIT_SAVE_SNAPSHOT:
 
 RC_PICKIT_SAVE_SNAPSHOT
 _______________________
@@ -345,6 +372,8 @@ Snapshots will be saved in the ``robot`` subfolder, which can be accessed from t
 |        +------------------------------------------------------+--------------------------------------------------+
 |        | :ref:`PICKIT_SAVE_SNAPSHOT_FAILED <response-status>` | Failed to save a snapshot.                       |
 +--------+------------------------------------------------------+--------------------------------------------------+
+
+.. _RC_PICKIT_BUILD_BACKGROUND:
 
 RC_PICKIT_BUILD_BACKGROUND
 __________________________
@@ -379,6 +408,8 @@ Note that, due to the :ref:`flipping of object poses<pose-flipping>`, it is nece
 This corrected offset is computed by ``pick_offset_to_apply = Rx × inv(offset_from_pickit) × Rx``, where ``Rx`` denotes a rotation of 180 degrees
 around the X-axis. The pick point offset ``fpp_T_ppr`` is the transform between the final pick point and the pick point's
 reference.
+
+.. _RC_PICKIT_GET_PICK_POINT_DATA_response:
 
 **Response**
 

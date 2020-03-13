@@ -69,14 +69,7 @@ Advanced picking
 
 These variables expose additional information that can be used when picking an object.
 They refer to the currently selected object for picking, and are not used by default by the :ref:`pick and place template <urcap-pick-and-place-template>`.
-
-With multiple or flexible :ref:`pick points <pick-points-teach>`, the robot sometimes needs to know how an object is being picked (:ref:`learn more <RC_PICKIT_GET_PICK_POINT_DATA>`).
-Examples:
-
-- Use different dropoff points when picking an object from the top or bottom side.
-- When picking an object from its bottom side, do an extra step in the place sequence that regrasps it so it can be placed from the top side.
-
-To this end, Pickit exposes information such as the ID of the :ref:`selectec pick point <urcap-pickit-pick-id>` and :ref:`its reference <urcap-pickit-pick-ref-id>`, to which extent :ref:`was flexible orientation used <urcap-pickit-pick-off>`, and the ID of the :ref:`model <urcap-pickit-obj-type>` the pick point belongs to.
+Learn more about when and how you should use them in the :ref:`smart placing examples <smart-place-examples>`.
 
 .. _urcap-pickit-pick-id:
 
