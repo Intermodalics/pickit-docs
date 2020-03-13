@@ -50,7 +50,7 @@ The minimum inputs required to run the pick and place program are:
 
 .. note::
 
-  Make sure the Tool Center Point (TCP) is correctly specified for your robot tool before teaching the above waypoints.
+  Before teaching the above waypoints, make sure the Tool Center Point (TCP) is correctly specified for your robot tool.
 
 .. image:: /assets/images/robot-integrations/ur/pick-and-place-waypoints.png
   :align: center
