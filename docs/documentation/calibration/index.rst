@@ -3,7 +3,7 @@
 Calibration
 ===========
 
-Robot camera calibration
+Robot-camera calibration
 ------------------------
 
 Robot camera calibration is the process where the camera and the robot learn their relative position
@@ -11,6 +11,9 @@ with respect to each other. If done correctly, the camera can guide the robot to
 the physical environment. Calibration can be performed once the camera and robot have been mounted in
 the work cell. This process only needs to be repeated if the camera is moved relative to the robot base,
 or vice-versa.
+
+.. tip::
+  You can learn about the main ideas behind *multi poses robot camera calibration* by watching this :ref:`video tutorial <video-tutorials-calibration>`.
 
 Related articles:
 

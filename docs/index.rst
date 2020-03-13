@@ -34,6 +34,7 @@ sending an email to `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`_
 
   first-steps/quick-start/index
   first-steps/installation/index
+  Video tutorials <first-steps/video-tutorials>
   Downloads <first-steps/downloads>
 
 .. toctree::

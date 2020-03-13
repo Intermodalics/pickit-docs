@@ -22,6 +22,9 @@ type of shape or part arrangement.
   (rectangles, squares, circles and ellipses) of known fixed size, and is
   especially useful for detecting parts that are aligned and touching.
 
+.. tip::
+  You can learn about the main ideas behind the :ref:`Teach <Teach>` engine by watching this :ref:`video tutorial <video-tutorials-what-to-pick>`.
+
 .. toctree::
   :maxdepth: 1
   :hidden:

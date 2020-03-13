@@ -39,5 +39,11 @@ Follow the steps below to do your first detection with Pickit:
 
 .. image:: /assets/images/first-steps/First-detection.png
 
-.. tip:: More information about the possibilities of the Pickit system can be
-   found in the :ref:`region-of-interest` or the :ref:`teach` section.
+.. tip::
+  You can learn more about the possibilities of Pickit in these video tutorials:
+
+  - :ref:`Where to pick <video-tutorials-where-to-pick>`
+  - :ref:`What to pick <video-tutorials-what-to-pick>`
+  - :ref:`How to pick <video-tutorials-how-to-pick>`
+
+  and in the :ref:`setup`, :ref:`detection` and :ref:`Picking` articles.
