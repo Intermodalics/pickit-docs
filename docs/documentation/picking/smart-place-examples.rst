@@ -14,6 +14,11 @@ way to place the objects, while keeping the robot program as simple as possible.
     :local:
     :depth: 1
 
+.. note::
+  Each example below contains a **Robot program snippet**, consisting of an implementation of the object placing sequence, ``place()``.
+  These snippets are written in robot-agnostic pseudo-code.
+  Refer to the :ref:`complete pick and place program <robot-independent-pick-and-place-complete>` to learn more about the logic of a pick and place application.
+
 .. _smart-place-pick-point-id:
 
 Different drop-off based on pick point ID
@@ -25,7 +30,14 @@ For instance, these power sockets can be picked from the top (pick point 1) or f
 .. image:: /assets/images/documentation/picking/pick_point_data_sockets_multiple_id.png
 
 Depending on which side is picked, the user may want the robot to place the object differently.
-In the video below, the robot program uses the **pick point ID** to drop the object on the left side if picked from the top, and on the right side if picked from the bottom.
+Below, the robot program uses the **pick point ID** to drop the object on the left side if picked from the top, and on the right side if picked from the bottom.
+
+.. details:: Robot program snippet (click to expand)
+
+  .. literalinclude:: code/pick-point-id.py
+    :language: python
+
+|
 
 .. raw:: html
 
@@ -33,6 +45,9 @@ In the video below, the robot program uses the **pick point ID** to drop the obj
   <br>
 
 |
+
+.. note::
+    Similar logic can be written depending not on the pick point ID, but on the detected :ref:`model <robot-independent-pickit-obj-type>`  (if multiple :ref:`Teach <Teach>` models exist) or the detected :ref:`object dimensions <robot-independent-pickit-obj-dim>` (:ref:`Flex <Flex>` engine), for instance.
 
 .. _smart-place-pick-point-offset:
 
@@ -42,6 +57,16 @@ Same drop-off for objects with flexible pick point orientation
 If you are using :ref:`pick points with flexible orientations <flexible-pick-orientation>`, the object can be picked in infinitely many ways.
 However, it is usually desired that the object is dropped off in the same way, regardless of how it was picked.
 In the two cases below, the robot program compensates the difference between the actual and nominal pick point to always place the object at the same drop-off location.
+
+.. details:: Robot program snippet (click to expand)
+
+  .. literalinclude:: code/pick-point-offset.py
+    :language: python
+
+  Where ``Dropoff`` was defined for the nominal pick point, that is, when :ref:`flexible pick orientations <flexible-pick-orientation>` are not used.
+  Learn more about ``PickPointOff`` :ref:`here <robot-independent-pickit-pick-off>`.
+
+|
 
 Flexibility around Z
 ^^^^^^^^^^^^^^^^^^^^
@@ -92,6 +117,16 @@ However, defining the same number of drop-off poses would be time-consuming, err
 Thanks to the ability to :ref:`define reference pick points <pick-point-reference>`, only one drop-off pose is defined in this example.
 Having one pick point as the reference of the other two, the robot program only needs to define the drop-off position of the reference.
 The **pick point offset**, which is the offset between the actual pick point and its reference, is used to correct the drop-off position, allowing the object to always be placed in the same way, regardless of which pick point was used to pick it.
+
+.. details:: Robot program snippet (click to expand)
+
+  .. literalinclude:: code/pick-point-offset.py
+    :language: python
+
+  Where ``Dropoff`` was defined for the reference pick point.
+  Learn more about ``PickPointOff`` :ref:`here <robot-independent-pickit-pick-off>`.
+
+|
 
 .. raw:: html
 

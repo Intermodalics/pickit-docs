@@ -142,16 +142,12 @@ Expand each entry to learn more about their default implementation and behavior:
 
   This sequence places the object at the specified dropof location.
   For simple applications the implementation is trivial, as shown above.
-  However, some applications require more advanced place motions, as discussed below.
+  However, some applications require more advanced place motions.
 
-  **Example 1.** The object has :ref:`two possible pick points <multiple-pick-points>`, depending on how it's picked: one for the top side and another for the bottom side, each requiring a different drop-off strategy.
+  The robot sometimes needs to know about the way the object was picked, in order to place it appropriately.
+  Refer to the :ref:`smart placing <smart-place-examples>` examples to learn how to do this with minimal programming effort.
 
-  .. literalinclude:: code/advanced-place.py
-    :language: python
-
-  Similar logic can be written depending not on the pick point, but on the detected :ref:`Teach <Teach>` model (if multiple models exist) or the detected object dimensions (:ref:`Flex <Flex>` engine), for instance.
-
-  **Example 2.** It can also be the case that the drop-off point is not constant, as when parts need to be stacked or palletized.
+  It can also be the case that the drop-off point is not constant, as when parts need to be stacked or palletized.
   Many robot programming languages provide helpers and templates for stacking and palletizing, which can replace the fixed ``Dropoff`` point.
 
 .. _robot-independent-hooks-after-end:

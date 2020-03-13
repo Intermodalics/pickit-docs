@@ -170,7 +170,10 @@ This sequence places the picked object at the specified dropoff location.
 - ``Dropoff`` user-defined :ref:`waypoint <template-waypoints>`.
 
   .. tip::
-    Some applications require a non-constant dropoff point, such as when parts need to be stacked or palletized.
+    The robot sometimes needs to know about the way the object was picked, in order to place it appropriately.
+    Refer to the :ref:`smart placing <smart-place-examples>` examples to learn how to do this with minimal programming effort.
+
+    It can also be the case that the drop-off point is not constant, as when parts need to be stacked or palletized.
     In such a case, ``Dropoff`` can be replaced with an instance of Universal Robot's **Palletizing** template, for instance.
 
 - ``Tool action: Release``: Populate with user-defined release logic.

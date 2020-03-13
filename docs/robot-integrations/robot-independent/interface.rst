@@ -32,7 +32,7 @@ detection results are available, that is, when calling |get_result| returns ``T
 These variables are typically used by a :ref:`pick and place program <robot-independent-pick-and-place-complete>` in the :ref:`pick <robot-independent-hooks-pick>` and :ref:`place <robot-independent-hooks-place>` hooks.
 They refer to the currently selected object for picking.
 :ref:`PickitPick <robot-independent-pickit-pick>` is the most commonly used variable, normally in the :ref:`pick <robot-independent-hooks-pick>` hook.
-All other variables are used for implementing :ref:`advanced picking or placing <smart-place-examples>`.
+All other variables are used for implementing :ref:`smart picking or placing <smart-place-examples>`.
 
 .. _robot-independent-pickit-pick:
 
@@ -95,7 +95,7 @@ All other variables are used for implementing :ref:`advanced picking or placing 
   | post-multiplying ``Dropoff`` by |pickit-pick-off|.                       |
   |                                                                          |
   | Learn more on how to use this variable in the                            |
-  | :ref:`advanced placing examples <smart-place-examples>`.                 |
+  | :ref:`smart placing examples <smart-place-examples>`.                    |
   +--------------------------------------------------------------------------+
 
 .. _robot-independent-pickit-obj-type:
