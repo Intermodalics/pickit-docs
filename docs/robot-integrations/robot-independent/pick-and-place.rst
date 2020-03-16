@@ -30,7 +30,7 @@ Generic pick and place function
   :lines: 19-66
   :emphasize-lines: 1, 13, 20-40, 48
 
-Expand the flowchart below for an illustration of the implemented logic.
+Click below to expand a flowchart of the implemented logic.
 
 .. details:: Flowchart
 
@@ -56,7 +56,7 @@ Application-specific hooks
 --------------------------
 
 The ``pick_and_place`` function requires the following application-specific hooks to be defined.
-Expand each entry to learn more about their default implementation and behavior:
+Click on the entries below to expand them and learn more about their default implementation and behavior:
 
 .. _robot-independent-hooks-before-start:
 

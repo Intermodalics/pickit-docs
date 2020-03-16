@@ -33,6 +33,7 @@ These variables are typically used by a :ref:`pick and place program <robot-inde
 They refer to the currently selected object for picking.
 :ref:`PickitPick <robot-independent-pickit-pick>` is the most commonly used variable, normally in the :ref:`pick <robot-independent-hooks-pick>` hook.
 All other variables are used for implementing :ref:`smart picking or placing <smart-place-examples>`.
+Click on the entries below to expand them and learn more:
 
 .. _robot-independent-pickit-pick:
 
@@ -180,6 +181,7 @@ Functions
 
 The following functions relate to performing object detection. They send a request to Pickit, but don't wait for the response to arrive.
 :ref:`Results <robot-independent-global-variables>` from these requests are collected by calling |get_result|, which waits until a response is ready.
+Click on the entries below to expand them and learn more:
 
 .. _robot-independent-find-objects:
 
