@@ -6,8 +6,7 @@ KUKA example picking program
 This example program requires that Pickit is installed and set up with your robot.
 For installation instructions, please refer to the :ref:`kuka-krc4-installation-and-setup` article.
 
-Make sure that :ref:`robot-camera-calibration` is done.
-This can be done by running the :ref:`kuka-krc4-calibration-program`.
+.. include:: ../../run_program_warning.rst
 
 Example program: PickitSimplePicking
 ------------------------------------
@@ -29,11 +28,11 @@ This example program can be found in **R1** > **Program** > **Pickit**.
    
         Pickit_configure(5,4)
 
-        BAS(#TOOL,14) ; Tool for picking
+        BAS(#TOOL,1) ; Tool for picking
         BAS(#BASE,0) ; Robot base
 
         PTP Detect
-        Pickit_detect_with_retr(3)
+        Pickit_detect_with_retr(5)
         WAIT FOR Pickit_get_results() 
 
         LOOP
@@ -55,7 +54,7 @@ This example program can be found in **R1** > **Program** > **Pickit**.
                     LIN F_PostPick
                     LIN AbovePickArea
                     PTP Detect
-                    Pickit_detect_with_retr(3)
+                    Pickit_detect_with_retr(5)
                     PTP Dropit
                     ;Add release logic           
                     WAIT FOR Pickit_get_results()
@@ -79,34 +78,35 @@ This example program can be found in **R1** > **Program** > **Pickit**.
 
 The idea of the program is the following:
 
-- First it is checked if Pickit is set to :ref:`Robot mode <web-interface-top-bar>`.
-- If so, the robot moves to its detect pose and a detection is triggered.
+- First, it is checked if Pickit is set to :ref:`Robot mode <web-interface-top-bar>`.
+- If so, the robot moves to its detect pose and a detection is triggered, otherwise the robot program is halted.
 - If an object is found, it's checked if the pick positions are reachable for the robot.
 - If the object is reachable, the robot moves to the object to pick it.
-  Next, the robot moves to a fixed drop off position.
+  Next, the robot moves to a fixed drop-off position.
   During these motions when the robot is out the field of view of the camera, a new Pickit detection is triggered immediately.
-- If the object is not reachable the robot requests another object.
+- If the object is not reachable, the robot requests another object.
 - If the ROI is empty, the program stops.
-- If no object is found but ROI is not empty, a :ref:`Snapshots` is saved on the Pickit system and the robot program stops. 
+- If no object is found but ROI is not empty, a :ref:`snapshot <Snapshots>` is saved on the Pickit system and the robot program stops. 
 
 .. note:: Depending on which software version you are running the example program can look different, the idea and functionallity are the same.
+  We recommend to use the example program shipped with your Kuka connect version
 
 Define the tool for picking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a tool with the actual TCP values.
-In this example **#TOOL14** is used.
+In this example **#TOOL1** is used.
 
 Set correct input arguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The commands Pickit_configure and Pickit_detect_with_retr need input arguments.
-See :ref:`` for more information about these arguments.
+The commands ``Pickit_configure`` and ``Pickit_detect_with_retr`` need input arguments.
+See :ref:`kuka-pickit-communication-functions` for more information about these arguments.
 
 Define fixed positions
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In this example program 4 fixed positions are used.
+In this example program, 4 fixed positions are used.
 These positions need to be defined depending on the application.
 
 - **Home**: Where the robot will start the program.
@@ -117,7 +117,7 @@ These positions need to be defined depending on the application.
 Add grasping/releasing logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the **pi pose** and **drop off pose** positions, grasping and releasing logic needs to be added, respectively.
+At the **F_Pick** and **Dropit** positions, grasping and releasing logic needs to be added, respectively.
 
 Execute the picking program
 ---------------------------

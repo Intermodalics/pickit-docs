@@ -3,7 +3,7 @@
 KUKA installation and setup
 ===========================
 
-The setup of Pickit with an KUKA robot consists of 4 steps:
+The setup of Pickit with a KUKA robot consists of 4 steps:
 
 .. contents::
     :backlinks: top
@@ -13,10 +13,13 @@ The setup of Pickit with an KUKA robot consists of 4 steps:
 Check controller and software compatibility
 -------------------------------------------
 
-Pickit is compatible with controllers as of version **KR-C4** and the software module **KUKA Connect KRC** for socket communication is required. The product number for this module is **91B300-020** version **2.0.14** or later.
+Pickit is compatible with controllers of version **KR-C4** and the software module **KUKA Connect KRC** for socket communication is required. The product number for this module is **91B300-020** version **2.0.14** or later.
 
 .. tip::
    This module can only be purchased through Pickit. Please contact your account manager or sales@pickit3d.com for more information.
+   Generation of temporary license keys by KUKA is possible for validating an application before the actual purchase of a Pickit system.
+   
+   The module consists of: a set of files that you should copy to a NTFS formatted USB drive, and a 16-digit license key with the format **xxxx-xxxx-xxxx-xxxx** that depends on the robot’s serial number.
 
 Verify if already installed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,11 +35,6 @@ If an entry named **Connect** is listed, then the module is installed and you ca
 Module installation
 ~~~~~~~~~~~~~~~~~~~
 :ref:`Download the Pickit KUKA files here. <downloads:KUKA>`
-
-The **KUKA Connect KRC** module can be purchased directly from KUKA, and consists of: a set of files that you should copy to a NTFS formatted USB drive, and a 16-digit license key with the format **xxxx-xxxx-xxxx-xxxx** that depends on the robot’s serial number.
-
-.. tip::
-   Generation of temporary license keys by KUKA is possible for validating an application before the actual purchase of a Pickit system.
 
 Plug in the USB drive containing the **KUKA Connect KRC** module files in the external USB port of the **KR-C4** controller cabinet.
 
@@ -104,14 +102,15 @@ Now that the **KUKA Connect KRC** module is installed, we need to configure it t
 -  **Activate ‘Enable PickIt client connection’.**
 -  **Specify the Pickit server IP address.**
 
-When communicating with KUKA robots, the Pickit server IP address cannot belong to the following IP ranges:
+.. attention::
+  When communicating with KUKA robots, the Pickit server IP address cannot belong to the following IP ranges:
 
-- 169.254.0.0 to 169.254.255.255
-- 192.168.0.0 to 192.168.0.255
-- 172.16.0.0 to 172.16.255.255
-- 172.17.0.0 to 172.17.255.255
+  - 169.254.0.0 to 169.254.255.255
+  - 192.168.0.0 to 192.168.0.255
+  - 172.16.0.0 to 172.16.255.255
+  - 172.17.0.0 to 172.17.255.255
 
-The default Pickit server IP is **169.254.5.180**, which belongs to the first range, so it must be modified.
+  The default Pickit server IP is **169.254.5.180**, which belongs to the first range, so it must be modified.
 
 Click on the :guilabel:`Save` button to store the settings.
 
@@ -138,7 +137,8 @@ relate to Pickit communication:
 
 The Pickit application files can be loaded and executed as any other KUKA.KRL program. Please refer to the **KUKA KR-C4** user manual for further details.
 
-The examples contained in the Pickit application files contain **hard-coded robot poses that should be adapted to every new robot**. When executing such programs for the first time, please do so in **manual mode and at low speed** to check for potential collisions.
+.. attention::
+  The examples contained in the Pickit application files contain **hard-coded robot poses that should be adapted to every new robot**. When executing such programs for the first time, please do so in **manual mode and at low speed** to check for potential collisions.
 
 Starting and verifying the communication
 ----------------------------------------
