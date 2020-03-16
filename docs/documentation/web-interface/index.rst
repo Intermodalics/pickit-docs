@@ -67,7 +67,7 @@ The right part of the bar displays the following contents:
 - The :guilabel:`Snapshots` button, which opens a page for
   :ref:`snapshot management <Snapshots>`.
 - The :guilabel:`Calibration` button, which opens the page for performing
-  :ref:`robot camera calibration <robot-camera-calibration>`.
+  :ref:`robot-camera calibration <robot-camera-calibration>`.
 - The :guilabel:`Enable Robot Mode` button. When enabled, Pickit starts
   listening for incoming robot commands and prevents the user from modifying
   the Pickit configuration.

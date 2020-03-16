@@ -6,14 +6,14 @@ Calibration
 Robot-camera calibration
 ------------------------
 
-Robot camera calibration is the process where the camera and the robot learn their relative position
+Robot-camera calibration is the process where the camera and the robot learn their relative position
 with respect to each other. If done correctly, the camera can guide the robot to correct positions in
 the physical environment. Calibration can be performed once the camera and robot have been mounted in
 the work cell. This process only needs to be repeated if the camera is moved relative to the robot base,
 or vice-versa.
 
 .. tip::
-  You can learn about the main ideas behind *multi poses robot camera calibration* by watching this :ref:`video tutorial <video-tutorials-calibration>`.
+  You can learn about the main ideas behind *multi poses robot-camera calibration* by watching this :ref:`video tutorial <video-tutorials-calibration>`.
 
 Related articles:
 
@@ -29,7 +29,7 @@ Related articles:
   Wrong or old calibration parameters can lead to unexpected motions. Safe motions of the robot
   must always be checked by the operator of the robot itself and can never be guaranteed by Pickit.
 
-There are two possible ways to perform robot camera calibration: the multi poses and the single pose
+There are two possible ways to perform robot-camera calibration: the multi poses and the single pose
 method. Both options are briefly described below.
 
 Multi poses calibration
@@ -60,8 +60,8 @@ camera only once. However, this option can only be executed if the following res
 
 .. warning::
   If after calibration the Pickit camera has been relocated or rotated relatively to the robot base,
-  a new robot camera calibration is required before picking, even if the motion was small.
+  a new robot-camera calibration is required before picking, even if the motion was small.
 
 .. important::
-  After finishing robot camera calibration, don't forget to check the calibration result. Go to
+  After finishing robot-camera calibration, don't forget to check the calibration result. Go to
   :ref:`checking-robot-camera-calibration` to know how.

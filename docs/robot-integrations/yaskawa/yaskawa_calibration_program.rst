@@ -6,7 +6,7 @@ Yaskawa calibration program
 This example program requires that Pickit is installed and set up with your robot.
 For installation instructions, please refer to the :ref:`yaskawa_installation_and_setup` article.
 
-Before following these Yaskawa specific instructions in this article, make sure you first understand the process of executing a robot camera calibration as explained on :ref:`robot-camera-calibration`.
+Before following these Yaskawa specific instructions in this article, make sure you first understand the process of executing a robot-camera calibration as explained on :ref:`robot-camera-calibration`.
 
 .. note::
   If you want to perform calibration once or infrequently, you don't need to use this example program.

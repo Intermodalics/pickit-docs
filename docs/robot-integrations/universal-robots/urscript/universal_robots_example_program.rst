@@ -185,7 +185,7 @@ Running the example program
 ---------------------------
 
 .. attention::
-   Before running the program, it should be verified that the robot camera
+   Before running the program, it should be verified that the robot-camera
    calibration has been done correctly and that the tool frame has been
    defined correctly.
 

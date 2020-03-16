@@ -113,7 +113,7 @@ The following are valid strings that can be passed as payload to the ``/im/picki
 -  ``e_look_for_object``: Pickit performs one detection on the latest camera image.
 -  ``e_do_stop``: Pickit leaves the continuous testing state.
 
--  ``e_calibration_requested``: Pickit looks for the robot camera calibration plate.
+-  ``e_calibration_requested``: Pickit looks for the robot-camera calibration plate.
 
 Changing the Pickit configuration
 ----------------------------------
@@ -279,10 +279,10 @@ An example script that could to the filtering of the  ``/tf`` topic could look
         tf_sub = rospy.Subscriber('/tf', tf.msg.tfMessage, tf_message_cb)
         rospy.spin()
 
-Robot camera calibration
+Robot-camera calibration
 ------------------------
 
-Doing a robot camera calibration is not (yet) straightforward with the ROS interface. You need to publish certain commands to the ``/pickit/external_cmds`` topic and optionally listen to the ``/pickit/status`` or ``/pickit/status_calib`` topic to get feedback.
+Doing a robot-camera calibration is not (yet) straightforward with the ROS interface. You need to publish certain commands to the ``/pickit/external_cmds`` topic and optionally listen to the ``/pickit/status`` or ``/pickit/status_calib`` topic to get feedback.
 
 Single pose calibration
 ~~~~~~~~~~~~~~~~~~~~~~~

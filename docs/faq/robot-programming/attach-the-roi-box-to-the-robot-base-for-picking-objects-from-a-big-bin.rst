@@ -34,7 +34,7 @@ between different setup files and ROI boxes for every viewing position. 
 How to attach the ROI box to the robot base frame?
 --------------------------------------------------
 
-1. Perform robot camera calibration
+1. Perform robot-camera calibration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For Pickit to define where the ROI box is with to the robot base

@@ -18,6 +18,6 @@ On a Universal Robot the TCP needs to defined in the screen as shown below. Make
 
 .. image:: /assets/images/faq/define-tcp-on-a-ur-step-2.png
 
-If robot camera calibration was performed succesfully and TCP was defined in the right way a pick result should look like the pick in the green frame. If the TCP was not set in the right way a pick could look like the pick in the red frame.
+If robot-camera calibration was performed succesfully and TCP was defined in the right way a pick result should look like the pick in the green frame. If the TCP was not set in the right way a pick could look like the pick in the red frame.
 
 .. image:: /assets/images/faq/define-tcp-on-a-ur-step-3.png

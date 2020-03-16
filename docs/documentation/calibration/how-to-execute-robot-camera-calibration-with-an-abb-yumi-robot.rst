@@ -7,7 +7,7 @@ Calibration with an ABB Yumi
 When using Pickit with the YuMi robot, the camera should be **fixed to
 an independent structure**. A robot-mounted camera configuration is not
 possible due to YuMi payload limitations. Although YuMi is a robot with
-two-arms, robot camera calibration only needs to be performed **for one
+two-arms, robot-camera calibration only needs to be performed **for one
 arm**. Just be mindful that your calibration program uses a tool frame
 **attached to the arm holding the calibration plate**. 
 

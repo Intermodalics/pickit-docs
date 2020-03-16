@@ -83,7 +83,7 @@ Calibrating
 #. Select the correct robot type: **6 DOF** or **4 DOF**, depending on the number of
    degrees-of-freedom of your robot.
 
-#. Choose the **multi poses** robot camera calibration method.
+#. Choose the **multi poses** robot-camera calibration method.
 
 #. Follow the indicated steps, and run the robot program when instructed.
    The Pickit web interface shows the progress of the calibration process.
@@ -113,9 +113,9 @@ a field for inputing:
 Looking at the camera location in the 3D viewer will help you obtaining the correct value.
 
 .. important::
-  After finishing robot camera calibration, don't forget to check the calibration result. Go to
+  After finishing robot-camera calibration, don't forget to check the calibration result. Go to
   :ref:`checking-robot-camera-calibration` to know how.
 
 .. warning::
   If after calibration the Pickit camera has been relocated or rotated relatively to the robot base,
-  a new robot camera calibration is required before picking, even if the motion was small.
+  a new robot-camera calibration is required before picking, even if the motion was small.

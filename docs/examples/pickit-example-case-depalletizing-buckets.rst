@@ -59,10 +59,10 @@ sufficiently high to achieve this, the following solutions are possible:
 
 .. image:: /assets/images/faq/depal-buckets-4.png
 
-Robot camera calibration
+Robot-camera calibration
 ------------------------
 
-Once the camera is mounted to the robot flange, robot camera calibration
+Once the camera is mounted to the robot flange, robot-camera calibration
 should be carried out. Refer to :ref:`robot-camera-calibration`
 for further guidance.
 
