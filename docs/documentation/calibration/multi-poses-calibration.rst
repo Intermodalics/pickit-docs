@@ -10,6 +10,9 @@ This article goes through the main steps in the multi poses calibration process:
     :local:
     :depth: 1
 
+.. tip::
+  You can learn about the main ideas behind *multi poses robot-camera calibration* by watching this :ref:`video tutorial <video-tutorials-calibration>`.
+
 Fixing the calibration plate
 ----------------------------
 

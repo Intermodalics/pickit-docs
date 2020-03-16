@@ -12,9 +12,6 @@ the physical environment. Calibration can be performed once the camera and robot
 the work cell. This process only needs to be repeated if the camera is moved relative to the robot base,
 or vice-versa.
 
-.. tip::
-  You can learn about the main ideas behind *multi poses robot-camera calibration* by watching this :ref:`video tutorial <video-tutorials-calibration>`.
-
 Related articles:
 
 .. toctree::
@@ -24,6 +21,9 @@ Related articles:
     single-pose-calibration
     checking-robot-camera-calibration
     how-to-execute-robot-camera-calibration-with-an-abb-yumi-robot
+
+.. tip::
+  You can learn about the main ideas behind *multi poses robot-camera calibration* by watching this :ref:`video tutorial <video-tutorials-calibration>`.
 
 .. warning::
   Wrong or old calibration parameters can lead to unexpected motions. Safe motions of the robot

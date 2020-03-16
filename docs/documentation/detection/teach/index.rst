@@ -17,3 +17,6 @@ In the image below, first a single socket was shown to the Pickit system, next s
 
     how-to-use-pickit-teach
     explaining-the-teach-detection-parameters
+
+.. tip::
+  You can learn about the main ideas behind the Teach engine by watching this :ref:`video tutorial <video-tutorials-what-to-pick>`.
