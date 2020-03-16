@@ -51,7 +51,7 @@ Generic pick and place logic
 
 Lines where application-specific hooks are called are highlighted above.
 The following is a breakdown of the pick and place logic along with a flowchart illustrating it.
-Expand any of the entries to learn more:
+Click on the entries below to expand them and learn more:
 
 .. details:: Lines 1-6: Initialization
 
