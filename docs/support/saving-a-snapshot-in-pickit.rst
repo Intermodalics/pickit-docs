@@ -20,13 +20,13 @@ on your detection settings.
 #. Press the yellow **Snapshot** button in the lower left of the Pickit
    viewer.
 
-   .. image:: /assets/images/Documentation/snapshot-button-21.png
+   .. image:: /assets/images/documentation/snapshot-button-21.png
 
 #. Specify a name for the snapshot and click the :guilabel:`Save` button. (The
    file is saved and the name is automatically appended with the date
    and time)
 
-   .. image:: /assets/images/Documentation/save-snapshot-21.png
+   .. image:: /assets/images/documentation/save-snapshot-21.png
 
 #. Download this file from the :ref:`snapshots page <Snapshots>`. Check the
    snapshot(s) that you want to download and press the :guilabel:`Download` button.

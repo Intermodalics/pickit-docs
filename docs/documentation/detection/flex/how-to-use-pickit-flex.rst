@@ -27,7 +27,7 @@ The information shown in the :ref:`Points view <points-view>` is what will be tr
 the next step. All other information is not taken into account for the
 detection with Pickit Flex. 
 
-.. image:: /assets/images/Documentation/Flex-3d-points.gif
+.. image:: /assets/images/documentation/Flex-3d-points.gif
 
 Divide the scene into clusters & reject (some) clusters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,7 +51,7 @@ apart. A bad example would be one cluster (color) for 2 parts in the
 scene. The Pickit system supports different ways of clustering. All
 methods are explained in the  :ref:`Explaining-the-flex-detection-parameters`.
 
-.. image:: /assets/images/Documentation/Flex-points-clusters.gif
+.. image:: /assets/images/documentation/Flex-points-clusters.gif
 
 Fit & filter objects
 ~~~~~~~~~~~~~~~~~~~~
@@ -71,4 +71,4 @@ objects is done on their parameters shown in the  :ref:`detection-grid`.
 An explanation of all these parameters can be found in the
 article :ref:`Explaining-the-flex-detection-parameters`.
 
-.. image:: /assets/images/Documentation/Flex-clusters-objects.gif
+.. image:: /assets/images/documentation/Flex-clusters-objects.gif

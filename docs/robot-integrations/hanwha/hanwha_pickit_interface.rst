@@ -46,12 +46,12 @@ Define piRefJoint
 
 To prevent strange movements of the robot, we need to define the robot joint configuration for picking.
 This is done by jogging the robot to the center of the picking area and manually set the joint position values of **piRefJoint**.
-This position will indicate the desired robot configuration, which will be used for all calculated pick poses. 
+This position will indicate the desired robot configuration, which will be used for all calculated pick poses.
 
 Pickit functions
 ----------------
 
-First, download the integration files :ref:`here <downloads:Hanwha>`.
+First, download the integration files :ref:`here <downloads_hanwha>`.
 Copy all the .script files to a USB drive and plug it in the teach pendant.
 To add a Pickit function in your robot program go to :guilabel:`Commands` → :guilabel:`script`.
 A new **script** node will be created.

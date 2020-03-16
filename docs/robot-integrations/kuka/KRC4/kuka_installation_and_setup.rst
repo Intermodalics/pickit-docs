@@ -34,7 +34,7 @@ If an entry named **Connect** is listed, then the module is installed and you ca
 
 Module installation
 ~~~~~~~~~~~~~~~~~~~
-:ref:`Download the Pickit KUKA files here. <downloads:KUKA>`
+:ref:`Download the Pickit KUKA files here. <downloads_kuka>`
 
 Plug in the USB drive containing the **KUKA Connect KRC** module files in the external USB port of the **KR-C4** controller cabinet.
 

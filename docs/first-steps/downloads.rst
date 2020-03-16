@@ -11,12 +11,16 @@ For now, Pickit supports:
     :local:
     :depth: 2
 
+.. _downloads_abb:
+
 ABB
 ---
 
 Pickit is compatible with controllers as of version IRC5 with RobotWare 5 or 6 and furthermore. To communicate with Pickit, the modules **616 PC interface** and **623-1 Multitasking** should be installed.
 
 -  `Download the Pickit ABB files <https://drive.google.com/uc?export=download&id=1jzn6qibwQtRY875WdLdkjzd9z6Uvny1P>`__
+
+.. _downloads_fanuc:
 
 Fanuc
 -----
@@ -26,12 +30,16 @@ software module **User Socket Msg** for socket communication is required (the pr
 
 - `Download the Pickit files for Fanuc <https://drive.google.com/uc?export=download&id=1VcGgW01ksSDtSGp5jEkaoc9fCujahS_M>`__
 
+.. _downloads_hanwha:
+
 Hanwha
 ------
 
 Pickit is compatible with controllers as of version **2.001**. **Rodi 2.001 for socket communication** is required.
 
 - `Download the Pickit Hanwha HCR files <https://drive.google.com/uc?export=download&id=1yOluatxv_LBuMSG3xVnC13OHanyKmtub>`__
+
+.. _downloads_kuka:
 
 KUKA
 ----
@@ -54,6 +62,8 @@ The Pickit TMflow components are available for TMflow version 1.72 and higher.
 
 - `Download the Pickit TMflow components 2.0 <https://drive.google.com/uc?export=download&id=1yYWVB8dlt7gbj4wD0vJTK2keE49aigeY>`__
 
+.. _downloads_ros:
+
 ROS
 ---
 
@@ -61,6 +71,8 @@ To communicate with Pickit using the ROS interface, you need to have the
 ``im_pickit_msgs`` package in your workspace.
 
 - `Download the Pickit ROS interface files <https://drive.google.com/uc?export=download&id=1JEAY-ZEi3seUmB7O6s070Skqi7ivVGh2>`__
+
+.. _downloads_staubli:
 
 Stäubli
 -------
@@ -88,6 +100,8 @@ Universal Robots
 
 :sup:`*` The most recent supported Polyscope version represents what has been officially tested by Pickit.
 More recent Polyscope versions typically work out-of-the-box.
+
+.. _downloads_yaskawa:
 
 Yaskawa
 -------

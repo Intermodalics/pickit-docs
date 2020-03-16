@@ -18,7 +18,7 @@ The gripper performs a centered, internal grasp, and each pick point has the fol
 - **Y-axis tilt:** The gripper can tilt in one direction and still successfully pick the object.
 - **Full rotation about Z-axis:** The circular symmetry of the object allows the gripper to freely rotate about the symmetry axis.
 
-.. image:: /assets/images/Documentation/picking/example_ring_gripper.png
+.. image:: /assets/images/documentation/picking/example_ring_gripper.png
     :scale: 75 %
     :align: center
 
@@ -41,7 +41,7 @@ Each pick point has a single flexible pick orientation:
 
  - **Y-axis tilt:** The gripper can tilt in one direction and still successfully pick the object.
 
-.. image:: /assets/images/Documentation/picking/example_socket_gripper.png
+.. image:: /assets/images/documentation/picking/example_socket_gripper.png
     :scale: 80%
     :align: center
 
@@ -61,7 +61,7 @@ Each pick point has the following flexible pick orientations:
  - **XY axes tilt:** The flexible bellows at the tip of the suction cup allow tilting in any direction.
  - **Full rotation about Z-axis:** The tool is free to rotate about its axis.
 
-.. image:: /assets/images/Documentation/picking/example_socket_suction.png
+.. image:: /assets/images/documentation/picking/example_socket_suction.png
     :scale: 75%
     :align: center
 

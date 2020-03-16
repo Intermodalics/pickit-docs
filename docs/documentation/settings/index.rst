@@ -14,7 +14,7 @@ User settings
 Units
 ~~~~~
 
-.. image:: /assets/images/Documentation/settings-units.png
+.. image:: /assets/images/documentation/settings-units.png
 
 This setting allows you to select the length unit of choice
 (meters, inches, ...) after which length values in the interface
@@ -23,7 +23,7 @@ will be converted to the newly selected unit.
 Automatic detections
 ~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/settings-automatic-detections.png
+.. image:: /assets/images/documentation/settings-automatic-detections.png
 
 .. _Automatically-save-snapshots:
 
@@ -39,7 +39,7 @@ To prevent running out of disk space, the number of saved snapshots is
 limited to **max. number of snapshots to save**. Old snapshots get removed
 once this number has been reached.
 
-.. image:: /assets/images/Documentation/settings-automatically-save-snapshots.png
+.. image:: /assets/images/documentation/settings-automatically-save-snapshots.png
 
 .. warning:: Since saving a snapshot takes some time, detections are slower when
              automatic snapshot saving is enabled.
@@ -50,7 +50,7 @@ once this number has been reached.
 Share usage statistics
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/settings-usage-statistics.png
+.. image:: /assets/images/documentation/settings-usage-statistics.png
 
 This aggregated data can be used to help create features that
 can give you a better understanding of what’s happening across your
@@ -75,7 +75,7 @@ Pickit port labeled ROBOT
 This port has the purpose of connecting your Pickit processor to the
 robot controller or PLC.
 
-.. image:: /assets/images/Documentation/settings-port-your-robot.png
+.. image:: /assets/images/documentation/settings-port-your-robot.png
 
 By default, this port is set to Static, which means it's using a fixed IP
 configuration.
@@ -100,7 +100,7 @@ pressing :guilabel:`Check`.
 A pop-up message indicating failure or success appears on the lower right corner
 of the screen.
 
-.. image:: /assets/images/Documentation/pickit-robot-connection.png
+.. image:: /assets/images/documentation/pickit-robot-connection.png
    :scale: 70%
 
 .. note:: In case of failure, check if the cables are
@@ -115,7 +115,7 @@ Pickit port labeled LAN
 This port has the purpose of connecting your Pickit processor to a
 network, to bring the system online (see article :ref:`connect-your-system-to-internet`). 
 
-.. image:: /assets/images/Documentation/settings-port-lan.png
+.. image:: /assets/images/documentation/settings-port-lan.png
 
 By default, this port is set to Dynamic, which means it's
 requesting an IP address from the DHCP server in your network.
@@ -134,7 +134,7 @@ Test connectivity to the internet by pressing the Check button.
 Upgrade Pickit version
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/upgrade_pickit_2.1.2.png
+.. image:: /assets/images/documentation/upgrade_pickit_2.1.2.png
 
 Here you can upgrade your Pickit system to latest software version.
 Refer to the :ref:`Pickit-system-software-upgrade`
@@ -144,7 +144,7 @@ system.
 System management
 ~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/settings-system-management-22.png
+.. image:: /assets/images/documentation/settings-system-management-22.png
 
 Here you can monitor the ressources used by your system.
 You can also **reboot** or **power off** the Pickit processor.

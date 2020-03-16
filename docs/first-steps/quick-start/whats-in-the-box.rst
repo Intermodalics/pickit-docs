@@ -1,7 +1,7 @@
 What's in the box
 =================
 
-.. image:: /assets/images/First-steps/Pickit-full-system.jpg
+.. image:: /assets/images/first-steps/Pickit-full-system.jpg
 
 -  Pickit processor
 

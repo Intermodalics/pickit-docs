@@ -26,7 +26,7 @@ plate.
 Align the dowel pin in the only diagonal hole and smack it with a soft
 hammer, so that it enters the plate.
 
-.. image:: /assets/images/First-steps/Calibration-plate-dowel-pin.jpg
+.. image:: /assets/images/first-steps/Calibration-plate-dowel-pin.jpg
 
 Installing the Pickit calibration plate on the robot flange
 ------------------------------------------------------------
@@ -34,7 +34,7 @@ Installing the Pickit calibration plate on the robot flange
 #. Align the plate, dowel pin and holes with the robot flange.
 #. Screw the plate to the flange.
 
-.. image:: /assets/images/First-steps/Calibration-plate-robot-flange.jpg
+.. image:: /assets/images/first-steps/Calibration-plate-robot-flange.jpg
 
 Installing the Pickit calibration plate on a tool changer
 ----------------------------------------------------------
@@ -56,4 +56,4 @@ Align the dowel pin in the only diagonal hole.
 Bolt the tool changer piece to the plate and attach the plate to the
 tool changer.
 
-.. image:: /assets/images/First-steps/Calibration-plate-tool-changer.jpg
+.. image:: /assets/images/first-steps/Calibration-plate-tool-changer.jpg

@@ -39,7 +39,7 @@ camera. The Pickit text of all markers should be oriented in the same
 direction and the arrows of the same color should be pointing towards each other.
 The markers are not interchangeable.
 
-.. image:: /assets/images/Documentation/Roi-markers.jpg
+.. image:: /assets/images/documentation/Roi-markers.jpg
 
 #. Open the :ref:`2D view <2d-view>` view in the Pickit viewer.
 #. Place the three markers as shown in the image above in the field of

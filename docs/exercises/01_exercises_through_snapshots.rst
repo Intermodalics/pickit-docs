@@ -12,9 +12,6 @@ followed:
 #. Optional: Take a snapshot of your solution and send to
    support@pickit3d.com to receive feedback
 
-.. attention:: For this exercise you need Pickit version 1.9.x
-   If you have a older software version. Please continue reading the :ref:`support-remote-update` article and contact support@pickit3d.com to get an update.
-
 Basic exercises
 ---------------
 

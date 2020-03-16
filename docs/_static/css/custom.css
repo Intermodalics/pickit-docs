@@ -73,16 +73,3 @@ a:visited {
        overflow: visible !important;
     }
  }
-
-.toggle .header {
-    display: block;
-    clear: both;
-}
-
-.toggle .header::before {
-    content: "►";
-}
-
-.toggle .header.open:before {
-    content: "▼";
-}

@@ -10,4 +10,4 @@ maximum specified angle, the object will be labeled as unpickable and
 not sent to the robot. In the Pickit web interface, unpickable objects
 are displayed orange in the :ref:`Objects view <objects-view>` and the :ref:`detection-grid`.
 
-.. image:: /assets/images/Documentation/Max-angle-reference.png
+.. image:: /assets/images/documentation/Max-angle-reference.png

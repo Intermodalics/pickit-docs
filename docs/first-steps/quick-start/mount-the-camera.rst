@@ -11,6 +11,6 @@ structures. Follow these simple steps below to mount the camera:
 -  Use the ball joint to point the camera towards the
    surface.
 
-.. image:: /assets/images/First-steps/Mounting-instructions.png
+.. image:: /assets/images/first-steps/Mounting-instructions.png
 
 .. attention:: Screws and nuts are not provided.

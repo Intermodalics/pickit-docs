@@ -20,9 +20,6 @@ Requirements
 Before starting on this exercise we advise you to read the articles describing the
 :ref:`Flex` detection engine.
 
-.. attention:: For this exercise you need Pickit version 1.10.x
-   If you have a older software version. Please read the :ref:`support-remote-update` article and contact support@pickit3d.com to get an update.
-
 Task
 ----
 

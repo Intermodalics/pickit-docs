@@ -10,7 +10,7 @@ The primitive shapes detected by the :ref:`Flex <Flex>` and :ref:`Pattern <Patte
 
 For 2D shapes (circles, squares, rectangles and ellipses), the pick point is located in the shape center, with the X-axis parallel to the longest direction, and the Z-axis perpendicular to the surface.
 
-.. image:: /assets/images/Documentation/picking/flex_2d_shape_pick_points.png
+.. image:: /assets/images/documentation/picking/flex_2d_shape_pick_points.png
     :scale: 80%
     :align: center
 
@@ -19,7 +19,7 @@ For 2D shapes (circles, squares, rectangles and ellipses), the pick point is loc
 
 For 3D shapes (cylinders and spheres), the pick point can be in one of the following locations, which can be selected from the **Define pick points** section.
 
-.. image:: /assets/images/Documentation/picking/flex_3d_shape_pick_points.png
+.. image:: /assets/images/documentation/picking/flex_3d_shape_pick_points.png
     :align: center
 
 Blobs

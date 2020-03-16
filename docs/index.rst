@@ -32,9 +32,9 @@ sending an email to `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`_
   :caption: First steps
   :maxdepth: 1
 
-  quick-start/index
-  installation/index
-  Downloads <downloads>
+  first-steps/quick-start/index
+  first-steps/installation/index
+  Downloads <first-steps/downloads>
 
 .. toctree::
   :hidden:
@@ -68,9 +68,7 @@ sending an email to `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`_
   Stäubli <robot-integrations/staubli/index>
   Universal Robots <robot-integrations/universal-robots/index>
   Yaskawa <robot-integrations/yaskawa/index>
-
-  Socket communication <robot-integrations/socket/index>
-  ROS communication <robot-integrations/ros/index>
+  Robot-independent <robot-integrations/robot-independent/index>
 
 .. toctree::
   :hidden:
