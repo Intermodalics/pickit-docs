@@ -3,7 +3,16 @@
 Video tutorials
 ===============
 
-With this set of Pickit video tutorials, you can learn in *five lessons*, and *less than one hour* how to automate bin picking and other pick and place applications:
+Pickit is all about *robot vision made easy*, and this introductory video explains what we mean by this.
+
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/GOIa_5W1nPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <br>
+
+|
+
+In the following set of Pickit video tutorials, you can learn in *five lessons*, and *less than one hour* how to automate bin picking and other pick and place applications:
 
   1. :ref:`Where to pick <video-tutorials-where-to-pick>`
   2. :ref:`What to pick <video-tutorials-what-to-pick>`
@@ -13,6 +22,8 @@ With this set of Pickit video tutorials, you can learn in *five lessons*, and *l
 
 Each lesson consists of a brief introduction to the essential concepts and tools, and is followed by a live demonstration.
 If you want to learn more about a specific topic, a link to the complete documentation is provided.
+
+The slides used in these video tutorials can be `downloaded here <https://drive.google.com/uc?export=download&id=195PoWuYLgZygqBV5g1VGg4ReK4P37hnt>`_ in pdf format.
 
 .. _video-tutorials-where-to-pick:
 
