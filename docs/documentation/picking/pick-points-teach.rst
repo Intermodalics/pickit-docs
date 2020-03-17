@@ -51,6 +51,25 @@ The **Define pick points** section of the :ref:`picking <Picking>` page allows t
     :scale: 60%
     :align: center
 
+When an object has multiple pick points, Pickit smartly selects the best one to use.
+
+.. details:: Click to expand and learn more about pick point selection.
+
+  It does so by following these steps:
+
+  1. **Sort the pick points** from highest to lowest. Note that this depends on how a particular object is oriented in the scene.
+  2. **Go over the list of pick points** starting from the highest one.
+
+    a. **Is the preferred orientation pickable?** Determine the orientation that is closest to the :ref:`preferred pick point orientation <preferred-orientation-teach>`. If it's pickable, use it to pick the object, else continue with the next step.
+    b. **Is there a pickable configuration?** If the pick point has a :ref:`flexible pick orientation <flexible-pick-orientation>`, search for a pickable configuration. The search will favor configurations that deviate as little as possible from the :ref:`preferred pick point orientation <preferred-orientation-teach>`. If a pickable configuration is found, use it to pick the object, else continue with the next pick point.
+
+  3. **No pickable points?** If no pickable point is found, the object is labeled as unpickable.
+
+  .. tip::
+    If you click on a particular detection in the :ref:`detection grid <detection-grid>`, you can learn which pick point was selected for picking. Also, if an object is unpickable, you can learn the reason why its pick points were not pickable.
+
+|
+
 Having multiple pick points may affect the way you want to drop-off the object, after picking it.
 For example, :ref:`this article <smart-place-pick-point-id>` shows a case where the robot places the object in a different drop-off position depending on the used pick point.
 
@@ -101,22 +120,3 @@ The :ref:`example applications <pick-points-teach-examples>` section describes f
 
 In some applications, you may want to drop-off the object in the same location independently of how it was picked (which pick point and how orientation flexibility was used).
 :ref:`This article <smart-place-pick-point-offset>` shows two different examples where this goal is achieved.
-
-.. _selecting-a-pick-point:
-
-Selecting which pick point to use
----------------------------------
-
-When an object has multiple pick points, Pickit smartly selects the best one to use.
-It does so by following these steps:
-
-1. **Sort the pick points** from highest to lowest. Note that this depends on how a particular object is oriented in the scene.
-2. **Go over the list of pick points** starting from the highest one.
-
-  a. **Is the preferred orientation pickable?** Determine the orientation that is closest to the :ref:`preferred pick point orientation <preferred-orientation-teach>`. If it's pickable, use it to pick the object, else continue with the next step.
-  b. **Is there a pickable configuration?** If the pick point has a :ref:`flexible pick orientation <flexible-pick-orientation>`, search for a pickable configuration. The search will favor configurations that deviate as little as possible from the :ref:`preferred pick point orientation <preferred-orientation-teach>`. If a pickable configuration is found, use it to pick the object, else continue with the next pick point.
-
-3. **No pickable points?** If no pickable point is found, the object is labeled as unpickable.
-
-.. tip::
-  If you click on a particular detection in the :ref:`detection grid <detection-grid>`, you can learn which pick point was selected for picking. Also, if an object is unpickable, you can learn the reason why its pick points were not pickable.
