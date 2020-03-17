@@ -13,3 +13,6 @@ to do your first pick with Pickit. 
 -  Define the start and drop off position for the robot.
 -  Add object grasping logic.
 -  Start picking!
+
+.. tip::
+  You can learn more about the officially supported robot integrations in the :ref:`robot integration video tutorial <video-tutorials-robot-integration>`, and in the articles in the panel to the left, under **Robot integrations**.

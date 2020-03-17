@@ -19,7 +19,7 @@ This article describes the main steps in the single pose calibration procedure:
 Mounting the calibration plate
 -------------------------------
 
-The advantage of only one pose required for robot camera calibration comes at the cost of Pickit
+The advantage of only one pose required for robot-camera calibration comes at the cost of Pickit
 needing to know how the calibration plate is mounted with respect to the robot flange. Therefore,
 the plate should be mounted to the flange in a specific way. :ref:`installing-calibration-plate`
 describes the correct way to mount the plate to the flange.
@@ -92,12 +92,12 @@ Calibrating
 #. Select the correct robot type: **6 DOF** or **4 DOF**, depending on the number of
    degrees-of-freedom of your robot. If your robot has only 4 degrees-of-freedom, fill
    in the distance between calibration plate and robot flange in the field **Flange Z-axis**.
-#. Choose the **single pose** robot camera calibration method.
+#. Choose the **single pose** robot-camera calibration method.
 #. Go through the instructed steps, and run the robot program. You can see the status of the
    calibration process in the Pickit web interface.
 
 .. image:: /assets/images/documentation/Calibration-progress-single-pose.png
 
 .. important::
-  After finishing robot camera calibration, don't forget to check the calibration result. Go to
+  After finishing robot-camera calibration, don't forget to check the calibration result. Go to
   :ref:`checking-robot-camera-calibration` to know how.

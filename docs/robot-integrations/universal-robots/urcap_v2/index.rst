@@ -20,5 +20,8 @@ URCap 2
 
   low_level_interface.rst
 
+.. tip::
+  You can learn about the main ideas behind the *Pickit-UR integration* by watching this :ref:`video tutorial <video-tutorials-robot-integration>`.
+
 .. image:: /assets/images/robot-integrations/ur/urcap-v2-overview.png
   :align: center

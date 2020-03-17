@@ -7,6 +7,8 @@ Pickit is not only about detecting objects, but also about being able to pick th
 While the :ref:`Detection <detection>` page is concerned with *what* to detect, the **Picking** page is concerned with everything that revolves around *how* to pick a detected object:
 From which points can it be picked? With which tool? Is the pick collision-free?
 
+.. tip::
+  You can learn about the main ideas behind *how to pick* by watching this :ref:`video tutorial <video-tutorials-how-to-pick>`.
 
 .. _pick-points:
 

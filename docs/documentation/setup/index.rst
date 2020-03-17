@@ -5,6 +5,9 @@ Setup
 
 In the **Setup** page you define where you want Pickit to look for objects.
 
+.. tip::
+  You can learn about the main ideas behind *where to look for objects* by watching this :ref:`video tutorial <video-tutorials-where-to-pick>`.
+
 .. _active-cameras:
 
 Active cameras

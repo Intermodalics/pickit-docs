@@ -124,10 +124,10 @@ Don't forget to save the settings. This will update the Product file.
 Calibration
 -----------
 
-Next step is the robot camera calibration. This process teaches Pickit
+Next step is the robot-camera calibration. This process teaches Pickit
 where the robot base is located w.r.t. to the camera. This information
 is used to transform the object pick points into robot coordinates. A
-detailed description in robot camera calibration can be found in the article :ref:`robot-camera-calibration`. 
+detailed description in robot-camera calibration can be found in the article :ref:`robot-camera-calibration`. 
 Do not forget to save after the calibration is finished.
 
 Your first pick (Program the robot)
