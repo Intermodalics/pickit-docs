@@ -29,7 +29,7 @@ At all times, a dedicated safety device(s) must be considered when the Pickit is
 
 3D Camera warning
 ^^^^^^^^^^^^^^^^^
- 
+
  - The Camera needs to be properly secured before operating the robot.
  - Do not install or operate a Camera that is damaged or lacking parts.
  - Always respect the Camera’s electrical and power supply specifications.
@@ -41,7 +41,7 @@ At all times, a dedicated safety device(s) must be considered when the Pickit is
 Pickit camera calibration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: /assets/images/camera-calibration-seal.png
+.. image:: /assets/images/support/camera-calibration-seal.png
 
 The Pickit factory calibration is important to guarantee the accuracy over the Field Of View range. Opening the camera will result in bad performance.
 

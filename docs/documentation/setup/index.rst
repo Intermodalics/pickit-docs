@@ -5,6 +5,9 @@ Setup
 
 In the **Setup** page you define where you want Pickit to look for objects.
 
+.. tip::
+  You can learn about the main ideas behind *where to look for objects* by watching this :ref:`video tutorial <video-tutorials-where-to-pick>`.
+
 .. _active-cameras:
 
 Active cameras
@@ -31,7 +34,7 @@ the bin. In the image below, we compare the camera field of view
 (:ref:`3D <3d-view>` in the Pickit viewer), with the contents of the ROI box
 (:ref:`Points <points-view>` in the Pickit viewer).
 
-.. image:: /assets/images/Documentation/Region-of-interest-example.png
+.. image:: /assets/images/documentation/Region-of-interest-example.png
 
 By specifying a correct ROI box, we get \ **faster detection times**, as
 Pickit doesn't have to look for objects where they are not expected. In

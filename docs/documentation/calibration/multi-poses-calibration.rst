@@ -10,6 +10,9 @@ This article goes through the main steps in the multi poses calibration process:
     :local:
     :depth: 1
 
+.. tip::
+  You can learn about the main ideas behind *multi poses robot-camera calibration* by watching this :ref:`video tutorial <video-tutorials-calibration>`.
+
 Fixing the calibration plate
 ----------------------------
 
@@ -22,7 +25,7 @@ fixed rigidly to the flange.
 
 Refer to :ref:`installing-calibration-plate` for the standard way to mount the plate.
 
-.. image:: /assets/images/Documentation/calibration_multi_pose_fixed_camera_plate_attachment.png
+.. image:: /assets/images/documentation/calibration_multi_pose_fixed_camera_plate_attachment.png
    :scale: 50 %
    :align: center
 
@@ -33,7 +36,7 @@ If the camera is mounted on the robot flange, place the calibration plate on a s
 comfortable distance from the robot. The location of the plate should correspond to the picking
 area.
 
-.. image:: /assets/images/Documentation/calibration_multi_pose_plate_in_view.png
+.. image:: /assets/images/documentation/calibration_multi_pose_plate_in_view.png
    :scale: 50 %
    :align: center
 
@@ -49,9 +52,9 @@ find the calibration plate. Each of the five waypoints should be defined such th
   of the plate. The angles should be large enough (for instance 30 degrees), while still making
   sure that the plate is clearly visible in the Pickit 2D viewer.
 
-.. image:: /assets/images/Documentation/Calibration-plate-visible-viewer.png
+.. image:: /assets/images/documentation/Calibration-plate-visible-viewer.png
    :align: center
-.. image:: /assets/images/Documentation/Calibration-plate-visible.png
+.. image:: /assets/images/documentation/Calibration-plate-visible.png
    :align: center
 
 Program for fixed camera
@@ -60,7 +63,7 @@ Program for fixed camera
 Move the robot such that the plate is in the middle of the field of view of the camera. Move the
 flange to five different angle combinations around the X, Y and Z axes.
 
-.. image:: /assets/images/Documentation/calibration_multi_pose_fixed_camera.png
+.. image:: /assets/images/documentation/calibration_multi_pose_fixed_camera.png
 
 Program for robot mounted camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,7 +71,7 @@ Program for robot mounted camera
 Teach the five waypoints such that the plate always appears approximately in the center of the
 image, but tilted in different directions.
 
-.. image:: /assets/images/Documentation/calibration_multi_pose_camera_on_robot.png
+.. image:: /assets/images/documentation/calibration_multi_pose_camera_on_robot.png
 
 
 .. _multi-poses-calibration-calibrating:
@@ -83,19 +86,19 @@ Calibrating
 #. Select the correct robot type: **6 DOF** or **4 DOF**, depending on the number of
    degrees-of-freedom of your robot.
 
-#. Choose the **multi poses** robot camera calibration method.
+#. Choose the **multi poses** robot-camera calibration method.
 
 #. Follow the indicated steps, and run the robot program when instructed.
    The Pickit web interface shows the progress of the calibration process.
 
-    .. image:: /assets/images/Documentation/calibration/multi-poses-progress.png
+    .. image:: /assets/images/documentation/calibration/multi-poses-progress.png
 
     .. _multi-poses-calibration-collect-current-pose:
 
     Alternatively, some robot integrations allow manually collecting calibration poses without having to run a robot program.
     When this is the case, the :guilabel:`Collect current pose` button is shown below the calibration progress, which should be pressed after manually bringing the robot to the next calibration pose (e.g. by jogging or free-driving):
 
-    .. image:: /assets/images/Documentation/calibration/collect-current-pose.png
+    .. image:: /assets/images/documentation/calibration/collect-current-pose.png
 
 #. In the final step, you will see a 3D viewer showing the robot and camera models. Here you can confirm whether the calibration is correct.
 
@@ -113,9 +116,9 @@ a field for inputing:
 Looking at the camera location in the 3D viewer will help you obtaining the correct value.
 
 .. important::
-  After finishing robot camera calibration, don't forget to check the calibration result. Go to
+  After finishing robot-camera calibration, don't forget to check the calibration result. Go to
   :ref:`checking-robot-camera-calibration` to know how.
 
 .. warning::
   If after calibration the Pickit camera has been relocated or rotated relatively to the robot base,
-  a new robot camera calibration is required before picking, even if the motion was small.
+  a new robot-camera calibration is required before picking, even if the motion was small.

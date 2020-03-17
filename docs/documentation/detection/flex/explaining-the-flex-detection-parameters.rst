@@ -18,7 +18,7 @@ categories.
 HD camera settings (HD camera only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/images/Documentation/hd-preset-22.png
+.. image:: /assets/images/documentation/hd-preset-22.png
 
 The HD camera presets are a set of predefined configurations that optimize the captures of images for specific materials.
 
@@ -75,7 +75,7 @@ sides).
 Rejected clusters are not shown in the  :ref:`Clusters view <clusters-view>`,
 and their count is listed in the detection summary.
 
-.. image:: /assets/images/Documentation/Reject-clusters.png
+.. image:: /assets/images/documentation/Reject-clusters.png
 
 .. _Fit-objects-to-clusters:
 
@@ -102,7 +102,7 @@ The image below shows that soda cans can be detected both as cylinders
 or circles. Which model is found depends on which side of the is shown
 to the camera.
 
-.. image:: /assets/images/Documentation/Flex-soda-cans.gif
+.. image:: /assets/images/documentation/Flex-soda-cans.gif
 
 For **3D object models** like cylinders and spheres, one can specify:
 
@@ -110,7 +110,7 @@ For **3D object models** like cylinders and spheres, one can specify:
 -  The **3D matching tolerance**, used to determine the points that
    confirm the object model. 
 
-.. image:: /assets/images/Documentation/3d-matching-tolerance.png
+.. image:: /assets/images/documentation/3d-matching-tolerance.png
 
 For **2D object models**, Pickit first finds a flat regions and then
 looks for the selected model within this surface (square, rectangle, circle or
@@ -127,7 +127,7 @@ ellipse). One can specify:
 -  The **2D matching tolerance**, used to determine the points that
    confirm the object model fitting.
 
-.. image:: /assets/images/Documentation/2d-matching-tolerance.png
+.. image:: /assets/images/documentation/2d-matching-tolerance.png
 
 .. _Filter-objects:
 
@@ -152,7 +152,7 @@ This score only applies to 2D shapes and represents the percentage
 of the **2D model contour** that is covered with points within the
 **2D matching tolerance**.
 
-.. image:: /assets/images/Documentation/2d-contour-score.png
+.. image:: /assets/images/documentation/2d-contour-score.png
 
 .. _Surface-score:
 
@@ -163,7 +163,7 @@ This score only applies to 2D shapes, and represents the percentage of
 the **2D shape surface** that is covered with points taking into account
 the **2D and 3D matching tolerance**. 
 
-.. image:: /assets/images/Documentation/2d-surface-score.png
+.. image:: /assets/images/documentation/2d-surface-score.png
 
 3D scene score
 ^^^^^^^^^^^^^^
@@ -174,7 +174,7 @@ This score applies to all shapes, and represents the percentage of the
 The example below is for **cylinders** (in yellow, shown from the side),
 but this score can be given for every object shape.
 
-.. image:: /assets/images/Documentation/3d-scene-score.png
+.. image:: /assets/images/documentation/3d-scene-score.png
 
 .. _Optimize-detections:
 
@@ -212,4 +212,4 @@ times and lower accuracy.
 In the illustration, you can see an example of setting the scene
 downsampling parameter to 1 mm, 4 mm and 10 mm.
 
-.. image:: /assets/images/Documentation/downsampling.png
+.. image:: /assets/images/documentation/downsampling.png

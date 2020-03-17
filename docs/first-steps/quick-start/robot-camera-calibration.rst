@@ -1,13 +1,13 @@
-Robot camera calibration
+Robot-camera calibration
 ========================
 
-In this step we do a robot camera calibration. In the previous chapter
+In this step we do a robot-camera calibration. In the previous chapter
 we saw that the Pickit system is able to detect parts in its field of
 view. Now Pickit needs to know where the robot is based so that it can
 tell the robot where it needs to move to when an object is detected.
 **If you skip this step, the robot will move to a wrong location.**
 
-Follow the steps below to do a robot camera calibration:
+Follow the steps below to do a robot-camera calibration:
 
 -  Mount the robot-to-camera calibration plate to the flange of the
    robot. Make sure it is well fixed.
@@ -22,7 +22,7 @@ Follow the steps below to do a robot camera calibration:
    robot shows the calibration plate to the camera at different angles. Confirm that
    the plate is visible for all waypoints.
 
-.. image:: /assets/images/Documentation/calibration_multi_pose_fixed_camera.png
+.. image:: /assets/images/documentation/calibration_multi_pose_fixed_camera.png
 
 -  Run the multi-poses calibration program on the robot. Once all five poses are
    collected, the calibration process is finished.
@@ -30,5 +30,5 @@ Follow the steps below to do a robot camera calibration:
    the actual robot. If that is the case, the calibration plate can be dismounted from
    the robot, and Pickit is ready for picking.
 
-.. tip:: More details about robot camera calibration can be found in
-   the :ref:`robot-camera-calibration` article.
+.. tip::
+  You can learn more about robot-camera calibration in the :ref:`calibration video tutorial <video-tutorials-calibration>` and the :ref:`robot-camera-calibration` article.

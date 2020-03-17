@@ -53,13 +53,13 @@ typically used when picking cylinders. As shown in the image
 below, if the X-axis is the center of rotation, for the gripper to pick
 the object it doesn’t matter how the other axes are oriented.
 
-.. image:: /assets/images/Documentation/yperpz-cylinder.png
+.. image:: /assets/images/documentation/yperpz-cylinder.png
 
 See screenshots below to see the effect on a real scene of Pickit. The
 image on the left is with no alignment and the image on the right is
 with the Y ⊥ Z option.
 
-.. image:: /assets/images/Documentation/yperpz-alignment.png
+.. image:: /assets/images/documentation/yperpz-alignment.png
 
 For this to work it is important that the X-axis is in the center of
 rotation of the object. For flex cylinders the pick points have to be
@@ -72,7 +72,7 @@ is shown if an object is lying close to the border of the bin an
 additional rotation is enforced so that the pick points tilt away from
 the sides of the bin.
 
-.. image:: /assets/images/Documentation/yperpz-box-avoidance.png
+.. image:: /assets/images/documentation/yperpz-box-avoidance.png
 
 For this following parameters are used:
 
@@ -90,7 +90,7 @@ For this following parameters are used:
 -  **Allowed correction along pick point Y axis:** For this correction
    to work this value should always be set to 0 degree.
 
-.. image:: /assets/images/Documentation/allowed-correction-axis-deviation.png
+.. image:: /assets/images/documentation/allowed-correction-axis-deviation.png
 
 .. _enforce-alignment-z-parallel-z:
 
@@ -108,7 +108,7 @@ no alignment, on the right Z\|\|Z alignment is used. Note that the
 X-axis of all pick points are still pointing in the same orientation.
 This correction has no influence on the orientation of the pick points.
 
-.. image:: /assets/images/Documentation/zz-alignment.png
+.. image:: /assets/images/documentation/zz-alignment.png
 
 Together with this setting an additional offset can be created around
 the if the object is lying close to the side of the bin. Below it is
@@ -116,7 +116,7 @@ shown if an object is lying close to the border of the bin an additional
 rotation is enforced so that the pick points tilt away from the sides of
 the bin.
 
-.. image:: /assets/images/Documentation/zz-box-avoidance.png
+.. image:: /assets/images/documentation/zz-box-avoidance.png
 
 For this following parameters are used:
 
@@ -145,7 +145,7 @@ cardboard boxes. See image below for the effect on a real scene in
 Pickit. The image on the left is with no alignment, on the right
 XYZ\|\|XYZ alignment is used.
 
-.. image:: /assets/images/Documentation/xyzxyz-alignment.png
+.. image:: /assets/images/documentation/xyzxyz-alignment.png
 
 The difference with Z\|\|Z alignment is that now also orientation of the
 object is lost. The benefit is that if set correctly there is almost no
@@ -158,7 +158,7 @@ shown if an object is lying close to the border of the bin an additional
 rotation is enforced so that the pick points tilt away from the sides of
 the bin.
 
-.. image:: /assets/images/Documentation/xyzxyz-box-avoidance.png
+.. image:: /assets/images/documentation/xyzxyz-box-avoidance.png
 
 -  **Distance from box for avoidance:** Pick points lying within this
    distance towards the sides of the ROI box are corrected. Set this
@@ -183,4 +183,4 @@ the maximum specified angle, the object will be labeled as unpickable
 and not sent to the robot. In the Pickit web interface, unpickable
 objects are displayed orange in the :ref:`Objects view <objects-view>` and the :ref:`detection-grid`.
 
-.. image:: /assets/images/Documentation/Max-angle-normal.png
+.. image:: /assets/images/documentation/Max-angle-normal.png

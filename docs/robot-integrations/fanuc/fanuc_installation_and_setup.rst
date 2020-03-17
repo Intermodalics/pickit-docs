@@ -153,7 +153,7 @@ Additionally we provide some extra insights on registers used by the Karel prog
 Download the right files
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Download the Pickit Fanuc files <downloads:fanuc>`
+:ref:`Download the Pickit Fanuc files <downloads_fanuc>`
 
 The .zip folder contains the following ASCII files:
 

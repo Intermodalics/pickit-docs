@@ -19,7 +19,7 @@ instructing the robot to move one layer down in a depalletizing application.
 Consider the case where we're interested in picking boxes from a bin,
 as shown below:
 
-.. image:: /assets/images/Documentation/Roi-non-empty.png
+.. image:: /assets/images/documentation/Roi-non-empty.png
    :scale: 60 %
    :align: center
 
@@ -40,7 +40,7 @@ two scenarios that can lead to this state, which Pickit can differentiate:
        not being visible enough and having a too low matching score (below right,
        bottom yellow box).
 
-.. image:: /assets/images/Documentation/Roi-empty.png
+.. image:: /assets/images/documentation/Roi-empty.png
    :align: center
 
 Defining an empty ROI
@@ -50,7 +50,7 @@ The ROI box is considered to be empty when it contains less than a certain
 number of points. This value is set in the **Setup** page, under
 **Define empty ROI box**.
 
-.. image:: /assets/images/Documentation/Roi-define-empty.png
+.. image:: /assets/images/documentation/Roi-define-empty.png
    :align: center
 
 The threshold can be manually set, or can be taught by pointing the camera to an
@@ -74,7 +74,7 @@ Confirming an empty ROI
 The Pickit web interface indicates in the detection summary when the ROI is
 considered to be empty.
 
-.. image:: /assets/images/Documentation/Roi-empty-summary.png
+.. image:: /assets/images/documentation/Roi-empty-summary.png
    :align: center
 
 When object detection results in no matches, the robot program can confirm

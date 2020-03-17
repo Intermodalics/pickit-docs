@@ -19,7 +19,7 @@ Follow the steps below to do your first detection with Pickit:
    Wait until the blue box is updated. 
 -  Press the :guilabel:`Save` button on top of the Setup tab.
 
-.. image:: /assets/images/First-steps/Empty-roi.png
+.. image:: /assets/images/first-steps/Empty-roi.png
 
 -  Create a new product: in the **Product** tab, on top, click :guilabel:`+ New` and name
    the new product file 'Test\_Pickit'. Press :guilabel:`Create`. 
@@ -29,7 +29,7 @@ Follow the steps below to do your first detection with Pickit:
    cloud of the soda can is shown in the right side of the tab.
 -  Press the :guilabel:`Save` button on top of the **Detection** tab.
 
-.. image:: /assets/images/First-steps/Model-soda-can.png
+.. image:: /assets/images/first-steps/Model-soda-can.png
 
 -  Go back to the :ref:`2D view <2d-view>` and press :guilabel:`Detect`. A pick point (red-green-blue
    arrows) appears above the soda can.
@@ -37,7 +37,13 @@ Follow the steps below to do your first detection with Pickit:
    :guilabel:`Detect` again.
 -  Congratulations for your first detection!
 
-.. image:: /assets/images/First-steps/First-detection.png
+.. image:: /assets/images/first-steps/First-detection.png
 
-.. tip:: More information about the possibilities of the Pickit system can be
-   found in the :ref:`region-of-interest` or the :ref:`teach` section.
+.. tip::
+  You can learn more about the possibilities of Pickit in these video tutorials:
+
+  - :ref:`Where to pick <video-tutorials-where-to-pick>`
+  - :ref:`What to pick <video-tutorials-what-to-pick>`
+  - :ref:`How to pick <video-tutorials-how-to-pick>`
+
+  and in the :ref:`setup`, :ref:`detection` and :ref:`Picking` articles.

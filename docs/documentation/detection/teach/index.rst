@@ -10,10 +10,13 @@ Pickit Teach is a detection engine that works in 2 steps:
 
 In the image below, first a single socket was shown to the Pickit system, next similar shaped sockets are found in the bin.
 
-.. image:: /assets/images/Documentation/detection/teach/detection.png
+.. image:: /assets/images/documentation/detection/teach/detection.png
 
 .. toctree::
     :maxdepth: 1
 
     how-to-use-pickit-teach
     explaining-the-teach-detection-parameters
+
+.. tip::
+  You can learn about the main ideas behind the Teach engine by watching this :ref:`video tutorial <video-tutorials-what-to-pick>`.

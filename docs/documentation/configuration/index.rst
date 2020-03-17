@@ -29,7 +29,7 @@ From this view you can also create :guilabel:`New` files, or :guilabel:`Rename`,
 :guilabel:`Download` or :guilabel:`Delete` selected files.
 Active files cannot be renamed or deleted.
 
-.. image:: /assets/images/Documentation/product-files-window.png
+.. image:: /assets/images/documentation/product-files-window.png
 
 .. warning::
   Deleted setup and product files cannot be recovered.
@@ -45,7 +45,7 @@ To create a new setup or product file, press :guilabel:`New`, name the file and
 press :guilabel:`Continue`. The new file will contain default settings.
 After creation, the new file will be automatically set to active.
 
-.. image:: /assets/images/Documentation/create-new-product-file.png
+.. image:: /assets/images/documentation/create-new-product-file.png
    :scale: 80%
 
 Saving a setup or product file
@@ -57,4 +57,4 @@ with a different name.
 Pressing :guilabel:`Reset` restores the last saved settings, and all unsaved
 changes are lost.
 
-.. image:: /assets/images/Documentation/save-saveas-reset.png
+.. image:: /assets/images/documentation/save-saveas-reset.png

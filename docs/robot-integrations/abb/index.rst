@@ -9,7 +9,7 @@ The setup of Pickit with an ABB robot consists of 4 steps:
     :backlinks: top
     :local:
     :depth: 1
- 
+
 Check controller and software compatibility
 -------------------------------------------
 
@@ -71,7 +71,7 @@ Load the program files
 Download the right files
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Download the Pickit ABB files <downloads:ABB>`
+:ref:`Download the Pickit ABB files <downloads_abb>`
 
 Upload the files to the robot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

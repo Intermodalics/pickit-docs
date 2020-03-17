@@ -27,7 +27,7 @@ The information shown in the :ref:`Points view <points-view>` is what will be tr
 the next step. All other information is not taken into account for the
 detection with Pickit Pattern.
 
-.. image:: /assets/images/Documentation/Pattern-3d-points.gif
+.. image:: /assets/images/documentation/Pattern-3d-points.gif
 
 Divide the scene into clusters & reject (some) clusters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,7 +46,7 @@ is done.
 The boundary of a planar cluster is known as its contour. In the :ref:`Clusters view <clusters-view>`, contour points can be distinguished from inner cluster points by its thickness. The 2D shape model is fit to this contour, and therefore the quality of the match depends on the quality of the contour. Parameters that
 have an influence on contour points are explained in :ref:`Fit-objects-to-clusters`.
 
-.. image:: /assets/images/Documentation/Pattern-points-clusters.gif
+.. image:: /assets/images/documentation/Pattern-points-clusters.gif
 
 Difference of clustering between Pattern and Flex
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -78,4 +78,4 @@ the last two blocks is possible. 
   An explanation of all these parameters can be found in the
   article :ref:`Explaining-the-pattern-detection-parameters`. 
 
-.. image:: /assets/images/Documentation/Pattern-clusters-objects.gif
+.. image:: /assets/images/documentation/Pattern-clusters-objects.gif

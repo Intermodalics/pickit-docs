@@ -15,8 +15,8 @@ The scene below is used to explain the different clustering
 methods. In the scene there are three shampoo bottles next to each other, four boxes randomly on top of each other and four electrical plug shieldings separated from each other. A snapshot of this scene can be downloaded 
 `here <https://drive.google.com/uc?export=download&id=1O_N-cxPfPcg-TQpFimSls3jx3sEwM_RW>`__.
 
-.. image:: /assets/images/Documentation/Clustering-2d.png
-.. image:: /assets/images/Documentation/Clustering-points.png
+.. image:: /assets/images/documentation/Clustering-2d.png
+.. image:: /assets/images/documentation/Clustering-points.png
 
 Touching parts
 ~~~~~~~~~~~~~~
@@ -36,7 +36,7 @@ is not good.
 -  Cylinders: bottles, gas springs, steel bars,..
 -  Balls: tennis balls, oranges,..
 
-.. image:: /assets/images/Documentation/Clustering-touching.png
+.. image:: /assets/images/documentation/Clustering-touching.png
 
 Plane Based Clustering
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -52,7 +52,7 @@ shieldings multiple clusters per part are formed, which is not good.
 -  Flat surfaces
 -  Boxes
 
-.. image:: /assets/images/Documentation/Clustering-plane-based.png
+.. image:: /assets/images/documentation/Clustering-plane-based.png
 
 Non-touching parts
 ~~~~~~~~~~~~~~~~~~
@@ -68,4 +68,4 @@ positioned separated, one cluster per part is formed, which is good.
 
 -  (Complex) non-touching shapes
 
-.. image:: /assets/images/Documentation/Clustering-non-touching.png
+.. image:: /assets/images/documentation/Clustering-non-touching.png

@@ -48,7 +48,7 @@ Set the `ROS_IP <http://wiki.ros.org/ROS EnvironmentVariables#ROS_IP.2BAC8-ROS_
 
 To test communications, you first need to source a ROS workspace containing the
 ``im_pickit_msgs`` package.
-The package is available in our :ref:`downloads page <downloads:ROS>`.
+The package is available in our :ref:`downloads page <downloads_ros>`.
 
 Refer to the `catkin tools quickstart <http://catkin-tools.readthedocs.io/en/latest/quick_start.html>`__ for details on how to build ROS packages and source ROS workspaces. Once the package has been built and its workspace has been sourced, run the following commands to verify connectivity with the Pickit system:
 
@@ -113,7 +113,7 @@ The following are valid strings that can be passed as payload to the ``/im/picki
 -  ``e_look_for_object``: Pickit performs one detection on the latest camera image.
 -  ``e_do_stop``: Pickit leaves the continuous testing state.
 
--  ``e_calibration_requested``: Pickit looks for the robot camera calibration plate.
+-  ``e_calibration_requested``: Pickit looks for the robot-camera calibration plate.
 
 Changing the Pickit configuration
 ----------------------------------
@@ -279,10 +279,10 @@ An example script that could to the filtering of the  ``/tf`` topic could look
         tf_sub = rospy.Subscriber('/tf', tf.msg.tfMessage, tf_message_cb)
         rospy.spin()
 
-Robot camera calibration
+Robot-camera calibration
 ------------------------
 
-Doing a robot camera calibration is not (yet) straightforward with the ROS interface. You need to publish certain commands to the ``/pickit/external_cmds`` topic and optionally listen to the ``/pickit/status`` or ``/pickit/status_calib`` topic to get feedback.
+Doing a robot-camera calibration is not (yet) straightforward with the ROS interface. You need to publish certain commands to the ``/pickit/external_cmds`` topic and optionally listen to the ``/pickit/status`` or ``/pickit/status_calib`` topic to get feedback.
 
 Single pose calibration
 ~~~~~~~~~~~~~~~~~~~~~~~

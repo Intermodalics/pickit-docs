@@ -29,4 +29,4 @@ The following strategies are available:
 The pattern sort options are useful for depalletization or pallet
 loading applications. The picture below illustrates each option:
 
-.. image:: /assets/images/Documentation/Object-ordering-pattern.png
+.. image:: /assets/images/documentation/Object-ordering-pattern.png

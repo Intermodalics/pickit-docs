@@ -10,13 +10,13 @@ views except 2D). Arrows are colored according to the Pickit reference
 frame direction: X→red, Y→green, Z→blue. You can interactively click and
 drag the arrows to extend and contract the box along each of its sides.
 
-.. image:: /assets/images/Documentation/Roi-arrows.png
+.. image:: /assets/images/documentation/Roi-arrows.png
 
 The exact bounds and size of the ROI box are reported in the **Fine-tune ROI box** section,
 as shown below. You can also manually set the bound
 values here and the ROI box will be updated in the viewer.
 
-.. image:: /assets/images/Documentation/Roi-values.png
+.. image:: /assets/images/documentation/Roi-values.png
 
 .. note:: Only the size and position of ROI box can be changed, not the
    orientation. To change the orientation the ROI box needs to be defined
@@ -30,7 +30,7 @@ to have faster detection times. The sequence below shows
 the :ref:`Points view <points-view>` before and after raising the bottom of the box
 just above the ground plane.
 
-.. image:: /assets/images/Documentation/Remove-ground-roi.png
+.. image:: /assets/images/documentation/Remove-ground-roi.png
 
 Bin representation with the ROI box
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,4 +43,4 @@ points, and includes all relevant bin contents. The sequence below shows
 the :ref:`Points view <points-view>` before and after adjusting the box boundaries to
 the inside of the bin.
 
-.. image:: /assets/images/Documentation/Bin-representation-roi.png
+.. image:: /assets/images/documentation/Bin-representation-roi.png

@@ -19,12 +19,12 @@ This article describes the main steps in the single pose calibration procedure:
 Mounting the calibration plate
 -------------------------------
 
-The advantage of only one pose required for robot camera calibration comes at the cost of Pickit
+The advantage of only one pose required for robot-camera calibration comes at the cost of Pickit
 needing to know how the calibration plate is mounted with respect to the robot flange. Therefore,
 the plate should be mounted to the flange in a specific way. :ref:`installing-calibration-plate`
 describes the correct way to mount the plate to the flange.
 
-.. image:: /assets/images/Documentation/calibration_single_pose_fixed_camera_plate_attachment.png
+.. image:: /assets/images/documentation/calibration_single_pose_fixed_camera_plate_attachment.png
    :scale: 50 %
    :align: center
 
@@ -35,7 +35,7 @@ In the Pickit web interface, you need to specify the helper transformation, whic
 between the flange frame of the robot and the calibration plate frame. The figure below shows the
 defined calibration plate frame.
 
-.. image:: /assets/images/Documentation/Helper-transformation.jpg
+.. image:: /assets/images/documentation/Helper-transformation.jpg
    :scale: 50%
    :align: center
 
@@ -44,7 +44,7 @@ If the screw holes of plate and flange are aligned, this transformation consists
 - a translation along the Z-axis,
 - a rotation around the Z-axis.
 
-.. image:: /assets/images/Documentation/Calibration-plate-offset.png
+.. image:: /assets/images/documentation/Calibration-plate-offset.png
    :align: center
 
 If the calibration plate is screwed directly to the flange, and oriented according to
@@ -78,9 +78,9 @@ is shown to the Pickit camera approximately in the center of the 2D image, and c
 area. Make sure the plate is visible in the 2D viewer. Afterwards the program should request Pickit
 to find the calibration plate.
 
-.. image:: /assets/images/Documentation/Calibration-plate-visible-viewer.png
+.. image:: /assets/images/documentation/Calibration-plate-visible-viewer.png
    :align: center
-.. image:: /assets/images/Documentation/Calibration-plate-visible.png
+.. image:: /assets/images/documentation/Calibration-plate-visible.png
    :align: center
 
 Calibrating
@@ -92,12 +92,12 @@ Calibrating
 #. Select the correct robot type: **6 DOF** or **4 DOF**, depending on the number of
    degrees-of-freedom of your robot. If your robot has only 4 degrees-of-freedom, fill
    in the distance between calibration plate and robot flange in the field **Flange Z-axis**.
-#. Choose the **single pose** robot camera calibration method.
+#. Choose the **single pose** robot-camera calibration method.
 #. Go through the instructed steps, and run the robot program. You can see the status of the
    calibration process in the Pickit web interface.
 
-.. image:: /assets/images/Documentation/Calibration-progress-single-pose.png
+.. image:: /assets/images/documentation/Calibration-progress-single-pose.png
 
 .. important::
-  After finishing robot camera calibration, don't forget to check the calibration result. Go to
+  After finishing robot-camera calibration, don't forget to check the calibration result. Go to
   :ref:`checking-robot-camera-calibration` to know how.

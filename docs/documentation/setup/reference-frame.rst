@@ -11,6 +11,6 @@ The Pickit **reference frame** is a coordinate system used throughout the Pickit
 
 The Pickit reference frame is represented using dashed axes, as shown in the image below, where it appears next to the ROI.
 
-.. image:: /assets/images/Documentation/setup/reference_frame.png
+.. image:: /assets/images/documentation/setup/reference_frame.png
     :scale: 80%
     :align: center
