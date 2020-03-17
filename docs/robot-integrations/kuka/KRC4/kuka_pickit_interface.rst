@@ -12,7 +12,7 @@ Pickit communication functions
 ------------------------------
 
 Below you find an overview of the functions defined by Pickit that are responsible for communicating with a Pickit system.
-For more details on these functions, refer to :ref:`socket-communication`.
+For more details on these functions, refer to :ref:`robot-independent-interface`.
 
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
 | Function                                     | Comment                                                                                                                                                                                                                                                  | Input arguments       | Return type                                                     |
@@ -33,9 +33,9 @@ For more details on these functions, refer to :ref:`socket-communication`.
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
 | Pickit_configure (LZ_Setup:IN,LZ_Product:IN) | Load the specified setup and product :ref:`Configuration`.                                                                                                                                                                                               | setup id, product id  | \-                                                              |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
-| Pickit_save_scene()                          | Save a :ref:`Snapshots` with the latest detection results.                                                                                                                                                                                               | \-                    | \-                                                              |
+| Pickit_save_scene()                          | Save a :ref:`snapshot <Snapshots>` with the latest detection results.                                                                                                                                                                                    | \-                    | \-                                                              |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
-| Pickit_build_bkg_cloud()                     | Build the background cloud used in :ref:`advanced-roi-filters`.                                                                                                                                                                                          | \-                    | \-                                                              |
+| Pickit_build_bkg_cloud()                     | Build the background cloud used by one of the :ref:`advanced-roi-filters`.                                                                                                                                                                               | \-                    | \-                                                              |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
 | Pickit_has_response()                        | Wait for Pickit reply with detection results. **Pickit_has_response()** should always be the next Pickit function after a **Pickit_look_for_object()**, **Pickit_next_object()**, **Pickit_detect_with_retr(..)** or **Pickit_process_image()** request. | \-                    | Boolean - (Some Pickit variables are updated in the background) |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
@@ -54,8 +54,8 @@ See :ref:`kuka-krc4-example-picking-program` on how they are typically implement
 Pickit helper functions
 -----------------------
 
-The following functions don't communicate with Pickit, but make your robot program more readable.
-The return value of these functions is a boolean and the status of the return value gets updated after using the Pickit function **Pickit_has_response()** or **Pickit_get_results()**.
+The following functions don't communicate with Pickit, using the results of previous commands, but make your robot program more readable.
+The return values of these functions get updated after using the Pickit functions **Pickit_has_response()** or **Pickit_get_results()**.
 See :ref:`kuka-krc4-example-picking-program` on how they are typically implemented in a robot program.
 
 +----------------------------+--------------------------------------------------------------------------------+
@@ -102,13 +102,11 @@ The output values are updated after using the Pickit function **Pickit_has_respo
 Using pick offset in a robot program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To use the **pick offset** in a robot program, first a fixed pose has to be taught.
-Then the offset can be applied to this fixed pose to correct from picking with an offset.
-The following example shows how the pose **Dropit** is corrected: 
+When using multiple pick points or flexible pick orientations, it can be useful to :ref:`use the pick offset from a reference/nominal pick point in order to correct a drop-off point <smart-place-examples>`.
+The following lines of code show how to correct the fixed point ``Dropit`` in a KUKA robot program:
+
 ::
 
   drop_offset = Pickit_get_offset()
   F_drop_correct = Dropit:drop_offset
   PTP F_drop_correct
-
-See :ref:`smart-place-examples` for different examples on how to use the pick offset.

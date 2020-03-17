@@ -13,6 +13,10 @@ Example program: PickitSimplePicking
 
 This example program can be found in **R1** > **Program** > **Pickit**.
 
+.. note::
+  This example program only works with Pickit software version of 2.2 or greater.
+  If you are using a software version prior 2.2, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__, and we will assist you in finding a solution. 
+
 ::
 
      DEF  PickitSimplePicking ( )
@@ -78,17 +82,17 @@ This example program can be found in **R1** > **Program** > **Pickit**.
 
 The idea of the program is the following:
 
-- First, it is checked if Pickit is set to :ref:`Robot mode <web-interface-top-bar>`.
-- If so, the robot moves to its detect pose and a detection is triggered, otherwise the robot program is halted.
-- If an object is found, it's checked if the pick positions are reachable for the robot.
+- First, it is checked whether or not Pickit is in :ref:`Robot mode <web-interface-top-bar>`.
+- If so, the robot moves to the ``detect`` pose and a detection is triggered, otherwise the robot program is halted.
+- If an object is found, it is checked if the pick, pre-pick and post-pick points are reachable for the robot.
 - If the object is reachable, the robot moves to the object to pick it.
-  Next, the robot moves to a fixed drop-off position.
-  During these motions when the robot is out the field of view of the camera, a new Pickit detection is triggered immediately.
-- If the object is not reachable, the robot requests another object.
+  Afterwards, the robot moves to a fixed drop-off position, ``Dropit``.
+  As soon as the robot is out of the field of view of the camera, a new Pickit detection is triggered, so that the detection is processed at the same time as the robot moves, optimizing cycle time.
+- If the object is not reachable, the robot requests the next detected object.
 - If the ROI is empty, the program stops.
-- If no object is found but ROI is not empty, a :ref:`snapshot <Snapshots>` is saved on the Pickit system and the robot program stops. 
+- If no object is found, and the ROI is not empty, a :ref:`snapshot <Snapshots>` is saved on the Pickit system and the robot program stops.
 
-.. note:: Depending on which software version you are running the example program can look different, the idea and functionallity are the same.
+.. note:: Depending on which Pickit software version you are running, the example program can look different, even though the functionality is the same.
   We recommend to use the example program shipped with your Kuka connect version
 
 Define the tool for picking
@@ -103,11 +107,11 @@ Set correct input arguments
 The commands ``Pickit_configure`` and ``Pickit_detect_with_retr`` need input arguments.
 See :ref:`kuka-pickit-communication-functions` for more information about these arguments.
 
-Define fixed positions
-~~~~~~~~~~~~~~~~~~~~~~
+Define fixed points
+~~~~~~~~~~~~~~~~~~~
 
-In this example program, 4 fixed positions are used.
-These positions need to be defined depending on the application.
+In this example program, 4 fixed points are used.
+These points need to be defined depending on the application.
 
 - **Home**: Where the robot will start the program.
 - **Detect**: Where to perform object detection from.
@@ -117,7 +121,7 @@ These positions need to be defined depending on the application.
 Add grasping/releasing logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the **F_Pick** and **Dropit** positions, grasping and releasing logic needs to be added, respectively.
+At the **F_Pick** and **Dropit** points, grasping and releasing logic needs to be added, respectively.
 
 Execute the picking program
 ---------------------------

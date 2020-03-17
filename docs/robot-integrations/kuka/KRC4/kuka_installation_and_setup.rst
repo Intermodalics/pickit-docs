@@ -99,7 +99,7 @@ Now that the **KUKA Connect KRC** module is installed, we need to configure it t
 -  **Disable the local UDP port.**
 -  **Disable the local TCP port.**
 -  **Activate ‘Show dialogs to autocomplete filter’.**
--  **Activate ‘Enable PickIt client connection’.**
+-  **Activate ‘Enable Pickit client connection’.**
 -  **Specify the Pickit server IP address.**
 
 .. attention::
@@ -119,7 +119,7 @@ Setting up the network connection
 
 The Pickit processor has to be connected to the **KUKA KR-C4** controller using an Ethernet cable. This Ethernet cable should connect:
 
-- The network port labeled **ROBOT** of the Pickit processor
+- The network port labeled **ROBOT** of the Pickit processor.
 - The KLI Ethernet port of the KR-C4 controller (also referred to as X66). The location of this port may vary depending on the controller model. The images below show example locations: Cabinet door (left), built-in switch (right).
 
 .. image:: /assets/images/robot-integrations/kuka/kuka-step-13.png
@@ -131,7 +131,7 @@ There are two sets of files installed in the robot controller that
 relate to Pickit communication:
 
 -  **Pickit application files.**
-   These are example programs that illustrate how to perform typical Pickit operations, like robot-camera calibration or object detection for pick and place.These are located in :guilabel:`R1` > :guilabel:`Progran` > :guilabel:`Pickit`.
+   These are example programs that illustrate how to perform typical Pickit operations, like robot-camera calibration or object detection for pick and place.These are located in :guilabel:`R1` > :guilabel:`Program` > :guilabel:`Pickit`.
 -  **Pickit interface files.**
    These are internal files that expose the high-level functions used by the application files, and manage low-level communication with the Pickit system. These files are not meant for editing and are located in :guilabel:`R1` > :guilabel:`TP` > :guilabel:`Connect` > :guilabel:`Pickit`.
 
@@ -143,7 +143,7 @@ The Pickit application files can be loaded and executed as any other KUKA.KRL pr
 Starting and verifying the communication
 ----------------------------------------
 
-Before starting the communication, on the Pickit interface select KUKA as the robot to communicate with. Next, on the robot side, go to **Main Menu**, then :guilabel:`Configuration` > :guilabel:`Connect settings`. In the **Connect settings** screen, data being exchanged between the robot and Pickit is displayed in the text boxes labeled **PC -> Robot** and **Robot -> PC**. You should see data and timestamps be updated multiple times per second.
+On the robot side, go to **Main Menu**, then :guilabel:`Configuration` > :guilabel:`Connect settings`. In the **Connect settings** screen, data being exchanged between the robot and Pickit is displayed in the text boxes labeled **PC -> Robot** and **Robot -> PC**. You should see data and timestamps being updated multiple times per second.
 
 .. image:: /assets/images/robot-integrations/kuka/kuka-step-14.png
 
