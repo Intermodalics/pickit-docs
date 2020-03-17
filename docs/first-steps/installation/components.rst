@@ -26,5 +26,5 @@ Pickit system:
    poses and the robot pose.
 -  **Left**\ : The Pickit processor **can be connected** via a network
    cable to the company network in order to receive remove service from
-   a Pickit engineer over the internet. Alternatively, it can be
-   connected to the internet with the Pickit 3G USB dongle.
+   a Pickit engineer over the Internet. Alternatively, it can be
+   connected to the Internet with the Pickit 3G USB dongle.

@@ -127,7 +127,7 @@ Configuration options:
 -  Subnet mask
 -  Gateway
 
-Test connectivity to the internet by pressing the Check button.
+Test connectivity to the Internet by pressing the Check button.
 
 .. _upgrade-pickit-version:
 
