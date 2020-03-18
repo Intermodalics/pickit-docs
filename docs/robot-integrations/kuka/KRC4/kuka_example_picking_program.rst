@@ -47,9 +47,9 @@ This example program can be found in **R1** > **Program** > **Pickit**.
                 F_PostPick={X 0.0,Y 0.0,Z 100.0,A 0.0,B 0.0,C 0.0}:F_Pick
                 
                 ; Check if positions are reachable
-                PickitAxistest=INVERSE(F_Pick,XHOME,Pickit_ErrStatCheckPos1)
-                PickitAxistest=INVERSE(F_PrePick,XHOME,Pickit_ErrStatCheckPos2)
-                PickitAxistest=INVERSE(F_PostPick,XHOME,Pickit_ErrStatCheckPos3)
+                PickitAxistest=INVERSE(F_Pick,XAbovePickArea,Pickit_ErrStatCheckPos1)
+                PickitAxistest=INVERSE(F_PrePick,XAbovePickArea,Pickit_ErrStatCheckPos2)
+                PickitAxistest=INVERSE(F_PostPick,XAbovePickArea,Pickit_ErrStatCheckPos3)
                 IF (Pickit_ErrStatCheckPos1==0) AND (Pickit_ErrStatCheckPos2==0) AND (Pickit_ErrStatCheckPos3==0) THEN
                     PTP AbovePickArea
                     LIN F_PrePick
