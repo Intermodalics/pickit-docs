@@ -54,11 +54,11 @@ See :ref:`kuka-krc4-example-picking-program` on how they are typically implement
 +----------------------------+--------------------------------------------------------------------------------+
 | Function                   | Return value                                                                   |
 +============================+================================================================================+
-| Pickit_object_found()      | True if Detection results are available.                                       |
+| Pickit_object_found()      | True if detection results are available.                                       |
 +----------------------------+--------------------------------------------------------------------------------+
-| Pickit_no_image_captured() | True if no image was captured by Pickit, if so check the camera connection.    |
+| Pickit_no_image_captured() | True if no image was captured by Pickit. If so, check the camera connection.   |
 +----------------------------+--------------------------------------------------------------------------------+
-| Pickit_roi_empty()         | True if the ROI is empty.                                                      |
+| Pickit_roi_empty()         | True if the :ref:`ROI is empty <detecting-an-empty-roi>`.                      |
 +----------------------------+--------------------------------------------------------------------------------+
 
 Pickit output functions
@@ -68,9 +68,9 @@ The following functions are used to get the output values of Pickit.
 The output values are updated after using the Pickit function **Pickit_has_response()** or **Pickit_get_results()**.
 
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------+
-| Function                   | Comment                                                                                                                                 | Return type |
+| Function                   | Return value                                                                                                                            | Return type |
 +============================+=========================================================================================================================================+=============+
-| Pickit_get_pose()          | Pick point expressed relatively to the robot base frame.                                                                                | FRAME       |
+| Pickit_get_pose()          | Pick point expressed with respect to the robot base frame.                                                                              | FRAME       |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------+
 | Pickit_get_offset()        | Pick point offset of the last requested object.                                                                                         | FRAME       |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------+
@@ -92,6 +92,8 @@ The output values are updated after using the Pickit function **Pickit_has_respo
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------+
 | Pickit_remaining_objects() | Number of remaining objects that can be sent to the robot in the next messages.                                                         | INT         |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------+
+
+More detailed information about these outputs can be found :ref:`here <robot-independent-global-variables>`.
 
 Using pick offset in a robot program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
