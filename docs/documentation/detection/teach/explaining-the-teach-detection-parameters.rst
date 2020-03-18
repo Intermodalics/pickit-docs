@@ -105,6 +105,15 @@ The following guide will help you find a good value for this parameter, :ref:`ho
 Optimize detections
 ~~~~~~~~~~~~~~~~~~~
 
+.. _teach-flat-objects:
+
+Flat objects
+^^^^^^^^^^^^
+
+Detect objects based on their edges.
+This feature is especially useful for flat objects, like sheet metal plates.
+When enabled, an additional input to specify the object thickness is needed.
+
 .. _image-fusion:
 
 Image fusion and scene downsampling resolution
