@@ -10,6 +10,21 @@ From which points can it be picked? With which tool? Is the pick collision-free?
 .. tip::
   You can learn about the main ideas behind *how to pick* by watching this :ref:`video tutorial <video-tutorials-how-to-pick>`.
 
+.. _Picking-tool-model:
+
+Robot tool model
+----------------
+
+Pickit allows to :ref:`model the robot tool <robot-tool-model>` that is used for picking.
+The tool model is useful for visually confirming the correct location of a pick point, and can also be used to :ref:`prevent collisions <collision-prevention>` between the tool and a bin or other objects.
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
+
+    robot-tool-model
+
 .. _pick-points:
 
 Pick points

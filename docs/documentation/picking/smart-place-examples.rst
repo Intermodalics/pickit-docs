@@ -142,4 +142,4 @@ The **pick point offset**, which is the offset between the actual pick point and
             - Different grippers for different pick points.
             - Different approach or retreat motions depending on the pick point.
 
-          .. image:: /assets/images/documentation/picking/pick_point_different_gripper_settings.png
+          .. image:: /assets/images/documentation/picking/different_gripper_openings.png
