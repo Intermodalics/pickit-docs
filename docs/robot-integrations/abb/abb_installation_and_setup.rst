@@ -1,3 +1,5 @@
+.. _abb-installation-and-setup:
+
 ABB installation and setup
 ==========================
 
