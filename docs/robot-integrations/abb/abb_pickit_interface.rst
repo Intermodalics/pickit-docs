@@ -95,8 +95,8 @@ Using pick offset in a robot program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When using multiple pick points or flexible pick orientations, it can be useful to :ref:`use the pick offset from a reference/nominal pick point in order to correct a drop-off point <smart-place-examples>`.
-For this one more helper function is created, **pickit_apply_offset(robtarget ..)**.
-In the example below the robot will move to the offset point relative to the fixed point DropOff.
+For this an additional function is created, **pickit_apply_offset(robtarget ..)**.
+In the example below the robot will move to the offset point relative to the fixed point **DropOff**.
 
 ::
 
