@@ -30,8 +30,8 @@ Pickit provides 2 ways to teach a model of your part:
 2. :ref:`Teach from CAD <teach-from-cad>`: upload a Computer Aided Design (CAD) file of your part.
 
 
-Detecting object(s)
-~~~~~~~~~~~~~~~~~~~
+Detecting objects
+~~~~~~~~~~~~~~~~~
 
 Now that you've added your models, it's time to detect objects. 
 
@@ -63,3 +63,26 @@ different settings (tilted, on top of each other,..)
 .. note:: There is a hard limit on the Teach matching time of 5 seconds.
    Before applying any optimization, this limit could be reached.
 
+A note on flat objects
+^^^^^^^^^^^^^^^^^^^^^^
+
+Pickit Teach requires objects to have distinct 3D shape features to be reliably detected.
+Flat objects are different from other 3D shapes in the sense that edges are the main source of shape information.
+
+The :ref:`flat objects <teach-flat-objects>` option tells Pickit Teach to focus on shape edges when performing object detection.
+The following example shows how to detect thin and flat sheet metal parts with this option.
+
+.. image:: /assets/images/documentation/detection/teach/flat_objects.png
+  :align: center
+  :scale: 70%
+
+.. tip::
+  When :ref:`teaching from camera <teach-from-camera>` the model of a flat object, it is advised to have the model parallel to the ground (not tilted).
+  For thin objects, it's advised to raise them during teaching to have a clear height difference with respect to the ground plane.
+
+.. tip::
+  When detecting very thin objects, it is advised to include the ground plane when building the :ref:`ROI <region-of-interest>`.
+  This makes sure that objects lying directly on the ground are completely included in the ROI.
+
+  Note that, for non-thin objects, it is generally advised to exclude the ground plane from the ROI for performance reasons.
+  When the flat objects option is enabled, the ground plane doesn't add a significant performance overhead, as only its edges are considered.
