@@ -1,7 +1,7 @@
-.. _abb-example-program:
+.. _abb-example-picking-program:
 
-ABB example program
-===================
+ABB example picking program
+===========================
 
 This example program requires that Pickit is installed and set up with your robot.
 For installation instructions, please refer to the :ref:`abb-installation-and-setup` article.
