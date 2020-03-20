@@ -96,10 +96,11 @@ Load parameters from controller
     :width: 550
     :alt: Load parameters from controller
 
-Select the **Pickit SYS.cfg** file. This will load the required system
-modules. 
+-  For an ABB controller with RobotWare 5 select the **Pickit SYS RW5.cfg** file.
+-  For an ABB controller with RobotWare 6 select the **Pickit SYS RW6.cfg** file.
+-  For the ABB YuMi select the **Pickit SYS YuMi.cfg** file.
 
-For the ABB YuMi select the **Pickit SYS YuMi.cfg** file.
+This will load the required system modules in corresponding tasks.
 
 .. image:: /assets/images/robot-integrations/abb/abb-load-program-files-step-4.jpg
     :width: 550
