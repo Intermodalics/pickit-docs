@@ -9,7 +9,7 @@ For installation instructions, please refer to the :ref:`abb-installation-and-se
 Pickit communication functions
 ------------------------------
 
-Below you find an overview of the functions defined by Pickit that are responsible for communicating with a Pickit system.
+Below you find an overview of the functions for communicating with Pickit.
 For more details on these functions, refer to :ref:`robot-independent-interface`.
 
 +----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
@@ -23,7 +23,7 @@ For more details on these functions, refer to :ref:`robot-independent-interface`
 +----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
 | Pickit_detect_with_retries (num retries)     | Repeatedly trigger a Pickit object detection as long as nothing is found and the ROI is not empty, up to a number of attempts.                                                                                                                                                                                        | max number of retries | \-                                                              |
 +----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
-| Pickit_capture_image()                       | Trigger Pickit to capture a camera image to be used by a following **Pickit_process_image()** function.                                                                                                                                                                                                               | \-                    | \-                                                              |
+| Pickit_capture_image()                       | Trigger Pickit to capture a camera image to be used by a following **Pickit_process_image()** call.                                                                                                                                                                                                                   | \-                    | \-                                                              |
 +----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
 | Pickit_process_image()                       | Trigger an object detection on the camera image that was previously captured via the **Pickit_capture_image()** function (or one of the **Detection** functions).                                                                                                                                                     | \-                    | \-                                                              |
 +----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------+
@@ -45,8 +45,8 @@ For more details on these functions, refer to :ref:`robot-independent-interface`
 Pickit helper functions
 -----------------------
 
-The following functions don't communicate with Pickit, using the results of previous commands, but make your robot program more readable.
-The return values of these functions get updated after using the Pickit functions **Pickit_has_response()** or **Pickit_get_results()**.
+The following functions don't communicate with Pickit. They use the information received in the most recent detection results, and are intended to make your robot program more readable.
+The return values of these functions get updated when calling **Pickit_has_response()** or **Pickit_get_results()**.
 See :ref:`abb-example-picking-program` on how they are typically implemented in a robot program.
 
 +----------------------------+--------------------------------------------------------------------------------+
@@ -95,7 +95,7 @@ Using pick offset in a robot program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When using multiple pick points or flexible pick orientations, it can be useful to :ref:`use the pick offset from a reference/nominal pick point in order to correct a drop-off point <smart-place-examples>`.
-For this an additional function is created, **pickit_apply_offset(robtarget ..)**.
+For this, an additional function is created, **pickit_apply_offset(robtarget ..)**.
 In the example below the robot will move to the offset point relative to the fixed point **DropOff**.
 
 ::

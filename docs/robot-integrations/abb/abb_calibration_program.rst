@@ -6,16 +6,14 @@ ABB calibration program
 This example program requires that Pickit is installed and set up with your robot.
 For installation instructions, please refer to the :ref:`abb-installation-and-setup` article.
 
-Before following these ABB specific instructions in this article, make sure you first understand the process of executing a robot-camera calibration as explained on :ref:`robot-camera-calibration`.
+Before following the ABB specific instructions in this article, make sure you first understand the process of executing a robot-camera calibration as explained on :ref:`robot-camera-calibration`.
 
-.. note::
-  If you want to perform calibration once or infrequently, you don't need to use this example program.
-  You can teach the calibration poses manually using the pendant and the :ref:`Collect current pose <multi-poses-calibration-collect-current-pose>` in the calibration wizard of the Pickit web interface.
+.. include:: ../calibration_note.rst
 
 Example program: MultiPoseCalibration
 -------------------------------------
 
-This example program can be found as a routine in the module Pickit_calibration.
+This example program can be found as a routine in the ``Pickit_calibration`` module.
 Go to :guilabel:`Program Editor` > :guilabel:`Modules` > :guilabel:`Pickit_calibration` > :guilabel:`MultiPoseCalibration()`.
 
 ::
@@ -44,8 +42,6 @@ Go to :guilabel:`Program Editor` > :guilabel:`Modules` > :guilabel:`Pickit_calib
         !
         Stop;
     ENDPROC
-
-Below, each step of the program is explained.
 
 Teach calibration points
 ~~~~~~~~~~~~~~~~~~~~~~~~
