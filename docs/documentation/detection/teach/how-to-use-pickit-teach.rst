@@ -63,6 +63,8 @@ different settings (tilted, on top of each other,..)
 .. note:: There is a hard limit on the Teach matching time of 5 seconds.
    Before applying any optimization, this limit could be reached.
 
+.. _teach-flat-objects-note:
+
 A note on flat objects
 ^^^^^^^^^^^^^^^^^^^^^^
 
