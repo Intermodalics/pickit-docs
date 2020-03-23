@@ -19,6 +19,8 @@ One of the Pickit example programs can be loaded from :guilabel:`HOME` > :guilab
 Below the **main()** part of the example program **Pickit_simple_pick_and_place** is shown.
 More information about this example program can be found in :ref:`robot-independent-program-simple`.
 
+Also a similar robot program to :ref:`robot-independent-pick-and-place-complete` can be found in the **Applications example** folder.
+
 ::
 
     MODULE Pickit_simple_pick_and_place
@@ -120,10 +122,6 @@ More information about this example program can be found in :ref:`robot-independ
             ENDIF
         ENDPROC
     ENDMODULE
-
-
-.. note::
-  Also a similar robot program to :ref:`robot-independent-pick-and-place-complete` can be found in the **Applications example** folder.
 
 Define the tool for picking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
