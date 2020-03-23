@@ -27,8 +27,8 @@ Generic pick and place function
 .. literalinclude:: code/pick-and-place.py
   :language: python
   :linenos:
-  :lines: 19-66
-  :emphasize-lines: 1, 13, 20-40, 48
+  :lines: 19-70
+  :emphasize-lines: 1, 13, 24-44, 52
 
 Click below to expand a flowchart of the implemented logic.
 
@@ -64,7 +64,7 @@ Click on the entries below to expand them and learn more about their default imp
 
   .. literalinclude:: code/pick-and-place.py
     :language: python
-    :lines: 70-71
+    :lines: 74-75
 
   This hook is executed *once* before starting to pick and place.
   It's recommended to add logic required to bring the robot to a sane configuration before starting to pick objects.
@@ -78,12 +78,37 @@ Click on the entries below to expand them and learn more about their default imp
 
   .. literalinclude:: code/pick-and-place.py
     :language: python
-    :lines: 74-75
+    :lines: 78-79
 
   This is a motion sequence that moves the robot to the point from which object detection is triggered.
   For simple applications, this typically corresponds to a single waypoint.
 
   Some applications using a robot-mounted camera might require a non-constant ``Detect`` point. For instance, when a bin is wider than the camera field of view, multiple detection points are required to fully cover it.
+
+.. _robot-independent-pre-post-pick:
+
+.. details:: compute_pre_pick - compute_post_pick
+
+  .. literalinclude:: code/pick-and-place.py
+    :language: python
+    :lines: 83-85
+
+  .. literalinclude:: code/pick-and-place.py
+    :language: python
+    :lines: 89-92
+
+  These hooks compute ``PrePick`` and ``PostPick`` from the pick point.
+  They are used in the linear approach and retreat motions of the :ref:`pick <robot-independent-hooks-pick>` sequence.
+
+  .. image:: /assets/images/robot-integrations/robot-independent/pick-sequence.png
+      :align: center
+
+  |
+
+  - ``PrePick`` is chosen such that the approach motion is aligned with the object.
+  - ``PostPick`` is chosen for a straight-up retreat (which makes it less likely to collide with obstacles like the bin).
+
+  The above strategies have proven to be effective in practice, but they can be overridden by different ones, if desired.
 
 .. _robot-independent-hooks-pick:
 
@@ -91,7 +116,7 @@ Click on the entries below to expand them and learn more about their default imp
 
   .. literalinclude:: code/pick-and-place.py
     :language: python
-    :lines: 84-100
+    :lines: 99-107
 
   .. note::
     ``movej(p)`` and ``movel(p)`` represent a robot motion to reach waypoint ``p`` following a path interpolated linearly in joint or Cartesian space, respectively.
@@ -108,10 +133,7 @@ Click on the entries below to expand them and learn more about their default imp
 
   - The pick point, ``PickitPick``, is computed by Pickit.
 
-  - ``PrePick`` is chosen such that the approach motion is aligned with the object, while ``PostPick`` is chosen for a straight-up retreat (which makes it less likely to collide with obstacles like the bin). These strategies have proven to be effective in practice, but they can be overridden, if desired.
-
-      .. image:: /assets/images/robot-integrations/robot-independent/pick-sequence.png
-        :align: center
+  - The ``PrePick`` and ``PostPick`` points are computed in their :ref:`respective hooks <robot-independent-pre-post-pick>`.
 
   - It returns a boolean indicating whether the pick was successful.
 
@@ -127,7 +149,7 @@ Click on the entries below to expand them and learn more about their default imp
 
   .. literalinclude:: code/pick-and-place.py
     :language: python
-    :lines: 103-104
+    :lines: 110-111
 
   This hook is executed whenever the pick success check fails, (see ``gripper_check_success()`` in the :ref:`pick hook <robot-independent-hooks-pick>`).
   The default implementation opens the gripper to prepare it for picking the next object.
@@ -138,7 +160,7 @@ Click on the entries below to expand them and learn more about their default imp
 
   .. literalinclude:: code/pick-and-place.py
     :language: python
-    :lines: 107-109
+    :lines: 114-116
 
   This sequence places the object at the specified dropof location.
   For simple applications the implementation is trivial, as shown above.
@@ -156,7 +178,7 @@ Click on the entries below to expand them and learn more about their default imp
 
   .. literalinclude:: code/pick-and-place.py
     :language: python
-    :lines: 112-
+    :lines: 119-
 
   This hook is executed *once* after pick and place has finished.
   The proposed implementation identifies the termination reason and prints an informative statement if there are no more pickable objects.

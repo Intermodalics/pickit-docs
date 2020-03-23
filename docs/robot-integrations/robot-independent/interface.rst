@@ -46,7 +46,8 @@ Click on the entries below to expand them and learn more:
   |                                                                          |
   | From this point it's possible to compute ``PickitPrePick`` and           |
   | ``PickitPostPick`` for performing linear approach and retreat motions.   |
-  | See the :ref:`pick <robot-independent-hooks-pick>` hook for an example.  |
+  | Learn more about how they are computed                                   |
+  | :ref:`here <robot-independent-pre-post-pick>`.                           |
   +--------------------------------------------------------------------------+
 
 .. _robot-independent-pickit-pick-id:
@@ -490,27 +491,38 @@ These helpers are typically used as part of conditional expressions, such as an 
   |    no sense).                                                            |
   +--------------------------------------------------------------------------+
 
-.. _robot-independent-no-object-reachable:
+.. _robot-independent-is-reachable:
 
-.. details:: pickit_object_reachable()
+.. details:: pickit_is_reachable(PickitPick, PrePick, PostPick)
 
   +--------------------------------------------------------------------------+
-  | Check if the last call to |get_result| produced a reachable              |
-  | :ref:`PickitPick <robot-independent-pickit-pick>` (and possibly also     |
-  | ``PickitPrePick`` and ``PickitPostPick``).                               |
+  | Check if the :ref:`pick point <robot-independent-pickit-pick>` and the   |
+  | linear :ref:`approach and retreat <robot-independent-pre-post-pick>`     |
+  | trajectories are reachable by the robot.                                 |
   |                                                                          |
-  | This is an optional, but recommended helper function that performs       |
-  | reachability checks on the pick point (and possibly also the approach    |
-  | and retreat trajectories).                                               |
-  | This function requires the robot programming language to expose          |
-  | functionality like joint limits, inverse kinematics and safety plane     |
-  | checks.                                                                  |
+  | **Parameters**                                                           |
+  |                                                                          |
+  | - ``PickitPick``: The pick point.                                        |
+  | - ``PrePick``: Point determining the linear approach motion to the pick  |
+  |   point.                                                                 |
+  | - ``PostPick``: Point determining the linear retreat motion from the     |
+  |   pick point.                                                            |
+  |                                                                          |
+  | This is an optional, but recommended function that requires the robot    |
+  | programming language to expose functionality like joint limits, inverse  |
+  | kinematics and safety plane checks.                                      |
+  |                                                                          |
+  | The exact implementation is open and left to the developer:              |
+  |                                                                          |
+  | - The simplest implementation only checks the validity of the three      |
+  |   input points.                                                          |
+  | - A more advanced implementation can additionally check points linearly  |
+  |   sampled in the approach and retreat trajectories, that is, between     |
+  |   ``PrePick`` → ``PickitPick`` and ``PickitPick`` → ``PostPick``.        |
   |                                                                          |
   | **Return**                                                               |
-  |     ``True`` if the checked global variables are reachable by the robot. |
+  |     ``True`` if the checked points are reachable by the robot.           |
   |                                                                          |
-  |     Note that ``pickit_object_reachable() == True`` implies              |
-  |     ``pickit_object_found() == True``.                                   |
   +--------------------------------------------------------------------------+
 
 .. _robot-independent-no-image-captured:

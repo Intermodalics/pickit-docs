@@ -15,7 +15,11 @@ while True:
         # There are no pickable objects, bail out.
         break
 
-    if pickit_object_reachable():
+    # Compute pre-pick and post-pick points.
+    PrePick = compute_pre_pick(PickitPick)
+    PostPick = compute_post_pick(PickitPick)
+
+    if pickit_is_reachable(PickitPick, PrePick, PostPick):
         # Object is pickable!
         pick()
         goto_detection()
@@ -37,22 +41,25 @@ def before_start():
 def goto_detection():
     movej(Detect)
 
+# PrePick is parallel to the object's z-axis, i.e. it tilts with the object.
+# The optional offset parameter is in millimeters.
+def compute_pre_pick(PickitPick, pre_pick_offset=100):
+    PrePick = PickitPick * Pose(0, 0, -pre_pick_offset, 0, 0, 0)
+    return PrePick
+
+# PostPick is along the robot base z-axis, which typically means straight-up.
+# The optional offset parameter is in millimeters.
+def compute_post_pick(PickitPick, post_pick_offset=100):
+    PostPick = PickitPick
+    PostPick.z = PostPick.z + post_pick_offset
+    return PostPick
+
 # Sequence for performing the picking motion:
 # - Starts and ends at AbovePickArea, a point reachable in a collision-free way.
 # - PrePick --> PickitPick: Linear approach to the pick point.
 # - A grasping action.
 # - PickitPick --> PostPick: Linear retreat away from the pick point.
-#
-# The optional offset parameters are in millimeters.
-def pick(pre_pick_offset=100, post_pick_offset=100):
-    # PrePick is parallel to the object's z-axis, i.e. it tilts with the object.
-    PrePick = PickitPick * Pose(0, 0, -pre_pick_offset, 0, 0, 0)
-
-    # PostPick is along the robot base z-axis, which typically means straight-up.
-    PostPick = PickitPick
-    PostPick.z = PostPick.z + post_pick_offset
-
-    # Actual motion sequence.
+def pick():
     movej(AbovePickArea)
     movel(PrePick)
     movel(PickitPick)
@@ -70,9 +77,7 @@ def after_end():
     if not pickit_object_found():
         if pickit_empty_roi():
             print("The ROI is empty.")
+        elif pickit_no_image_captured():
+            print("Failed to capture a camera image.")
         else:
-            print("The ROI is not empty, but the requested object was not found.")
-    elif not pickit_object_reachable():
-        print("All detections are unreachable.")
-    elif pickit_no_image_captured():
-        print("Failed to capture a camera image.")
+            print("The ROI is not empty, but the requested object was not found or is unreachable.")

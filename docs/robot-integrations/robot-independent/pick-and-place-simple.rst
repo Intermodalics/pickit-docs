@@ -46,8 +46,8 @@ Generic pick and place logic
 .. literalinclude:: code/pick-and-place-simple.py
   :language: python
   :linenos:
-  :emphasize-lines: 5, 9, 20, 21, 23, 30
-  :lines: 1-30
+  :emphasize-lines: 5, 9, 19-20, 24, 25, 27, 34
+  :lines: 1-34
 
 Lines where application-specific hooks are called are highlighted above.
 The following is a breakdown of the pick and place logic along with a flowchart illustrating it.
@@ -84,13 +84,13 @@ Click on the entries below to expand them and learn more:
 
 .. _robot-independent-pick-place-loop:
 
-.. details:: Lines 13-28: Pick and place loop
+.. details:: Lines 13-32: Pick and place loop
 
   .. literalinclude:: code/pick-and-place-simple.py
     :language: python
     :linenos:
-    :emphasize-lines: 8, 9, 11
-    :lines: 13-28
+    :emphasize-lines: 7-8, 12-13, 15
+    :lines: 13-32
     :lineno-start: 13
     :name: pick-and-place-simple-loop
 
@@ -110,14 +110,14 @@ Click on the entries below to expand them and learn more:
     .. image:: /assets/images/robot-integrations/robot-independent/cycle-time-optimization.png
       :align: center
 
-.. details:: Line 30: Termination
+.. details:: Line 34: Termination
 
   .. literalinclude:: code/pick-and-place-simple.py
     :language: python
     :linenos:
     :emphasize-lines: 1
-    :lines: 30
-    :lineno-start: 30
+    :lines: 34
+    :lineno-start: 34
 
   The :ref:`after_end() <robot-independent-hooks-after-end>` hook is called last, which contains application-specific termination logic.
 
@@ -148,5 +148,5 @@ A detailed description of these hooks can be found in the :ref:`Complete pick an
 .. literalinclude:: code/pick-and-place-simple.py
   :language: python
   :linenos:
-  :lines: 32-
-  :lineno-start: 32
+  :lines: 36-
+  :lineno-start: 36
