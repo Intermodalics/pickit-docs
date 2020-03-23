@@ -49,6 +49,8 @@ Teach calibration points
 The calibration program requires five points to be defined.
 For more information on how to define these points, see the article on :ref:`multi-poses-calibration`.
 
+The function ``MoveToCalPoint`` is a helper function defined by Pickit. This will throw an error if one of the calibration points is not yet defined by the user.
+
 Execute the calibration program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

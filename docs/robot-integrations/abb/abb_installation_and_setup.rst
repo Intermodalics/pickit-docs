@@ -111,7 +111,7 @@ Restart the controller.
 .. image:: /assets/images/robot-integrations/abb/abb-load-program-files-step-5.jpg
     :alt: Restart the controller
 
-Test robot connection on Pickit
---------------------------------
+Test robot connection with Pickit
+---------------------------------
 
 Details on testing this connection can be found on: :ref:`test-robot-connection`

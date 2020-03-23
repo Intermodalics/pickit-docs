@@ -6,13 +6,11 @@ ABB example picking program
 This example program requires that Pickit is installed and set up with your robot.
 For installation instructions, please refer to the :ref:`abb-installation-and-setup` article.
 
-.. include:: ../../run_program_warning.rst
-
 Example programs
 ----------------
 
 By default no **main()** module is loaded.
-One of the Pickit example programs can be loaded from **HOME** > **ABB_Pick-it** > **Pick-it** > **Application examples**.
+One of the Pickit example programs can be loaded from :guilabel:`HOME` > :guilabel:`ABB_Pick-it` > :guilabel:`Pick-it` > :guilabel:`Application examples`.
 
 .. note::
   These example programs only works with Pickit software version of 2.2 or greater.
@@ -32,9 +30,11 @@ More information about this example program can be found in :ref:`robot-independ
         CONST num PrePick_Z_offset:=-100;
         CONST num PostPick_Z_offset:=100;    
 
+        ! Fixed points that need to be taught
         CONST robtarget Detect:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
         CONST robtarget AbovePickArea:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
         CONST robtarget DropOff:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
+        ! Variable points computed from Pickit detection results
         VAR robtarget PickitPick:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
         VAR robtarget PrePick:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
         VAR robtarget PostPick:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
@@ -140,7 +140,7 @@ At the top of the program, the following constants need to be filled in with the
 - **Desired_product**: the desired Picket product id.
 - **Max_retries**: the maximum number of retries for Pickit.
 - **PrePick_Z_offset**: the z-offset for **PrePick** relative to the tool frame.
-- **PostPick_Z_offset**: the z-ffset for **PostPick** relative to the robot base.
+- **PostPick_Z_offset**: the z-offset for **PostPick** relative to the robot base.
 
 Define fixed points
 ~~~~~~~~~~~~~~~~~~~
@@ -161,6 +161,8 @@ In **before_start()**, **pick()** and **place()** the correct grasping and relea
 
 Execute the picking program
 ---------------------------
+
+.. include:: ../run_program_warning.rst
 
 Now you can run the program.
 Happy picking!
