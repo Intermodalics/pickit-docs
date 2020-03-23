@@ -36,6 +36,7 @@ Also a similar robot program to :ref:`robot-independent-pick-and-place-complete`
         CONST robtarget Detect:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
         CONST robtarget AbovePickArea:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
         CONST robtarget DropOff:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
+
         ! Variable points computed from Pickit detection results
         VAR robtarget PickitPick:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
         VAR robtarget PrePick:=[[0,0,0],[1,0,0,0],[0,0,0,0],[9e9,9e9,9e9,9e9,9e9,9e9]];
@@ -138,7 +139,14 @@ At the top of the program, the following constants need to be filled in with the
 - **Desired_product**: the desired Picket product id.
 - **Max_retries**: the maximum number of retries for Pickit.
 - **PrePick_Z_offset**: the z-offset for **PrePick** relative to the tool frame.
+
+  .. image:: /assets/images/robot-integrations/abb/pre-pose.png
+    :width: 150
+
 - **PostPick_Z_offset**: the z-offset for **PostPick** relative to the robot base.
+
+  .. image:: /assets/images/robot-integrations/abb/post-pose.png
+    :width: 150
 
 Define fixed points
 ~~~~~~~~~~~~~~~~~~~
