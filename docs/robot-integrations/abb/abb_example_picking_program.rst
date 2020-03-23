@@ -50,7 +50,7 @@ Also a similar robot program to :ref:`robot-independent-pick-and-place-complete`
             ENDIF
             before_start;
             TPWrite "Setting setup and product configuration...";
-            pickit_configure desired_setup,desired_product;
+            pickit_configure(desired_setup,desired_product);
             goto_detection;
             TPWrite "Looking for new object(s)";
             pickit_detection_with_retries(max_retries);
