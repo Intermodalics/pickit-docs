@@ -34,7 +34,7 @@ Alternatively, if a CAD file for your tool is not readily available, you can sti
 3. Assign different tools to different pick points
 --------------------------------------------------
 
-It's now possible to create multiple :ref:`tool models <robot-tool-model>`, and assign different tools to different pick points.
+It's now possible to create multiple :ref:`tool models <robot-tool-model>` and assign different tools to different pick points.
 A common example would be a two-finger gripper used with different opening distances depending on the selected pick point.
 
 .. image:: /assets/images/documentation/picking/different_gripper_openings.png
