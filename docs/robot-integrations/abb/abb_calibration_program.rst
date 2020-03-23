@@ -58,3 +58,9 @@ Before running the calibration program, make sure that the Pickit web interface 
 
 .. note::
   By default the robot flange (**tool0**) and the robot base (**wobj0**) are used to move to these points.
+
+Calibration with ABB YuMi
+-------------------------
+
+Please make sure that you are using the right hand of the robot to do the calibration process.
+All steps mentioned above are still valid.
