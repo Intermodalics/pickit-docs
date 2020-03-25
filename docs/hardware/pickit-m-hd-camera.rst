@@ -24,8 +24,9 @@ objects with higher accuracy compared to the existing Pickit M camera. 
 Field of View
 ~~~~~~~~~~~~~
 
--  780 x 490 mm @ 1.1 m
--  425 x 267 mm @ 0.6 m
+- 433 x 271 mm @ 0.62 m
+- 691 x 432 mm @ 1 m
+- 1330 x 871 mm @ 2 m
 
 Technical specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~
