@@ -20,7 +20,7 @@ The **Picking** page exposes different alternatives for defining the robot tool 
 
 .. _robot-tool-multiple-example:
 
-If your application requires it, it's possible to create multiple tool models, and assign different models to different pick points.
+If your application requires it, it's possible to create multiple tool models, and assign different tools to different pick points.
 A common example would be a two-finger gripper used with different opening distances depending on the selected pick point.
 
 .. image:: /assets/images/documentation/picking/different_gripper_openings.png

@@ -1,79 +1,46 @@
 .. _release-notes:
 
-Software release 2.2
+Software release 2.3
 ====================
 
-The new features of the 2.2 release revolve around improving the picking success, even from deeper, more challenging bins.
+The new features of the 2.3 release revolve around improving flat object detection and robot tool definition.
 
-1. Teach your parts from CAD files
-----------------------------------
+1. Flat object detection
+------------------------
 
-Do you need to pick complex 3D parts like crankshafts? :ref:`Teach your part by uploading a single CAD file <teach-from-cad>` and save yourself the effort of teaching multiple camera views. The entire part is captured in one shot and taught to the camera in no time.
+Pickit :ref:`Teach <teach>` is great for detecting objects with a distinctive 3D shape.
+Flat objects are different from other 3D shapes in the sense that edges are the main source of shape information.
 
-.. image:: /assets/images/documentation/release-notes/teach-camera-cad.png
+This release enables Pickit Teach to :ref:`detect flat objects <teach-flat-objects-note>` more reliably by focusing on shape edges.
 
-.. image:: /assets/images/documentation/release-notes/teach-cad-model.png
+.. image:: /assets/images/documentation/detection/teach/flat_objects.png
+  :align: center
+  :scale: 70%
 
-Alternatively, you can still :ref:`teach your parts with the camera <teach-from-camera>`, with the easy user experience you're already familiar with.
+2. Define your tool model from a CAD file
+-----------------------------------------
 
-2. Pick more parts
-------------------
+In the previous 2.2 release, we added support for :ref:`teaching part models from CAD <teach-from-cad>`.
+In this release, we extend this so you can also :ref:`define your tool model from a CAD file <cad-tool>`.
 
-Pickit is not just about detecting parts, but also about being able to pick them. Our two new features significantly increase the likelihood of objects being pickable.
+.. image:: /assets/images/documentation/picking/define_tool.png
+  :align: center
 
-Multiple pick points
-~~~~~~~~~~~~~~~~~~~~
+.. image:: /assets/images/documentation/picking/tool_model_cad_ui.png
+  :align: center
 
-If you ever felt limited because you could only set one pick point for your object, we have some good news: you can now specify as many :ref:`pick points<multiple-pick-points>` as you want for your part. The image below shows an example of a power socket being picked by a suction gripper.
+Alternatively, if a CAD file for your tool is not readily available, you can still define your tool using the existing :ref:`generic tool models <generic-tool>`.
 
-.. image:: /assets/images/documentation/release-notes/multiple-pick-points.png
+3. Assign different tools to different pick points
+--------------------------------------------------
 
-Having multiple pick points increases the likelihood that parts are reachable even if they overlap or are close to obstacles like bin walls. Another advantage is that you can find the pick point that requires the smallest robot displacement to reach. This will minimize robot motion and in turn optimize cycle time.
+It's now possible to create multiple :ref:`tool models <robot-tool-model>` and assign different tools to different pick points.
+A common example would be a two-finger gripper used with different opening distances depending on the selected pick point.
 
-.. image:: /assets/images/documentation/release-notes/multiple-pick-points-pickable.png
-
-Flexible pick orientations
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Individual pick points are often subject to some flexibility. For instance, if we pick the power socket with a suction gripper, the flexibility of its bellows allow tolerating some gripper tilt, and rotations about the approach direction.
-
-.. image:: /assets/images/documentation/release-notes/flexible-pick-orientations.png
-
-By using together multiple pick points with :ref:`flexible orientation <flexible-pick-orientation>`, all 12 detected parts are pickable in the bin below!
-
-.. image:: /assets/images/documentation/release-notes/multiple-flexible-pick-points.png
-
-3. Be more robust to collisions with the robot tool
----------------------------------------------------
-
-To make sure that picking a part will not cause the robot tool to collide with the bin or other objects inside it, Pickit needs to know what the tool looks like. Additional :ref:`tool modelling<robot-tool-model>` features have been added, allowing you to model the tool more realistically. You can model a mounted camera, as well as the bulky joints of the robot, above the gripper. You can also model your tool even if it has a slanted end.
-
-.. image:: /assets/images/documentation/release-notes/tool-model.png
-
-4. Pick bags out of pallets with our new Bags engine
-----------------------------------------------------
-
-Are you still picking heavy bags from a pallet manually, in a less than ergonomic way? Pickit can lend a hand with its :ref:`Bags engine <Bags>`. Specially designed to recognize a variety of common patterns of bags, this engine will relieve your back.
-
-.. raw:: html
-
-  <iframe src="https://drive.google.com/file/d/1XaH31JdYE9SxFtI_V4cY3pVfSw0oFoxT/preview" frameborder="0" allowfullscreen width="640" height="480"></iframe>
-  <br>
-
-5. Enjoy our new web interface features
----------------------------------------
-
-Making sure using Pickit is an enjoyable experience is a top priority for us. Teaching and tuning Teach models has become more intuitive and user-friendly.
-You can now also choose between different :ref:`visualization layouts <web-interface-top-bar>` in the web interface. Just adapt your workspace to suit your needs!
-
-.. image:: /assets/images/documentation/release-notes/ui-visualizations.gif
-
-6. Save snapshots automatically
--------------------------------
-
-Playing around with the settings to optimize your application, and would like to keep track of your changes and results? With this new feature, you can choose to :ref:`automatically save a snapshot <Automatically-save-snapshots>` on each detection trigger.
+.. image:: /assets/images/documentation/picking/different_gripper_openings.png
+  :align: center
 
 Get the update now
 ------------------
 
-If you have an older Pickit version and would like to try 2.2, check out :ref:`how you can upgrade your system <Pickit-system-software-upgrade>`.
+If you have an older Pickit version and would like to try 2.3, check out :ref:`how you can upgrade your system <Pickit-system-software-upgrade>`.
