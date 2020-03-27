@@ -1,7 +1,7 @@
 .. _kuka-krc2-installation-and-setup:
 
-KUKA KR C2 installation and setup
-=================================
+KUKA installation and setup (KR C2)
+===================================
 
 A Pickit interface for KR-C2 controllers is available and can be set up as follows.
 
