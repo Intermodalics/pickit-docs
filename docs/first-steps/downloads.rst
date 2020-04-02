@@ -25,7 +25,7 @@ Pickit is compatible with controllers as of version IRC5 with RobotWare 5 or 6 a
 Fanuc
 -----
 
-Pickit is compatible with controllers as of version **R-J30iA** (i.e. R-J30iA - V7.X , R-J30iB - V8.X and R-J30iB plus - V9.X) and the
+Pickit is compatible with controllers as of version **R-30iA** (i.e. R-30iA - V7.X , R-30iB - V8.X and R-30iB plus - V9.X) and the
 software module **User Socket Msg** for socket communication is required (the product number for this module is A05B-2600-R648).
 
 - `Download the Pickit files for Fanuc <https://drive.google.com/uc?export=download&id=1VcGgW01ksSDtSGp5jEkaoc9fCujahS_M>`__
