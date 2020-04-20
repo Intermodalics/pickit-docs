@@ -19,7 +19,7 @@ each layer, one by one, and place them on a conveyor belt. Once the
 layer is empty, the robot should pick the cardboard and place it on the
 side.
 
-In this example, a large 4 degrees of freedom depalletizing robotic arm,
+In this example, a large 4 degrees of freedom (DoF) depalletizing robotic arm,
 equipped with a vacuum gripper, is used for the picking. The gripper is
 composed of four suction cups.
 
@@ -58,6 +58,19 @@ sufficiently high to achieve this, the following solutions are possible:
 -  Put the robot base at a higher position than the pallet.
 
 .. image:: /assets/images/faq/depal-buckets-4.png
+
+A speacial class of 4 DoF robots, commonly used in depalletizing applications, are portal robots.
+These robots consist in three movable axes, allowing the flange to translate in the X, Y and Z directions, and one rotating joint, allowing the flange to rotate around its Z-axis.
+
+.. image:: /assets/images/examples/example_portal.png
+
+In the image below, the camera is mounted on an extension, so that it can face the scene at a higher distance.
+
+.. image:: /assets/images/examples/example_portal_extension.png
+
+.. warning::
+  To prevent the camera and/or its extension from hitting the Y-axis (dashed green) of the portal robot, the allowed angular range of the rotating joint at the flange must be limited.
+  It may also be necessary to limit the motion of the translation axes, to prevent collisions against the X-axis (dashed red).
 
 Robot-camera calibration
 ------------------------
