@@ -59,12 +59,14 @@ sufficiently high to achieve this, the following solutions are possible:
 
 .. image:: /assets/images/faq/depal-buckets-4.png
 
-A speacial class of 4 DoF robots, commonly used in depalletizing applications, are portal robots.
-These robots consist in three movable axes, allowing the flange to translate in the X, Y and Z directions, and one rotating joint, allowing the flange to rotate around its Z-axis.
+A special class of 4 DoF robots, commonly used in depalletizing applications, are portal robots.
+These robots consist in three movable axes, allowing the flange to translate in the X, Y and Z directions, and a rotating joint at the bottom of the vertical axis, allowing the flange to rotate around its Z-axis.
 
 .. image:: /assets/images/examples/example_portal.png
+   :scale: 70 %
+   :align: center
 
-In the image below, the camera is mounted on an extension, so that it can face the scene at a higher distance.
+In the example below, the camera is mounted on an extension, highlighted in yellow, so that it can face the scene at a higher distance.
 
 .. image:: /assets/images/examples/example_portal_extension.png
 
