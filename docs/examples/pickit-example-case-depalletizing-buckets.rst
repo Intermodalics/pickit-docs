@@ -62,13 +62,13 @@ sufficiently high to achieve this, the following solutions are possible:
 A special class of 4 DOF robots, commonly used in depalletizing applications, are gantry robots.
 These robots consist in three movable axes, allowing the flange to translate in the X, Y and Z directions, and a rotating joint at the bottom of the vertical axis, allowing the flange to rotate around its Z-axis.
 
-.. image:: /assets/images/examples/example_portal.png
+.. image:: /assets/images/examples/example_gantry.png
    :scale: 70 %
    :align: center
 
 In the example below, the camera is mounted on an extension, highlighted in yellow, so that it can face the scene at a higher distance.
 
-.. image:: /assets/images/examples/example_portal_extension.png
+.. image:: /assets/images/examples/example_gantry_extension.png
 
 .. warning::
   To prevent the camera and/or its extension from hitting the Y-axis (dashed green) of the gantry robot, the allowed angular range of the rotating joint at the flange must be limited.
