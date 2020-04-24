@@ -66,7 +66,8 @@ These robots consist in three movable axes, allowing the flange to translate in 
    :scale: 70 %
    :align: center
 
-In the example below, the camera is mounted on an extension, highlighted in yellow, so that it can face the scene at a higher distance.
+In the example below, the camera is mounted on an extension, to make sure that the highest layer of the pallet is captured.
+The gained distance is highlighted in yellow.
 
 .. image:: /assets/images/examples/example_gantry_extension.png
 
