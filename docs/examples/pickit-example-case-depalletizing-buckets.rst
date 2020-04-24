@@ -59,7 +59,7 @@ sufficiently high to achieve this, the following solutions are possible:
 
 .. image:: /assets/images/faq/depal-buckets-4.png
 
-A special class of 4 DoF robots, commonly used in depalletizing applications, are portal robots.
+A special class of 4 DOF robots, commonly used in depalletizing applications, are gantry robots.
 These robots consist in three movable axes, allowing the flange to translate in the X, Y and Z directions, and a rotating joint at the bottom of the vertical axis, allowing the flange to rotate around its Z-axis.
 
 .. image:: /assets/images/examples/example_portal.png
