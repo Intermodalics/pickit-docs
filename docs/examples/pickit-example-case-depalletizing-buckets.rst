@@ -71,7 +71,7 @@ In the example below, the camera is mounted on an extension, highlighted in yell
 .. image:: /assets/images/examples/example_portal_extension.png
 
 .. warning::
-  To prevent the camera and/or its extension from hitting the Y-axis (dashed green) of the portal robot, the allowed angular range of the rotating joint at the flange must be limited.
+  To prevent the camera and/or its extension from hitting the Y-axis (dashed green) of the gantry robot, the allowed angular range of the rotating joint at the flange must be limited.
   It may also be necessary to limit the motion of the translation axes, to prevent collisions against the X-axis (dashed red).
 
 Robot-camera calibration
