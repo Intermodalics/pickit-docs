@@ -19,7 +19,7 @@ each layer, one by one, and place them on a conveyor belt. Once the
 layer is empty, the robot should pick the cardboard and place it on the
 side.
 
-In this example, a large 4 degrees of freedom (DoF) depalletizing robotic arm,
+In this example, a large 4 degrees of freedom (DOF) depalletizing robotic arm,
 equipped with a vacuum gripper, is used for the picking. The gripper is
 composed of four suction cups.
 
