@@ -438,41 +438,42 @@ Constants
 .. code-block:: python
    :caption: Request command constants
 
-   RC_PICKIT_NO_COMMAND              = -1
-   RC_PICKIT_CHECK_MODE              = 0
-   RC_PICKIT_FIND_CALIB_PLATE        = 10
-   RC_PICKIT_LOOK_FOR_OBJECTS        = 20
-   RC_PICKIT_CAPTURE_IMAGE           = 22
-   RC_PICKIT_PROCESS_IMAGE           = 23
-   RC_PICKIT_NEXT_OBJECT             = 30
-   RC_PICKIT_CONFIGURE               = 40
-   RC_PICKIT_SAVE_SCENE              = 50
-   RC_PICKIT_BUILD_BACKGROUND        = 60
-   RC_PICKIT_GET_PICK_POINT_DATA     = 70
+   RC_PICKIT_NO_COMMAND                    = -1
+   RC_PICKIT_CHECK_MODE                    = 0
+   RC_PICKIT_FIND_CALIB_PLATE              = 10
+   RC_PICKIT_LOOK_FOR_OBJECTS              = 20
+   RC_PICKIT_LOOK_FOR_OBJECTS_WITH_RETRIES = 21
+   RC_PICKIT_CAPTURE_IMAGE                 = 22
+   RC_PICKIT_PROCESS_IMAGE                 = 23
+   RC_PICKIT_NEXT_OBJECT                   = 30
+   RC_PICKIT_CONFIGURE                     = 40
+   RC_PICKIT_SAVE_SCENE                    = 50
+   RC_PICKIT_BUILD_BACKGROUND              = 60
+   RC_PICKIT_GET_PICK_POINT_DATA           = 70
 
 .. _response-status:
 .. code-block:: python
    :caption: Response status constants
 
-   PICKIT_UNKNOWN_COMMAND            = -99
-   PICKIT_ROBOT_MODE                 =   0
-   PICKIT_IDLE_MODE                  =   1
-   PICKIT_CALIBRATION_MODE           =   2
-   PICKIT_FIND_CALIB_PLATE_OK        =  10
-   PICKIT_FIND_CALIB_PLATE_FAILED    =  11
-   PICKIT_OBJECT_FOUND               =  20
-   PICKIT_NO_OBJECTS                 =  21
-   PICKIT_NO_IMAGE_CAPTURED          =  22
-   PICKIT_EMPTY_ROI                  =  23
-   PICKIT_IMAGE_CAPTURED             =  26
-   PICKIT_CONFIG_OK                  =  40
-   PICKIT_CONFIG_FAILED              =  41
-   PICKIT_SAVE_SNAPSHOT_OK           =  50
-   PICKIT_SAVE_SNAPSHOT_FAILED       =  51
-   PICKIT_BUILD_BKG_CLOUD_OK         =  60
-   PICKIT_BUILD_BKG_CLOUD_FAILED     =  61
-   PICKIT_GET_PICK_POINT_DATA_OK     =  70
-   PICKIT_GET_PICK_POINT_DATA_FAILED =  71
+   PICKIT_UNKNOWN_COMMAND                  = -99
+   PICKIT_ROBOT_MODE                       =   0
+   PICKIT_IDLE_MODE                        =   1
+   PICKIT_CALIBRATION_MODE                 =   2
+   PICKIT_FIND_CALIB_PLATE_OK              =  10
+   PICKIT_FIND_CALIB_PLATE_FAILED          =  11
+   PICKIT_OBJECT_FOUND                     =  20
+   PICKIT_NO_OBJECTS                       =  21
+   PICKIT_NO_IMAGE_CAPTURED                =  22
+   PICKIT_EMPTY_ROI                        =  23
+   PICKIT_IMAGE_CAPTURED                   =  26
+   PICKIT_CONFIG_OK                        =  40
+   PICKIT_CONFIG_FAILED                    =  41
+   PICKIT_SAVE_SNAPSHOT_OK                 =  50
+   PICKIT_SAVE_SNAPSHOT_FAILED             =  51
+   PICKIT_BUILD_BKG_CLOUD_OK               =  60
+   PICKIT_BUILD_BKG_CLOUD_FAILED           =  61
+   PICKIT_GET_PICK_POINT_DATA_OK           =  70
+   PICKIT_GET_PICK_POINT_DATA_FAILED       =  71
 
 .. _response-object-type:
 .. code-block:: python
