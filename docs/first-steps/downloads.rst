@@ -91,11 +91,11 @@ Universal Robots
 +-----------------------------------------------------------------------------------------------------------------------------+------------+----------------------+-----------------------+
 | Download link                                                                                                               | Pickit     | Polyscope (e-series) | Polyscope (CB-series) |
 +=============================================================================================================================+============+======================+=======================+
-| `Pickit URCap 2.0.0 <https://drive.google.com/uc?export=download&id=1QPtIETcbdZnKOe618d0Tz6jzL8vT6hYd>`__ (recommended)     | **≥2.2.0** | **5.4** - 5.5*       | **3.10** - 3.11*      |
+| `Pickit URCap 2.0.1 <https://drive.google.com/uc?export=download&id=1sEH4Oq4gtFzQXHeodjFL3X4uddpMt54o>`__ (recommended)     | **≥2.2.0** | **5.4** - 5.8*       | **3.10** - 3.13*      |
 +-----------------------------------------------------------------------------------------------------------------------------+------------+----------------------+-----------------------+
-| `Pickit URCap 1.4.0 <https://drive.google.com/uc?export=download&id=15hsK3PCDgNbpdqzeIDDvHq-ewd9f8zcx>`__                   | ≥1.8.2     | 5.0 - 5.4*           | 3.4 - 3.10*           |
+| `Pickit URCap 1.4.1 <https://drive.google.com/uc?export=download&id=1NcEw2iuM3avRw-Du13VsvOcC3uD6rPTG>`__                   | ≥1.8.2     | 5.0 - 5.8*           | 3.4 - 3.13*           |
 +-----------------------------------------------------------------------------------------------------------------------------+------------+----------------------+-----------------------+
-| `URScript legacy interface <https://drive.google.com/uc?export=download&id=1VedZYjVvlcyiE4iuqUuF67DsT8545ojU>`__            | ≥1.4       | 5.0 - 5.4*           | 3.0 - 3.10*           |
+| `URScript legacy interface <https://drive.google.com/uc?export=download&id=1VedZYjVvlcyiE4iuqUuF67DsT8545ojU>`__            | ≥1.4       | 5.0 - 5.8*           | 3.0 - 3.13*           |
 +-----------------------------------------------------------------------------------------------------------------------------+------------+----------------------+-----------------------+
 
 :sup:`*` The most recent supported Polyscope version represents what has been officially tested by Pickit.
