@@ -276,6 +276,9 @@ htmlhelp_basename = 'PickitDocs'
 
 autosectionlabel_prefix_document = True
 
+
+versionwarning_api_url = "https://docs-beta.pickit3d.com/api/v2/"
+
 # Custom directive for creating collapsible HTML content.
 from docutils import nodes
 from docutils.parsers.rst import Directive, directives, states
