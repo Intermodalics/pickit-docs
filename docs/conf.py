@@ -29,7 +29,8 @@ import os
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'versionwarning.extension'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -274,6 +275,9 @@ htmlhelp_basename = 'PickitDocs'
 #texinfo_no_detailmenu = False
 
 autosectionlabel_prefix_document = True
+
+versionwarning_api_url = "https://docs-beta.pickit3d.com/api/v2/"
+versionwarning_body_selector = ".rst-content .document"
 
 # Custom directive for creating collapsible HTML content.
 from docutils import nodes
