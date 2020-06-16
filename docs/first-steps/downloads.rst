@@ -50,7 +50,7 @@ For KR C4 controllers, the **KUKA Connect KRC** software module is required for 
 The product number for this module is **91B300-020** and can be purchased through Pickit. Contact sales@pickit3d.com for more information and pricing.
 
 - `Download the Pickit for KUKA KR C2 <https://drive.google.com/uc?export=download&id=1SybxFMUheIqsuc8RUzoWDncPHzfWv6Ib>`__
-- `Download the Pickit for KUKA KR C4 <https://drive.google.com/uc?export=download&id=1pnDp_1vLx6NTTMv8ATMwTIWL_zNRPDxe>`__
+- `Download the Pickit for KUKA KR C4 <https://drive.google.com/uc?export=download&id=1QKgACz1Dcm3ffJfPIXw8tPrPYhDQn3OL>`__
 - `Download the Pickit for KUKA Sunrise <https://drive.google.com/uc?export=download&id=0ByhqgEqwu5R8QTlvZy1YcEk1NDQ>`__
 
 .. _downloads_omron_tm:
