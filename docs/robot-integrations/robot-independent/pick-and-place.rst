@@ -17,6 +17,9 @@ The program can be `downloaded here <https://drive.google.com/uc?export=download
 - :ref:`Generic pick and place function <pick-and-place-logic>`, which typically remains constant across applications.
 - :ref:`Application-specific hooks <pick-and-place-hooks>` that depend on things like the robot, the gripper, the part to pick and the cell layout.
 
+.. note::
+  The code samples presented in this article are **pseudo-code**, and are not meant to be executed.
+
 The minimum inputs required to run a pick and place program are the same as for the :ref:`simple pick and place logic <robot-independent-pick-and-place-inputs>`.
 
 .. _pick-and-place-logic:
