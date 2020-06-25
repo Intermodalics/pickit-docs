@@ -17,6 +17,8 @@ It is written in robot-independent pseudo-code using a syntax similar to that of
   The :ref:`Complete pick and place program <robot-independent-pick-and-place-complete>` is a slightly more complex version that can serve as a great starting point to build real applications on.
   A complete description of the Pickit interface can be found :ref:`here <robot-independent-interface>`.
 
+  The code samples presented in this article are **pseudo-code**, and are not meant to be executed.
+
 The program can be `downloaded here <https://drive.google.com/uc?export=download&id=1-eANenWTbOOLIhR8KnAaRn7T3vDDFISj>`__ and consists of two main parts:
 
 - :ref:`Generic pick and place logic <pick-and-place-simple-logic>`, which typically remains constant across applications.

@@ -34,11 +34,13 @@ Installing the Pickit TM integration files
 To install the Pickit TM integration files, follow these steps:
 
 #. :ref:`Download the Pickit TM integration files <downloads_omron_tm>`.
-#. Unzip the archive and copy the contents of the ``tm_pickit`` directory to a USB drive under ``TM_Export\<your-robot-serial>``.
+#. Have a USB drive named ``TMROBOT`` with a root directory called ``TM_Export``.
+#. Unzip the archive and copy the contents of the ``tm_pickit`` directory to the USB drive, under ``TM_Export\<your-robot-serial>``.
 
    .. note::
-     TMflow requires USB drives to adhere to a specific directory structure for importing contents into the robot. The above step adheres to this layout.
+     TMflow requires USB drives to adhere to a specific naming and directory structure for importing contents into the robot. The above steps adhere to this layout.
 
+#. Connect the USB drive to the **robot controller**.
 #. From a Windows PC, open the TMflow application and **Get control** of your TM robot.
 
     .. image:: /assets/images/robot-integrations/techman/tm-get-control.png
