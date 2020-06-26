@@ -1,7 +1,7 @@
 FROM keimlink/sphinx-doc:1.7.1
 
 RUN . .venv/bin/activate \
-    && python -m pip install sphinx-autobuild sphinx_rtd_theme
+    && python -m pip install sphinx-autobuild sphinx_rtd_theme sphinx-version-warning
 
 EXPOSE 8000
 
