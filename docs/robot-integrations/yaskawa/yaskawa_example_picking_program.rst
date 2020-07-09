@@ -17,56 +17,63 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
 ::
 
     NOP
+    'Initiallization PI count
     SET B021 0
-    MOVJ C00000 VJ=30.00  //HOME_POS
-    PULSE OT#(2)
+    'Init' reachable check signal
+    SET I043 0
+    MOVJ C00000 VJ=10.00  //Home pose
+    'Load config
     PI_CFG
     *LABEL
-    IFTHENEXP I040=20
-        'PREPICK_POS
-        MULMAT LP000 P049 P022
-        'POSTPICK_POS
-        MULMAT LP001 P021 P049
-        'GET_PICK_POINT_DATA
-        PI_GPPD
-        IFTHENEXP I041=1
-            IFTHENEXP I042=1
-                MOVJ P025 VJ=50.00  //ABOVE_PICK_AREA
-                MSG "moving to objects"
-                MOVL LP000 V=750.0  //PREPICK_POS
-                PULSE OT#(2)
-                MOVL P049 V=500.0  //PICK_POS
-                PULSE OT#(1)
-                TIMER T=0.50
-                MOVL LP001 V=750.0  //POSTPICK_POS
-                MOVJ P023 VJ=50.00  //ABOVE_PICK_AREA
-                MOVJ P025 VJ=50.00  //DETECT_POS
-                PI_LOOK
-                MSG "Looking for objects"
-                MULMAT LP002 P047 P029
-                MSG "Moving to drop"
-                MOVL P029 V=750.0  //DROP_POS
-                MOVL LP002 V=750.0  //CORR_DROP_POS
-                PULSE OT#(2)
-                TIMER T=0.50
-                MOVJ P025 VJ=50.00  //DETECT_POS
-                PI_WAIT
-            ENDIF
-        ENDIF
+    'Picking
+    IFTHEN I040=20
+    	'Prepick pose
+    	 MULMAT P043 P049 P022
+    	'Postpick pose
+    	 MULMAT P045 P049 P021
+    	'Check reachable object pose
+    	 PULSE OT#(1021)
+    	'GET PICK POINT DATA
+    	 PI_GPPD
+    	'If reachable
+    	 IFTHENEXP I043=0
+    		 MOVJ P040 VJ=50.00  //Above pick area
+    		 MSG "Moving to object"
+    		 MOVJ P043 VJ=10.00  //Prepick pose
+    		 MOVL P049 V=800.0 PL=0  //Pick pose
+    		'Add grasping logic here
+    		 TIMER T=0.500
+    		 MOVJ P045 VJ=10.00  //Post pick pose
+    		 MOVJ P040 VJ=50.00  //Above pick area
+    		 MOVJ P025 VJ=50.00  //Detect pose
+    		 MSG "Looking for objects"
+    		 PI_LOOK
+    		'Drop off part
+    		 MULMAT LP000 P047 P029
+    		 MSG "Moving to dropoff"
+    		 MOVL P029 V=23.0  //Dropoff pose
+    		 MOVL LP000 V=23.0  //Corr dropoff pose
+    		'Add realese logic here
+    		 TIMER T=0.500
+    		 MOVJ P025 VJ=50.00
+    		 PI_WAIT
+    	 ELSE
+    		 MSG "OBJECT OUT OF REACH"
+    	 ENDIF
     ELSEIFEXP I040=23
-        MSG "ROI is empty"
-        JUMP *EMPTY
+    	 MSG "ROI is empty"
+    	 JUMP *EMPTY
     ELSE
-        INC B021
-        IFTHENEXP B021>3
-            MSG "No objects found after 3 detecti"
-            PI_SAVE
-            JUMP *EMPTY
-        ENDIF
-        MOVJ P025 VJ=50.00  //DETECT_POS
-        PI_LOOK
-        MSG "Looking for objects"
-        PI_WAIT
+    	 INC B021
+    	 IFTHENEXP B021>3
+    		 MSG "No objects found after 3 times"
+    		 PI_SAVE
+    		 JUMP *EMPTY
+    	 ENDIF
+    	 MOVJ P025 VJ=50.00
+    	 PI_LOOK
+    	 MSG "Looking for objects"
+    	 PI_WAIT
     ENDIF
     JUMP *LABEL
     *EMPTY
@@ -74,7 +81,7 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
 
 The idea of the program is the following:
 
-- If an object is found, its model and pick point ID are retrieved.
+- If an object is found, and is within reach of the robot arm.
   The robot moves to the object to pick it.
   Next, the robot moves to a fixed drop off position, and finally it moves to a corrected drop off position.
   The corrected position is based on the pick offset and the fixed drop off position.
@@ -111,17 +118,11 @@ All other variables can be adapted according the changes you want to apply to th
 +-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
 | P022      | Pre pick offset            | Distance offset to calculate the pre pick position                                                | Yes         |
 +-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| P023      | Above pick area            | Position that is defined above the pick area                                                      | Yes         |
-+-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
 | P025      | Detect position            | Position not blocking the field of view of the camera when triggering detections                  | Yes         |
 +-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
 | P029      | Drop off position          | Position where the part is dropped off                                                            | Yes         |
 +-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| LP000     | Pre pick position          | Position the robot moves to before picking the object                                             | No          |
-+-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| LP001     | Post pick position         | Position the robot moves to after picking the object                                              | No          |
-+-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
-| LP002     | Corrected drop off positon | Drop off position corrected with offset of the pick point                                         | No          |
+| LP000     | Corrected drop off positon | Drop off position corrected with offset of the pick point                                         | No          |
 +-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
 | C000      | Home position              | Position where the robot starts his program                                                       | Yes         |
 +-----------+----------------------------+---------------------------------------------------------------------------------------------------+-------------+
@@ -131,7 +132,7 @@ All other variables can be adapted according the changes you want to apply to th
 Add grasping/releasing logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the **Pick** and **Dropoff** positions, grasping and releasing logic needs to be added, respectively.
+Grasping and releasing logic need to be added at the **Add grasping logic here** and **Add realese logic here** comments, respectively.
 
 Execute the picking program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
