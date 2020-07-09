@@ -98,7 +98,7 @@ More information about the variables can be found in :ref:`socket-communication`
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
 | S049     | IP Pickit        | IP address of Pickit, by default 169.254.5.180                                                                                          | Input    |
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| P049     | object_pose      | object pose expressed relatively to the robot base frame (used for reachability check)                                                  | Output   |
+| P049     | object_pose      | object pose expressed relatively to the robot base frame (used in the reachability check)                                               | Output   |
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
 | P048     | object_dimension | [0]: length or diameter (m) [1]: width or diameter (m) [2]: height (m)                                                                  | Output   |
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
@@ -106,11 +106,11 @@ More information about the variables can be found in :ref:`socket-communication`
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
 | P046     | rx_flip          | helper pose to calculate a correct offset pose                                                                                          | Internal |
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| P040     | Above pick area  | Position that is defined above the pick area (used for reachability check)                                                              | Input    |
+| P040     | Above pick area  | Position that is defined above the pick area (used in the reachability check)                                                           | Input    |
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| P043     | Pre pick pose    | Position the robot moves to before picking the object (used for reachability check)                                                     | Output   |
+| P043     | Pre pick pose    | Position the robot moves to before picking the object (used in the reachability check)                                                  | Output   |
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
-| P045     | Post pick pose   | Position the robot moves to after picking the object (used for reachability check)                                                      | Output   |
+| P045     | Post pick pose   | Position the robot moves to after picking the object (used in the reachability check)                                                   | Output   |
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
 | D042     | pick_ref_id      | ID of the selected pick point’s reference pick point                                                                                    | Output   |
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
@@ -124,4 +124,4 @@ More information about the variables can be found in :ref:`socket-communication`
 Reachability check
 ------------------
 
-The reachability check asses that from P040 (`Above pick area` pose), it is possible to reach P043 (`Pre pick` pose), P049 (`Pick` pose) and P045 (`Post pick` pose).
+The reachability check asses that from P040 (``Above pick area`` pose), it is possible to reach P043 (``Pre pick`` pose), P049 (``Pick`` pose) and P045 (``Post pick`` pose).
