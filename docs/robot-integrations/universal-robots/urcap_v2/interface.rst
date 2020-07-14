@@ -111,7 +111,9 @@ Learn more about when and how you should use them in the :ref:`smart placing exa
 | If the ``Dropoff`` point is expressed with respect to                    |
 | :ref:`PickitPickRefId <urcap-pickit-pick-ref-id>`, you can compensate    |
 | for the offset to :ref:`PickitPickId <urcap-pickit-pick-id>` by          |
-| post-multiplying ``Dropoff`` by ``PickitPickOff``.                       |
+| post-multiplying ``Dropoff`` by ``PickitPickOff``, i.e.                  |
+|                                                                          |
+| ``DropoffCorrected = pose_trans(Dropoff, PickitPickOff)``                |
 +--------------------------------------------------------------------------+
 
 Object information
