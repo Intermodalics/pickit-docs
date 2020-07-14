@@ -107,6 +107,6 @@ Environmental and operating conditions
 
 -  Temperature: -20ºC to 70ºC
 -  Vibrations: Operating, 5 Grms, 5-500 Hz, 3 axes
--  IP rating: IP54
+-  IP rating: IP20
 -  Power supply: 9-32V DC 160W
 -  Humidity: ~95% @ 40°C (non-condensing)
