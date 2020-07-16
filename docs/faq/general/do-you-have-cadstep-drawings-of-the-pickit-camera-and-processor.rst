@@ -16,6 +16,8 @@ We provide `.step <https://en.wikipedia.org/wiki/ISO_10303-21>`__ CAD files for
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | .. image:: /assets/images/faq/pickit-processor.png              | `Pickit processor <https://drive.google.com/uc?export=download&id=0B87wvNgWersoWWNxbXRta05IRUk>`__                     |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| .. image:: /assets/images/faq/pickit-robot-mounting-plate.png   | `Pickit Robot Mouting Plate <https://drive.google.com/uc?export=download&id=1K2OeUyYjnL7Dsn6k3tKR9U-_VK3NagrV>`__      |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 The dimensions of the processor can be found in the picture below,
 expressed in millimeters [inches].
