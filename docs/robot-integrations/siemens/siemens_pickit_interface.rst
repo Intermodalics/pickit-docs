@@ -101,7 +101,7 @@ The communication is internally set up with the ``TSEND_C`` and ``TRCV_C`` stand
 
 Robot to Pickit data
 ^^^^^^^^^^^^^^^^^^^^
-The *robot_to_pickit_data* structure contains all parameters that make up the send message of 48 bytes. The *robot_to_pickit_data* structure is not an identical copy of the actual sent message structure to the robot. Detailed information about the message structure can be found in `the socket communcation article`.
+The *robot_to_pickit_data* structure contains all parameters that make up the send message of 48 bytes. The *robot_to_pickit_data* structure is not an identical copy of the actual sent message structure to the robot. Detailed information about the message structure can be found in the :ref:`socket-communication` article.
 
 .. table:: robot_to_pickit_data
 
@@ -201,7 +201,7 @@ The ``socket_params.ConnectionId`` parameter describes the hardware connection i
 Pickit to robot data
 ^^^^^^^^^^^^^^^^^^^^
 
-The *pickit_to_robot_data* structure contains all parameters that make up the receive message of 64 bytes. The output structure in the DB is not identical to the actual received message structre. Detailed information of the receive message can be found in `the socket communcation article?`.
+The *pickit_to_robot_data* structure contains all parameters that make up the receive message of 64 bytes. The output structure in the DB is not identical to the actual received message structre. Detailed information of the receive message can be found in the :ref:`socket-communication` article.
 
 .. table:: pickit_to_robot_data
 
@@ -259,7 +259,8 @@ The *pickit_to_robot_data* structure contains all parameters that make up the re
    | MetaData.InterfaceVersion       | DInt      | The confirmed Pickit socket interface version.                                                                                                    |
    +---------------------------------+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
-The ``pickit_to_robot_data.ObjectPose`` holds the object pose expressed to robot base frame. The orientation convention is determined by the ``robot_to_pickit_data.MetaData.RobotType`` parameter in the input section. More information on supported robot brands and their orientation conventions in the socket communication article. The ``robot_to_pickit_data.PickPointOffset`` contains the offset transformation w.r.t. the reference pick point set inside the Pickit system. To obtain both the ``robot_to_pickit_data.ObjectPose`` and ``robot_to_pickit_data.PickPointOffset`` you need to subsequently request a *rc_pickit_find_objects()* and *rc_pickit_get_pick_point_data()* in order.
+The ``pickit_to_robot_data.ObjectPose`` holds the object pose expressed to robot base frame. The orientation convention is determined by the ``robot_to_pickit_data.MetaData.RobotType`` parameter in the input section. More information on supported robot brands and their orientation conventions :ref:`here <meta-msg>`.
+The ``robot_to_pickit_data.PickPointOffset`` contains the offset transformation w.r.t. the reference pick point set inside the Pickit system. To obtain both the ``robot_to_pickit_data.ObjectPose`` and ``robot_to_pickit_data.PickPointOffset`` you need to subsequently request a *rc_pickit_find_objects()* and *rc_pickit_get_pick_point_data()* in order.
 
 .. note:: The orientation of the object is expressed in compliance with the Pickit UI. This is having the ``pickit_to_robot_data.ObjectPose.Z`` axis is pointing up and/or outwards. It might be necessary to apply an additional 180 degrees rotation around the ``pickit_to_robot_data.ObjectPose.X`` axis to have the robot TCP aligning with the object pose.
 
