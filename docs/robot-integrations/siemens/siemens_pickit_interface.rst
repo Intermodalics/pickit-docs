@@ -95,7 +95,9 @@ The different block status types are listed in the table below. All of the statu
    | ``16#42``  | 1         | Timeout error, the connection was established but there was no data received as a response to the send request. |
    +------------+-----------+-----------------------------------------------------------------------------------------------------------------+
 
-The communication is internally set up with the ``TSEND_C`` and ``TRCV_C`` standard function blocks. For detailed status information on the connection, these internal blocks need to be monitored. Detailed information can be found in the `Siemens S7-1200 Programmable controller System Manual`.
+The communication is internally set up with the ``TSEND_C`` and ``TRCV_C`` standard function blocks.
+For detailed status information on the connection, these internal blocks need to be monitored. 
+Detailed information can be found in the `Siemens S7-1200 Programmable controller System Manual <https://drive.google.com/file/d/1yu0xbqCDkAdQDNX_uxTlV8zeeYXEIkpU/view?usp=sharing>`__.
 
 .. _siemens_robot_to_pickit_data:
 

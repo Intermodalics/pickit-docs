@@ -77,9 +77,9 @@ To communicate with Pickit using the ROS interface, you need to have the
 Siemens PLC
 -----------
 
-Pickit is compatible with Siemens PLC (ADD TIA PORTAL version)
+Pickit is compatible with Siemens PLC
 
--  ADD DOWNLOAD LINK
+- `Download the Pickit Siemens S7-1200-1500 interface files <https://drive.google.com/uc?export=download&id=1lHIT-uTX8CKUfJEPZawWhvyMNIraf_OH>`__
 
 .. _downloads_staubli:
 
