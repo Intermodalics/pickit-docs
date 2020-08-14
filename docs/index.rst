@@ -66,6 +66,7 @@ sending an email to `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`_
   Hanwha <robot-integrations/hanwha/index>
   KUKA <robot-integrations/kuka/index>
   Omron TM <robot-integrations/techman/index>
+  Siemens PLC <robot-integrations/siemens/index>
   Stäubli <robot-integrations/staubli/index>
   Universal Robots <robot-integrations/universal-robots/index>
   Yaskawa <robot-integrations/yaskawa/index>

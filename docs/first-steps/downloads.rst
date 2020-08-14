@@ -18,7 +18,7 @@ ABB
 
 Pickit is compatible with controllers as of version IRC5 with RobotWare 5 or 6 and furthermore. To communicate with Pickit, the modules **616 PC interface** and **623-1 Multitasking** should be installed.
 
--  `Download the Pickit ABB files <https://drive.google.com/uc?export=download&id=1qC2bfYFxbjM0jruCSPYxqVqVubUe4vvN>`__
+-  `Download the Pickit ABB files <https://drive.google.com/uc?export=download&id=1RCeMRlWlFg4b2XfxNeAXKE8IV8PLIHCe>`__
 
 .. _downloads_fanuc:
 
@@ -72,6 +72,15 @@ To communicate with Pickit using the ROS interface, you need to have the
 
 - `Download the Pickit ROS interface files <https://drive.google.com/uc?export=download&id=1RGIK5MlZAwios-6Pb7OfYc22JqQ4iOK7>`__
 
+.. _downloads_siemens:
+
+Siemens PLC
+-----------
+
+Pickit is compatible with Siemens PLC
+
+- `Download the Pickit Siemens S7-1200-1500 interface files <https://drive.google.com/uc?export=download&id=1lHIT-uTX8CKUfJEPZawWhvyMNIraf_OH>`__
+
 .. _downloads_staubli:
 
 Stäubli
@@ -108,4 +117,6 @@ Yaskawa
 
 Pickit is compatible with controllers **DX200**, **YRC1000** and **YRC1000 micro**.
 
-- `Download the Pickit Yaskawa files <https://drive.google.com/uc?export=download&id=1TC3pY4PBpYuflZLtPs148T0n9cFu2jKF>`__
+- `Download the Pickit Yaskawa files <https://drive.google.com/uc?export=download&id=1M1E6eHZy8USkLD9cAGzgJS9s31WSAvKf>`__
+
+.. note:: For older Yaskawa controllers, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__. 
