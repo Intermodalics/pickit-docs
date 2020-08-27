@@ -155,24 +155,28 @@ Download the right files
 
 :ref:`Download the Pickit Fanuc files <downloads_fanuc>`
 
-The .zip folder contains the following ASCII files:
+The .zip folder contains the binaries for different controller version.
+Depending on your controller version (i.e. R-30iA - V7.X , R-30iB - V8.X and R-30iB plus - V9.X), select the right binaries folder to be uploaded to your robot.
 
-- ``pick_it_communication15_C.kl`` is a Karel program that cares of the low level communication. This files should not be adapted.
+It contains:
 
-- ``PICKIT_SIMPLE_PICKING.LS`` is a Teach Pendant program that shows a simple pick application for FANUC using Pickit.
+- ``pick_it_communicationX_c.pc`` is a Karel program that takes care of the low level communication. This files should not be adapted.
+
+- ``PICKIT_SIMPLE_PICKING.TP`` is a Teach Pendant program that shows a simple pick application for FANUC using Pickit.
   More infomation about this example program can be found in the following article, :ref:`fanuc-example-picking-program`.
 
 - For calibration we provide two Teach Pendant programs;
 
-  - ``PICKIT_MP_CALIBRATE.LS`` for :ref:`multi-poses-calibration`, this program is explained in full in the following article, :ref:`fanuc-calibration-program`.
+  - ``PICKIT_MP_CALIBRATE.TP`` for :ref:`multi-poses-calibration`, this program is explained in full in the following article, :ref:`fanuc-calibration-program`.
 
-  - ``PI_CALIBRATE.LS`` for :ref:`single-pose-calibration`.
+  - ``PI_CALIBRATE.TP`` for :ref:`single-pose-calibration`.
 
-- The other ``PI_**.LS`` files define short Teach Pendant programs that abstract some of the Pickit logic into more user readable functions. They can also serve as macros that can be called manually.
+- The other ``PI_**.TP`` files define short Teach Pendant programs that abstract some of the Pickit logic into more user readable functions. They can also serve as macros that can be called manually.
 
-.. tip:: In case of using Fanuc software version V7.X, V8.X and V9.X , you can directly use the binaries available in the downloaded folder. In the other case, you first have to compile the above files into binaries. 
+.. tip:: If there is no binaries provided for your controller version, you have to compile the sources into binaries compatible with your controller.
+    Don't hesitate to contact Pickit for support.
 
-.. Warning:: Modifying the ``pick_it_communication15_C.kl`` file should only be considered after talking to a Pickit support engineer.
+.. Warning:: Modifying the ``pick_it_communicationX_c.kl`` file should only be considered after talking to a Pickit support engineer.
 
 Upload the files to the robot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
