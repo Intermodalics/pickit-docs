@@ -11,6 +11,13 @@ setup of Pickit with a Yaskawa robot consists of the following steps:
     :local:
     :depth: 1
 
+.. note:: 
+  In this article you will be asked to switch between the **NORMAL MODE**, that you get when you start the robot normally, and the **MAINTENACE MODE** which you can access by turning on the controller while pressing the ``MAIN MENU`` key.
+
+.. note:: 
+  Several steps of the following procedure require the security level to be in **MANAGEMENT MODE**. The password for Motoman robots is usually "99999999" (hold the ``9`` key until the password field is completely filled out and then press ``ENTER``). The security menu can be found under :guilabel:`MAIN MENU` > :guilabel:`SYSTEM INFO` > :guilabel:`SECURITY` in normal mode, and directly under the :guilabel:`MAIN MENU` in maintenance mode.
+
+
 Check controller and software compatibility
 -------------------------------------------
 
@@ -25,26 +32,12 @@ Ask your local Yaskawa affiliate to check this.
 .. details:: LAN INTERFACE SETTING set to MANUAL SETTING
 
   +----------------------------------------------------------------------------+
-  | This setting is accessed in the **MAINTENANCE MODE.** The maintenance can  |
-  | be accessed by turning ON the controller while pressing ``MAIN MENU``      |
-  | button.                                                                    |
-  |                                                                            |
-  | The security mode should be **MANAGEMENT MODE.**                           |
-  |                                                                            |
-  | :guilabel:`SYSTEM` > :guilabel:`SETUP` > :guilabel:`OPTION FUNCTION` >     |
-  | :guilabel:`LAN INTERFACE SETTING` > :guilabel:`HOST SETTING`               |
-  |                                                                            |
-  +----------------------------------------------------------------------------+
-
-.. details:: MotoPlus function set to USED
-
-  +----------------------------------------------------------------------------+
   | This setting is accessed in the **MAINTENANCE MODE.**                      |
   |                                                                            |
   | The security mode should be **MANAGEMENT MODE.**                           |
   |                                                                            |
   | :guilabel:`SYSTEM` > :guilabel:`SETUP` > :guilabel:`OPTION FUNCTION` >     |
-  | :guilabel:`MotoPlus FUNC.`                                                 |
+  | :guilabel:`LAN INTERFACE SETTING` > :guilabel:`HOST SETTING`               |
   |                                                                            |
   +----------------------------------------------------------------------------+
 
@@ -60,14 +53,22 @@ Ask your local Yaskawa affiliate to check this.
   | .. image:: /assets/images/robot-integrations/yaskawa/yaskawa-macro.png     |
   +----------------------------------------------------------------------------+
 
-.. details:: The Number of files set to 1 and the number of tasks set to 5
+.. details:: MotoPlus function set to USED
 
   +----------------------------------------------------------------------------+
-  | These are the minimum values set in a new YRC1000 (Micro)                  |
+  | This setting is accessed in the **MAINTENANCE MODE.**                      |
+  |                                                                            |
+  | The security mode should be **MANAGEMENT MODE.**                           |
+  |                                                                            |
+  | :guilabel:`SYSTEM` > :guilabel:`SETUP` > :guilabel:`OPTION FUNCTION` >     |
+  | :guilabel:`MotoPlus FUNC.`                                                 |
   |                                                                            |
   +----------------------------------------------------------------------------+
 
 |
+
+.. warning::
+  The MotoPlus function is not a standard feature on all YRC1000(micro) and DX200 robots. It shoud be ordered with the robot. Make sure to precise in the the order that the MotoPlus's number of files is set to 1 and its number of tasks is set to 5, as these settings can only be configured by Yaskawa service engineer.
 
 Setup the network connection
 ----------------------------
@@ -89,7 +90,7 @@ IP configuration
   Before making these changes, the robot controller should be in **MAINTENANCE MODE**, and the security mode should be **MANAGEMENT MODE**.
 
 Setting the IP address of the robot controller should be done in **MAINTENANCE MODE**.
-Go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`OPTION FUNCTION` → :guilabel:`LAN interface setting` (or :guilabel:`Network` for the DX200) and set the following values:
+Go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`OPTION FUNCTION` → :guilabel:`LAN INTERFACE SETTING` (or :guilabel:`NETWORK` for the DX200) and set the following values:
 
   - **IP ADDRESS SETTING**: MANUAL SETTING
   - **IP ADDRESS:** 169.254.5.182
@@ -106,12 +107,13 @@ Load the program files
 ----------------------
 
 Before starting, :ref:`Download the Pickit Yaskawa files here <downloads_yaskawa>`.
-The Pickit folder should be copied to a USB pen drive. Then copy the file ``Pickit_YRC100.out`` (or ``Pickit_DX200.out``) to the root directory of the USB drive. 
+The Pickit folder should be copied to a USB pen drive. Then copy the correct ".out" extension file to the root directory of the USB drive:
+
+  -  **Pickit_YRC100.out** for YRC1000 and YRC1000 Micro controllers.
+  -  **Pickit_DX200.out** for DX200 controllers.
 
 The robot controller should be in **MAINTENANCE MODE** and the security mode set to **MANAGEMENT MODE** before making these changes.
 
-#. Turn on the controller while holding the ``MAIN MENU`` key. This will allow the access to the **MAINTENANCE MODE**, therefore this step can be skipped if that's the case already.
-#. Switch the security level to the **MANAGEMENT MODE** under :guilabel:`SYSTEM` → :guilabel:`SECURITY`. The password for Motoman robots is usually "99999999" (hold the ``9`` key until the password field is completely filled out and then press ``ENTER``).
 #. Insert the USB pen drive in the robot pendant or to the controller USB port.
 #. Under :guilabel:`MotoPlus APL` → :guilabel:`DEVICE` select the USB target port used.
 #. If the file **Pickit_YRC1000.out** ( **Pickit_DX200.out** ) is not placed in the main root of the USB drive, select its containing folder folder in: :guilabel:`MotoPlus APL.` → :guilabel:`FOLDER`.
@@ -131,10 +133,10 @@ If the MotoPlus application is running you can continue with uploading the Picki
 #. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`DEVICE` select the USB target port used.
 #. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`FOLDER` select the folder **program**.
 #. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the file **IONAME.DAT**.
-#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the the file **VARNAME.DAT**.
-#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the the .JBI files ( **PI_BUILD.JBI**, **PI_CALIB.JBI**, **PI_CAPTU.JBI**, **PI_CFG.JBI**, **PI_GPPD.JBI**, **PI_LOOK.JBI**,  **PI_NEXT.JBI**, **PI_PROCE.JBI**, **PI_RUN.JBI**, **PI_SAVE.JBI**, and **PI_WAIT.JBI** ).
+#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the file **VARNAME.DAT**.
+#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the .JBI files (Selected files appears with a star).
 
-.. note:: The order of loading these files must be respected: **I/0 data**, then **System data**, and lately the **JOB files**. The correct loading of these files can be verified in the **NORMAL MODE** under :guilabel:`JOB` > :guilabel:`SELECT MACRO JOB`
+.. note:: The order of loading these files must be respected: **I/0 data** (IONAME.DAT), then **System data** (VARNAME.DAT and MACRO.DAT), and finally the **JOB files** (.JBI files). The correct loading of these files can be verified in the **NORMAL MODE** under :guilabel:`JOB` > :guilabel:`SELECT MACRO JOB`.
 
 
 Load the Pickit example jobs
