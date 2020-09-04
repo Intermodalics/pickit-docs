@@ -130,7 +130,7 @@ If the MotoPlus application is running you can continue with uploading the Picki
 
 #. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`DEVICE` select the USB target port used.
 #. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`FOLDER` select the folder **program**.
-#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the the file **IONAME.DAT**.
+#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the file **IONAME.DAT**.
 #. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the the file **VARNAME.DAT**.
 #. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the the .JBI files ( **PI_BUILD.JBI**, **PI_CALIB.JBI**, **PI_CAPTU.JBI**, **PI_CFG.JBI**, **PI_GPPD.JBI**, **PI_LOOK.JBI**,  **PI_NEXT.JBI**, **PI_PROCE.JBI**, **PI_RUN.JBI**, **PI_SAVE.JBI**, and **PI_WAIT.JBI** ).
 
