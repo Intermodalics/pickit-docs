@@ -114,7 +114,7 @@ The robot controller should be in **MAINTENANCE MODE** and the security mode set
 #. Switch the security level to the **MANAGEMENT MODE** under :guilabel:`SYSTEM` → :guilabel:`SECURITY`. The password for Motoman robots is usually "99999999" (hold the ``9`` key until the password field is completely filled out and then press ``ENTER``).
 #. Insert the USB pen drive in the robot pendant or to the controller USB port.
 #. Under :guilabel:`MotoPlus APL` → :guilabel:`DEVICE` select the USB target port used.
-#. If the file **Pickit_YRC100.out** ( **Pickit_DX200.out** ) is not placed in the main root of the USB drive, select its containing folder folder in: :guilabel:`MotoPlus APL.` → :guilabel:`FOLDER`.
+#. If the file **Pickit_YRC1000.out** ( **Pickit_DX200.out** ) is not placed in the main root of the USB drive, select its containing folder folder in: :guilabel:`MotoPlus APL.` → :guilabel:`FOLDER`.
 #. Load the MotoPlus application under :guilabel:`MotoPlus APL.` → :guilabel:`LOAD (USER APPLICATION)`. 
 
 Press :guilabel:`Select`, :guilabel:`Enter` and confirm.
