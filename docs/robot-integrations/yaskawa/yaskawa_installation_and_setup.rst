@@ -53,7 +53,7 @@ Ask your local Yaskawa affiliate to check this.
   +----------------------------------------------------------------------------+
   | This is the default setting on the YRC1000  and YRC1000micro. However,     |
   | it could be verified when **SELECT MACRO JOB** can be seen in the          |
-  | **JOB** nenu.                                                              |
+  | **JOB** menu.                                                              |
   |                                                                            |
   | The security mode should be **MANAGEMENT MODE.**                           |
   |                                                                            |
