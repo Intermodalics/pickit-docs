@@ -68,7 +68,7 @@ Ask your local Yaskawa affiliate to check this.
 |
 
 .. warning::
-  The MotoPlus function is not a standard feature on all YRC1000(micro) and DX200 robots. It shoud be ordered with the robot. Make sure to precise in the the order that the MotoPlus's number of files is set to 1 and its number of tasks is set to 5, as these settings can only be configured by Yaskawa service engineer.
+  The MotoPlus function is not a standard feature on all YRC1000(micro) and DX200 robots. It shoud be ordered with the robot. Make sure to precise in the order that the MotoPlus's number of files is set to 1 and its number of tasks is set to 5, as these settings can only be configured by Yaskawa service engineer.
 
 Setup the network connection
 ----------------------------
