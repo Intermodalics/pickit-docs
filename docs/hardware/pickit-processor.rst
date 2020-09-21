@@ -20,9 +20,11 @@ versions 1.0 and 2.0 unless mentioned otherwise.
 -  19-inch server: rack compatible (2U)
 -  Temperature: -20°C to 70°C
 -  Vibrations: Operating, 5 Grms, 5-500 Hz, 3 axes
--  IP rating: IP54
--  Power supply: 9-32V DC 160W
+-  IP rating: IP20
 -  Humidity: ̃95% @ 40°C (non-condensing)
+-  Input Voltage Range: 100 - 240V
+-  Input Current: 50A @115Vac; 100A @230Vac
+-  Input Frequency: 47 - 63Hz
 
 Processor ports and power supply
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,6 +68,8 @@ Environmental and operating conditions
 
 -  Temperature: -20ºC to 70ºC
 -  Vibrations: Operating, 5 Grms, 5-500 Hz, 3 axes
--  IP rating: IP54
--  Power supply: 9-32V DC 160W
+-  IP rating: IP20
 -  Humidity: ~95% @ 40°C (non-condensing)
+-  Input Voltage Range: 100 - 240V
+-  Input Current: 50A @115Vac; 100A @230Vac
+-  Input Frequency: 47 - 63Hz
