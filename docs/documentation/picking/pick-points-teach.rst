@@ -19,6 +19,9 @@ A number of useful and easy to program place strategies are exemplified in :ref:
 
     pick-points-teach-examples
     smart-place-examples
+    cylinder-pick-points-wizard
+
+For :ref:`cylinder models <teach-cylinder>`, pick points can be easily defined with a :ref:`dedicated wizard <cylinder-pick-points-wizard>`.
 
 .. _multiple-pick-points:
 
