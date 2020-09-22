@@ -83,7 +83,7 @@ If the MotoPlus application is running you can continue with uploading the Picki
 
 #. Load the correct USB device under :guilabel:`EX. MEMORY` → :guilabel:`DEVICE`.
 #. Select the folder **Pickit** > **Program** on the USB device under :guilabel:`EX. MEMORY` → :guilabel:`FOLDER`.
-#. Load the **I/O DATA**, **SYSTEM DATA** and  **JOB** files under :guilabel:`EX. MEMORY` → :guilabel:`LOAD` (the order of loading the files is important).
+#. Load the **I/O DATA** (IONAME.DAT, VARNAME.DAT), **SYSTEM DATA** (MACRO.DAT) and  **JOB** (JBI files) files under :guilabel:`EX. MEMORY` → :guilabel:`LOAD` (the order of loading the files is important).
 
 Load the Pickit example jobs
 ----------------------------
@@ -110,7 +110,7 @@ Still in **normal mode**, the IP address of Pickit needs to be entered in a **St
 Test the robot connection
 -------------------------
 
-To start the communication, you can run **PIT_RUN** on the robot.
+To start the communication, you can run **PI_RUN** on the robot.
 This job can be found in :guilabel:`JOB` → :guilabel:`SELECT MACRO JOB`.
 
 While the program is running, an indicator in the Pickit web interface :ref:`web-interface-top-bar` should confirm that the robot is connected.

@@ -42,10 +42,14 @@ Add the communication function block into an empty network in **Main (OB1)**. TI
 Verify the connection
 ~~~~~~~~~~~~~~~~~~~~~
 
-Once the block is inserted into **OB1** we can verify that the communication is working. Firstly, compile the project and upload it to the CPU such that it has the correct IP address configured. Now inside the Pickit software in settings, navigate to :ref:`"ROBOT" Check robot IP connection` and enter the IP address of the robot. By pressing the *check*-button you are executing a ping from the Pickit processor.
+Once the block is inserted into **OB1** we can verify that the communication is working. Firstly, compile the project and upload it to the CPU such that it has the correct IP address configured.
+Now inside the Pickit software in settings, navigate to :ref:`"ROBOT" port settings <settings-network-robot>` => Check robot IP connection` and enter the IP address of the robot. By pressing the *check*-button you are executing a ping from the Pickit processor.
 
 .. note:: If the ping is unsuccessful, validate the IP address settings on both the Pickit and the PLC.
 
-After a successful ping from Pickit to the CPU, we can establish the socket communication. After uploading the entire project to the PLC, it will try to establish a connection immediately based on the IP address entered in the Pickit communication **Data Block (DB)**. The default value is ``169.254.5.180`` and the remote port value is ``5001`` (fixed). Pickit will show the connection checkmark in the UI when there is a connection established. You can also validate the initial handshake request that has been sent out by the PLC which can be seen under :ref:`"LOGS" Log raw data from robot`. This initial handshake is a ``rc_pickit_check_mode()`` command, the actual mode of Pickit is not of importance (robot, idle or calibration mode).
+After a successful ping from Pickit to the CPU, we can establish the socket communication. After uploading the entire project to the PLC, it will try to establish a connection immediately based on the IP address entered in the Pickit communication **Data Block (DB)**.
+The default value is ``169.254.5.180`` and the remote port value is ``5001`` (fixed).
+Pickit will show the connection checkmark in the UI when there is a connection established.
+You can also validate the initial handshake request that has been sent out by the PLC which can be seen under `"LOGS" Log raw data from robot`. This initial handshake is a ``rc_pickit_check_mode()`` command, the actual mode of Pickit is not of importance (robot, idle or calibration mode).
 
 .. note:: When connecting or switching network cables **after** powering on the PLC, the block will fault as no connection could be made. When you need to switch cables when uploading through a router you can memory reset the PLC ``MRES`` (cold start).
