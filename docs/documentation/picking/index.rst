@@ -58,6 +58,7 @@ Pick strategy
     preferred-orientation-flex-pattern
     maximum-angle-between-pick-and-reference-frame-zaxis
     enforce-alignment-of-pick-frame-orientation
+    temporarily-avoid-unpicked-objects
 
 Once pick points are specified, there are a number of options that influence how objects are picked.
 
@@ -68,10 +69,14 @@ Once pick points are specified, there are a number of options that influence how
       - :ref:`Preferred pick point orientation in Pickit Teach <preferred-orientation-teach>`
       - :ref:`Preferred pick point orientation in Pickit Flex and Pattern <preferred-orientation-flex-pattern>`
 
-  - **Maximum tilt from reference frame Z-axis:** When a pick point is too tilted, it is more likely that picking it will result in unreachable robot motions. This option allows to label objects that are too tilted as unpickable (:ref:`more <max_angle_pick_z_ref_z>`).
+  - **Maximum tilt from reference frame Z-axis:** When a pick point is too tilted, it is more likely that picking it will result in unreachable robot motions.
+    This option allows to label objects that are too tilted as unpickable (:ref:`more <max_angle_pick_z_ref_z>`).
 
-  - **Enforce pick point alignment** This applies only to the :ref:`Flex <Flex>` and :ref:`Pattern <Pattern>` detection engines, and is explained in detail in :ref:`this article <enforce-alignment-of-pick-point-orientation>`. If using Pickit :ref:`Teach <teach>`, refer to the more powerful :ref:`flexible pick orientation <flexible-pick-orientation>` feature.
+  - **Enforce pick point alignment** This applies only to the :ref:`Flex <Flex>` and :ref:`Pattern <Pattern>` detection engines, and is explained in detail in :ref:`this article <enforce-alignment-of-pick-point-orientation>`.
+    If using Pickit :ref:`Teach <teach>`, refer to the more powerful :ref:`flexible pick orientation <flexible-pick-orientation>` feature.
 
+  - **Temporarily avoid unpicked objects** This prevents repeatedly failing to pick the same object, and contributes to more consistent cycle times.
+    It is explained in detail in :ref:`this article <temporarily-avoid-unpicked-objects>`.
 
 Collision prevention
 --------------------
