@@ -10,13 +10,15 @@ Pickit has three general detection engines, each optimized for a different
 type of shape or part arrangement.
 
 - :ref:`Teach <Teach>` is the most versatile engine, and well suited for most
-  shapes, both simple and complex. You teach the part you want to detect by
-  showing it to the camera or uploading a CAD model of it.
-  It is the recommended detection engine for most applications.
+  shapes of known fixed sizes, both simple and complex.
+  It is the recommended detection engine for most applications, ranging from
+  complex shapes to cylinders of known dimensions.
 
-- :ref:`Flex <Flex>` is meant for detecting geometric shapes in 3D
+- :ref:`Flex <Flex>` is meant for detecting simple geometric shapes in 3D
   (cylinders and spheres) and 2D (squares, rectangles, circles and ellipses).
   It can detect instances of the same shape with similar or different sizes.
+  It is recommended for cylinders of varying sizes, but for cylinders of fixed sizes
+  prefer :ref:`Teach <Teach>`.
 
 - :ref:`Pattern <Pattern>` is similar to Flex. It looks for 2D shapes
   (rectangles, squares, circles and ellipses) of known fixed size, and is

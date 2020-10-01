@@ -5,10 +5,15 @@ Teach
 
 Pickit Teach is a detection engine that works in 2 steps:
 
-1. **Teach a model**: Show an object to the camera or directly upload its CAD file to teach its shape.
-2. **Detect the object(s)**: Pickit will then look for similar shaped objects in a new scene.
+1. **Teach a model**: Teach your object shape to Pickit by:
 
-In the image below, first a single socket was shown to the Pickit system, next similar shaped sockets are found in the bin.
+  * uploading a CAD file.
+  * selecting a basic shape (cylinder)
+  * showing an object to the camera
+
+2. **Detect the object(s)**: Pickit will then look for similar shaped objects in the scene.
+
+In the image below, first a socket CAD file was uploaded to Pickit (teaching), next similar shaped sockets are found in the bin (detection).
 
 .. image:: /assets/images/documentation/detection/teach/detection.png
 

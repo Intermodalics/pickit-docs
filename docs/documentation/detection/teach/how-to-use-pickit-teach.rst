@@ -3,9 +3,7 @@ How to use Pickit Teach
 
 This article describes how to get started with the Pickit Teach engine.
 Pickit Teach is a detection engine which can search for
-objects based on a previously taught model of the object. It is primarily used
-to find irregularly shaped objects that don't fit in one of the basic
-shape categories, like cylinders, spheres, squares, rectangles, circles or ellipses.
+objects based on a previously taught model of the object.
 
 .. contents::
     :backlinks: top
@@ -23,11 +21,13 @@ Teach a model based on your part
 
     teach-from-camera
     teach-from-cad
+    teach-cylinder
 
-Pickit provides 2 ways to teach a model of your part:
+Pickit provides 3 ways to teach a model of your part:
 
-1. :ref:`Teach from camera <teach-from-camera>`: show an object to the camera to teach its shape.
-2. :ref:`Teach from CAD <teach-from-cad>`: upload a Computer Aided Design (CAD) file of your part.
+1. :ref:`Teach from CAD <teach-from-cad>`: upload a Computer Aided Design (CAD) file of your part.
+2. :ref:`Teach from camera <teach-from-camera>`: show an object to the camera to teach its shape.
+3. :ref:`Teach cylinder <teach-cylinder>`: specify cylinder dimensions.
 
 
 Detecting objects
