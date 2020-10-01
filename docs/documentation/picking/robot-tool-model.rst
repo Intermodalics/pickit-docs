@@ -47,7 +47,7 @@ This is the most convenient way to get your robot tool model into Pickit, as you
   :align: center
 
 .. note::
-  Pickit supports **stl** and **dae** formats for tool models. Most CAD design editors can export CAD into such formats. However, if you do not have such CAD formats, free online converters are available on the Internet.
+  Pickit only supports the **stl** format for tool models. This format is widely supported and most CAD design editors can export CAD into **stl** format. There are also free online converters available on the Internet which can help you in doing so.
 
 .. tip::
   To speed up :ref:`collision checks <collision-prevention>` between the tool model and the bin or other objects, follow these recommendations when preparing your CAD file:
