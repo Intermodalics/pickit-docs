@@ -3,26 +3,26 @@
 Temporarily avoid unpicked objects
 ==================================
 
-Unavoidably, Pickit might fail to pick some objects. This is inherent to the unstructured aspect of bin picking.
-A typical example is when an object is locked by its neighbors and that the gripper is not strong enough to grasp it.
+On occasions, it happens that an object detected by Pickit cannot be picked by the robot. A typical example is when the gripper is not strong enough to establish a firm pick on an object that is locked in place by neighboring parts.
 
-In these situations, it is important to prevent the robot from repeateadly going to the same "hard to pick" object.
-Otherwise, the cycle time of the application can significantly drop and in the worst cases the robot program might be stuck at trying to always pick the same "unpickable" object.
+In these situations, it is important to prevent the robot from repeatedly going to the same "hard to pick" object, and potentially get stuck in an endless loop.
+By reaching out to other pickable objects instead of insisting on a hard pick, the application moves forward, cycle time becomes more consistent, and the hard to pick object eventually can become pickable.
 
-The purpose of the **temporarily avoid unpicked objects** functionality is to avoid exactly that.
+This is the purpose of the **temporarily avoid unpicked objects** functionality.
 If an object that was recently sent to the robot for picking is detected again, it will temporarily be deprioritized for picking.
-This article describes this functionality.
 
 How it works
 ------------
 
 Pickit keeps track of the objects that were recently sent to the robot for picking in the so-called `avoid list`.
 If an object of the `avoid list` is detected again, it is considered as an object that failed to be picked.
-This object will then be put at the bottom of the object list, i.e. it is deprioritized for picking.
-In other words, Pickit will avoid to pick this object, if other objects are pickable they will be preferred.
+This object will then be put at the bottom of the _pickable_ object list, i.e. it is deprioritized for picking.
+In other words, Pickit will avoid to pick this object, as long as there are other objects to be picked.
 
 .. note::
-  The list of object to avoid only concerns object sent to the robot. It is therefore only updated when in robot mode.
+  The list of objects to avoid only operates when robot mode is enabled. It is updated from objects sent to the robot, and not from detections triggered from the :ref:`Pickit web interface <web-interface>`.
+  
+  Pickit :ref:`snapshots <Snapshots>` preserve the list of objects to avoid that was active at the time of saving.
 
 Objects temporarily put at the bottom of the list are indicated in the :ref:`detection grid <detection-grid>` as shown below.
 
@@ -31,14 +31,14 @@ Objects temporarily put at the bottom of the list are indicated in the :ref:`det
 The parameters explained
 ------------------------
 
-Once enabled, 2 parameters need to be configured for the temporary object rejection.
+Once enabled, two parameters need to be configured:
 
-The **number of run to avoid** is the number of detections an object stays in the avoid list.
-For example, if set to 5, a missed object will be pull to the bottom of the list for the 5 next detections.
+The **number of runs to avoid** is the number of detection runs an object stays in the avoid list.
+For example, when set to 5, an initially unpicked object will be pushed to the bottom of the pickable objects list for the 5 next detections (if detected again).
 After that it will not be deprioritized anymore.
 
-The **Proximity tolerance** is the distance used to evaluate if a detected object should be avoided.
-If the pick point of a detected object is within this distance to the pick point of an object of the avoid list, it will be deprioritized.
+The **Proximity tolerance** is the distance used for matching a detection against the avoid list.
+If the pick point of a detected object is within this distance to a pick point stored in the avoid list, it will be deprioritized.
 
-For conveninence, a :guilabel:`Reset` button that clears the avoid list is available.
+For convenience, a :guilabel:`Reset` button that clears the avoid list is available.
 It can be helpful when setting up an application. 
