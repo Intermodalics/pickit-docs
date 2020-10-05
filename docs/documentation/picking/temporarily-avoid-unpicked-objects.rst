@@ -5,7 +5,7 @@ Temporarily avoid unpicked objects
 
 On occasions, it happens that an object detected by Pickit cannot be picked by the robot. A typical example is when the gripper is not strong enough to establish a firm pick on an object that is locked in place by neighboring parts.
 
-In these situations, it is important to prevent the robot from repeatedly going to the same "hard to pick" object, and potentially get stuck in an endless loop.
+In these situations, it is important to prevent the robot from repeatedly going to the same hard to pick object, and potentially get stuck in an endless loop.
 By reaching out to other pickable objects instead of insisting on a hard pick, the application moves forward, cycle time becomes more consistent, and the hard to pick object eventually can become pickable.
 
 This is the purpose of the **temporarily avoid unpicked objects** functionality.
@@ -16,7 +16,7 @@ How it works
 
 Pickit keeps track of the objects that were recently sent to the robot for picking in the so-called `avoid list`.
 If an object of the `avoid list` is detected again, it is considered as an object that failed to be picked.
-This object will then be put at the bottom of the _pickable_ object list, i.e. it is deprioritized for picking.
+This object will then be deprioritized and put at the bottom of the `pickable` object list.
 In other words, Pickit will avoid to pick this object, as long as there are other objects to be picked.
 
 .. note::
@@ -35,7 +35,7 @@ Once enabled, two parameters need to be configured:
 
 The **number of runs to avoid** is the number of detection runs an object stays in the avoid list.
 For example, when set to 5, an initially unpicked object will be pushed to the bottom of the pickable objects list for the 5 next detections (if detected again).
-After that it will not be deprioritized anymore.
+After that, the object will no longer be deprioritized.
 
 The **Proximity tolerance** is the distance used for matching a detection against the avoid list.
 If the pick point of a detected object is within this distance to a pick point stored in the avoid list, it will be deprioritized.
