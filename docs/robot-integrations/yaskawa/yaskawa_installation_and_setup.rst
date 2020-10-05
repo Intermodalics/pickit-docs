@@ -11,13 +11,6 @@ setup of Pickit with a Yaskawa robot consists of the following steps:
     :local:
     :depth: 1
 
-.. note:: 
-  In this article you will be asked to switch between the **NORMAL MODE**, that you get when you start the robot normally, and the **MAINTENACE MODE** which you can access by turning on the controller while pressing the ``MAIN MENU`` key.
-
-.. note:: 
-  Several steps of the following procedure require the security level to be in **MANAGEMENT MODE**. The password for Motoman robots is usually "99999999" (hold the ``9`` key until the password field is completely filled out and then press ``ENTER``). The security menu can be found under :guilabel:`MAIN MENU` > :guilabel:`SYSTEM INFO` > :guilabel:`SECURITY` in normal mode, and directly under the :guilabel:`MAIN MENU` in maintenance mode.
-
-
 Check controller and software compatibility
 -------------------------------------------
 
@@ -25,6 +18,12 @@ Pickit is compatible with controllers **DX200**, **YRC1000** and **YRC1000 micr
 Also Pickit can be used with the **HC10** human-collaborative robot.
 
 .. note:: Pickit is not yet compatible with the **Smart Pendant**.
+
+.. note:: 
+  In this article you will be asked to switch between the **NORMAL MODE**, that you get when you start the robot normally, and the **MAINTENACE MODE** which you can access by turning on the controller while pressing the ``MAIN MENU`` key.
+
+.. note:: 
+  Several steps of the following procedure require the security level to be in **MANAGEMENT MODE**. The password for Motoman robots is usually "99999999" (hold the ``9`` key until the password field is completely filled out and then press ``ENTER``). The security menu can be found under :guilabel:`MAIN MENU` > :guilabel:`SYSTEM INFO` > :guilabel:`SECURITY` in normal mode, and directly under the :guilabel:`MAIN MENU` in maintenance mode.
 
 The parameters listed below must be verified on the controller to allow the correct operation of the application.
 Ask your local Yaskawa affiliate to check this.
@@ -68,7 +67,7 @@ Ask your local Yaskawa affiliate to check this.
 |
 
 .. warning::
-  The MotoPlus function is not a standard feature on all YRC1000(micro) and DX200 robots. It shoud be ordered with the robot. Make sure to precise in the order that the MotoPlus's number of files is set to 1 and its number of tasks is set to 5, as these settings can only be configured by Yaskawa service engineer.
+  On old DX200 controllers, the MotoPlus function can only be configured by Yaskawa service engineer.
 
 Setup the network connection
 ----------------------------
