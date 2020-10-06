@@ -27,4 +27,5 @@ The examples below show a pick point being rejected due to collisions that would
 .. tip::
   When collisions checks with the bin are enabled, it's important to have a correctly defined :ref:`bin box <bin-box>`.
 
-  When using Pickit :ref:`Teach <teach>`, having :ref:`multiple pick points <multiple-pick-points>` and/or :ref:`flexible pick orientations <flexible-pick-orientation>` increases the likelihood of finding collision-free pick points.
+  Pickit supports multiple strategies to increase the likelihood of an object being pickable and avoid collisions, such as
+  :ref:`multiple pick points <multiple-pick-points>`, :ref:`symmetry axes <pick-point-symmetry-axis>` and :ref:`flexible pick orientation <flexible-pick-orientation>`.

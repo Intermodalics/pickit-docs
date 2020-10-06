@@ -31,6 +31,19 @@ When multiple tools exist, the default tool represents the tool that will be sel
 .. image:: /assets/images/documentation/picking/multiple_tools.png
   :align: center
 
+
+TODO: Flexible pick orientation
+-------------------------------
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
+
+    flexible-pick-orientation
+
+TODO: :ref:`flexible pick orientation <flexible-pick-orientation>`.
+
 .. _cad-tool:
 
 CAD-based tool model
