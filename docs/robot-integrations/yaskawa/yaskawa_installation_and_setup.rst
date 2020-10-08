@@ -167,7 +167,7 @@ Test the robot connection
 -------------------------
 
 To start the communication, you can run **PI_RUN** on the robot.
-This job can be found in :guilabel:`JOB` → :guilabel:`SELECT MACRO JOB`.
+This job can be found in :guilabel:`JOB` → :guilabel:`SELECT MACRO JOB` (with **MANAGEMENT MODE** as security mode).
 
 While the program is running, an indicator in the Pickit web interface :ref:`web-interface-top-bar` should confirm that the robot is connected.
 
