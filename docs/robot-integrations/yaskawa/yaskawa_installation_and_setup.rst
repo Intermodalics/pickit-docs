@@ -19,14 +19,55 @@ Also Pickit can be used with the **HC10** human-collaborative robot.
 
 .. note:: Pickit is not yet compatible with the **Smart Pendant**.
 
-The parameters listed below must be declared on the controller to allow the correct operation of the application.
+.. note:: 
+  In this article you will be asked to switch between the **NORMAL MODE**, that you get when you start the robot normally, and the **MAINTENACE MODE** which you can access by turning on the controller while pressing the ``MAIN MENU`` key.
+
+.. note:: 
+  Several steps of the following procedure require the security level to be in **MANAGEMENT MODE**. The password for Motoman robots is usually "99999999" (hold the ``9`` key until the password field is completely filled out and then press ``ENTER``). The security menu can be found under :guilabel:`MAIN MENU` > :guilabel:`SYSTEM INFO` > :guilabel:`SECURITY` in normal mode, and directly under the :guilabel:`MAIN MENU` in maintenance mode.
+
+The parameters listed below must be verified on the controller to allow the correct operation of the application.
 Ask your local Yaskawa affiliate to check this.
 
--  **LAN INTERFACE SETTING** function set to **MANUAL SETTING**
--  **MotoPlus** function set to **USED**
--  **MACRO INST.** function set to **USED**
--  **MotoPlus - Number of files** set to **1** (Default setting)
--  **MotoPlus - Number of tasks** set to **5** (Default setting)
+.. details:: LAN INTERFACE SETTING set to MANUAL SETTING
+
+  +----------------------------------------------------------------------------+
+  | This setting is accessed in the **MAINTENANCE MODE.**                      |
+  |                                                                            |
+  | The security mode should be **MANAGEMENT MODE.**                           |
+  |                                                                            |
+  | :guilabel:`SYSTEM` > :guilabel:`SETUP` > :guilabel:`OPTION FUNCTION` >     |
+  | :guilabel:`LAN INTERFACE SETTING` > :guilabel:`HOST SETTING`               |
+  |                                                                            |
+  +----------------------------------------------------------------------------+
+
+.. details:: The MACRO INST. set ON
+
+  +----------------------------------------------------------------------------+
+  | This is the default setting on the YRC1000  and YRC1000micro. However,     |
+  | it could be verified when **SELECT MACRO JOB** can be seen in the          |
+  | **JOB** menu.                                                              |
+  |                                                                            |
+  | The security mode should be **MANAGEMENT MODE.**                           |
+  |                                                                            |
+  | .. image:: /assets/images/robot-integrations/yaskawa/yaskawa-macro.png     |
+  +----------------------------------------------------------------------------+
+
+.. details:: MotoPlus function set to USED
+
+  +----------------------------------------------------------------------------+
+  | This setting is accessed in the **MAINTENANCE MODE.**                      |
+  |                                                                            |
+  | The security mode should be **MANAGEMENT MODE.**                           |
+  |                                                                            |
+  | :guilabel:`SYSTEM` > :guilabel:`SETUP` > :guilabel:`OPTION FUNCTION` >     |
+  | :guilabel:`MotoPlus FUNC.`                                                 |
+  |                                                                            |
+  +----------------------------------------------------------------------------+
+
+|
+
+.. warning::
+  On old DX200 controllers, the MotoPlus function can only be configured by Yaskawa service engineer.
 
 Setup the network connection
 ----------------------------
@@ -45,10 +86,10 @@ IP configuration
 ~~~~~~~~~~~~~~~~
 
 .. warning::
-  Before making these changes, the robot controller should be in **maintenance mode**, and the security mode should be **management mode**.
+  Before making these changes, the robot controller should be in **MAINTENANCE MODE**, and the security mode should be **MANAGEMENT MODE**.
 
-Setting the IP address of the robot controller should be done in **maintenance mode**.
-Go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`OPTION FUNCTION` → :guilabel:`LAN interface setting` (or :guilabel:`Network` for the DX200) and set the following values:
+Setting the IP address of the robot controller should be done in **MAINTENANCE MODE**.
+Go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`OPTION FUNCTION` → :guilabel:`LAN INTERFACE SETTING` (or :guilabel:`NETWORK` for the DX200) and set the following values:
 
   - **IP ADDRESS SETTING**: MANUAL SETTING
   - **IP ADDRESS:** 169.254.5.182
@@ -57,50 +98,65 @@ Go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`OPTION FUNCTION` �
 
 Press :guilabel:`ENTER` and :guilabel:`CONFIRM` to modify the values.
 
+Pickit and the robot should be in the same IP range. This can be configured in :ref:`The Pickit port labeled ROBOT <settings-network-robot>` menu.
+
+The robot IP address can always be checked in **NORMAL MODE.** This information can be consulted under: :guilabel:`SYSTEM INFO` > :guilabel:`NETWORK SERVICES` after switching the security level to **MANAGEMENT MODE.**
+
 Load the program files
 ----------------------
 
 Before starting, :ref:`Download the Pickit Yaskawa files here <downloads_yaskawa>`.
-The Pickit folder should be copied to a USB pen drive.
+The Pickit folder should be copied to a USB pen drive. Then copy the correct ".out" extension file to the root directory of the USB drive:
 
-The robot controller should still be in **maintenance mode** and the security mode set to **management mode** before making these changes.
+  -  **Pickit_YRC100.out** for YRC1000 and YRC1000 Micro controllers.
+  -  **Pickit_DX200.out** for DX200 controllers.
 
-#. Insert the USB pen drive in the robot pendant.
-#. Load the correct USB device under :guilabel:`MotoPlus APL` → :guilabel:`DEVICE`.
-#. Select the folder **Pickit** > **MotoPlus** on the USB device under :guilabel:`MotoPlus APL` → :guilabel:`FOLDER`.
-#. Load the MotoPlus application under :guilabel:`MotoPlus APL` → :guilabel:`LOAD(USER APPLICATION)`. 
+The robot controller should be in **MAINTENANCE MODE** and the security mode set to **MANAGEMENT MODE** before making these changes.
+
+#. Insert the USB pen drive in the robot pendant or to the controller USB port.
+#. Under :guilabel:`MotoPlus APL` → :guilabel:`DEVICE` select the USB target port used.
+#. If the file **Pickit_YRC1000.out** ( **Pickit_DX200.out** ) is not placed in the main root of the USB drive, select its containing folder folder in: :guilabel:`MotoPlus APL.` → :guilabel:`FOLDER`.
+#. Load the MotoPlus application under :guilabel:`MotoPlus APL.` → :guilabel:`LOAD (USER APPLICATION)`. 
 
 Press :guilabel:`Select`, :guilabel:`Enter` and confirm.
-Now reboot the controller in **normal mode** with the USB device still attached.
-After rebooting, set security to **management mode**.
+Now reboot the controller in **NORMAL MODE** with the USB device still attached.
+After rebooting, set security to **MANAGEMENT MODE**.
 
-First check if the MotoPlus application is running by looking for robot output **#1024** under :guilabel:`IN/OUT` → :guilabel:`UNIVERSAL OUTPUT`, this output should be blinking.
+First check if the MotoPlus application is running by looking for robot output **#1024** under :guilabel:`IN/OUT` → :guilabel:`GENERAL PURPOSE OUTPUT`, this output should be blinking.
 If the MotoPlus application is running you can continue with uploading the Pickit files.
 
 .. warning:: In the next step, uploading the system data file **MACRO INST DEF DATA, MACRO.DAT** will remove all existing macro files on your controller, before pushing in the Pickit macros.
    If this is unwanted, do not upload the file.
    In that case, you should upload all other files as described below, and then :ref:`manually define the macros. <manually-define_macros>`
 
-#. Load the correct USB device under :guilabel:`EX. MEMORY` → :guilabel:`DEVICE`.
-#. Select the folder **Pickit** > **Program** on the USB device under :guilabel:`EX. MEMORY` → :guilabel:`FOLDER`.
-#. Load the **I/O DATA** (IONAME.DAT, VARNAME.DAT), **SYSTEM DATA** (MACRO.DAT) and  **JOB** (JBI files) files under :guilabel:`EX. MEMORY` → :guilabel:`LOAD` (the order of loading the files is important).
+#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`DEVICE` select the USB target port used.
+#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`FOLDER` select the folder **program**.
+#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the file **IONAME.DAT**.
+#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the file **VARNAME.DAT**.
+#. Under :guilabel:`MAIN MENU` →   :guilabel:`EX. MEMORY` →  :guilabel:`LOAD` select the .JBI files (Selected files appears with a star).
+
+.. note:: The order of loading these files must be respected: **I/0 data** (IONAME.DAT), then **System data** (VARNAME.DAT and MACRO.DAT), and finally the **JOB files** (.JBI files). The correct loading of these files can be verified in the **NORMAL MODE** under :guilabel:`JOB` > :guilabel:`SELECT MACRO JOB`.
+
 
 Load the Pickit example jobs
 ----------------------------
 
-In the Pickit folder there are two example jobs available.
+For this section the controller should be in the **NORMAL MODE** and the security level set to **MANAGEMENT MODE**. In the Pickit folders there are two example jobs available.
 These can be uploaded to the controller so you can easily get started with picking.
 
-#. Select the folder **Pickit** > **Program** > **Examples** on the USB device under :guilabel:`EX. MEMORY` → :guilabel:`FOLDER`.
-#. Load the **JOB** files under :guilabel:`EX. MEMORY` → :guilabel:`LOAD`.
+#. Under :guilabel:`MAIN MENU` → :guilabel:`EX. MEMORY` → :guilabel:`DEVICE` select the USB target port where the USB drive is plugged in.
+#. Under :guilabel:`MAIN MENU` → :guilabel:`EX. MEMORY` → :guilabel:`FOLDER` navigate to the folder **program** > **EXAMPLE**.
+#. Under :guilabel:`MAIN MENU` → :guilabel:`EX. MEMORY` → :guilabel:`LOAD` ``SELECT`` **JOB**, then ``SELECT`` both files (selected files appear with a star), finally press ``ENTER`` and confirm the loading.
+
+Now, you should be able to see these loaded files under :guilabel:`MAIN MENU` → :guilabel:`JOB` → :guilabel:`SELECT JOB` 
 
 Setting the Pickit IP address on the robot controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Still in **normal mode**, the IP address of Pickit needs to be entered in a **String**. To do this:
+For this section the controller should be in the **NORMAL MODE** and the security level set to **MANAGEMENT MODE**. The IP address of Pickit needs to be specified as a **String** the **S049** is meant to receive this address:
 
-  #. Go to :guilabel:`Main menu` → :guilabel:`VARIABLE` → :guilabel:`STRING` → :guilabel:`S049`.
-  #. Set **S049** to value **169.254.5.180**.
+#. Under :guilabel:`MAIN MENU` → :guilabel:`VARIABLE` → :guilabel:`STRING` navigate to :guilabel:`S049`
+#. Type in the same IP address set in :ref:`The Pickit port labeled ROBOT <settings-network-robot>` menu.
 
 .. note:: There is no communication yet between the Pickit and the robot.
   So don't worry if the connection is not shown in the Pickit web interface :ref:`web-interface-top-bar`.
@@ -111,7 +167,7 @@ Test the robot connection
 -------------------------
 
 To start the communication, you can run **PI_RUN** on the robot.
-This job can be found in :guilabel:`JOB` → :guilabel:`SELECT MACRO JOB`.
+This job can be found in :guilabel:`JOB` → :guilabel:`SELECT MACRO JOB` (with **MANAGEMENT MODE** as security mode).
 
 While the program is running, an indicator in the Pickit web interface :ref:`web-interface-top-bar` should confirm that the robot is connected.
 
