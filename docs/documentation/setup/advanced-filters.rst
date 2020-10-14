@@ -6,28 +6,11 @@ Advanced filters
 There are a number of advanced Region of Interest filters used for
 excluding points \ **inside the ROI box**.
 
--  :ref:`Bin-wall-filter`
 -  :ref:`Flat-curved-region-filter`
 -  :ref:`Dynamic-box-based-roi-filter`
 -  :ref:`Point-based-roi-filter`
 -  :ref:`Plane-based-roi-filter`
 -  :ref:`Sphere-based-roi-filter`
-
-.. _Bin-wall-filter:
-
-Bin wall filter
-~~~~~~~~~~~~~~~
-
-In bin picking, the :ref:`bin box <bin-box>` is typically fit to the internal borders of the bin, to exclude the bin sides. It can sometimes happen that some bin points end up inside the bin box, such as when bin sides are deformed, or when the bin moves slightly over time.
-
-This filter is meant to remove the points on the bin sides that end up inside the bin box. A point is removed if the following conditions are met:
-
-#. The distance between the point and the bin is smaller than the bin distance threshold
-#. The surface that the point belongs to is close to parallel with the bin wall. Specifically, the angle between this surface and the bin wall should be smaller than the normal angle threshold.
-
-The image below demonstrates the effect of this filter. On the left this filter is not enabled, whereas on the right it is enabled. Typically some points at the top of the bin sides will remain which is usually not a problem.
-
-.. image:: /assets/images/documentation/setup/region_of_interest/advanced_filters/bin_wall_filter.png
 
 .. _Flat-curved-region-filter:
 
