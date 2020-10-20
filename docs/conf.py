@@ -29,8 +29,12 @@ import os
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'versionwarning.extension'
 ]
+
+versionwarning_api_url = '/api/v2/'
+versionwarning_body_selector = 'div.document'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
