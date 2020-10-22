@@ -25,12 +25,30 @@ import os
 # If your documentation needs a minimal Sphinx version, state it here.
 #needs_sphinx = '1.0'
 
+# Whitelist pattern for tags (set to None to ignore all tags)
+smv_tag_whitelist = None
+
+# Whitelist pattern for branches (set to None to ignore all branches)
+smv_branch_whitelist = r'^\d+\.\d+$'    # Branches like "2.1"
+
+# Whitelist pattern for remotes (set to None to use local branches only)
+smv_remote_whitelist = r'^(origin|upstream)$'
+
+# Format for versioned output directories inside the build directory
+smv_outputdir_format = '{ref.name}'
+
+# Determines whether remote or local git branches/tags are preferred if their output dirs conflict
+smv_prefer_remote_refs = True
+
+# Pattern for released versions
+smv_released_pattern = r'^heads/\d+\.\d+$'    # Branches like "2.1"
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
     'sphinx.ext.autosectionlabel',
-    'versionwarning.extension'
+    "sphinx_multiversion"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -38,6 +56,8 @@ templates_path = ['_templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
+
+html_show_sourcelink = False
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -106,9 +126,9 @@ html_theme = 'sphinx_rtd_theme'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-# html_theme_options = {
+html_theme_options = {
 #   'canonical_url': '',
-#   'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
+    'analytics_id': 'UA-79358775-2',  #  Provided by Google in your dashboard
 #   'logo_only': False,
 #   'display_version': True,
 #   'prev_next_buttons_location': 'bottom',
@@ -120,7 +140,7 @@ html_theme = 'sphinx_rtd_theme'
 #   'navigation_depth': 4,
 #   'includehidden': True,
 #   'titles_only': False
-# }
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
