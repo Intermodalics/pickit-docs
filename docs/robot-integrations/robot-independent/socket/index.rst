@@ -264,7 +264,7 @@ _______________________________________
 Request Pickit to find objects in the current scene *with retries*.
 This command is similar to RC_PICKIT_LOOK_FOR_OBJECTS_, but when no objects are found (but the :ref:`Region of Interest (ROI) <region-of-interest>` is not empty), Pickit will retry up to *n* times to find objects before giving up.
 
-**Request:**
+**Request**
 
 +-------------+-----------------------------------------------------------+
 | Field       | Value /  Description                                      |
@@ -335,7 +335,7 @@ ___________________
 Request Pickit to load a specific setup and product :ref:`configuration<Configuration>`. Each setup and product configuration
 have a unique ID assigned, which is shown in the web interface, next to the configuration name.
 
-**Request:**
+**Request**
 
 +-------------+-----------------------------------------------------------+
 | Field       | Value /  Description                                      |
@@ -363,7 +363,7 @@ __________________________
 Request Pickit to set the cylinder dimensions when using the :ref:`teach-cylinder`.
 For the command to succeed, there can be only one Teach model, it must be of type cylinder, and it must be enabled.
 
-**Request:**
+**Request**
 
 +-------------+-----------------------------------------------------------+
 | Field       | Value /  Description                                      |
