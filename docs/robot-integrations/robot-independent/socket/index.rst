@@ -424,7 +424,7 @@ _______________________
 
 Request Pickit to save a :ref:`snapshot<Snapshots>` with the last captured scene and the current configuration.
 Snapshots will be saved in the ``robot`` subfolder, which can be accessed from the web interface.
-If the user wishes to distinguish snapshots of different situations (ex. mispicks and no detected objects), it is possible to specify a subfolder inside the ``robot`` folder.
+If the user wishes to distinguish snapshots of different situations (e.g. mispicks and no detected objects), it is possible to optionally specify a subfolder inside the ``robot`` folder.
 
 **Request**
 
