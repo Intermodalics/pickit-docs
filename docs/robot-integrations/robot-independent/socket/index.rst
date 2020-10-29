@@ -362,6 +362,8 @@ __________________________
 
 Request Pickit to set the cylinder dimensions when using the :ref:`teach-cylinder`.
 For the command to succeed, there can be only one Teach model, it must be of type cylinder, and it must be enabled.
+Notice that, after calling this command with different dimensions than the ones of the current cylinder model, the product file will have unsaved changes.
+If you wish you can save them by calling the command :ref:`RC_SAVE_ACTIVE_PRODUCT`.
 
 **Request**
 
@@ -424,7 +426,7 @@ _______________________
 
 Request Pickit to save a :ref:`snapshot<Snapshots>` with the last captured scene and the current configuration.
 Snapshots will be saved in the ``robot`` subfolder, which can be accessed from the web interface.
-If the user wishes to distinguish snapshots of different situations (e.g. mispicks and no detected objects), it is possible to optionally specify a subfolder inside the ``robot`` folder.
+If you wish to distinguish snapshots of different situations (e.g. mispicks and no detected objects), it is possible to optionally specify a subfolder inside the ``robot`` folder.
 
 **Request**
 
@@ -432,7 +434,7 @@ If the user wishes to distinguish snapshots of different situations (e.g. mispic
 | Field       | Value /  Description                                                     |
 +=============+==========================================================================+
 | payload[0]  | Subfolder (inside ``robot``) in which the snapshot should be saved.      |
-|             | The subfolder is identified and named by a number smaller than 256.      |
+|             | The subfolder is identified and named by a number between 1 and 255.     |
 |             | If zero (0), the snapshot is saved directly inside the ``robot`` folder. |
 +-------------+--------------------------------------------------------------------------+
 
