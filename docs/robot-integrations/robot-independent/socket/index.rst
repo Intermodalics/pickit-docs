@@ -435,7 +435,8 @@ If you wish to distinguish snapshots of different situations (e.g. mispicks and 
 +=============+==========================================================================+
 | payload[0]  | Subfolder (inside ``robot``) in which the snapshot should be saved.      |
 |             | The subfolder is identified and named by a number between 1 and 255.     |
-|             | If zero (0), the snapshot is saved directly inside the ``robot`` folder. |
+|             | If the value is outside this range, the snapshot is saved directly       |
+|             | inside the ``robot`` folder.                                             |
 +-------------+--------------------------------------------------------------------------+
 
 **Response**
