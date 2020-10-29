@@ -264,7 +264,7 @@ _______________________________________
 Request Pickit to find objects in the current scene *with retries*.
 This command is similar to RC_PICKIT_LOOK_FOR_OBJECTS_, but when no objects are found (but the :ref:`Region of Interest (ROI) <region-of-interest>` is not empty), Pickit will retry up to *n* times to find objects before giving up.
 
-**Request:**
+**Request**
 
 +-------------+-----------------------------------------------------------+
 | Field       | Value /  Description                                      |
@@ -335,7 +335,7 @@ ___________________
 Request Pickit to load a specific setup and product :ref:`configuration<Configuration>`. Each setup and product configuration
 have a unique ID assigned, which is shown in the web interface, next to the configuration name.
 
-**Request:**
+**Request**
 
 +-------------+-----------------------------------------------------------+
 | Field       | Value /  Description                                      |
@@ -355,6 +355,70 @@ have a unique ID assigned, which is shown in the web interface, next to the conf
 |        | :ref:`PICKIT_CONFIG_FAILED <response-status>`     | Failed to load the specified configurations.     |
 +--------+---------------------------------------------------+--------------------------------------------------+
 
+.. _RC_PICKIT_SET_CYLINDER_DIM:
+
+RC_PICKIT_SET_CYLINDER_DIM
+__________________________
+
+Request Pickit to set the cylinder dimensions when using the :ref:`teach-cylinder`.
+For the command to succeed, there can be only one Teach model, it must be of type cylinder, and it must be enabled.
+Notice that, after calling this command with different dimensions than the ones of the current cylinder model, the product file will have unsaved changes.
+If you wish you can save them by calling the command :ref:`RC_SAVE_ACTIVE_PRODUCT`.
+
+**Request**
+
++-------------+-----------------------------------------------------------+
+| Field       | Value /  Description                                      |
++=============+===========================================================+
+| payload[0]  | Length of the cylinder.                                   |
++-------------+-----------------------------------------------------------+
+| payload[1]  | Diameter of the cylinder.                                 |
++-------------+-----------------------------------------------------------+
+
+**Response**
+
++--------+---------------------------------------------------+--------------------------------------------------+
+| Field  | Value                                             | Description                                      |
++========+===================================================+==================================================+
+| status | :ref:`PICKIT_CONFIG_OK <response-status>`         | Successfully set the cylinder dimensions.        |
+|        +---------------------------------------------------+--------------------------------------------------+
+|        | :ref:`PICKIT_CONFIG_FAILED <response-status>`     | Failed to set the cylinder dimensions.           |
++--------+---------------------------------------------------+--------------------------------------------------+
+
+.. _RC_SAVE_ACTIVE_SETUP:
+
+RC_SAVE_ACTIVE_SETUP
+____________________
+
+Request Pickit to save the currently loaded setup.
+
+**Response**
+
++--------+---------------------------------------------------+--------------------------------------------------+
+| Field  | Value                                             | Description                                      |
++========+===================================================+==================================================+
+| status | :ref:`PICKIT_CONFIG_OK <response-status>`         | Successfully saved the active setup.             |
+|        +---------------------------------------------------+--------------------------------------------------+
+|        | :ref:`PICKIT_CONFIG_FAILED <response-status>`     | Failed to save the active setup.                 |
++--------+---------------------------------------------------+--------------------------------------------------+
+
+.. _RC_SAVE_ACTIVE_PRODUCT:
+
+RC_SAVE_ACTIVE_PRODUCT
+____________________
+
+Request Pickit to save the currently loaded product.
+
+**Response**
+
++--------+---------------------------------------------------+--------------------------------------------------+
+| Field  | Value                                             | Description                                      |
++========+===================================================+==================================================+
+| status | :ref:`PICKIT_CONFIG_OK <response-status>`         | Successfully saved the active product.           |
+|        +---------------------------------------------------+--------------------------------------------------+
+|        | :ref:`PICKIT_CONFIG_FAILED <response-status>`     | Failed to save the active product.               |
++--------+---------------------------------------------------+--------------------------------------------------+
+
 .. _RC_PICKIT_SAVE_SNAPSHOT:
 
 RC_PICKIT_SAVE_SNAPSHOT
@@ -362,6 +426,18 @@ _______________________
 
 Request Pickit to save a :ref:`snapshot<Snapshots>` with the last captured scene and the current configuration.
 Snapshots will be saved in the ``robot`` subfolder, which can be accessed from the web interface.
+If you wish to distinguish snapshots of different situations (e.g. mispicks and no detected objects), it is possible to optionally specify a subfolder inside the ``robot`` folder.
+
+**Request**
+
++-------------+--------------------------------------------------------------------------+
+| Field       | Value /  Description                                                     |
++=============+==========================================================================+
+| payload[0]  | Subfolder (inside ``robot``) in which the snapshot should be saved.      |
+|             | The subfolder is identified and named by a number between 1 and 255.     |
+|             | If the value is outside this range, the snapshot is saved directly       |
+|             | inside the ``robot`` folder.                                             |
++-------------+--------------------------------------------------------------------------+
 
 **Response**
 
@@ -447,6 +523,9 @@ Constants
    RC_PICKIT_PROCESS_IMAGE                 = 23
    RC_PICKIT_NEXT_OBJECT                   = 30
    RC_PICKIT_CONFIGURE                     = 40
+   RC_PICKIT_SET_CYLINDER_DIM              = 41
+   RC_SAVE_ACTIVE_SETUP                    = 42
+   RC_SAVE_ACTIVE_PRODUCT                  = 43
    RC_PICKIT_SAVE_SCENE                    = 50
    RC_PICKIT_BUILD_BACKGROUND              = 60
    RC_PICKIT_GET_PICK_POINT_DATA           = 70
