@@ -141,12 +141,3 @@ more matches. There are three available options:
 #. Perform an orientation check for re-grasping using
    **Fast** detection speed, as the part is isolated. Grasp and place in
    final location.
-
-Detection precision
-^^^^^^^^^^^^^^^^^^^
-
-Apart from the above choice, you can instruct Pickit Teach to favor
-being **more precise** or to potentially find **more objects**. This
-choice has a negligible impact on detection times. In most cases,
-selecting **more precise** yields a good number of matches per
-detection run, and is the recommended default.
