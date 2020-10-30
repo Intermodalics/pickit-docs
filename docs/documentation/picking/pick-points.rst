@@ -74,7 +74,7 @@ When an object has multiple ways of being picked, Pickit smartly selects the bes
 
   2. **Go over the list of pick points** starting from the highest one.
 
-    a. **Is the initial pick point pickable?** Determine the orientation that is closest to the :ref:`preferred pick point orientation <preferred-orientation-teach>`.
+    a. **Is the initial pick point pickable?** Determine the orientation that is closest to the :ref:`preferred pick point orientation <preferred-orientation>`.
     If the tool model has :ref:`flexible pick orientation <flexible-orientation-at-pick-point>`, you can choose whether you prefer the initial pick to tilt less or point up as much as possible.
     If the initial pick point is pickable, use it to pick the object, else continue with the next step.
 

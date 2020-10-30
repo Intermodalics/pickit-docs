@@ -43,7 +43,7 @@ This part has distinct top and bottom sides, and has the following picking confi
 
 - **Four pick points**, two on each side.
   The two pick points of each side have a 180° offset in Z to represent the bilateral symmetry of the gripper.
-  Representing this discrete symmetry allows Pickit to chose the one that is closest to the :ref:`preferred pick point orientation <preferred-orientation-teach>`, and potentially minimize robot motions.
+  Representing this discrete symmetry allows Pickit to chose the one that is closest to the :ref:`preferred pick point orientation <preferred-orientation>`, and potentially minimize robot motions.
 
 - **Two finger gripper** :ref:`tool model <robot-tool-model>`, with a flexible pick orientation that allows a **Y-axis tilt**.
 

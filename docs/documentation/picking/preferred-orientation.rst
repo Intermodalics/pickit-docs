@@ -1,9 +1,9 @@
-.. _preferred-orientation-teach:
+.. _preferred-orientation:
 
-Preferred pick point orientation in Pickit Teach
-================================================
+Preferred pick point orientation
+================================
 
-When a Pickit Teach model has :ref:`multiple pick points <multiple-pick-points>`, a :ref:`symmetry axis <pick-point-symmetry-axis>` or a tool with :ref:`flexible pick orientation <flexible-pick-orientation>`, there can be some freedom in how the pick point is oriented.
+When an object model has :ref:`multiple pick points <multiple-pick-points>`, a :ref:`symmetry axis <pick-point-symmetry-axis>` or a tool with :ref:`flexible pick orientation <flexible-pick-orientation>`, there can be some freedom in how the pick point is oriented.
 The **preferred pick point orientation** allows to point a pick point axis as close as possible to one of the :ref:`reference frame <reference-frame>` axes, or a feature point like the reference frame origin or :ref:`ROI <region-of-interest>` center.
 
 Consider the following example. The part in the image below has a single pick point without :ref:`symmetry axis <pick-point-symmetry-axis>`, hence has no freedom to reorient the pick point.
