@@ -18,7 +18,7 @@ external computer to your Pickit system.
 When successfully connected to the Pickit web interface, you should expect to
 see something similar to the image below:
 
-.. image:: /assets/images/documentation/web-interface/pickit-webinterface-22.png
+.. image:: /assets/images/documentation/web-interface/pickit-webinterface-24.png
 
 If you cannot manage to successfully visualize the Pickit web interface, contact
 us at `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`__.
@@ -44,7 +44,7 @@ buttons that remain visible at all times.
 
 The left part of the bar displays the following contents:
 
-.. image:: /assets/images/documentation/web-interface/pickit-webinterface-top-bar-left-22.png
+.. image:: /assets/images/documentation/web-interface/pickit-webinterface-top-bar-left-24.png
    :scale: 90%
 
 - The Pickit logo.
@@ -84,7 +84,7 @@ configuration. There are different pages where you can define:
 - :ref:`Detection: <detection>` What type of object to look for.
 - :ref:`Picking: <Picking>` How to pick the detected objects.
 
-.. image:: /assets/images/documentation/web-interface/pickit-webinterface-right-side-22.png
+.. image:: /assets/images/documentation/web-interface/pickit-webinterface-right-side-24.png
 
 .. _web-interface-left-panel:
 

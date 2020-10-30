@@ -9,7 +9,7 @@ things you can check for:
    -  Open a :ref:`supported web browser <supported-browsers>` on your external PC and enter http://192.168.66.1 in the address bar.
    -  Now the Pickit user interface is visible inside your web browser.
 
-   .. image:: /assets/images/documentation/web-interface/pickit-webinterface-22.png
+   .. image:: /assets/images/documentation/web-interface/pickit-webinterface-24.png
 
 #. Pickit can successfully reach the IP address of the robot:
 
