@@ -54,13 +54,13 @@ Pick strategy
     object-ordering
     preferred-orientation
     max-robot-flange-tilt
-    enforce-alignment-of-pick-frame-orientation
     flange-filter
     temporarily-avoid-unpicked-objects
 
 Once pick points are specified, there are a number of options that influence how objects are picked.
 
   - :ref:`Object ordering: <object-ordering>` When multiple objects are detected, object ordering determines the order in which they should be picked.
+
   - :ref:`Preferred pick point orientation: <preferred-orientation>` Pick points can have flexibility in how they are oriented.
     This flexibility can be used to favor pick orientations that are easier and faster to reach by the robot (e.g. less wrist motion):
 
