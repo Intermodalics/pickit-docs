@@ -17,7 +17,7 @@ In contrast, to teach this model :ref:`from camera <teach-from-camera>`, one wou
 
 .. image:: /assets/images/documentation/detection/teach/teach-from-cad.png
 
-Another important benefit is absolute accuracy when defining :ref:`pick points <pick-points-teach>`.
+Another important benefit is absolute accuracy when defining :ref:`pick points <pick-points-detail>`.
 If the origin of the CAD file with respect to the part geometry is known, pick points can be positioned by specifying exact offsets with respect to the origin.
 
 .. note:: Pickit supports **stl**, **obj** and **ply** formats. Most CAD design editors can export CAD into such formats.

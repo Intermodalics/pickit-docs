@@ -21,7 +21,7 @@ This article describes the features provided by Pickit to model such allowed var
 Flexible orientation at the pick point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Most tool models allow setting the optional :guilabel:`Flexible pick orientation`, which specifies the orientation flexibility allowed at the :ref:`pick point <pick-points-teach>`.
+Most tool models allow setting the optional :guilabel:`Flexible pick orientation`, which specifies the orientation flexibility allowed at the :ref:`pick point <pick-points-detail>`.
 
 Pickit allows the pick orientation to tilt around the X and/or Y axes, as well as to rotating around the tool Z-axis (below left).
 Flexibility around each axis is represented in the 3D views as a circular sector as wide as the specified interval size (below right).

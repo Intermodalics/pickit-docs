@@ -21,7 +21,7 @@ Before starting on this exercise we advise you to read the following articles:
 
 -  :ref:`Setup: Region of Interest <region-of-interest>`
 -  :ref:`Detection: Pickit Teach <Teach>`
--  :ref:`Picking: Pick points in Pickit Teach <pick-points-teach>`
+-  :ref:`Picking: Pick points <pick-points-detail>`
 
 Task
 ----

@@ -1,19 +1,23 @@
-.. _pick-points-teach:
+.. _pick-points-detail:
 
-Pick points in Pickit Teach
-===========================
+Pick points
+===========
 
-Once a Pickit Teach model :ref:`has been taught <teach-a-model>`, pick points need to be associated to it.
+Once a :ref:`part to detect <detection>` has been defined, pick points need to be associated to it.
 A pick point represents where an object can be picked by the robot.
 It is specified as a position and orientation relative to the object, where the robot Tool Center Point (TCP) should move to perfrom a pick.
 What constitutes a good pick point depends on both the gripping device and the object to be picked.
 
-This article focuses on how pick points are created and managed, and the companion :ref:`smart picking examples <smart-picking-examples>` article describes how to make the best of it on real application scenarios.
-The way in which an object is picked can also determine how to correctly place it at a drop-off location.
-Refer to the :ref:`smart placing examples <smart-place-examples>` to learn more about useful and easy to program place strategies.
+This article focuses on how pick points are created and managed, which corresponds to the typical :ref:`Pickit Teach <teach>` workflow.
+Pickit also provides convenient wizards for creating pick points for the following cases:
 
-.. tip::
-  If using a :ref:`cylinder model <teach-cylinder>`, the easiest way to create pick points is using the :ref:`pick points wizard <cylinder-pick-points-wizard>`.
+- :ref:`Pick points for cylinders <cylinder-pick-points-wizard>` of known size with :ref:`Pickit Teach <teach-cylinder>`.
+- :ref:`Pick points for 2D or 3D shapes <pick-points-flex-pattern>` with :ref:`Flex <Flex>` or :ref:`Pattern <Pattern>`.
+
+
+The way in which an object is picked can also determine how to correctly place it at a drop-off location.
+To learn more about how to make the best use of pick points in real application scenarios, take a look at the
+:ref:`smart picking <smart-picking-examples>` and :ref:`smart placing <smart-place-examples>` examples companion articles.
 
 .. _multiple-pick-points:
 
@@ -95,5 +99,6 @@ When an object has multiple ways of being picked, Pickit smartly selects the bes
     pick-point-location
     pick-point-priority
     pick-point-symmetry-axis
+    pick-points-flex-pattern
     smart-pick-examples
     smart-place-examples

@@ -7,7 +7,7 @@ Pickit allows to model the robot tool that is used for picking.
 Defining a tool model is not mandatory, but highly recommended for the following reasons:
 
 - In constrained picking scenarios like bin picking, it's possible to :ref:`prevent collisions <collision-prevention>` between the robot tool and the bin or other objects.
-- When defining :ref:`pick points <pick-points-teach>`, it's helpful to visualize the robot tool with respect to the object to confirm the correct placement of a pick point.
+- When defining :ref:`pick points <pick-points-detail>`, it's helpful to visualize the robot tool with respect to the object to confirm the correct placement of a pick point.
 
 .. attention::
   Pickit is not aware of the robot Tool Center Point (TCP) definition.
@@ -27,7 +27,7 @@ A common example would be a two-finger gripper used with different opening dista
   :scale: 60%
   :align: center
 
-When multiple tools exist, the default tool represents the tool that will be selected when a new :ref:`pick point <pick-points-teach>` is created.
+When multiple tools exist, the default tool represents the tool that will be selected when a new :ref:`pick point <pick-points-detail>` is created.
 
 .. image:: /assets/images/documentation/picking/multiple_tools.png
   :align: center

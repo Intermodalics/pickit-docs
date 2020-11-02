@@ -30,18 +30,16 @@ The tool model is useful for visually confirming the correct location of a pick 
 Pick points
 -----------
 
-A pick point represents where an object can be picked by the robot.
+A :ref:`pick point <pick-points-detail>` represents where an object can be picked by the robot.
 It is specified as a position and orientation relative to the object, where the robot Tool Center Point (TCP) should move to perform a pick.
 What constitutes a good pick point depends on both the gripping device and the object to be picked.
-The following articles detail how pick points are managed by the different detection engines:
 
 .. toctree::
+    :hidden:
     :maxdepth: 1
     :glob:
 
-    pick-points-teach
-    pick-points-flex-pattern
-
+    pick-points
 
 .. _pick-strategy:
 
