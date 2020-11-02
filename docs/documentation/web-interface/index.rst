@@ -101,7 +101,7 @@ optimizing your application.
 The following color code is used to classify detections:
 
 -  **Green - Pickable object:** These are the only objects sent to the robot for picking. Note that for Pickit :ref:`Teach <teach>`, different colors (other than red and orange) are used in the :ref:`Objects <objects-view>` view to discriminate multiple detections in a scene.
--  **Orange - Unpickable object:** Pickit successfully detected the object, but it's not pickable for reasons such as :ref:`robot tool collisions <collision-prevention>` or :ref:`too tilted <max_angle_pick_z_ref_z>` pick points.
+-  **Orange - Unpickable object:** Pickit successfully detected the object, but it's not pickable for reasons such as :ref:`robot tool collisions <collision-prevention>` or :ref:`too tilted <max-robot-flage-tilt>` objects.
 -  **Red - Invalid object:** The object failed to pass a detection quality check, such as the matching score being too low.
  
 

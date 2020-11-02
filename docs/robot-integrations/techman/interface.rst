@@ -175,7 +175,7 @@ Pickit can discriminate the following scenarios, for which the robot program can
 
   - For suction and magnetic grippers that exhibit compliant behavior, enforce :ref:`pick points with the z-axis pointing up <enforce-alignment-z-parallel-z>`. This constraint modifies the pick point orientation such that the tool always approaches the part straight down. This can be set in the **Picking** tab, under **Pick strategy**.
 
-  - For fingered grippers, ignore parts that are :ref:`too tilted wit respect to the reference frame Z-axis <max_angle_pick_z_ref_z>`. This setting is also in the **Picking** tab, under **Collision prevention**. Set the maximum angle to a low value such as 15 degrees.
+  - For fingered grippers, ignore parts that are :ref:`too tilted <max-robot-flage-tilt>`. This setting is also in the **Picking** tab, under **Collision prevention**. Set the maximum angle to a low value such as 15 degrees.
 
 saveSnapshot
 ~~~~~~~~~~~~
