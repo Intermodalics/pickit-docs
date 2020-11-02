@@ -58,6 +58,7 @@ Pick strategy
     preferred-orientation-flex-pattern
     maximum-angle-between-pick-and-reference-frame-zaxis
     enforce-alignment-of-pick-frame-orientation
+    flange-filter
     temporarily-avoid-unpicked-objects
 
 Once pick points are specified, there are a number of options that influence how objects are picked.
@@ -74,6 +75,9 @@ Once pick points are specified, there are a number of options that influence how
 
   - **Enforce pick point alignment** This applies only to the :ref:`Flex <Flex>` and :ref:`Pattern <Pattern>` detection engines, and is explained in detail in :ref:`this article <enforce-alignment-of-pick-point-orientation>`.
     If using Pickit :ref:`Teach <teach>`, refer to the more powerful :ref:`flexible pick orientation <flexible-pick-orientation>` feature.
+
+  - **Minimum distance between robot flange and ROI** This allows limiting lateral deviations of the robot flange away from the bin walls, at the pick point.
+    Refer to :ref:`this article <flange-filter>` for more details.
 
   - **Temporarily avoid unpicked objects** This prevents repeatedly failing to pick the same object, and contributes to more consistent cycle times.
     It is explained in detail in :ref:`this article <temporarily-avoid-unpicked-objects>`.
