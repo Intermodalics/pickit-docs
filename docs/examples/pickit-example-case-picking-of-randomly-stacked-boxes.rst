@@ -81,7 +81,7 @@ This is what we call the small plane strategy.
 Preferred pick orientation
 --------------------------
 
-In this first step the orientation of the part is from no importance.
+In this first step the orientation of the part is not important.
 This means that the pick points can be forced to be orientated in exactly the same way.
 We do this by:
 
@@ -89,7 +89,7 @@ We do this by:
 
 - Setting a :ref:`preferred pick point orientation <preferred-orientation>` that aligns the pick x-axis with that of the :ref:`reference frame <reference-frame>`.
 
-This allows further optimization of the movement speed of the robot, because the last wrist movement of the robot is not used.
+This allows further optimization of the robot motions, because wrist rotations can hereby be avoided.
 By applying this strategy it means that in the first step all parts will be picked and dropped with the same robot orientation.
 
 Robot program

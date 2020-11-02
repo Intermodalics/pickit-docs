@@ -38,7 +38,7 @@ Pickit, while others relate to your hardware setup.
 
 -  Increase the likelihood of an object being pickable, by using :ref:`multiple pick points <multiple-pick-points>`, :ref:`symmetry axes <pick-point-symmetry-axis>`, and robot tool :ref:`flexible pick orientation <flexible-pick-orientation>`.
 
-- Optionally, limit the robot workspace by setting a minimum distance between the robot flange and bin walls. **TODO: Add Ref!**
+- Optionally, limit the robot workspace by setting a minimum distance between the :ref:`robot flange and bin walls <flange-filter>`.
 
 -  Consider :ref:`detecting-an-empty-roi` when no more detections are found.
 
