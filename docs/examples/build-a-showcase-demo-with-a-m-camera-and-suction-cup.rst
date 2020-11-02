@@ -60,7 +60,7 @@ Product file
 
 The model that is being used is the shape from the top, which is a circle.
 The **pick point** of this model is located in the center of the circle.
-The **matching score** and **tolerance** is set to 90% and 1.5 mm.
+The **matching score** and **tolerance** are set to 90% and 3.0 mm.
 No **fusion** or **downsampling** is applied and the **detection speed** is set to Fast.
 
 Need help with these settings? See the :ref:`Teach` article for more information.

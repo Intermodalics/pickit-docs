@@ -58,7 +58,7 @@ Product file
 The models that are being used correspond to the shape of the top and bottom of the part.
 The difference lies within the height of both models.
 The **pick point** of each model is put in the center.
-The **matching score** and **tolerance** is set to 85% and 1.8 mm.
+The **matching score** and **tolerance** are set to 85% and 3.6 mm.
 No **downsampling** is applied and the **detection speed** is set to Fast.
 
 Need help with these settings? See the :ref:`Teach` article for more information.

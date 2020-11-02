@@ -76,7 +76,7 @@ articles on how to use Pickit :ref:`Teach`.
 
 The following parameters are used in both models:
 
--  **Matching tolerance:** 4 mm
+-  **Matching tolerance:** 8 mm
 -  **Minimum matching score:** 75%
 -  **Fusion:** None
 -  **Downsampling:** 4

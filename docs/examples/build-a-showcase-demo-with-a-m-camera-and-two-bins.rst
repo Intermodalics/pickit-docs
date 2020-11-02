@@ -64,7 +64,7 @@ Product file
 
 For this demo, one product file is defined with a single :ref:`Teach model <how-to-good-model>`.
 The model that is being used is the shape from the side.
-The **matching score** and **tolerance** is set to 80% and 2.4 mm.
+The **matching score** and **tolerance** are set to 80% and 4.8 mm.
 No **fusion** or **downsampling** is applied and the **detection speed** is set to Normal.
 
 .. image:: /assets/images/examples/demo_2_bins_pick_frame.png
