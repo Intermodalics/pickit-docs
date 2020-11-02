@@ -10,8 +10,8 @@ For 2D shapes (circles, squares, rectangles and ellipses), the pick points are l
 Additionally, the following considerations apply:
 
 - **Circle:** The pick point has a symmetry axis about the circle center.
-- **Square:** There are four pick points, each one with the X-axis pointing toward one of the sides.
-- **Rectangle and ellipse:** There are two pick points, each with the X-axis parallel to the longest side (any of the two directions).
+- **Square:** The X-axis points toward one of the sides.
+- **Rectangle and ellipse:** The X-axis is parallel to the longest side (any of the two directions).
 
 .. image:: /assets/images/documentation/picking/flex_2d_shape_pick_points.png
     :scale: 80%
