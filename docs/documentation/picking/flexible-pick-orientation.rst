@@ -1,45 +1,81 @@
 .. _flexible-pick-orientation:
 
-Flexible pick orientation
--------------------------
+Tool models and flexible pick orientation
+-----------------------------------------
 
-In practice, many applications can tolerate some variation with respect to the nominal pick orientation without compromising pick success.
-Taking advantage of this can increase the likelihood that individual pick points are pickable by the robot.
-This flexibility is typically due to shape symmetries (e.g. a circular object, below left), robot tool compliance (e.g. suction cup bellows, below center), or application-specific considerations (e.g. clearance between the tool and object at a specific pickpoint, below right). It is represented in Pickit by a pick point's :guilabel:`Flexible pick orientation`.
+In practice, many tools can tolerate some variation with respect to the nominal pick orientation without compromising pick success.
+Taking advantage of this can increase the likelihood that a pick point is pickable by the robot.
+This variation is typically due to:
+
+- **Robot tool compliance**, such as a passive hinge (below left), or flexible suction cup bellows (below center).
+- **Application-specific constraints**, like the clearance between tool and object at the pick point (below right).
 
 .. image:: /assets/images/documentation/picking/flexibility_real_examples.png
   :scale: 60%
   :align: center
 
-Pickit allows the pick point orientation to tilt around the X and/or Y axes, as well as to rotate around the Z-axis (below, left).
-Flexibility around each axis is represented in the 3D model view as a circular sector as wide as the specified interval size (below, right).
+This article describes the features provided by Pickit to model such allowed variations.
+
+.. _flexible-orientation-at-pick-point:
+
+Flexible orientation at the pick point
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Most tool models allow setting the optional :guilabel:`Flexible pick orientation`, which specifies the orientation flexibility allowed at the :ref:`pick point <pick-points-teach>`.
+
+Pickit allows the pick orientation to tilt around the X and/or Y axes, as well as to rotating around the tool Z-axis (below left).
+Flexibility around each axis is represented in the 3D views as a circular sector as wide as the specified interval size (below right).
 
 .. image:: /assets/images/documentation/picking/flexible_pick_orientation_ui_with_3d.png
-  :scale: 80%
+  :scale: 70%
   :align: center
 
-The following three examples show, from left to right:
+The following examples show, from left to right:
 
 - A picture of the real application.
-- The 3D visualization of the :ref:`object model <teach>`, :ref:`robot tool model <robot-tool-model>`, pick point and flexible pick orientation.
+- The 3D visualization of the :ref:`object model <teach>`, :ref:`robot tool model <robot-tool-model>`, pick point, and flexible pick orientation.
 - The flexible pick orientation specification.
 
 .. image:: /assets/images/documentation/picking/flexibility_real_examples_full.png
   :align: center
 
-The image below highlights the beneficial effect of flexible pick orientations on increasing the likelihood of finding pickable objects.
-Without it, the shown objects would be labeled as unpickable by Pickit due to :ref:`collisions <collision-prevention>` between the tool and the bin or other objects.
-The :ref:`example applications <pick-points-teach-examples>` section describes further scenarios where flexible pick orientations can be used.
+Note that it's possible to instruct Pickit whether one prefers the tool to use the tilt flexibility more or not.
 
-.. image:: /assets/images/documentation/picking/flexible_pick_orientation_comparison.png
-  :scale: 55%
-  :align: center
+When **Prefer picks with less tilt** is enabled, the tilting flexibility will *only* be used to make a point pickable, such as to :ref:`avoid a collision <collision-prevention>` between the robot tool and the bin or other objects.
+In other words, Pickit will prefer the pick point specified by the user, and in case it's not pickable, it will select one that is as close as possible to it.
+This is the default setting.
+Prefer it when tilting the tool can decrease the likelihood of pick success. For instance, some suction cups might have more difficulty establishing vacuum when highly tilted.
+
+On the other hand, when **Prefer picks with less tilt** is disabled, the tilting flexibility will be used to align as much as possible with the preferred pick orientation, which typically points up.
+The real application pictures shown above correspond to this situation.
+Prefer this setting when you want to minimize tilting of the robot flange.
 
 .. note::
-  Apart from the robot tool model :ref:`flexible pick orientation <flexible-pick-orientation>`, :ref:`multiple pick points <multiple-pick-points>` and pick point :ref:`symmetry axes <pick-point-symmetry-axis>` are other strategies for increasing the likelihood of an object being pickable.
+  Apart from the :ref:`flexible pick orientation <flexible-pick-orientation>` of the robot tool model, :ref:`multiple pick points <multiple-pick-points>` and pick point :ref:`symmetry axes <pick-point-symmetry-axis>` are other strategies for increasing the likelihood of an object being pickable.
 
 .. tip::
-  Flexible pick orientations, in combination with the :ref:`preferred pick point orientation <preferred-orientation-teach>` can be used to favor picks that are easier and faster to reach by the robot (e.g. less wrist motion, lower occurrence of unreachable points).
+  Flexible pick orientations, in combination with the :ref:`preferred pick point orientation <preferred-orientation>` can be used to favor picks that are easier and faster to reach by the robot (e.g. less wrist motion, lower occurrence of unreachable points).
 
-In some applications, you may want to drop-off the object in the same location independently of how it was picked (which pick point and how orientation flexibility was used).
-:ref:`This article <smart-place-pick-point-offset>` shows two different examples where this goal is achieved.
+.. _passive-hinge-tool:
+
+Passive hinge
+~~~~~~~~~~~~~
+
+A tool with a passive hinge is well suited for picking tilted objects from deep bins, while tilting the robot flange as little as possible.
+Minimizing robot flange tilt is associated with the following advantages:
+
+- Decrease the risk of :ref:`robot tool collisions <collision-prevention>`.
+- Reduce the required robot workspace, as pick points are more likely to be reachable by the robot.
+- Potentially faster robot motions, which can translate into shorter cycle times.
+
+.. note::
+  Pickit will launch in Q1 2021 grippers with a passive hinge, among other features.
+  They will seamlessly integrate into the Pickit product.
+
+  Currently, it is possible to have a preview of the tool model by exploring the example snapshots in the ``examples/billets`` folder.
+
+.. image:: /assets/images/documentation/picking/tool_model_passive_hinge_collision.png
+  :align: center
+
+.. image:: /assets/images/documentation/picking/tool_model_passive_hinge_workspace.png
+  :align: center

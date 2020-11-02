@@ -24,60 +24,22 @@ If your application requires it, it's possible to create multiple tool models, a
 A common example would be a two-finger gripper used with different opening distances depending on the selected pick point.
 
 .. image:: /assets/images/documentation/picking/different_gripper_openings.png
+  :scale: 60%
   :align: center
 
-When multiple tools exist, the default tool represents the tool that will be selected by default when a new :ref:`pick point <pick-points-teach>` is created.
+When multiple tools exist, the default tool represents the tool that will be selected when a new :ref:`pick point <pick-points-teach>` is created.
 
 .. image:: /assets/images/documentation/picking/multiple_tools.png
   :align: center
 
-
-TODO: Flexible pick orientation
--------------------------------
-
-.. toctree::
-    :hidden:
-    :maxdepth: 1
-    :glob:
-
-    flexible-pick-orientation
-
-TODO: :ref:`flexible pick orientation <flexible-pick-orientation>`.
-
-.. _cad-tool:
-
-CAD-based tool model
---------------------
-
-If you have a CAD file of the tool, you can directly upload it to Pickit.
-This is the most convenient way to get your robot tool model into Pickit, as you only need to specify:
-
-- The CAD file to upload.
-- The units in which the CAD geometry is represented.
-- The relative transform of the tool with respect to the :ref:`pick point <pick-points>`.
-
-.. image:: /assets/images/documentation/picking/tool_model_cad_ui.png
-  :align: center
-
-.. note::
-  Pickit only supports the **stl** format for tool models. This format is widely supported and most CAD design editors can export CAD into **stl** format. There are also free online converters available on the Internet which can help you in doing so.
-
-.. tip::
-  To speed up :ref:`collision checks <collision-prevention>` between the tool model and the bin or other objects, follow these recommendations when preparing your CAD file:
-
-  - Remove all non-visible geometry such as inner walls. They slow down collision checks without adding any value.
-  - Reduce the complexity of the CAD geometry. A typical model should not exceed a few thousand vertices.
-
-.. _generic-tool:
+.. _generic-tool-model:
 
 Generic tool model
 ------------------
 
-Pickit provides three general purpose models that closely resemble commonly used tools.
-Currently, three different models are supported:
+Pickit provides the following general purpose models that closely resemble commonly used tools:
 
     .. image:: /assets/images/documentation/picking/tool_models.png
-      :scale: 50%
       :align: center
 
 It is possible to modify a tool's characteristic dimensions, as well as adapt its relative distance and orientation with respect to an object’s pick point.
@@ -91,8 +53,58 @@ The image below shows the tool model editor for the **Box-shaped tool**.
   If the model is too large (too conservative), objects will be labeled as unpickable even if they could be picked without collision.
   Conversely, if the model is smaller than the actual tool, unpickable objects might be labeled as pickable and the robot will collide when picking them.
 
+.. _cad-tool:
+
+CAD-based tool model
+--------------------
+
+If you have a CAD file of the tool, you can directly upload it to Pickit.
+This is a very convenient way to get your robot tool model into Pickit, as you only need to specify:
+
+- The CAD file to upload.
+- The units in which the CAD geometry is represented.
+- The location of the tool centerpoint (TCP) with respect to the flange.
+- Optional: An offset to apply to the CAD model.
+  If the model origin coincides with the flange frame, it doesn't need to be specified.
+- Optional: The mesh clipping offset, which cutts off the bottom-most part of the CAD model by a user-defined amount.
+  This is useful for not including parts of the CAD model close to the TCP in :ref:`collision checks <collision-prevention>`.
+
+.. image:: /assets/images/documentation/picking/tool_model_cad_ui.png
+  :align: center
+
+.. note::
+  Pickit only supports the **stl** format for tool models. This format is widely supported and most CAD design editors can export CAD into **stl** format. There are also free online converters available on the Internet which can help you in doing so.
+
+.. tip::
+  To speed up :ref:`collision checks <collision-prevention>` between the tool model and the bin or other objects, follow these recommendations when preparing your CAD file:
+
+  - Remove all non-visible geometry such as inner walls. They slow down collision checks without adding any value.
+  - Reduce the complexity of the CAD geometry. A typical model should not exceed a few thousand faces.
+
+.. _generic-tool:
+
 Optional tool configuration
----------------------------
+===========================
+
+Flexible pick orientation
+-------------------------
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
+
+    flexible-pick-orientation
+
+In practice, many tools can tolerate some variation with respect to the nominal pick orientation without compromising pick success.
+Pickit represents these variations as a tool's :ref:`flexible pick orientation <flexible-pick-orientation>`, and taking advantage of them can increase the likelihood that an object is pickable.
+
+.. image:: /assets/images/documentation/picking/flexibility_real_examples.png
+  :scale: 60%
+  :align: center
+
+Additional collision geometries
+-------------------------------
 
 The robot tool model can also include additional optional geometries:
 
