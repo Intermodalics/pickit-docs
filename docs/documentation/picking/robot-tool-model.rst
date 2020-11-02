@@ -63,10 +63,10 @@ This is a very convenient way to get your robot tool model into Pickit, as you o
 
 - The CAD file to upload.
 - The units in which the CAD geometry is represented.
-- The location of the tool centerpoint (TCP) with respect to the flange.
+- The location of the Tool Center Point (TCP) with respect to the flange.
 - Optional: An offset to apply to the CAD model.
   If the model origin coincides with the flange frame, it doesn't need to be specified.
-- Optional: The mesh clipping offset, which cutts off the bottom-most part of the CAD model by a user-defined amount.
+- Optional: The mesh clipping offset, which cuts off the bottom-most part of the CAD model by a user-defined amount.
   This is useful for not including parts of the CAD model close to the TCP in :ref:`collision checks <collision-prevention>`.
 
 .. image:: /assets/images/documentation/picking/tool_model_cad_ui.png
