@@ -43,9 +43,9 @@ This part has distinct top and bottom sides, and has the following picking confi
 
 - **Four pick points**, two on each side.
   The two pick points of each side have a 180° offset in Z to represent the bilateral symmetry of the gripper.
-  Representing this discrete symmetry allows Pickit to chose the one that is closest to the :ref:`preferred pick point orientation <preferred-orientation>`, and potentially minimize robot motions.
+  Representing this discrete symmetry allows Pickit to choose the one that is closest to the :ref:`preferred pick point orientation <preferred-orientation>`, and potentially minimize robot motions.
 
-- **Two finger gripper** :ref:`tool model <robot-tool-model>`, with a flexible pick orientation that allows a **Y-axis tilt**.
+- **Two-finger gripper** :ref:`tool model <robot-tool-model>`, with a flexible pick orientation that allows a **Y-axis tilt**.
 
 .. image:: /assets/images/documentation/picking/example_socket_gripper.png
     :scale: 70%
@@ -59,7 +59,7 @@ This part has distinct top and bottom sides, and has the following picking confi
 Pick sockets with a suction gripper
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the same part as in the :ref:`previous example <example-pick-socket-gripper>`, the only difference being that it's now picked by a suction gripper, instead of by a two-finger gripper.
+This is the same part as in the :ref:`previous example <example-pick-socket-gripper>`, the only difference being that it's now picked by a suction gripper, instead of a two-finger gripper.
 It has the following picking configuration:
 
 - **Four pick points**, two on each side.
