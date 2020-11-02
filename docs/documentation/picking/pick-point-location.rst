@@ -6,6 +6,7 @@ Pick point position and orientation
 The **point position and orientation** can be specified in two ways:
 
 - Exact values, manually entering the six coordinates for position and orientation.
+  This option is useful when dealing with models :ref:`taught from CAD <teach-from-cad>`, as pick points can be placed with absolute accuracy with respect to the CAD origin.
 
   .. image:: /assets/images/documentation/picking/pick_point_location.png
     :scale: 70%
@@ -14,6 +15,7 @@ The **point position and orientation** can be specified in two ways:
 - Interactively, by enabling **Enable drag handles in 3D view**. This will show interactive handles that you can click and drag. You can modify the position or orientation by selecting one of the icons below, which appear on the top-left of the 3D view.
 
   .. image:: /assets/images/documentation/picking/pick_point_drag_markers.png
+    :scale: 80%
     :align: center
 
 .. _pick-point-reference:

@@ -4,7 +4,7 @@ Pick points for Teach cylinder models
 =====================================
 
 Defining pick points for :ref:`Teach cylinder models <teach-cylinder>` is a very simple task.
-By default, on teaching a new model, Pickit adds by default pick points in the surface of the cylinder, in the middle of the shape.
+By default, on teaching a new model, Pickit adds pick points on the surface of the cylinder, in the middle of the shape.
 When using suction or magnetic grippers, this is typically enough to start picking.
 
 .. image:: /assets/images/documentation/picking/pick_point_cylinder_surface.png
@@ -21,11 +21,10 @@ The default choice can be overridden by means of the **pick points wizard**, whi
 It's possible to select between three different pick point locations:
 
 - `Cylinder surface`: to pick cylinders from their surface. Ideal for suction or magnetic grippers.
-- `Cylinder axis`: to pick cylinders around their central axis: Ideal for two finger grippers.
+- `Cylinder axis`: to pick cylinders around their central axis: Ideal for two-finger grippers.
 - `Circular caps`: to pick cylinders from their caps. Ideal to pick cylinders standing (almost) vertically.
 
-All pick points created by the wizard are aware of the cylinder :ref:`symmetry axis <pick-point-symmetry-axis>`.
-Additionaly, `surface`  and `axis` pick points have a mirrored version to represent the lateral symmetry of the cylinder.
+All pick points created by the wizard are aware of the cylinder :ref:`symmetry axis <pick-point-symmetry-axis>`, and have a mirrored version to represent the lateral symmetry of the cylinder.
 
 .. image:: /assets/images/documentation/picking/cylinder_pick_points_wizard.png
    :scale: 70 %

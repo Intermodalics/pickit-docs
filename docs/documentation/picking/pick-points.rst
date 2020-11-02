@@ -5,19 +5,14 @@ Pick points
 
 Once a :ref:`part to detect <detection>` has been defined, pick points need to be associated to it.
 A pick point represents where an object can be picked by the robot.
-It is specified as a position and orientation relative to the object, where the robot Tool Center Point (TCP) should move to perfrom a pick.
+It is specified as a position and orientation relative to the object, where the robot Tool Center Point (TCP) should move to perform a pick.
 What constitutes a good pick point depends on both the gripping device and the object to be picked.
 
-This article focuses on how pick points are created and managed, which corresponds to the typical :ref:`Pickit Teach <teach>` workflow.
-Pickit also provides convenient wizards for creating pick points for the following cases:
+This article focuses on how pick points are created and managed in the generic :ref:`Pickit Teach <teach>` workflow.
+Pickit also provides convenient wizards for creating pick points for the following particular cases:
 
 - :ref:`Pick points for cylinders <cylinder-pick-points-wizard>` of known size with :ref:`Pickit Teach <teach-cylinder>`.
 - :ref:`Pick points for 2D or 3D shapes <pick-points-flex-pattern>` with :ref:`Flex <Flex>` or :ref:`Pattern <Pattern>`.
-
-
-The way in which an object is picked can also determine how to correctly place it at a drop-off location.
-To learn more about how to make the best use of pick points in real application scenarios, take a look at the
-:ref:`smart picking <smart-picking-examples>` and :ref:`smart placing <smart-place-examples>` examples companion articles.
 
 .. _multiple-pick-points:
 
@@ -50,14 +45,19 @@ The **Define pick points** section of the :ref:`picking <Picking>` page allows t
 
 - **Add pick point** creates a new pick point.
   Once created, a pick point can be enabled/disabled and its visibility can be toggled.
-- :guilabel:`⋮` **button**, provides acces to duplicating or deleting an existing pick point.
+- :guilabel:`⋮` **button**, provides access to duplicating or deleting an existing pick point.
 - :ref:`Select tool <robot-tool-model>`, sets the tool model to use for this pick point.
 - :ref:`Point position and orientation <pick-point-location>`, sets the pick point location with respect to the object origin, or optionally with respect to an existing point by changing the :ref:`Reference point <pick-point-reference>`.
-- :ref:`Priority <pick-point-priority>`, can be optionally set such that pick points with lower priority are considered only if higher priority ones are unpickable .
-- :ref:`Symmetry axis <pick-point-symmetry-axis>`, can be optionally associated to the pick point. This is especially relevant for parts with axial symmetry .
+- :ref:`Priority <pick-point-priority>`, can be optionally set such that pick points with lower priority are considered only if higher priority ones are unpickable.
+- :ref:`Symmetry axis <pick-point-symmetry-axis>`, can be optionally associated to the pick point. This is especially relevant for parts with axial symmetry.
 
 .. image:: /assets/images/documentation/picking/pick_point_ui.png
   :align: center
+
+.. tip::
+  The way in which an object is picked can also determine how to correctly place it at a drop-off location.
+  To learn more about how to make the best use of pick points in real application scenarios, take a look at the
+  :ref:`smart picking <smart-picking-examples>` and :ref:`smart placing <smart-place-examples>` examples companion articles.
 
 .. _pick-point-selection:
 
@@ -65,28 +65,27 @@ Pick point selection
 --------------------
 
 When an object has multiple ways of being picked, Pickit smartly selects the best one to use.
+It does so by following these steps:
 
-.. details:: Click to expand and learn more about pick point selection.
+1. **Sort the pick points**
 
-  It does so by following these steps:
+  a. If a pick point tolerates variations, because it either has a :ref:`symmetry axis <pick-point-symmetry-axis>` or the robot tool has a :ref:`flexible pick orientation <flexible-orientation-at-pick-point>`, prefer orientations that are closer to the :ref:`preferred pick point orientation <preferred-orientation>`.
 
-  1. **Sort the pick points** from highest to lowest. Note that this depends on how a particular object is oriented in the scene.
+  b. If :ref:`multiple pick points <multiple-pick-points>` exist, prefer pick points that are higher.
+  For pick points at the same height, prefer pick points that are closer to the :ref:`preferred pick point orientation <preferred-orientation>`.
 
-  2. **Go over the list of pick points** starting from the highest one.
+2. **Find a pickable point**
 
-    a. **Is the initial pick point pickable?** Determine the orientation that is closest to the :ref:`preferred pick point orientation <preferred-orientation>`.
-    If the tool model has :ref:`flexible pick orientation <flexible-orientation-at-pick-point>`, you can choose whether you prefer the initial pick to tilt less or point up as much as possible.
-    If the initial pick point is pickable, use it to pick the object, else continue with the next step.
+  a. Select a pick point from the sorted list.
 
-    b. **Is there a pickable configuration?** If the pick point has a :ref:`symmetry axis <pick-point-symmetry-axis>`, or the tool model has :ref:`flexible pick orientation <flexible-pick-orientation>`, search for a pickable configuration. The search will favor configurations that deviate as little as possible from the initial pick point from the previous step. If a pickable configuration is found, use it to pick the object, else continue with the next pick point.
+  b. If the initial configuration is unpickable (e.g. it's too tilted or collides with the bin or other objects) but the pick point tolerates variations, search for a pickable configuration that deviates as little as possible from the preferred orientation.
 
-  3. **No pickable points?** If no pickable point is found, the object is labeled as unpickable.
+  c. If a pickable configuration is found, use it to pick the object, else continue with the next pick point.
 
-  .. tip::
-    If you click on a particular detection in the :ref:`detection grid <detection-grid>`, you can learn which pick point was selected for picking. Also, if an object is unpickable, you can learn the reason why its pick points were not considered pickable.
+3. **No pickable points?** If no pickable point is found, the object is labeled as unpickable.
 
-|
-
+.. tip::
+  If you click on a particular detection in the :ref:`detection grid <detection-grid>`, you can learn which pick point was selected for picking. Also, if an object is unpickable, you can learn the reason why its pick points were not considered pickable.
 
 .. These entries are included last to not show in the left panel toc.
 
