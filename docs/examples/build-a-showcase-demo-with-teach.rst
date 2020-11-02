@@ -81,7 +81,6 @@ The following parameters are used in both models:
 -  **Fusion:** None
 -  **Downsampling:** 4
 -  **Detection speed:** Normal
--  **Detection precision:** More precise
 
 Note the orientation of the **pick points** for both models, one is
 rotated 90° towards the other. The reason for this is that the gripper
