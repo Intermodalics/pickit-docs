@@ -3,7 +3,7 @@
 Pick point position and orientation
 -----------------------------------
 
-The **point position and orientation** can be specified in two ways:
+The **pick point position and orientation** can be specified in two ways:
 
 - Exact values, manually entering the six coordinates for position and orientation.
   This option is useful when dealing with models :ref:`taught from CAD <teach-from-cad>`, as pick points can be placed with absolute accuracy with respect to the CAD origin.
@@ -24,7 +24,7 @@ Pick point reference
 --------------------
 
 By default, the pick point location is expressed relative to the object origin.
-By changing the **reference point**, it's posible to set the location as a relative offset with respect to an existing point.
+By changing the **reference point**, it's posible to set the location as a relative offset with respect to an existing pick point.
 In the example below, **Pick point 2** is expressed using **Pick point 1** as reference, hence appears nested inside it.
 
 .. image:: /assets/images/documentation/picking/pick_point_reference.png
