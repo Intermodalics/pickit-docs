@@ -115,8 +115,7 @@ the picking strategies can be found in the 
 
 For this demo, the following parameters are used:
 
--  **Pick strategy:** Surface top
--  **Enforce alignment:** No alignment
+-  **Pick strategy:** Cylinder surface
 -  **Check collision with:** Bin
 -  **Ordering Strategy:** Highest product center
 

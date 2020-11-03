@@ -68,15 +68,14 @@ The **matching score** and **tolerance** are set to 80% and 4.8 mm.
 No **fusion** or **downsampling** is applied and the **detection speed** is set to Normal.
 
 .. image:: /assets/images/examples/demo_2_bins_pick_frame.png
+  :scale: 70%
+  :align: center
 
 Need help with these settings? See the :ref:`Teach` article for more information.
 
-In the **Picking** page, the **pick point** of this model is located in the center of the cylinder, with the X-axis pointing along the bottle's length. We specify a :ref:`flexible pick orientation <flexible-pick-orientation>` allowing full-circle tilt along the X-axis.
-This setting representd the cylindrical symmetry and gives Pickit the freedom to rotate around the X-axis of the pick point.
-If a bottle is found in the middle of the bin the pick point will point as much as possible upwards.
+In the **Picking** page, the **pick point** of this model is located on the surface of the cylinder, with the X-axis pointing along the bottle’s length. Since this object is symmetric, the pick point should have a :ref:`symmetry axis <pick-point-symmetry-axis>`, allowing the tool to pick the bottle anywhere around the pink circle.
 
 Also, :ref:`collision prevention <collision-prevention>` is used. A simple cylinder shaped tool is used here.
-Note that since the pick point is in the center an pick offset in tool is used to compensate for this.
 
 Need help with these settings? See the :ref:`Picking` article for more information.
 
