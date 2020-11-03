@@ -23,7 +23,7 @@ It can be seen below how the symmetry is now exploited to fully align the object
 
 Finally, if this is a bin picking scenario, we are also interested in :ref:`preventing collisions <collision-prevention>` between the robot tool and the bin.
 As a result, it can be seen that the preferred orientation is used *as long as* it's collision free.
-The pick point diverges from the preferred orientation only for a few objects, and it can be clearly seen that it's for collision prevention purposes.
+The pick point diverges from the preferred orientation only for a few objects, for collision prevention purposes.
 
 .. image:: /assets/images/documentation/picking/preferred_orientation_with_collision_avoidance.png
     :align: center
