@@ -405,7 +405,7 @@ Request Pickit to save the currently loaded setup.
 .. _RC_SAVE_ACTIVE_PRODUCT:
 
 RC_SAVE_ACTIVE_PRODUCT
-____________________
+______________________
 
 Request Pickit to save the currently loaded product.
 
