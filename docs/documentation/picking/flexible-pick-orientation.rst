@@ -8,13 +8,13 @@ Taking advantage of this can increase the likelihood that a pick point is pickab
 This variation is typically due to:
 
 - **Robot tool compliance**, such as a passive hinge (below left), or flexible suction cup bellows (below center).
-- **Application-specific constraints**, like the clearance between tool and object at the pick point (below right).
+- **Application-specific constraints**, like the clearance between the tool fingers and the object at the pick point (below right).
 
 .. image:: /assets/images/documentation/picking/flexibility_real_examples.png
   :scale: 60%
   :align: center
 
-This article describes the features provided by Pickit to model such allowed variations.
+This article describes the features provided by Pickit to model such flexible pick orientation.
 
 .. _flexible-orientation-at-pick-point:
 
@@ -43,10 +43,10 @@ The following examples show, from left to right:
 It's possible to instruct Pickit how much we want the tool to use its tilt flexibility:
 
 When **Prefer picks with less tilt** is enabled, the tilting flexibility will *only* be used to make a point pickable, such as to :ref:`avoid a collision <collision-prevention>` between the robot tool and the bin or other objects.
-In other words, Pickit will prefer the nominal pick point orientation, and in case it's not pickable, it will select a tilted alternative that is as close as possible to it.
+If apart from tilting, the tool additionally allows rotating about the Z-axis, this rotation will be used to align as close as possible to the :ref:`preferred pick orientation <preferred-orientation>`.
 This is the default setting, and is recommended whenever tilting the tool decreases the likelihood of pick success. For instance, some suction cups might have more difficulty establishing vacuum when highly tilted.
 
-On the other hand, when **Prefer picks with less tilt** is disabled, the tilting flexibility will be used to align as much as possible with the preferred pick orientation, which typically points up.
+On the other hand, when **Prefer picks with less tilt** is disabled, the tilting flexibility will be used to align as much as possible with the :ref:`preferred pick orientation <preferred-orientation>`, which typically points up.
 The real application pictures shown above correspond to this situation.
 Prefer this setting when you want to minimize tilting of the robot flange.
 
