@@ -42,7 +42,7 @@ Pick sockets with a two-finger gripper
 This part has distinct top and bottom sides, and has the following picking configuration:
 
 - **Four pick points**, two on each side.
-  The two pick points of each side have a 180° offset in Z to represent the bilateral symmetry of the gripper.
+  The two pick points of each side have a 180° offset in Z to represent the lateral symmetry of the gripper.
   Representing this discrete symmetry allows Pickit to choose the one that is closest to the :ref:`preferred pick point orientation <preferred-orientation>`, and potentially minimize robot motions.
 
 - **Two-finger gripper** :ref:`tool model <robot-tool-model>`, with a flexible pick orientation that allows a **Y-axis tilt**.
