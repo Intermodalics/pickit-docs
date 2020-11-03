@@ -6,7 +6,7 @@ Pick points in Pickit Flex and Pattern
 2D shapes
 ---------
 
-For 2D shapes (circles, squares, rectangles and ellipses), the pick points are located in the shape center, with the Z-axis perpendicular to the surface.
+For 2D shapes (circles, squares, rectangles and ellipses), the pick point is located in the shape center, with the Z-axis perpendicular to the surface.
 Additionally, the following considerations apply:
 
 - **Circle:** The pick point has a symmetry axis about the circle center.
