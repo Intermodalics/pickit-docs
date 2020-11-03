@@ -53,6 +53,10 @@ The image below shows the tool model editor for the **Box-shaped tool**.
   If the model is too large (too conservative), objects will be labeled as unpickable even if they could be picked without collision.
   Conversely, if the model is smaller than the actual tool, unpickable objects might be labeled as pickable and the robot will collide when picking them.
 
+.. tip::
+  When representing tools like suction cups, it is acceptable that the flexible bellows collide with the object to pick.
+  In these cases, it is recommended to not model the last millimeters of the tool tip, for instance, make the tool tip shape 5mm shorter and set the ``Pick offset`` in Z to 5mm.
+
 .. _cad-tool:
 
 CAD-based tool model
