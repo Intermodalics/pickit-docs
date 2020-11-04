@@ -173,7 +173,7 @@ Pickit can discriminate the following scenarios, for which the robot program can
   It is currently recommended that end users focus on applications in which parts are known to be always reachable.
   When parts can overlap, as in bin picking scenarios, the methods below help in making sure that objects are reachable.
 
-  - For suction and magnetic grippers that exhibit compliant behavior, enforce :ref:`pick points with the z-axis pointing up <enforce-alignment-z-parallel-z>`. This constraint modifies the pick point orientation such that the tool always approaches the part straight down. This can be set in the **Picking** tab, under **Pick strategy**.
+  - For suction and magnetic grippers that exhibit compliant behavior, add :ref:`flexible pick orientation <flexible-pick-orientation>` to the robot tool.
 
   - For fingered grippers, ignore parts that are :ref:`too tilted <max-robot-flage-tilt>`. This setting is also in the **Picking** tab, under **Collision prevention**. Set the maximum angle to a low value such as 15 degrees.
 

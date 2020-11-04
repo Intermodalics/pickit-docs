@@ -30,18 +30,16 @@ The tool model is useful for visually confirming the correct location of a pick 
 Pick points
 -----------
 
-A pick point represents where an object can be picked by the robot.
+A :ref:`pick point <pick-points-detail>` represents where an object can be picked by the robot.
 It is specified as a position and orientation relative to the object, where the robot Tool Center Point (TCP) should move to perform a pick.
 What constitutes a good pick point depends on both the gripping device and the object to be picked.
-The following articles detail how pick points are managed by the different detection engines:
 
 .. toctree::
+    :hidden:
     :maxdepth: 1
     :glob:
 
-    pick-points-teach
-    pick-points-flex-pattern
-
+    pick-points
 
 .. _pick-strategy:
 
@@ -54,33 +52,24 @@ Pick strategy
     :glob:
 
     object-ordering
-    preferred-orientation-teach
-    preferred-orientation-flex-pattern
+    preferred-orientation
     max-robot-flange-tilt
-    enforce-alignment-of-pick-frame-orientation
     flange-filter
     temporarily-avoid-unpicked-objects
 
 Once pick points are specified, there are a number of options that influence how objects are picked.
 
-  - **Object ordering:** When multiple objects are detected, object ordering determines the order in which they should be picked (:ref:`more <object-ordering>`).
-  - **Preferred pick point orientation:** Pick points can have flexibility in how they are oriented.
-    This flexibility can be used to favor pick orientations that are easier and faster to reach by the robot (e.g. less wrist motion):
+  - :ref:`Object ordering: <object-ordering>` When multiple objects are detected, object ordering determines the order in which they should be picked.
 
-      - :ref:`Preferred pick point orientation in Pickit Teach <preferred-orientation-teach>`
-      - :ref:`Preferred pick point orientation in Pickit Flex and Pattern <preferred-orientation-flex-pattern>`
+  - :ref:`Preferred pick point orientation: <preferred-orientation>` Pick points can have flexibility in how they are oriented.
+    This flexibility can be used to favor pick orientations that are easier and faster to reach by the robot (e.g. less wrist motion).
 
-  - **Maximum robot flange tilt:** When the robot flange tilts too much to pick an object, it is more likely that picking it will result in unreachable robot motions.
-    This option allows to label objects that are too tilted as unpickable (:ref:`more <max-robot-flage-tilt>`).
+  - :ref:`Maximum robot flange tilt: <max-robot-flage-tilt>` When the robot flange tilts too much to pick an object, it is more likely that picking it will result in unreachable robot motions.
+    This option allows to label objects that are too tilted as unpickable.
 
-  - **Enforce pick point alignment** This applies only to the :ref:`Flex <Flex>` and :ref:`Pattern <Pattern>` detection engines, and is explained in detail in :ref:`this article <enforce-alignment-of-pick-point-orientation>`.
-    If using Pickit :ref:`Teach <teach>`, refer to the more powerful :ref:`flexible pick orientation <flexible-pick-orientation>` feature.
+  - :ref:`Minimum distance between robot flange and ROI: <flange-filter>` This allows limiting lateral deviations of the robot flange away from the bin walls, at the pick point.
 
-  - **Minimum distance between robot flange and ROI** This allows limiting lateral deviations of the robot flange away from the bin walls, at the pick point.
-    Refer to :ref:`this article <flange-filter>` for more details.
-
-  - **Temporarily avoid unpicked objects** This prevents repeatedly failing to pick the same object, and contributes to more consistent cycle times.
-    It is explained in detail in :ref:`this article <temporarily-avoid-unpicked-objects>`.
+  - :ref:`Temporarily avoid unpicked objects: <temporarily-avoid-unpicked-objects>` This prevents repeatedly failing to pick the same object, and contributes to more consistent cycle times.
 
 Collision prevention
 --------------------

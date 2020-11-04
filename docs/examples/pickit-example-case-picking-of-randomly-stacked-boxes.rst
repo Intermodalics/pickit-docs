@@ -78,16 +78,19 @@ This is what we call the small plane strategy.
 
 .. image:: /assets/images/examples/example-case-boxes-small-plane-strategy.png
 
-Enforce alignment
------------------
+Preferred pick orientation
+--------------------------
 
-In this first step the orientation of the part is from no importance.
+In this first step the orientation of the part is not important.
 This means that the pick points can be forced to be orientated in exactly the same way.
-By using the option XYZ||XYZ all pick points will be orientated exactly as the :ref:`reference frame <reference-frame>`.
-This allows further optimization of the movement speed of the robot, because the last wrist movement of the robot is not used.
-By applying this strategy it means that in the first step all parts will be picked and dropped with the same orientation.
+We do this by:
 
-Interested in enforce alignment? See this article about :ref:`enforce-alignment-of-pick-point-orientation`.
+- Adding a :ref:`flexible pick orientation <flexible-pick-orientation>` to the robot tool, that allows it to rotate about its z-axis.
+
+- Setting a :ref:`preferred pick point orientation <preferred-orientation>` that aligns the pick x-axis with that of the :ref:`reference frame <reference-frame>`.
+
+This allows further optimization of the robot motions, because wrist rotations can hereby be avoided.
+By applying this strategy it means that in the first step all parts will be picked and dropped with the same robot orientation.
 
 Robot program
 -------------

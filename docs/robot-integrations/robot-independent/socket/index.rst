@@ -471,7 +471,7 @@ Request Pickit to capture the current scene as background for :ref:`background r
 RC_PICKIT_GET_PICK_POINT_DATA
 _____________________________
 
-With multiple or flexible :ref:`pick points <pick-points-teach>`, the robot needs to know how an object is being picked in order to drop it off
+With multiple or flexible :ref:`pick points <pick-points-detail>`, the robot needs to know how an object is being picked in order to drop it off
 at a fixed position. This information can be retrieved via RC_PICKIT_GET_PICK_POINT_DATA_, which requests the
 pick point ID and pick point offset of the last requested object.
 

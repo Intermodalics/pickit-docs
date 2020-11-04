@@ -42,13 +42,13 @@ Place your objects below the camera as shown below, build a new :ref:`region of 
   :align: center
 
 At this point, it's possible to verify in the :ref:`Objects view <objects-view>` if the objects are detected.
-Note that at this point, all valid detections will be displayed as unpickable (in orange) because the model doesn't have any :ref:`pick points <pick-points-teach>` defined yet.
+Note that at this point, all valid detections will be displayed as unpickable (in orange) because the model doesn't have any :ref:`pick points <pick-points-detail>` defined yet.
 
 .. image:: /assets/images/documentation/detection/teach/objects-all-unpickable.png
   :scale: 70%
   :align: center
 
-Once :ref:`pick points <pick-points-teach>` have been defined for a model, Pickit can determine if an object is pickable and display the pick points in the :ref:`2D <2d-view>` (below left) and :ref:`Objects <objects-view>` (below right) views.
+Once :ref:`pick points <pick-points-detail>` have been defined for a model, Pickit can determine if an object is pickable and display the pick points in the :ref:`2D <2d-view>` (below left) and :ref:`Objects <objects-view>` (below right) views.
 
 .. image:: /assets/images/documentation/detection/teach/objects-pickable.png
   :align: center

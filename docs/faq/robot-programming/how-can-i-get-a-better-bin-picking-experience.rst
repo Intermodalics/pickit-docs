@@ -36,11 +36,12 @@ Pickit, while others relate to your hardware setup.
 
    .. image:: /assets/images/faq/Collision-prevention.png
 
--  :ref:`enforce-alignment-of-pick-point-orientation`
-   to constrain the approach direction and orientation. When enforcing
-   alignment constraints it's useful to enable the bin avoidance
-   strategy to improve reachability of objects close to the bin borders.
+-  Increase the likelihood of an object being pickable, by using :ref:`multiple pick points <multiple-pick-points>`, :ref:`symmetry axes <pick-point-symmetry-axis>`, and robot tool :ref:`flexible pick orientation <flexible-pick-orientation>`.
+
+- Optionally, limit the robot workspace by setting a minimum distance between the :ref:`robot flange and bin walls <flange-filter>`.
+
 -  Consider :ref:`detecting-an-empty-roi` when no more detections are found.
+
 -  Not related to Pickit but to bin picking in general, use a **slender
    tool** **that is as long as the bin depth**. Leaving bulky parts of
    the tool and the robot outside of the bin at all times greatly

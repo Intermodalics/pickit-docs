@@ -1,13 +1,12 @@
 .. _smart-place-examples:
 
-Smart placing using pick point data
------------------------------------
+Smart placing examples
+----------------------
 
-Having multiple and/or flexible pick points increases the likelihood that an object is pickable, which significantly :ref:`benefits bin picking applications <pick-points-teach-examples>`.
-However, after picking an object, the robot usually needs to know something about the way the object was picked, in order to place it appropriately.
+When an object has multiple ways of being picked, Pickit smartly selects the best one to use, as shown in the :ref:`smart picking examples <smart-picking-examples>`.
+However, after picking an object, the robot usually needs some knowledge about the way the object was picked in order to place it appropriately.
 
-Concrete examples of such situations are listed below, as well as a brief explanation of how :ref:`pick point data <RC_PICKIT_GET_PICK_POINT_DATA>` can help to obtain the desired
-way to place the objects, while keeping the robot program as simple as possible.
+Concrete examples of such situations are listed below, as well as a brief explanation of how :ref:`pick point data <RC_PICKIT_GET_PICK_POINT_DATA>` can help to obtain the desired way to place the objects, while keeping the robot program as simple as possible.
 
 .. contents::
     :backlinks: top

@@ -98,7 +98,6 @@ Finally the picking strategy is defined. For this application no special
 strategies are applied. However, more information about the picking
 strategies can be found in the :ref:`Picking` article.
 
--  **Enforce alignment:** No alignment
 -  **Check collision with:** none
 -  **Ordering Strategy:** Highest product center
 
