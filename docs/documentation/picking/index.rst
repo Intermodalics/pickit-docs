@@ -64,7 +64,7 @@ Once pick points are specified, there are a number of options that influence how
   - :ref:`Preferred pick point orientation: <preferred-orientation>` Pick points can have flexibility in how they are oriented.
     This flexibility can be used to favor pick orientations that are easier and faster to reach by the robot (e.g. less wrist motion).
 
-  - :ref:`Maximum robot flange tilt: <max_angle_pick_z_ref_z>` When the robot flange tilts too much to pick an object, it is more likely that picking it will result in unreachable robot motions.
+  - :ref:`Maximum robot flange tilt: <max-robot-flage-tilt>` When the robot flange tilts too much to pick an object, it is more likely that picking it will result in unreachable robot motions.
     This option allows to label objects that are too tilted as unpickable.
 
   - :ref:`Minimum distance between robot flange and ROI: <flange-filter>` This allows limiting lateral deviations of the robot flange away from the bin walls, at the pick point.
