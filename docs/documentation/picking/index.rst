@@ -56,7 +56,7 @@ Pick strategy
     object-ordering
     preferred-orientation-teach
     preferred-orientation-flex-pattern
-    maximum-angle-between-pick-and-reference-frame-zaxis
+    max-robot-flange-tilt
     enforce-alignment-of-pick-frame-orientation
     flange-filter
     temporarily-avoid-unpicked-objects
@@ -70,8 +70,8 @@ Once pick points are specified, there are a number of options that influence how
       - :ref:`Preferred pick point orientation in Pickit Teach <preferred-orientation-teach>`
       - :ref:`Preferred pick point orientation in Pickit Flex and Pattern <preferred-orientation-flex-pattern>`
 
-  - **Maximum tilt from reference frame Z-axis:** When a pick point is too tilted, it is more likely that picking it will result in unreachable robot motions.
-    This option allows to label objects that are too tilted as unpickable (:ref:`more <max_angle_pick_z_ref_z>`).
+  - **Maximum robot flange tilt:** When the robot flange tilts too much to pick an object, it is more likely that picking it will result in unreachable robot motions.
+    This option allows to label objects that are too tilted as unpickable (:ref:`more <max-robot-flage-tilt>`).
 
   - **Enforce pick point alignment** This applies only to the :ref:`Flex <Flex>` and :ref:`Pattern <Pattern>` detection engines, and is explained in detail in :ref:`this article <enforce-alignment-of-pick-point-orientation>`.
     If using Pickit :ref:`Teach <teach>`, refer to the more powerful :ref:`flexible pick orientation <flexible-pick-orientation>` feature.
