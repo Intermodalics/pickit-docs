@@ -7,7 +7,7 @@ structures. Follow these simple steps below to mount the camera:
 
 -  Unbox the camera
 -  Use the L-bracket to mount the camera 700 mm above a flat surface.
-   (1700 mm for a Pickit L-camera)
+   (1700 mm for a Pickit L camera)
 -  Use the ball joint to point the camera towards the
    surface.
 

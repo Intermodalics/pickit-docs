@@ -13,7 +13,9 @@ In the **Setup** page you define where you want Pickit to look for objects.
 Active cameras
 --------------
 
-One Pickit processor can be connected to two different Pickit cameras at the same time. This can be two M-cameras, two L-cameras or a M and L-camera combined.
+One Pickit processor can be connected to two different Pickit cameras at the same time.
+This can be two M cameras, two L cameras, or an M and an L camera, or also an M-HD and an M/L camera combined.
+At the moment we do not support two M-HD cameras connected to the same processor.
 
 Here you select which camera to use in the setup file. Each setup file should have exactly one active camera.
 

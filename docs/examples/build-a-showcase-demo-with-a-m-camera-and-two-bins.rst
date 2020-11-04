@@ -1,4 +1,4 @@
-Build a showcase demo with an M-camera and two bins
+Build a showcase demo with an M camera and two bins
 ===================================================
 
 This article will guide you in setting up a simple showcase demo with Pickit and a UR robot.
