@@ -1,46 +1,79 @@
 .. _release-notes:
 
-Software release 2.3
+Software release 2.4
 ====================
 
-The new features of the 2.3 release revolve around improving flat object detection and robot tool definition.
+Pickit 2.4 has been created with one main goal in mind: Improving the experience of ramping up bin-picking applications into production.
+Special attention was given to cylindrical shaped objects, such as billets, which is a commonly observed application in the forging industry.
 
-1. Flat object detection
-------------------------
+Teach cylinder model
+--------------------
 
-Pickit :ref:`Teach <teach>` is great for detecting objects with a distinctive 3D shape.
-Flat objects are different from other 3D shapes in the sense that edges are the main source of shape information.
+The Teach engine has been upgraded to support :ref:`cylinder models<teach-cylinder>`, which is ideal for detecting billets.
+Whereas before you had to teach a cylindrical part by placing it under the camera or uploading a CAD file, now you only need to specify a length and diameter.
+Choose how you intend to pick the cylinders, and Pickit takes care of the pick point definition for you.
+Furthermore, by letting Pickit exploit the cylindrical geometry, both detection speed and accuracy are optimized.
 
-This release enables Pickit Teach to :ref:`detect flat objects <teach-flat-objects-note>` more reliably by focusing on shape edges.
-
-.. image:: /assets/images/documentation/detection/teach/flat_objects.png
-  :align: center
-  :scale: 70%
-
-2. Define your tool model from a CAD file
------------------------------------------
-
-In the previous 2.2 release, we added support for :ref:`teaching part models from CAD <teach-from-cad>`.
-In this release, we extend this so you can also :ref:`define your tool model from a CAD file <cad-tool>`.
-
-.. image:: /assets/images/documentation/picking/define_tool.png
+.. image:: /assets/images/documentation/detection/teach/teach_cylinder_wizard_and_model.png
   :align: center
 
-.. image:: /assets/images/documentation/picking/tool_model_cad_ui.png
+.. image:: /assets/images/documentation/detection/teach/billets_example.png
+  :scale: 80%
   :align: center
 
-Alternatively, if a CAD file for your tool is not readily available, you can still define your tool using the existing :ref:`generic tool models <generic-tool>`.
+Are you picking several types of billets, but don't want to open the web interface to teach a new model everytime?
+Now you can optionally :ref:`set the cylinder dimensions directly from the robot program <RC_PICKIT_SET_CYLINDER_DIM>`, speeding up the setup of different production settings.
 
-3. Assign different tools to different pick points
---------------------------------------------------
+Shape symmetry
+--------------
 
-It's now possible to create multiple :ref:`tool models <robot-tool-model>` and assign different tools to different pick points.
-A common example would be a two-finger gripper used with different opening distances depending on the selected pick point.
+If you want to pick a symmetric part like a billet, a ring or a shaft, you can now specify its :ref:`symmetry axis<pick-point-symmetry-axis>` and make pick points aware of it.
+Pickit exploits the motion freedom introduced by this symmetry to increase the likelihood of the part being pickable.
 
-.. image:: /assets/images/documentation/picking/different_gripper_openings.png
+.. image:: /assets/images/documentation/picking/symmetry_axis.png
   :align: center
+
+Flexible tools instead of flexible pick points
+----------------------------------------------
+
+In Pickit 2.2, we introduced the concept of flexible pick orientation, which allows pick points to tolerate some orientation variability without compromising pick success.
+This can, in fact, increase the likelihood that a part is pickable.
+
+In Pickit 2.4, we moved the specification of this flexibility from the pick point to the :ref:`robot tool definition <flexible-pick-orientation>`.
+Don't worry! Your existing product files will be automatically converted to this new specification.
+
+.. image:: /assets/images/documentation/picking/tool_flexibility.png
+  :scale: 80%
+  :align: center
+
+Minimum distance between robot flange and bin
+---------------------------------------------
+
+It is sometimes desired that the robot flange, when picking objects, does not deviate too much laterally above the :ref:`ROI <region-of-interest>` or bin.
+This is particularly relevant when there are collision obstacles close to the bin like poles, fences or other tall structures, as shown below.
+It is now possible to limit how much the :ref:`robot flange is allowed to deviate away from the bin walls <flange-filter>`.
+
+.. image:: /assets/images/documentation/picking/flange_filter.png
+
+Temporarily avoid unpicked objects
+----------------------------------
+
+The success of many applications, like forging, relies on a steady flow of picked objects, which in practice can be hindered by various reasons.
+A typical example is when the gripper is not strong enough to establish a firm pick on an object that is locked in place by neighboring parts.
+In these situations, it is important to :ref:`temporarily avoid unpicked objects <temporarily-avoid-unpicked-objects>`, and prevent the robot from repeatedly going to the same hard-to-pick object, and potentially get stuck in an endless loop.
+
+.. image:: /assets/images/documentation/picking/blacklist_object_table.png
+
+Picking experience in Flex
+--------------------------
+
+Pickit Flex now benefits from all the picking improvements that have been added to Pickit Teach since version 2.2, like :ref:`flexible pick orientation <flexible-pick-orientation>`, :ref:`symmetry axes<pick-point-symmetry-axis>`, and the different :ref:`pick strategy <pick-strategy>` options.
+
+If you are picking basic shaped-objects with mixed dimensions, Pickit will find more pickable parts with potentially less robot motions.
+
+.. image:: /assets/images/documentation/picking/flex_pick_flexibility.png
 
 Get the update now
 ------------------
 
-If you have an older Pickit version and would like to try 2.3, check out :ref:`how you can upgrade your system <Pickit-system-software-upgrade>`.
+If you have an older Pickit version and would like to try 2.4, check out :ref:`how you can upgrade your system <Pickit-system-software-upgrade>`.
