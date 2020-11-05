@@ -1,4 +1,4 @@
-Build a showcase demo with a M-camera and suction cup
+Build a showcase demo with a M camera and suction cup
 =====================================================
 
 This article will guide you in setting up a simple showcase demo with Pickit and a UR that you can show at trade fairs.
