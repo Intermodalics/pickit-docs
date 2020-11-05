@@ -14,8 +14,8 @@ Active cameras
 --------------
 
 One Pickit processor can be connected to two different Pickit cameras at the same time.
-This can be any combination of M and L cameras, or an M-HD and M/L camera combination.
-At the moment we do not support two M-HD cameras connected to the same processor.
+This can be any combination of M and/or L cameras, or an HD and M/L camera combination.
+At the moment we do not support two HD cameras connected to the same processor.
 
 Here you select which camera to use in the setup file. Each setup file should have exactly one active camera.
 
