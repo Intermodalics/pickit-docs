@@ -4,7 +4,7 @@ Software release 2.4
 ====================
 
 Pickit 2.4 focuses on improving the experience and performance for **axis-symmetrical objects**, like billets, pipes, shafts, rings and camshafts.
-Formally recognizing the symmetry of a shape opens the door to optimizations and picking possibilities, which are thoroughly explored by this release.
+Formally recognizing the symmetry of a shape opens the door to optimizations and picking possibilities, which are thoroughly leveraged by this release.
 
 Teach cylinder model
 --------------------
