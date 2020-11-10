@@ -3,13 +3,13 @@
 Software release 2.4
 ====================
 
-Pickit 2.4 has been created with one main goal in mind: Improving the experience of ramping up bin-picking applications into production.
-Special attention was given to cylindrical shaped objects, such as billets, which is a commonly observed application in the forging industry.
+Pickit 2.4 focuses on improving the experience and performance for **axis-symmetrical objects**, like pipes, shafts, rings and camshafts.
+Formally recognizing the symmetry of a shape opens the door to optimizations and picking possibilities, which are thoroughly explored by this release.
 
 Teach cylinder model
 --------------------
 
-The Teach engine has been upgraded to support :ref:`cylinder models<teach-cylinder>`, which is ideal for detecting billets.
+The Teach engine has been upgraded to support :ref:`cylinder models<teach-cylinder>`, which is ideal for detecting pure cylinders.
 Whereas before you had to teach a cylindrical part by placing it under the camera or uploading a CAD file, now you only need to specify a length and diameter.
 Choose how you intend to pick the cylinders, and Pickit takes care of the pick point definition for you.
 Furthermore, by letting Pickit exploit the cylindrical geometry, both detection speed and accuracy are optimized.
@@ -21,13 +21,13 @@ Furthermore, by letting Pickit exploit the cylindrical geometry, both detection 
   :scale: 80%
   :align: center
 
-Are you picking several types of billets, but don't want to open the web interface to teach a new model everytime?
+Are you constantly switching between different sized cylinders, but don't want to open the web interface to teach a new model everytime?
 Now you can optionally :ref:`set the cylinder dimensions directly from the robot program <RC_PICKIT_SET_CYLINDER_DIM>`, speeding up the setup of different production settings.
 
 Shape symmetry
 --------------
 
-If you want to pick a symmetric part like a billet, a ring or a shaft, you can now specify its :ref:`symmetry axis<pick-point-symmetry-axis>` and make pick points aware of it.
+If you want to pick a symmetric part like a pipe, a ring or a shaft, you can now specify its :ref:`symmetry axis<pick-point-symmetry-axis>` and make pick points aware of it.
 Pickit exploits the motion freedom introduced by this symmetry to increase the likelihood of the part being pickable.
 
 .. image:: /assets/images/documentation/picking/symmetry_axis.png
@@ -39,7 +39,7 @@ Flexible tools instead of flexible pick points
 In Pickit 2.2, we introduced the concept of flexible pick orientation, which allows pick points to tolerate some orientation variability without compromising pick success.
 This can, in fact, increase the likelihood that a part is pickable.
 
-In Pickit 2.4, we moved the specification of this flexibility from the pick point to the :ref:`robot tool definition <flexible-pick-orientation>`.
+In order to better model different types of grippers, we moved the specification of this flexibility from the pick point to the :ref:`robot tool definition <flexible-pick-orientation>`.
 Don't worry! Your existing product files will be automatically converted to this new specification.
 
 .. image:: /assets/images/documentation/picking/tool_flexibility.png
@@ -58,7 +58,7 @@ It is now possible to limit how much the :ref:`robot flange is allowed to deviat
 Temporarily avoid unpicked objects
 ----------------------------------
 
-The success of many applications, like forging, relies on a steady flow of picked objects, which in practice can be hindered by various reasons.
+The success of many feeding applications relies on a steady flow of picked objects, which in practice can be hindered by various reasons.
 A typical example is when the gripper is not strong enough to establish a firm pick on an object that is locked in place by neighboring parts.
 In these situations, it is important to :ref:`temporarily avoid unpicked objects <temporarily-avoid-unpicked-objects>`, and prevent the robot from repeatedly going to the same hard-to-pick object, and potentially get stuck in an endless loop.
 
