@@ -108,7 +108,7 @@ Load the program files
 Before starting, :ref:`Download the Pickit Yaskawa files here <downloads_yaskawa>`.
 The Pickit folder should be copied to a USB pen drive. Then copy the correct ".out" extension file to the root directory of the USB drive:
 
-  -  **Pickit_YRC100.out** for YRC1000 and YRC1000 Micro controllers.
+  -  **Pickit_YRC1000.out** for YRC1000 and YRC1000 Micro controllers.
   -  **Pickit_DX200.out** for DX200 controllers.
 
 The robot controller should be in **MAINTENANCE MODE** and the security mode set to **MANAGEMENT MODE** before making these changes.
