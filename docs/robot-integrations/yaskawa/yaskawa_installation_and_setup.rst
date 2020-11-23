@@ -106,16 +106,14 @@ Load the program files
 ----------------------
 
 Before starting, :ref:`Download the Pickit Yaskawa files here <downloads_yaskawa>`.
-The Pickit folder should be copied to a USB pen drive. Then copy the correct ".out" extension file to the root directory of the USB drive:
-
-  -  **Pickit_YRC1000.out** for YRC1000 and YRC1000 Micro controllers.
-  -  **Pickit_DX200.out** for DX200 controllers.
+The Pickit folder should be copied to a USB pen drive.
+Then copy the correct ".out" extension (e.g. **Pickit_DX200.out** for DX200 controllers) file to the root directory of the USB drive.
 
 The robot controller should be in **MAINTENANCE MODE** and the security mode set to **MANAGEMENT MODE** before making these changes.
 
 #. Insert the USB pen drive in the robot pendant or to the controller USB port.
 #. Under :guilabel:`MotoPlus APL` → :guilabel:`DEVICE` select the USB target port used.
-#. If the file **Pickit_YRC1000.out** ( **Pickit_DX200.out** ) is not placed in the main root of the USB drive, select its containing folder folder in: :guilabel:`MotoPlus APL.` → :guilabel:`FOLDER`.
+#. If the `.out` file is not placed in the main root of the USB drive, select its containing folder folder in: :guilabel:`MotoPlus APL.` → :guilabel:`FOLDER`.
 #. Load the MotoPlus application under :guilabel:`MotoPlus APL.` → :guilabel:`LOAD (USER APPLICATION)`. 
 
 Press :guilabel:`Select`, :guilabel:`Enter` and confirm.
