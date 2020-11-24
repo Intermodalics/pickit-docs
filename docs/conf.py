@@ -43,6 +43,8 @@ smv_prefer_remote_refs = True
 # Pattern for released versions
 smv_released_pattern = r'^heads/\d+\.\d+$'    # Branches like "2.1"
 
+smv_latest_version = "2.4"
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
