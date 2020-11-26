@@ -252,7 +252,7 @@ htmlhelp_basename = 'PickitDocs'
 # If true, show URL addresses after external links.
 #man_show_urls = False
 
-# -- Options for shpinx-multiversion --------------------------------------
+# -- Options for sphinx-multiversion --------------------------------------
 
 # Whitelist pattern for tags (set to None to ignore all tags)
 smv_tag_whitelist = ''
