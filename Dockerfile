@@ -7,10 +7,7 @@ ENV PYTHONUNBUFFERED True
 
 RUN python -m pip install sphinx-autobuild sphinx_rtd_theme sphinx-version-warning sphinx-multiversion
 
-EXPOSE 8080
+EXPOSE 8000
+WORKDIR /workdir
 
-WORKDIR /docs
-COPY . .
-RUN sphinx-build docs _build
-
-CMD ["sphinx-autobuild", "-W", "--host", "0.0.0.0", "--port", "8080", "/docs/docs", "/docs/_build"]
+CMD ["sphinx-autobuild", "-W", "--host", "0.0.0.0", "--port", "8000", "/workdir/docs", "/workdir/_build"]

@@ -25,26 +25,6 @@ import os
 # If your documentation needs a minimal Sphinx version, state it here.
 #needs_sphinx = '1.0'
 
-# Whitelist pattern for tags (set to None to ignore all tags)
-smv_tag_whitelist = None
-
-# Whitelist pattern for branches (set to None to ignore all branches)
-smv_branch_whitelist = r'^\d+\.\d+$'    # Branches like "2.1"
-
-# Whitelist pattern for remotes (set to None to use local branches only)
-smv_remote_whitelist = r'^(origin|upstream)$'
-
-# Format for versioned output directories inside the build directory
-smv_outputdir_format = '{ref.name}'
-
-# Determines whether remote or local git branches/tags are preferred if their output dirs conflict
-smv_prefer_remote_refs = True
-
-# Pattern for released versions
-smv_released_pattern = r'^heads/\d+\.\d+$'    # Branches like "2.1"
-
-smv_latest_version = "2.4"
-
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
@@ -271,6 +251,28 @@ htmlhelp_basename = 'PickitDocs'
 
 # If true, show URL addresses after external links.
 #man_show_urls = False
+
+# -- Options for sphinx-multiversion --------------------------------------
+
+# Whitelist pattern for tags (set to None to ignore all tags)
+smv_tag_whitelist = ''
+
+# Whitelist pattern for branches (set to None to ignore all branches)
+smv_branch_whitelist = r'^\d+\.\d+$'    # Branches like "2.1"
+
+# Whitelist pattern for remotes (set to None to use local branches only)
+smv_remote_whitelist = r'^(origin|upstream)$'
+
+# Format for versioned output directories inside the build directory
+smv_outputdir_format = '{ref.name}'
+
+# Determines whether remote or local git branches/tags are preferred if their output dirs conflict
+smv_prefer_remote_refs = True
+
+# Pattern for released versions
+smv_released_pattern = r'^heads/\d+\.\d+$'    # Branches like "2.1"
+
+smv_latest_version = version
 
 
 # -- Options for Texinfo output -------------------------------------------
