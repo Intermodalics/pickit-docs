@@ -37,6 +37,10 @@ Below you find an overview of the macros defined by Pickit.
 +---------+------------+-----------------------------------------------------------------------------------------------------------------+
 | MACRO11 | PI_BUILD   | Build the background cloud used in :ref:`advanced-roi-filters`.                                                 |
 +---------+------------+-----------------------------------------------------------------------------------------------------------------+
+| MACRO12 | PI_REACH   | Check if the pre pick, pick and post pick poses are reachable from the above pick area pose.                    |
+|         |            | It assumes that the poses are correctly set in the following registers:                                         |
+|         |            | ``Above pick area`` in P040, ``Pre pick`` pose in P043, ``Pick`` in P049 and ``Post pick`` in P045.             |
++---------+------------+-----------------------------------------------------------------------------------------------------------------+
 
 .. tip:: The ID's of the macros can be changed by :ref:`manually defining the Pickit macros <manually-define_macros>`.
   Note if the ID's are changed the provided example programs by Pickit need to be altered accordingly.
@@ -120,8 +124,3 @@ More information about the variables can be found in :ref:`socket-communication`
 +----------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------+
 
 .. tip:: If these registers are already used on your robot, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__, and we will assist you in finding a solution.
-
-Reachability check
-------------------
-
-The reachability check asses that from P040 (``Above pick area`` pose), it is possible to reach P043 (``Pre pick`` pose), P049 (``Pick`` pose) and P045 (``Post pick`` pose).
