@@ -17,13 +17,14 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
 ::
 
     NOP
+    PI_RUN
     'Initiallization PI count
     SET B021 0
     'Init' reachable check signal
     SET I043 0
-    MOVJ C00000 VJ=10.00  //Home pose
+    MOVJ VJ=10.00  //Home pose
     'Load config
-    PI_CFG
+    PI_CFG SETUP:2 PRODUCT:2 U/FRAME:5 TOOL:1 TIMEOUT:20000
     *LABEL
     'Picking
     IFTHEN I040=20
@@ -32,7 +33,7 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
     	'Postpick pose
     	 MULMAT P045 P049 P021
     	'Check reachable object pose
-    	 PULSE OT#(1021)
+    	 PI_REACH
     	'GET PICK POINT DATA
     	 PI_GPPD
     	'If reachable
@@ -59,6 +60,9 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
     		 PI_WAIT
     	 ELSE
     		 MSG "OBJECT OUT OF REACH"
+    		 TIMER T=5.000
+    		 PI_NEXT
+    		 PI_WAIT
     	 ENDIF
     ELSEIFEXP I040=23
     	 MSG "ROI is empty"
