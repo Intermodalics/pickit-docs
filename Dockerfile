@@ -10,4 +10,7 @@ RUN python -m pip install sphinx-autobuild sphinx_rtd_theme sphinx-version-warni
 EXPOSE 8000
 WORKDIR /workdir
 
+COPY docs ./docs
+RUN ["sphinx-build", "/workdir/docs", "/workdir/_build"]
+
 CMD ["sphinx-autobuild", "-W", "--host", "0.0.0.0", "--port", "8000", "/workdir/docs", "/workdir/_build"]
