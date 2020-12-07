@@ -18,7 +18,7 @@ pipeline {
           def container_args = "--rm -d \
                                 --name ${container_name} \
                                 --network demo.pickit3d.com"
-          sh "docker run ${container_args} `cat image_id` python -m http.server 8080"
+          sh "docker run ${container_args} `cat image_id` python -m http.server 80"
 
           def post_instance_url_comment = true;
           for (comment in pullRequest.comments) {
@@ -27,7 +27,7 @@ pipeline {
             }
           }
           if (post_instance_url_comment) {
-            pullRequest.comment("Docker instance URL: http://${container_name}.demo.pickit3d.com:8080")
+            pullRequest.comment("Docker instance URL: http://${container_name}.demo.pickit3d.com/_build/")
           }
         }
       }
