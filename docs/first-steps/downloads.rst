@@ -6,7 +6,7 @@ _________
 Pickit software upgrades
 ========================
 
-If you would like to upgrade to a more recent version of the Pickit software, follow the :ref:`Pickit system software upgrade <Pickit-system-software-upgrade>` instructions.
+If you would like to upgrade to the latest version of the Pickit software, follow the :ref:`Pickit system software upgrade <Pickit-system-software-upgrade>` instructions.
 
 .. _downloads_robot_integrations:
 
