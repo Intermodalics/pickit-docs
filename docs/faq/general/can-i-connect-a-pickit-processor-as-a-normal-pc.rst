@@ -12,4 +12,6 @@ An external computer is only needed for setup/configuration and optional
 monitoring of Pickit. Once this has been done, the external computer can be
 disconnected.
 
-.. image:: /assets/images/first-steps/Connecting-instructions-full.png
+.. image:: /assets/images/first-steps/connecting-instructions.png
+  :scale: 70%
+  :align: center

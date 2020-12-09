@@ -3,117 +3,81 @@
 Bring your Pickit system online
 ===============================
 
-There are two methods to bring your Pickit system online:
+This article covers how to bring your Pickit system online for the exceptional
+event that it requires remote service from a Pickit support engineer.
+During normal operation, it's not required to bring your Pickit system online.
 
--  The preferred method is to connect your Pickit processor via an
-   Ethernet cable. 
--  If this is not possible you can connect your Pickit processor via
-   the 3G USB dongle.
+.. note::
+   If you're interested in **upgrading your Pickit software version**, you don't need to bring your Pickit system online.
+   Updates can be downloaded from any computer with Internet access, as described in the :ref:`Pickit system software upgrade <Pickit-system-software-upgrade>` article.
 
-.. image:: /assets/images/first-steps/Connecting-instructions-full.png
+.. warning::
+  **Legacy USB dongle connection.** Until April 2020, Pickit systems shipped with a :ref:`3G USB dongle  <connect-your-system-to-internet-using-dongle>` as an additional mechanism for bringing the system online.
+  This connection method is no longer supported.
 
-Connecting via Ethernet cable
+To bring your Pickit system online for remote service, you need a **wired Ethernet connection**, as shown below, to the left of the Pickit processor. 
+
+.. image:: /assets/images/first-steps/connecting-instructions-full.png
+
+Steps to connect via Ethernet
 -----------------------------
 
 #. **Plug in an Ethernet cable** (with Internet access) into the **LAN
    port** of the Pickit processor.
+
 #. Navigate to the **Network settings**, by clicking on the Settings
    button at the top-right of the web interface.
 
-   .. image:: /assets/images/documentation/settings-button-21.png
+   .. image:: /assets/images/support/settings-button-21.png
 
-#. In the **Pickit port labeled 'LAN’** section, make sure that the
-   **IP address** field has a valid value (blue arrow in the image
-   below).
+#. In the **Pickit port labeled 'LAN’** section, make sure that the network settings are correct.
+   In particular, the **IP address** field represents Pickit's IP in your network (red arrow below).
+   If the network configuration changed, don't forget to click the :guilabel:`Save` button.
 
-   .. image:: /assets/images/documentation/network-settings-21.png
+   .. image:: /assets/images/support/network-settings-24.png
+     :scale: 80%
+     :align: center
 
-If an **IP address** shows up, you are good to go. A Pickit engineer
-can now connect to your system.
+#. **Check Internet connectivity** by clicking the :guilabel:`Check` button at the bottom of the network settings.
+   If you see the following acknowledgement of success, your system is ready for remote service!
 
-If no **IP address** shows up:
+   .. image:: /assets/images/support/online-connection-ok.png
+     :scale: 70%
 
--  Double check if the Ethernet cable is attached in the right
-   way to the Pickit processor and your network;
--  Check with your system administrator if there is a **firewall** on
-   your network. If so:
 
-   -  Ask your system administrator to whitelist the ‘LAN’ port’s **MAC
-      address** shown in the Network section of the :guilabel:`Settings`
-      page (red arrow in the image above).
-   -  Ask your system administrator to open **TCP 443 port.**
+Troubleshooting an unsuccessful connection
+------------------------------------------
 
-.. note:: Pickit uses VPN/TLS over TCP port 443 to establish a
-   connection. The Pickit software update server is known as
-   **vpn.intermodalics.eu**.
+This section provides guidelines to troubleshoot if the connectivity check from step 4 above was not successful.
+There are two scenarios that can take place, which are described below.
+If connection problems persist after following these guidelines, please contact us at `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`__, and we will assist you in finding a solution.
 
-Connecting via USB dongle
--------------------------
+Not connected to the Internet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your Pickit system was delivered with a USB 3G dongle to connect the
-Pickit system to the Internet when connecting via
-Ethernet is not an option. A Pickit SIM card is already
-inside so this works out of the box. 
+If there's no Internet connection, check that:
 
-.. note:: Since this is a wireless device, it's important that it is
-   positioned **outside a metal enclosure** (cage of Faraday). In case your
-   Pickit system is in such an enclosure, you may use an extension cable
-   up to 2 m to install the remote service modem outside this enclosure.
+- The network settings for step 3 above are correct (DHCP vs static, IP address, subnet mask and gateway).
+- The Ethernet cable is not physically damaged and that the plugs are well connected to their sockets.
+- The cable is connected on one end to the LAN port of the Pickit processor.
+- The cable is connected on the other end to a network socket with Internet connection.
 
-.. note:: Depending on **3G reception on site**, a Pickit support
-   engineer could view and manipulate the Pickit web interface, install
-   product and or setup files and perform updates. If the mobile reception
-   is bad viewing and manipulating the interface could be impossible. On
-   slow connections, software updates can take up to several hours.
+Connected to the Internet but not to the Pickit server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Pickit systems were shipped with 2 different types of USB 3G dongles,
-use the images below as a reference to check which type of dongle came
-with your Pickit system.
+Pickit communicates with its server using OpenVPN via TCP port 443.
+When it can't be reached, contact your system administrator, as it's usually the result of:
 
-Type 1
-~~~~~~
+- The network configuration preventing Pickit from resolving the name of the OpenVPN server ``vpn.intermodalics.eu``.
+- A software firewall filtering incoming connections on port 443.
+  Many firewalls block incoming connections by default, unless configured otherwise.
+- A perimeter firewall filtering incoming OpenVPN packets.
+- A firewall's web filter filtering out VPN communication on port 443, as it doesn't look like normal web traffic.
+- A NAT gateway not having a port forwarding rule for TCP 443 to the internal address of the Pickit machine.
 
-.. image:: /assets/images/documentation/3g-dongle-type-1.jpg
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
 
-The USB dongle can be plugged into any available USB port of your
-Pickit system. No configuration is required.
-
-+------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| Status LED       | Indication                                                                                                                      |
-+==================+=================================================================================================================================+
-| Solid red        | The modem is initializing.                                                                                                      |
-+------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| Blinking red     | Check if a SIM/USIM card is inserted. If it is, try to unplug and replug the modem.                                             |
-+------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| Blinking green   | The card has registered to the network but no Internet connection could be made.                                                |
-|                  | Try reinserting the USB modem and restarting the Pickit processor. If that doesn’t help, contact a Pickit support engineer.     |
-+------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| Solid Green      | The network is available with a successful Internet connection. A Pickit support engineer can now access the system.            |
-+------------------+---------------------------------------------------------------------------------------------------------------------------------+
-
-Type 2
-~~~~~~
-
-.. image:: /assets/images/documentation/3g-dongle-type-2.jpg
-
-The USB dongle can be plugged into any available USB port of your
-Pickit system. No configuration is required.
-
-+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Status LED                        | Indication                                                                                                                |
-+===================================+===========================================================================================================================+
-| Blinking green twice (every 3s)   | The USB dongle is powered on.                                                                                             |
-+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Blinking green once (every 3s)    | The USB dongle is registering with a 2G network.                                                                          |
-+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Blinking blue (every 3s)          | The USB dongle is registering with a 3G/3G+ network.                                                                      |
-+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Solid Green                       | The network is available with a successful Internet connection to a 2G network.                                           |
-|                                   | A Pickit support engineer can now access the system but the connection might be too slow to perform a software update.    |
-+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Solid Blue                        | The network is available with a successful Internet connection to a 3G network.                                           |
-|                                   | A Pickit support engineer can now access the system but the software update might take up to several hours.               |
-+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Solid Cyan                        | The network is available with a successful Internet connection to a 3G+ network.                                          |
-|                                   | A Pickit support engineer can now access the system to perform a software update.                                         |
-+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+    connect-your-system-to-internet-using-dongle
