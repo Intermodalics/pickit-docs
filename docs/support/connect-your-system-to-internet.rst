@@ -12,7 +12,7 @@ During normal operation, it's not required to bring your Pickit system online.
    Updates can be downloaded from any computer with Internet access, as described in the :ref:`Pickit system software upgrade <Pickit-system-software-upgrade>` article.
 
 .. warning::
-  **Legacy USB dongle connection.** Until April 2020, Pickit systems shipped with a :ref:`3G USB dongle  <connect-your-system-to-internet-using-dongle>` as an additional mechanism for bringing the system online.
+  **Legacy USB dongle connection.** Until April 2020, Pickit systems came with a :ref:`3G USB dongle  <connect-your-system-to-internet-using-dongle>` as an additional mechanism for bringing the system online.
   This connection method is no longer supported.
 
 To bring your Pickit system online for remote service, you need a **wired Ethernet connection**, as shown below, to the left of the Pickit processor. 
@@ -25,7 +25,7 @@ Steps to connect via Ethernet
 #. **Plug in an Ethernet cable** (with Internet access) into the **LAN
    port** of the Pickit processor.
 
-#. Navigate to the **Network settings**, by clicking on the Settings
+#. Navigate to the **Network settings**, by clicking on the :guilabel:`Settings`
    button at the top-right of the web interface.
 
    .. image:: /assets/images/support/settings-button-21.png
