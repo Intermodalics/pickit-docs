@@ -1,15 +1,26 @@
-.. _downloads:
+.. _downloads_pickit:
 
-Download Pickit robot programs
-===============================
+Downloads
+_________
 
-Pickit provides robot programs for all supported robot brands.
-For now, Pickit supports:
+Pickit software upgrades
+========================
+
+If you would like to upgrade to a more recent version of the Pickit software, follow the :ref:`Pickit system software upgrade <Pickit-system-software-upgrade>` instructions.
+
+.. _downloads_robot_integrations:
+
+Pickit robot integrations
+=========================
+
+Pickit provides integrations and example robot programs for the following robot brands:
 
 .. contents::
     :backlinks: top
     :local:
     :depth: 2
+
+If your robot brand is not listed above, and you would like Pickit to integrate with it, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__.
 
 .. _downloads_abb:
 
@@ -119,4 +130,4 @@ Pickit is compatible with controllers **DX200**, **YRC1000** and **YRC1000 micr
 
 - `Download the Pickit Yaskawa files <https://drive.google.com/uc?export=download&id=1W8zWMQQgWYQhiVnzrVR2hIJ3U4uA_7j4>`__
 
-.. note:: For older Yaskawa controllers, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__. 
+.. note:: For older Yaskawa controllers, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__.
