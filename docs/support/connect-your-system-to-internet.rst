@@ -74,6 +74,8 @@ When it can't be reached, contact your system administrator, as it's usually the
 - A perimeter firewall filtering incoming OpenVPN packets.
 - A firewall's web filter filtering out VPN communication on port 443, as it doesn't look like normal web traffic.
 - A NAT gateway not having a port forwarding rule for TCP 443 to the internal address of the Pickit machine.
+- Additionally, the MAC address of the Pickit ‘LAN’ port should be whitelisted.
+  The MAC address is shown in the network settings (blue arrow in image above).
 
 .. toctree::
     :hidden:
