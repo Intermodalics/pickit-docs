@@ -1,13 +1,13 @@
 Components
 ==========
 
-An operational Pickit system consists of 3 mandatory components:
+An operational Pickit system consists of three mandatory components:
 
 -  Pickit processor
 -  Pickit camera
 -  Your robot
 
-.. image:: /assets/images/first-steps/Connecting-instructions-full.png
+.. image:: /assets/images/first-steps/connecting-instructions-full.png
 
 During the setup, a computer is used to configure the Pickit
 system. After setup and configuration, the computer can be disconnected.
@@ -26,5 +26,4 @@ Pickit system:
    poses and the robot pose.
 -  **Left**\ : The Pickit processor **can be connected** via a network
    cable to the company network in order to receive remove service from
-   a Pickit engineer over the Internet. Alternatively, it can be
-   connected to the Internet with the Pickit 3G USB dongle.
+   a Pickit engineer over the Internet.

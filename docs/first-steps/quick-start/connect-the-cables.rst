@@ -26,7 +26,9 @@ connections. Follow the steps below to connect the processor:
 .. tip:: The last step, the connection to a robot, is not necessary to
    already test the Pickit system.
 
-.. image:: /assets/images/first-steps/Connecting-instructions.png
+.. image:: /assets/images/first-steps/connecting-instructions.png
+  :scale: 70%
+  :align: center
 
 .. tip:: More information about connecting all the hardware components can be
    found in :ref:`connecting-the-cables`.
