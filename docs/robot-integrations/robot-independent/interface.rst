@@ -377,14 +377,25 @@ The robot sends a request to Pickit and waits for the response, which only consi
 
 .. _robot-independent-save-snapshot:
 
-.. details:: pickit_save_snapshot()
+.. details:: pickit_save_snapshot(subfolder_id=0)
 
   +--------------------------------------------------------------------------+
   | Save a :ref:`snapshot <Snapshots>` with the latest detection results.    |
   |                                                                          |
+  | Snapshots will be saved in the ``robot`` subfolder of your Pickit system,|
+  | which can be accessed from the :ref:`web interface <snapshots>`.         |
+  | If you wish to distinguish snapshots of different situations             |
+  | (e.g. mispicks and no detected objects), it is possible to optionally    |
+  | specify a subfolder inside the ``robot`` folder.                         |
+  |                                                                          |
   | For an example usage, refer to the description of the                    |
   | :ref:`after_end <robot-independent-hooks-after-end>` hook of the pick    |
   | and place program.                                                       |
+  |                                                                          |
+  | **Parameters**                                                           |
+  |                                                                          |
+  |   Optional, ID of the subfolder where the snapshot will be saved.        |
+  |   Allowed values are numbers between 1 and 255.                          |
   |                                                                          |
   | **Implementation**                                                       |
   |   Send :ref:`RC_PICKIT_SAVE_SNAPSHOT` and wait for a response.           |
@@ -392,6 +403,38 @@ The robot sends a request to Pickit and waits for the response, which only consi
   | **Return**                                                               |
   |    ``True`` if the response status is                                    |
   |    :ref:`PICKIT_SAVE_SNAPSHOT_OK <response-status>`.                     |
+  +--------------------------------------------------------------------------+
+
+.. _robot-independent-save-active-setup:
+
+.. details:: pickit_save_active_setup()
+
+  +--------------------------------------------------------------------------+
+  | Save the active :ref:`setup file <Configuration>`.                       |
+  |                                                                          |
+  |                                                                          |
+  | **Implementation**                                                       |
+  |   Send :ref:`RC_SAVE_ACTIVE_SETUP` and wait for a response.              |
+  |                                                                          |
+  | **Return**                                                               |
+  |    ``True`` if the response status is                                    |
+  |    :ref:`PICKIT_CONFIG_OK <response-status>`.                            |
+  +--------------------------------------------------------------------------+
+
+.. _robot-independent-save-active-product:
+
+.. details:: pickit_save_active_product()
+
+  +--------------------------------------------------------------------------+
+  | Save the active :ref:`product file <Configuration>`.                     |
+  |                                                                          |
+  |                                                                          |
+  | **Implementation**                                                       |
+  |   Send :ref:`RC_SAVE_ACTIVE_PRODUCT` and wait for a response.            |
+  |                                                                          |
+  | **Return**                                                               |
+  |    ``True`` if the response status is                                    |
+  |    :ref:`PICKIT_CONFIG_OK <response-status>`.                            |
   +--------------------------------------------------------------------------+
 
 .. _robot-independent-capture-image:
@@ -420,6 +463,31 @@ The robot sends a request to Pickit and waits for the response, which only consi
   | **Return**                                                               |
   |    ``True`` if the response status is                                    |
   |    :ref:`PICKIT_IMAGE_CAPTURED <response-status>`.                       |
+  +--------------------------------------------------------------------------+
+
+.. _robot-independent-set-cylinder-dim:
+
+.. |set-cylinder-dim| replace:: :ref:`pickit_set_cylinder_dim() <robot-independent-set-cylinder-dim>`
+
+.. details:: pickit_set_cylinder_dim(length, diameter)
+
+  +--------------------------------------------------------------------------+
+  | Set the dimensions of a :ref:`Teach cylinder model <teach-cylinder>`     |
+  | (diameter and length).                                                   |
+  |                                                                          |
+  | Learn more about the conditions that apply to this request               |
+  | :ref:`here <RC_PICKIT_SET_CYLINDER_DIM>`.                                |
+  |                                                                          |
+  | **Parameters**                                                           |
+  |                                                                          |
+  |   New length and diameter of the cylinder to detect.                     |
+  |                                                                          |
+  | **Implementation**                                                       |
+  |   Send :ref:`RC_PICKIT_SET_CYLINDER_DIM` and wait for a response.        |
+  |                                                                          |
+  | **Return**                                                               |
+  |    ``True`` if the response status is                                    |
+  |    :ref:`PICKIT_CONFIG_OK <response-status>`.                            |
   +--------------------------------------------------------------------------+
 
 .. _robot-independent-build-background:
