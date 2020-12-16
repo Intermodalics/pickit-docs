@@ -7,7 +7,7 @@ In practice, many tools can tolerate some variation with respect to the nominal 
 Taking advantage of this can increase the likelihood that a pick point is pickable by the robot.
 This variation is typically due to:
 
-- **Robot tool compliance**, such as a passive hinge (below left), or flexible suction cup bellows (below center).
+- **Robot tool compliance**, such as flexible suction cup bellows (below left).
 - **Application-specific constraints**, like the clearance between the tool fingers and the object at the pick point (below right).
 
 .. image:: /assets/images/documentation/picking/flexibility_real_examples.png
@@ -60,27 +60,3 @@ The below image shows the difference between the two alternatives for a gripper 
 
 .. tip::
   Flexible pick orientations, in combination with the :ref:`preferred pick point orientation <preferred-orientation>` can be used to favor picks that are easier and faster to reach by the robot (e.g. less wrist motion, lower occurrence of unreachable points).
-
-.. _passive-hinge-tool:
-
-Passive hinge
-~~~~~~~~~~~~~
-
-A tool with a passive hinge is well suited for picking tilted objects from deep bins, while tilting the robot flange as little as possible.
-Minimizing robot flange tilt is associated with the following advantages:
-
-- Decrease the risk of :ref:`robot tool collisions <collision-prevention>`.
-- Reduce the required robot workspace, as pick points are more likely to be reachable by the robot.
-- Potentially faster robot motions, which can translate into shorter cycle times.
-
-.. note::
-  Pickit will launch in Q1 2021 grippers with a passive hinge, among other features.
-  They will seamlessly integrate into the Pickit product.
-
-  Currently, it is possible to have a preview of the tool model by exploring the example snapshots in the ``examples/billets`` folder.
-
-.. image:: /assets/images/documentation/picking/tool_model_passive_hinge_collision.png
-  :align: center
-
-.. image:: /assets/images/documentation/picking/tool_model_passive_hinge_workspace.png
-  :align: center
