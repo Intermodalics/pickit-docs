@@ -43,7 +43,6 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
     		 MOVJ P043 VJ=10.00  //Prepick pose
     		 MOVL P049 V=800.0 PL=0  //Pick pose
     		'Add grasping logic here
-    		 TIMER T=0.500
     		 MOVJ P045 VJ=10.00  //Post pick pose
     		 MOVJ P040 VJ=50.00  //Above pick area
     		 MOVJ P025 VJ=50.00  //Detect pose
@@ -55,12 +54,10 @@ This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
     		 MOVL P029 V=23.0  //Dropoff pose
     		 MOVL LP000 V=23.0  //Corr dropoff pose
     		'Add realese logic here
-    		 TIMER T=0.500
     		 MOVJ P025 VJ=50.00
     		 PI_WAIT
     	 ELSE
     		 MSG "OBJECT OUT OF REACH"
-    		 TIMER T=5.000
     		 PI_NEXT
     		 PI_WAIT
     	 ENDIF
