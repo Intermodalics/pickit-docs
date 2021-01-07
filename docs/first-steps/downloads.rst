@@ -81,7 +81,7 @@ ROS
 To communicate with Pickit using the ROS interface, you need to have the
 ``im_pickit_msgs`` package in your workspace.
 
-- `Download the Pickit ROS interface files <https://drive.google.com/uc?export=download&id=1RGIK5MlZAwios-6Pb7OfYc22JqQ4iOK7>`__
+- `Download the Pickit ROS interface files <https://drive.google.com/uc?export=download&id=1oMGCjDyk3LYt3sRq4FxwioHU72m1og_m>`__
 
 .. _downloads_siemens:
 
