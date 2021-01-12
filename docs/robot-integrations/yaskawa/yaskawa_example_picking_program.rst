@@ -12,6 +12,9 @@ This can be done by running the :ref:`yaskawa_calibration_program`.
 Example program: TEST_SIMPLEPICK
 --------------------------------
 
+.. warning::
+  On DX100 controllers, the reachability check is not available. The ``PI_REACH`` call should be removed.
+
 This example program can be found in :guilabel:`JOB` → :guilabel:`SELECT JOB`.
 
 ::

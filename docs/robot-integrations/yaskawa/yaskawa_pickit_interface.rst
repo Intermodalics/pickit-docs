@@ -40,6 +40,7 @@ Below you find an overview of the macros defined by Pickit.
 | MACRO12 | PI_REACH   | Check if the pre pick, pick and post pick poses are reachable from the above pick area pose.                    |
 |         |            | It assumes that the poses are correctly set in the following registers:                                         |
 |         |            | ``Above pick area`` in P040, ``Pre pick`` pose in P043, ``Pick`` in P049 and ``Post pick`` in P045.             |
+|         |            | (**Not available for DX100 controllers**)                                                                       |
 +---------+------------+-----------------------------------------------------------------------------------------------------------------+
 
 .. tip:: The ID's of the macros can be changed by :ref:`manually defining the Pickit macros <manually-define_macros>`.
