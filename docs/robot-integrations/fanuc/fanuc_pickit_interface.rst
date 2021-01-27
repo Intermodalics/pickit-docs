@@ -11,7 +11,16 @@ For installation instructions, please refer to the :ref:`fanuc_installation_and_
 Pickit macros
 -------------
 
-Below you find an overview of the macros defined by Pickit. For more details on these macros, refer to :ref:`socket-communication`.
+Below you find an overview of the macros defined by Pickit.
+
+.. tip:: The macros can be assigned to hotkeys on the teach pendant.
+  This is done in :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
+
+Socket communication macros
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These are all the macros used in the socket communication between the robot and Pickit.
+For more details on these macros, refer to :ref:`socket-communication`.
 
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | Macro name                | Comment                                                                                                                                                                         | Input arguments |
@@ -40,13 +49,25 @@ Below you find an overview of the macros defined by Pickit. For more details on 
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | PI_SAVE_SCENE             | Save a :ref:`Snapshots` with the latest detection results.                                                                                                                      | /               |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-| PI_SET_PICK_POSE          | Get the current configuration of the robot. This is used as base configuration for calculated pick positions.                                                                   | /               |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | PI_WAIT                   | Wait for Pickit reply with detection results. PI_WAIT should always be the next Pickit command after a PI_LOOK_FOR_OBJECT, PI_NEXT_OBJECT or PI_DETECTION_WITH_RETRIES request. | /               |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
-.. tip:: The macros can be assigned to hotkeys on the teach pendant.
-  This is done in :guilabel:`MENU` > :guilabel:`SETUP` > :guilabel:`Macro`.
+Helper macros
+~~~~~~~~~~~~~
+
+Other macros not directly communicating with Pickit are also available to simplify the pick and place programming.
+
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| Macro name                | Comment                                                                                                                                                                         | Input arguments |
++===========================+=================================================================================================================================================================================+=================+
+| PI_SET_PICK_POSE          | Get the current configuration of the robot. This is used as base configuration for calculated pick positions.                                                                   | /               |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| PI_SET_OFFSET             | Create the pose resister in PR[PR_id] with all elements set to 0 except Z set to Z_offset. It is useful to create pre and post pick offsets.                                    | Z_offset, PR_id |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| PI_REACH                  | Check if ``PR[51]+tool offset PR[1]`` (pre pick pose), ``PR[51]`` (pick pose) and ``PR[51]+tool offset PR[2]`` (post pick pose) can be reach by the robot.                      | /               |
+|                           | The tool and user frame active when calling the macro are used for the check (make sure they correspond to the one used for reaching the poses).                                |                 |
+|                           | See :ref:`Example program <fanuc-example-picking-program>` for use.                                                                                                             |                 |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 .. _fanuc_pickit_registers:
 
@@ -57,42 +78,44 @@ Below you find an overview of the variables used by Pickit.
 When using Pickit these variables cannot be used for anything else.
 More information about the variables can be found in :ref:`socket-communication`.
 
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| Variable      | Field name    | Comment                                                                                                                            | Type     |
-+===============+===============+====================================================================================================================================+==========+
-| R[141]        | command       | command from robot to Pickit                                                                                                       | Output   |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[142]        | setup         | setup file ID known by the Pickit system                                                                                           | Output   |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[143]        | product       | product file ID known by the Pickit system                                                                                         | Output   |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[144]        | retries       | maximum number of retries for a Pickit detection                                                                                   | Output   |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[149]        | comm status   | used to check if socket communication is running                                                                                   | Input    |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[150]        | object status | Pickit status of the object: OBJECT_FOUND, NO_OBJECTS, NO_IMAGE_CAPTURED or EMPTY_ROI                                              | Input    |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[151]        | status        | Pickit response to previously received robot commands                                                                              | Input    |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[152]        | obj age       | amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot | Input    |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[153]        | obj remaining | number of remaining objects that can be sent in next messages to the robot                                                         | Input    |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[154]-R[156] | obj dim 1-3   | [0]: length or diameter (mm) [1]: width or diameter (mm) [2]: height (mm)                                                          | Input    |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[157]        | model id      | - for a :ref:`Teach` detection, ID type of the detected object                                                                     | Input    |
-|               |               | - for a :ref:`Flex`/:ref:`Pattern` detection, the object type of the detected object                                               |          |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[158]        | pick id       | ID of the pick point that was selected for the given object                                                                        | Input    |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| R[159]        | pick ref id   | ID of the selected pick point’s reference pick point                                                                               | Input    |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| PR[51]        | pick pose     | object pose expressed relatively to the robot base frame                                                                           | Input    |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| PR[52]        | pick offset   | pick point offset of the last requested object                                                                                     | Input    |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
-| PR[53]        | x rot         | helper pose to calculate a correct offset pose                                                                                     | Internal |
-+---------------+---------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| Variable      | Field name     | Comment                                                                                                                            | Type     |
++===============+================+====================================================================================================================================+==========+
+| R[141]        | command        | command from robot to Pickit                                                                                                       | Output   |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[142]        | setup          | setup file ID known by the Pickit system                                                                                           | Output   |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[143]        | product        | product file ID known by the Pickit system                                                                                         | Output   |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[144]        | retries        | maximum number of retries for a Pickit detection                                                                                   | Output   |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[149]        | comm status    | used to check if socket communication is running                                                                                   | Input    |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[150]        | object status  | Pickit status of the object: OBJECT_FOUND, NO_OBJECTS, NO_IMAGE_CAPTURED or EMPTY_ROI                                              | Input    |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[151]        | status         | Pickit response to previously received robot commands                                                                              | Input    |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[152]        | obj age        | amount of time that has passed between the capturing of the camera data and the moment the object information is sent to the robot | Input    |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[153]        | obj remaining  | number of remaining objects that can be sent in next messages to the robot                                                         | Input    |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[154]-R[156] | obj dim 1-3    | [0]: length or diameter (mm) [1]: width or diameter (mm) [2]: height (mm)                                                          | Input    |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[157]        | model id       | - for a :ref:`Teach` detection, ID type of the detected object                                                                     | Input    |
+|               |                | - for a :ref:`Flex`/:ref:`Pattern` detection, the object type of the detected object                                               |          |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[158]        | pick id        | ID of the pick point that was selected for the given object                                                                        | Input    |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[159]        | pick ref id    | ID of the selected pick point’s reference pick point                                                                               | Input    |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| R[160]        | reachability   | Set by PI_REACH to 0 if pre pick, pick and post pick pose are reachable                                                            | Output   |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| PR[51]        | pick pose      | object pose expressed relatively to the robot base frame                                                                           | Input    |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| PR[52]        | pick offset    | pick point offset of the last requested object                                                                                     | Input    |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
+| PR[53]        | x rot          | helper pose to calculate a correct offset pose                                                                                     | Internal |
++---------------+----------------+------------------------------------------------------------------------------------------------------------------------------------+----------+
 
 .. tip:: If these registers are already used on your robot, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__, and we will assist you in finding a solution.
 
@@ -102,3 +125,21 @@ Using pick offset in a robot program
 To use the **pick offset** in a robot program, first a fixed pose has to be taught.
 Then the offset can be applied to this fixed pose to correct from picking with an offset.
 Following example shows how the pose **drop off** is corrected: ``J P[3:drop off] 100% FINE Tool_Offset,PR[52:pi pick offset]``.
+
+Low level reachability check
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reachability check is performed by a low level karel program implemented by Pickit, namely PICKIT_REACH.
+Advance users can directly use it (see documentation below).
+
+::
+
+  PICKIT_REACH (pr_id, offset_id)
+  
+  Check reachability of  "PR[pr_id], Tool_Offset, PR[offset_id]"
+  Note, currently active uframe and tool are used
+  
+  tp_param[1]: 		input: pr_id , Id of the PR to check the reach
+  tp_param[2]: 		input: offset_id, Id of the tool_offset to add to the pose (OPTIONAL)
+  
+  Returns results in R[160], 0 if rechable, 1 otherwise

@@ -160,7 +160,9 @@ Depending on your controller version (i.e. R-30iA - V7.X , R-30iB - V8.X and R-3
 
 It contains:
 
-- ``pick_it_communicationX_c.pc`` is a Karel program that takes care of the low level communication. This files should not be adapted.
+- ``pick_it_communication*.pc`` is a Karel program that takes care of the low level communication.
+
+- ``pick_it_reachability*.pc`` is a Karel program that allow to check the reachability of a pose.
 
 - ``PICKIT_SIMPLE_PICKING.TP`` is a Teach Pendant program that shows a simple pick application for FANUC using Pickit.
   More infomation about this example program can be found in the following article, :ref:`fanuc-example-picking-program`.
@@ -173,8 +175,8 @@ It contains:
 
 - The other ``PI_**.TP`` files define short Teach Pendant programs that abstract some of the Pickit logic into more user readable functions. They can also serve as macros that can be called manually.
 
-.. tip:: If there is no binaries provided for your controller version, you have to compile the sources into binaries compatible with your controller.
-    Don't hesitate to contact Pickit for support.
+.. tip:: If there is no binaries provided for your controller version, you have to compile the sources (.kl) into binaries compatible with your controller.
+  Don't hesitate to contact Pickit for support.
 
 .. Warning:: Modifying the ``pick_it_communicationX_c.kl`` file should only be considered after talking to a Pickit support engineer.
 
@@ -189,7 +191,7 @@ Uploading the files can be done using an FTP server or by manually loading them 
 Registers used by the Karel program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Karel program ``pick_it_communication15_C.kl``, which takes care of the low-level communication between the controller and Pickit, uses the following registers to pass on data from the low-level communication to a Teach Pendant application program:
+The Karel program ``pick_it_communication.pc``, which takes care of the low-level communication between the controller and Pickit, uses the following registers to pass on data from the low-level communication to a Teach Pendant application program:
 
 - Data communicated from Pickit via the Karel program to the Teach Pendant application program:
 

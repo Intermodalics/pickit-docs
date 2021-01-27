@@ -39,7 +39,7 @@ Fanuc
 Pickit is compatible with controllers as of version **R-30iA** (i.e. R-30iA - V7.X , R-30iB - V8.X and R-30iB plus - V9.X) and the
 software module **User Socket Msg** for socket communication is required (the product number for this module is A05B-2600-R648).
 
-- `Download the Pickit files for Fanuc <https://drive.google.com/uc?export=download&id=1tE7Cv_wA6Km3IpNbHNKMPKunlW4vrr0r>`__
+- `Download the Pickit files for Fanuc <https://drive.google.com/uc?export=download&id=1C1h1w03x0BzvP2JejBavYXu_2IcNOoHS>`__
 
 .. _downloads_hanwha:
 
