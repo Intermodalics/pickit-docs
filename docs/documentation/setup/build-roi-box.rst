@@ -51,6 +51,17 @@ The markers are not interchangeable.
 
 .. note:: When building the ROI box, the :ref:`Pickit reference frame <reference-frame>` location is set to the left bottom corner of the ROI box.
 
+.. tip::
+  When the region of interest corresponds to the contents of a bin, you have two choices:
+
+  - If the bin is **shallow and empty**, you can place the markers on three corners
+    at the *bottom* of the bin.
+
+  - If the bin is **deep or not empty**, it's more convenient to place the markers on three corners at the *top* of the bin.
+
+  .. image:: /assets/images/documentation/setup/roi_markers_bin.jpg
+      :align: center
+
 Automatically
 ~~~~~~~~~~~~~
 
