@@ -3,89 +3,132 @@
 Fanuc example picking program
 =============================
 
-This example program requires that Pickit is installed and set up with your robot.
+This article describes the Fanuc example picking program. 
+Then, it explains how to adapt the program to start running it.
+It is ideal to get started with Pickit.
+
+PICKIT_SIMPLE_PICKING: program overview
+---------------------------------------
+
+The program follows the :ref:`generic Pickit example program <pick-and-place-simple-logic>` logic.
+
+- First check if Pickit is in :ref:`Robot mode <web-interface-top-bar>`.
+- If so, the robot moves to its detect pose and a detection is triggered.
+- If an object is found and if it is reachable, its model and pick point ID are retrieved.
+  The robot moves to the object to pick it.
+  Next, the robot moves to a fixed drop off position.
+  During these motions when the robot is out the field of view of the camera, a new Pickit detection is triggered immediately.
+- If the ROI is empty, the program stops.
+- If no object is found but ROI is not empty, a :ref:`Snapshots` is saved on the Pickit system and the robot program stops. 
+
+This program can be found in :guilabel:`Select`.
+
+::
+
+   1:  !Program settings ;
+   2:  !Fill in settings below ;
+   3:  UFRAME_NUM=0 ;
+   4:  UTOOL_NUM=1 ;
+   5:  R[1:setup id]=3    ;
+   6:  R[2:product id]=2    ;
+   7:  R[3:max detect]=5    ;
+   8:  R[4:pre offset]=(-100)    ;
+   9:  R[5:post offset]=(-100)    ;
+  10:   ;
+  11:   ;
+  12:  !Init ;
+  13:  CALL PI_OPEN_COMMUNICATION    ;
+  14:  CALL PI_RUN    ;
+  15:  IF (R[151:pi status]<>0) THEN ;
+  16:  MESSAGE[Not in robot mode] ;
+  17:  JMP LBL[2] ;
+  18:  ENDIF ;
+  19:  CALL PI_CONFIGURE(R[1:setup id],R[2:product id]) ;
+  20:  CALL PI_SET_OFFSET(R[4:pre offset],1) ;
+  21:  CALL PI_SET_OFFSET(R[5:post offset],2) ;
+  22:   ;
+  23:  !First detection ;
+  24:J P[1:detect] 100% CNT100    ;
+  25:  CALL PI_DETECTION_WITH_RETRIES(R[3:max detect]) ;
+  26:  CALL PI_WAIT    ;
+  27:   ;
+  28:   ;
+  29:  !Main Loop ;
+  30:  LBL[1] ;
+  31:   ;
+  32:  !If object found ;
+  33:  IF (R[150:pi obj status]=20) THEN ;
+  34:   ;
+  35:  !If reachable ;
+  36:  CALL PI_REACH    ;
+  37:  IF (R[160:pi reach status]=0) THEN ;
+  38:   ;
+  39:  CALL PI_GET_PICK_POINT_DATA    ;
+  40:   ;
+  41:  !Picking ;
+  42:J P[2:above bin] 100% CNT100    ;
+  43:  !Move to pre pick pose ;
+  44:L PR[51:pi pick pose] 100mm/sec CNT100 Tool_Offset,PR[1:pre offset]    ;
+  45:  !Move to pick pose ;
+  46:L PR[51:pi pick pose] 100mm/sec FINE    ;
+  47:  !Add grasping logic ;
+  48:  !Move to post pick pose ;
+  49:L PR[51:pi pick pose] 100mm/sec CNT100 Tool_Offset,PR[2:post offset]    ;
+  50:L P[2:above bin] 100mm/sec CNT100    ;
+  51:  !Detection ;
+  52:J P[1:detect] 100% CNT100    ;
+  53:  CALL PI_CAPTURE_IMAGE    ;
+  54:  CALL PI_PROCESS_IMAGE    ;
+  55:   ;
+  56:  !Drop off ;
+  57:J P[3:drop off] 100% FINE    ;
+  58:  !Add release logic ;
+  59:J P[1:detect] 100% CNT100    ;
+  60:   ;
+  61:  !Get detection results ;
+  62:  CALL PI_WAIT    ;
+  63:   ;
+  64:  !Not reachable ;
+  65:  ELSE ;
+  66:  !Try next object ;
+  67:  CALL PI_NEXT_OBJECT    ;
+  68:  CALL PI_WAIT    ;
+  69:  ENDIF ;
+  70:   ;
+  71:  !No object found ;
+  72:  ELSE ;
+  73:  !Empty ROI ;
+  74:  IF (R[150:pi obj status]=23) THEN ;
+  75:  MESSAGE[ROI is empty] ;
+  76:  JMP LBL[2] ;
+  77:  !No object found ;
+  78:  ELSE ;
+  79:  MESSAGE[No object found] ;
+  80:  CALL PI_SAVE_SCENE    ;
+  81:  JMP LBL[2] ;
+  82:  ENDIF ;
+  83:  ENDIF ;
+  84:  JMP LBL[1] ;
+  85:  LBL[2] ;
+     END
+
+See :ref:`fanuc-pickit-macros` for more information about the Pickit rountines available.
+
+Before running the program
+--------------------------
+
+This example program requires Pickit to be installed and set up with your robot.
 For installation instructions, please refer to the :ref:`fanuc_installation_and_setup` article.
 
 Make sure that :ref:`robot-camera-calibration` is done.
 This can be done by running the :ref:`fanuc-calibration-program`.
 
 Run PI_SET_PICK_POSE
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 Before executing the picking program we first need to define the robot joint configuration for picking.
 This is done by jogging the robot to the center of the picking area and manually run the PI_SET_PICK_POSE macro.
 The macro will read out the current joint configuration of the robot and this will be used as seed for all calculated pick poses. 
-
-Example program: PICKIT_SIMPLE_PICKING
---------------------------------------
-
-This example program can be found in :guilabel:`Select`.
-
-::
-
-      1:  CALL PI_OPEN_COMMUNICATION    ;
-      2:  CALL PI_RUN    ;
-      3:  IF (R[151:pi status]<>0) THEN ;
-      4:    MESSAGE[Not in robot mode] ;
-      5:    JMP LBL[2] ;
-      6:  ENDIF ;
-      7:  UFRAME_NUM=0 ;
-      8:  UTOOL_NUM=1 ;
-      9:  !Fill in correct setup id ;
-     10:  R[1:setup]=3    ;
-     11:  !Fill in correct product id ;
-     12:  R[2:product]=2    ;
-     13:  !Fill in max detection retries ;
-     14:  R[3:retries]=5    ;
-     15:  CALL PI_CONFIGURE(R[1:setup],R[2:product]) ;
-     16:J P[1:detect] 100% CNT100    ;
-     17:  CALL PI_DETECTION_WITH_RETRIES(R[3:retries]) ;
-     18:  CALL PI_WAIT    ;
-     19:  LBL[1] ;
-     20:  !Object found ;
-     21:  IF (R[150:pi object status]=20) THEN ;
-     22:    CALL PI_GET_PICK_POINT_DATA    ;
-     23:J   P[2:above bin] 100% CNT100    ;
-     24:    !Move to pre pick pose ;
-     25:L   PR[51:pi pose] 100mm/sec CNT100 Tool_Offset,PR[1:pre pick offset]    ;
-     26:    !Move to pick pose ;
-     27:L   PR[51:pi pose] 100mm/sec FINE    ;
-     28:    !Add grasping logic ;
-     29:    !Move to post pick pose ;
-     30:L   PR[51:pi pose] 100mm/sec CNT100 Offset,PR[2:post pick offset]    ;
-     31:L   P[2:above bin] 100mm/sec CNT100    ;
-     32:J   P[1:detect] 100% CNT100    ;
-     33:    CALL PI_DETECTION_WITH_RETRIES(R[3:retries]) ;
-     34:J   P[3:drop off] 100% FINE    ;
-     35:    !Add release logic ;
-     36:J   P[1:detect] 100% CNT100    ;
-     37:    CALL PI_WAIT    ;
-     38:  ELSE ;
-     39:  !Empty ROI ;
-     40:  IF (R[150:pi object status]=23) THEN ;
-     41:    MESSAGE[ROI is empty] ;
-     42:    JMP LBL[2] ;
-     43:  !No object found ;
-     44:  ELSE ;
-     45:    MESSAGE[No object found] ;
-     46:    CALL PI_SAVE_SCENE    ;
-     47:    JMP LBL[2] ;
-     48:  ENDIF ;
-     49:  ENDIF ;
-     50:  JMP LBL[1] ;
-     51:  LBL[2] ;
-     END
-
-The idea of the program is the following:
-
-- First it is checked if Pickit is set to :ref:`Robot mode <web-interface-top-bar>`.
-- If so, the robot moves to its detect pose and a detection is triggered.
-- If an object is found, its model and pick point ID are retrieved.
-  The robot moves to the object to pick it.
-  Next, the robot moves to a fixed drop off position.
-  During these motions when the robot is out the field of view of the camera, a new Pickit detection is triggered immediately.
-- If the ROI is empty, the program stops.
-- If no object is found but ROI is not empty, a :ref:`Snapshots` is saved on the Pickit system and the robot program stops. 
 
 Define the tool for picking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,19 +136,15 @@ Define the tool for picking
 Create a tool frame with the actual TCP values.
 In this example **UTOOL1** is used.
 
-Set correct input arguments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adapt the registers used in PICKIT_SIMPLE_PICKING 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The commands PI_CONFIGURE and PI_DETECTION_WITH_RETRIES need input arguments.
-In this example R[1], R[2] and R[3] are reserved for this and by default set to 5, 2 and 5.
-See :ref:`fanuc-pickit-macros` for more information about these arguments.
+Below you find an overview of the registers used in this example program.
+They should be adapted according the changes you want to apply to this example program.
 
-Variables used in PICKIT_SIMPLE_PICKING 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Below you find an overview of the variables used in this example program.
-The Pickit registers, in the 140-160 range, and the Pickit pose registers, in the 50 range, can't be changed by the user, an overview of these can be found in the :ref:`fanuc-pickit-interface` article.
-All other variables should be adapted according the changes you want to apply to this example program.
+.. note::
+  The Pickit registers, in the 140-160 range, and the Pickit pose registers, in the 50 range, can't be changed by the user.
+  An overview of these can be found in the :ref:`fanuc-pickit-interface` article.
 
 +-----------+------------------------+---------------------------------------------------------------------------------------------------+
 | Variable  | Field name             | Comment                                                                                           |
@@ -116,15 +155,19 @@ All other variables should be adapted according the changes you want to apply to
 +-----------+------------------------+---------------------------------------------------------------------------------------------------+
 | R[3]      | Retries                | Maximum number of detection retries                                                               |
 +-----------+------------------------+---------------------------------------------------------------------------------------------------+
+| R[4]      | Pre pick offset        | Z offset used to defined the pre pick pose offset (use a negative value).                         |
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
+| R[5]      | Post pick offset       | Z offset used to defined the post pick pose offset (use a negative value).                        |
++-----------+------------------------+---------------------------------------------------------------------------------------------------+
 | P[1]      | Detect pose            | Position not blocking the field of view of the camera when triggering detections                  |
 +-----------+------------------------+---------------------------------------------------------------------------------------------------+
 | P[2]      | Above bin pose         | Position above the picking area                                                                   |
 +-----------+------------------------+---------------------------------------------------------------------------------------------------+
 | P[3]      | Drop off pose          | Position where the object is dropped off                                                          |
 +-----------+------------------------+---------------------------------------------------------------------------------------------------+
-| PR[1]     | Before pick            | Position offset the robot moves to before picking the object (relative to tool frame)             |
+| PR[1]     | Pre pick pose          | Position offset the robot moves to before picking the object (relative to tool frame)             |
 +-----------+------------------------+---------------------------------------------------------------------------------------------------+
-| PR[2]     | After pick             | Position offset the robot moves to after picking the object (relative to world frame)             |
+| PR[2]     | Post pick pose         | Position offset the robot moves to after picking the object (relative to tool frame)              |
 +-----------+------------------------+---------------------------------------------------------------------------------------------------+
 
 Add grasping/releasing logic
