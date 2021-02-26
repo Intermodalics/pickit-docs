@@ -109,6 +109,10 @@ Before starting, :ref:`Download the Pickit Yaskawa files here <downloads_yaskawa
 The Pickit folder should be copied to a USB pen drive.
 Then copy the correct ".out" extension (e.g. **Pickit_DX200.out** for DX200 controllers) file to the root directory of the USB drive.
 
+.. note::
+  Folders with too long names are not recognized by Yaskawa controller.
+  The simplest is to copy the files directly on the root folder of a clean usb stick.
+
 The robot controller should be in **MAINTENANCE MODE** and the security mode set to **MANAGEMENT MODE** before making these changes.
 
 #. Insert the USB pen drive in the robot pendant or to the controller USB port.

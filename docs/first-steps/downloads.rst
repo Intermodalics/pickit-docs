@@ -128,6 +128,6 @@ Yaskawa
 
 Pickit is compatible with controllers **DX100**, **DX200**, **FS100**, **YRC1000** and **YRC1000 micro**.
 
-- `Download the Pickit Yaskawa files <https://drive.google.com/uc?export=download&id=1nRlfonWKAPTBGDrtJy7u0MOH8xNde5_8>`__
+- `Download the Pickit Yaskawa files <https://drive.google.com/uc?export=download&id=1W1iqnMTpyfh_QkVjifjECUqXItVQGBxy>`__
 
 .. note:: For older Yaskawa controllers, please contact us at `support@pickit3d.com <mailto:support@pickit3d.com>`__.
