@@ -11,3 +11,4 @@ Fanuc
   fanuc_calibration_program.rst
   fanuc_example_picking_program.rst
   fanuc_pickit_interface.rst
+  fanuc_interface_support.rst
