@@ -29,7 +29,7 @@ ABB
 
 Pickit is compatible with controllers as of version IRC5 with RobotWare 5 or 6 and furthermore. To communicate with Pickit, the modules **616 PC interface** and **623-1 Multitasking** should be installed.
 
--  `Download the Pickit ABB files <https://drive.google.com/uc?export=download&id=1RCeMRlWlFg4b2XfxNeAXKE8IV8PLIHCe>`__
+-  `Download the Pickit ABB files <https://drive.google.com/uc?export=download&id=1tJ-3hJCMBR9iNyEmM57zR5laTSvJpMnK>`__
 
 .. _downloads_fanuc:
 
