@@ -39,6 +39,10 @@ To do this go to :guilabel:`SYSTEM` → :guilabel:`SETUP` → :guilabel:`MACRO I
 +---------+-------------+-------------+
 | MACRO11 | PI_BUILD    | `********`  |
 +---------+-------------+-------------+
+| MACRO12 | PI_REACH    | `********`  |
++---------+-------------+-------------+
+| MACRO13 | PI_CYL      | `********`  |
++---------+-------------+-------------+
 
 Macro argument definition
 -------------------------
@@ -67,6 +71,10 @@ The values that need to be filled in can be found in the table below.
 |              | **4**      | TOOL         | I CONST  | 1-64         | TOOL         | ON          | TOOL:        |
 |              +------------+--------------+----------+--------------+--------------+-------------+--------------+
 |              | **5**      | TIMEOUT      | I CONST  | ms           | TIMEOUT      | ON          | TIMEOUT:     |
++--------------+------------+--------------+----------+--------------+--------------+-------------+--------------+
+| **PI_CYL**   | **1**      | CYL LENGTH   | I CONST  | mm           | CYL LENGTH   | ON          | LENGTH:      |
+|              +------------+--------------+----------+--------------+--------------+-------------+--------------+
+|              | **2**      | CYL DIAMETER | I CONST  | mm           | CYL DIAMETER | ON          | DIAM:        |
 +--------------+------------+--------------+----------+--------------+--------------+-------------+--------------+
 
 If the arguments are set correctly, the screen will be similar as shown below.
