@@ -1,13 +1,14 @@
 What's in the box
 =================
 
-.. image:: /assets/images/first-steps/Pickit-full-system.jpg
+.. image:: /assets/images/first-steps/pickit-full-system.jpg
 
 -  Pickit processor
 
-   -  Rack handles and mounting bolts
-   -  Pair of keys for locking the front lid
+   -  Power supply adapter
    -  Power cable
+   -  Rack handles and mounting screws
+   -  Wall mounting plates and their screws
 
 -  Pickit 3D Camera
 
@@ -34,4 +35,9 @@ to buy one or more of these options.
    -  2 plate screws
    -  2 dowel pins
 
-.. tip:: More technical specifications can be found in following articles, :ref:`pickit-processor`, :ref:`m-camera`, :ref:`l-camera` and :ref:`m-hd-camera`.
+.. tip:: More technical specifications can be found in the following articles: 
+
+ - :ref:`processor`
+ - :ref:`m-camera` 
+ - :ref:`l-camera` 
+ - :ref:`m-hd-camera`

@@ -77,7 +77,7 @@ sending an email to `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`_
   :caption: Hardware
   :maxdepth: 1
 
-  Processor <hardware/pickit-processor>
+  Processor <hardware/processor/index>
   M camera <hardware/pickit-m-camera>
   M-HD camera <hardware/pickit-m-hd-camera>
   L camera <hardware/pickit-l-camera>
