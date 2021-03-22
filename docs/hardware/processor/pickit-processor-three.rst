@@ -5,9 +5,9 @@ Pickit processor 3.0
 
 .. image:: /assets/images/hardware/processor-three.jpg
 
-The Pickit processor 3.0 is 77% lighter, more compact (1U rack mount instead of 2U), more robust, and less noisy compared to the :ref:`pickit-processor-two`.
+The Pickit processor 3.0 is 77% lighter, more compact (1U rack mount instead of 2U), more rugged, and less noisy compared to the :ref:`pickit-processor-two`.
 
-Additionally, its 12V DC-in power supply is a separate adapter, so the processor can be optionally mounted on an Autonomous Ground Vehicle (AGV), and not require to be powered from an AC power input like a wall socket. 
+Additionally, its 12V DC-in power supply is a separate adapter, so the processor can be optionally mounted on an Autonomous Ground Vehicle (AGV), and does not require to be powered from an AC power input like a wall socket. 
 
 Technical specifications
 ------------------------
