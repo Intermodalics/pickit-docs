@@ -6,6 +6,10 @@ The Pickit ROS interface
 Connecting to Pickit using ROS
 ------------------------------
 
+.. warning::
+    Pickit supports communication via `ROS <https://www.ros.org/>`__, but in practice it's less frequently used. 
+    Backwards compatibility is not guaranteed across Pickit versions. 
+
 .. image:: /assets/images/robot-integrations/ros/ros-logo.png
 
 The Pickit system is running a ROS Master, which allows another system to connect to it using the ROS interfaces. Pickit exposes its ROS parameters, nodes and topics using standard ROS messages and a limited set of Pickit specific ROS messages.

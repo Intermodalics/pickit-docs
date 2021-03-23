@@ -17,22 +17,23 @@ The articles present content in robot-independent pseudo-code. When developing a
   .. toctree::
     :glob:
     :maxdepth: 1
-
+    
     interface.rst
     pick-and-place-simple.rst
     pick-and-place.rst
     calibration.rst
 
-Communication
--------------
-
-The communication layer takes care of the low-level data exchange between the robot and Pickit by implementing the Pickit socket communication protocol. This part of the integration is typically not visible to the robot programmer, and is abstracted by the interface layer.
-
-Pickit also supports communication via `ROS <https://www.ros.org/>`__, but in practice it's less frequently used, and backwards compatibility is not guaranteed across Pickit versions.
-
   .. toctree::
     :glob:
     :maxdepth: 1
+    :hidden:
+    
+    socket.rst
 
-    Socket communication <socket/index.rst>
-    ROS communication <ros/index.rst>
+Communication
+-------------
+
+The communication layer takes care of the low-level data exchange between the robot and Pickit by implementing the :ref:`Pickit socket communication protocol <socket-communication>`. This part of the integration is typically not visible to the robot programmer, and is abstracted by the interface layer.
+
+Pickit also supports communication via `ROS <https://www.ros.org/>`__. 
+Refer to the following article about :ref:`the Pickit ROS interface <ros>` to learn more. 
