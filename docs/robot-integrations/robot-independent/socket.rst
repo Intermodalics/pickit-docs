@@ -620,4 +620,4 @@ An example communication flow is as follows:
    :width: 500
    :alt: Socket communication flow
 
-   Example communication flow between robot and Pickit.
+   Example communication flow between robot and Pickit. 
