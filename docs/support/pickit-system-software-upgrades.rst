@@ -19,7 +19,7 @@ To upgrade your system follow these steps:
 
      .. image:: /assets/images/support/settings-button-21.png
 
-- In the **Network settings** section of the left menu, select the **Upgrade
+- In the **System settings** section of the left menu, select the **Upgrade
   Pickit version** drawer, and press the **Upload and
   Install Upgrades** button to upload and select the downloaded
   file.
