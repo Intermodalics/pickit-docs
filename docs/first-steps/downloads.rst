@@ -50,6 +50,15 @@ Pickit is compatible with controllers as of version **2.001**. **Rodi 2.001 for 
 
 - `Download the Pickit Hanwha HCR files <https://drive.google.com/uc?export=download&id=1yOluatxv_LBuMSG3xVnC13OHanyKmtub>`__
 
+.. _downloads_kawasaki:
+
+Kawasaki
+--------
+
+Pickit is compatible with Kawasaki robots.
+
+- `Download the Pickit Kawasaki files <https://drive.google.com/uc?export=download&id=1Zoar408EYsELGwWvCSLNdJyViUJSeDAs>`__
+
 .. _downloads_kuka:
 
 KUKA
