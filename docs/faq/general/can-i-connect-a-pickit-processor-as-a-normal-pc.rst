@@ -15,3 +15,9 @@ disconnected.
 .. image:: /assets/images/first-steps/connecting-instructions.png
   :scale: 70%
   :align: center
+
+If you access the Pickit system via LAN you may have to configure your firewall. Pickit requires that the following ports are reachable:
+
+- **Web interface**: 80, 8080, 8083, 8182, 9999
+- **Robot socket interface**: 5001 or 30001
+- **Pickit remote access**: 22 (only required for online remote support)
