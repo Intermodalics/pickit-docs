@@ -58,10 +58,10 @@ The back panel of the processor 3.0  contains:
 Power consumption
 -----------------
 
--  While turned off: 5 W
--  Booting: 115 W
--  Idle: 70 W
--  Heavy processing: 120 W
+-  While turned off: 3 W
+-  Booting: 35 W
+-  Idle: 25 W
+-  Heavy processing: 85 W
 
 
 Mounting and installation
