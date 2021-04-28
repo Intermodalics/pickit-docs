@@ -64,6 +64,7 @@ sending an email to `support@pickit3d.com <mailto:mailto:support@pickit3d.com>`_
   ABB <robot-integrations/abb/index>
   Fanuc <robot-integrations/fanuc/index>
   Hanwha <robot-integrations/hanwha/index>
+  Kawasaki <robot-integrations/kawasaki/index>
   KUKA <robot-integrations/kuka/index>
   Omron TM <robot-integrations/techman/index>
   Siemens PLC <robot-integrations/siemens/index>
